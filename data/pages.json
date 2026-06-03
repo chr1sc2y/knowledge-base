@@ -1,11 +1,17 @@
 [
   {
-    "slug": "blood-sugar-nutrition-guide",
-    "title": "Blood Glucose, Carbohydrates, and Metabolism",
-    "subtitle": "A systematic review from fundamentals to advanced: monosaccharides, starches, insulin, training, and dietary strategies for metabolic health.",
-    "category": "Health & Nutrition",
-    "tags": ["glucose", "carbs", "nutrition", "metabolism", "strength training"],
-    "path": "pages/blood-sugar-nutrition-guide.html",
+    "slug": "blood-glucose",
+    "zh_title": "血糖、碳水与代谢",
+    "en_title": "Blood Glucose, Carbohydrates, and Metabolism",
+    "zh_subtitle": "从碳水的基本结构开始，逐层理解消化、血糖调控、胰岛素、淀粉摄入、力量训练和日常策略。",
+    "en_subtitle": "A layered guide to carbohydrate structure, digestion, blood glucose control, insulin, starch intake, strength training, and daily strategy.",
+    "zh_category": "健康与营养",
+    "en_category": "Health & Nutrition",
+    "tags": ["glucose", "carbs", "nutrition", "metabolism", "strength training", "血糖", "碳水", "胰岛素", "力量训练"],
+    "zh_search": "血糖 碳水 单糖 双糖 多糖 淀粉 纤维 胰岛素 胰高血糖素 代谢 力量训练 餐后 血糖控制",
+    "en_search": "glucose carbohydrates monosaccharides disaccharides polysaccharides starch fiber insulin glucagon metabolism strength training postprandial",
+    "zh_path": "articles/blood-glucose.html",
+    "en_path": "articles/blood-glucose.html",
     "date": "2026-06-03",
     "featured": true
   }

@@ -1,6 +1,6 @@
 # Providence Knowledge Base
 
-A clean, private knowledge base for high-value learning pages and curated references.  
+A calm, bilingual knowledge base for high-value learning pages and repeated review.  
 Deployed at https://knowledge.prov1dence.top/
 
 ## Why "Not Secure"?
@@ -29,20 +29,19 @@ open dist/index.html
 
 ## Adding Content
 
-1. Place a standalone HTML page in `pages/`.
-2. Register it in `data/pages.json` with title, category, tags, and path.
-3. Add external references in `data/links.json` if needed.
-4. Push to `master`. GitHub Actions builds `dist/` and deploys to GitHub Pages.
+1. Place Chinese articles in `articles/`.
+2. Place matching English articles in `en/articles/`.
+3. Register both paths and localized metadata in `data/pages.json`.
+4. Add external references in `data/links.json` if needed, but keep references off the home page.
+5. Push to `master`. GitHub Actions builds `dist/` and deploys to GitHub Pages.
 
 ## Design Notes
 
-- Apple-inspired: generous whitespace, crisp system typography, minimal chrome, subtle interactions, high scannability.
-- All content is in English.
-- Keep pages concise. Focus on depth and clarity over volume. Avoid redundant explanations or decorative UI.
-- Professional design tools worth using before coding:
-  - **Figma** (industry standard for UI/UX, great for knowledge-base layouts, prototypes, and design systems).
-  - Apple Human Interface Guidelines (HIG) and SF Symbols / typography references.
-  - Optional: Framer for high-fidelity interactive mocks, or Penpot (open source).
+- Editorial learning template: warm paper background, serif display headings, restrained accent color, and section-by-section reading flow.
+- Every public page should have Simplified Chinese and English versions with a matching language switch.
+- Home page is a quiet index, not a card grid and not a references wall.
+- Articles should teach progressively from intuition to mechanism to practice. Do not label the depth progression as literal school stages unless explicitly requested.
+- Use cards sparingly. Prefer typography, rules, tables, notes, and a small number of framed interactive tools.
 
 ## Tech
 
@@ -52,7 +51,7 @@ open dist/index.html
 
 ## Contributing
 
-Keep additions focused and high-signal. Translate or write directly in English. Prefer precise, citable explanations over long prose. Update the build and push.
+Keep additions focused and high-signal. Maintain Chinese and English together. Prefer precise, citable explanations over long prose. Update the build before pushing.
 
 ## License / Disclaimer
 

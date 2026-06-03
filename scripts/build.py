@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the Knowledge Base static site."""
+"""Build the Providence Knowledge Base static site."""
 from __future__ import annotations
 
 import html
@@ -21,315 +21,140 @@ def esc(value: object) -> str:
     return html.escape(str(value), quote=True)
 
 
-def tag_list(tags: list[str]) -> str:
-    return "".join(f"<span class='tag'>{esc(tag)}</span>" for tag in tags)
+def page_value(page: dict, key: str, lang: str) -> str:
+    localized = f"{lang}_{key}"
+    if localized in page:
+        return str(page[localized])
+    value = page.get(key, "")
+    if isinstance(value, dict):
+        return str(value.get(lang, value.get("en", "")))
+    return str(value)
 
 
-def render_page_cards(pages: list[dict]) -> str:
-    cards = []
+def render_rows(pages: list[dict], lang: str) -> str:
+    rows = []
     for page in pages:
-        tags = tag_list(page.get("tags", []))
-        featured = " featured" if page.get("featured") else ""
-        cards.append(
+        path = page_value(page, "path", lang)
+        title = page_value(page, "title", lang)
+        subtitle = page_value(page, "subtitle", lang)
+        category = page_value(page, "category", lang)
+        search = " ".join(
+            [
+                title,
+                subtitle,
+                category,
+                " ".join(page.get("tags", [])),
+                page_value(page, "search", lang),
+            ]
+        ).lower()
+        go = "进入" if lang == "zh" else "Enter"
+        rows.append(
             f"""
-            <article class="card page-card{featured}" data-search="{esc(' '.join([page.get('title',''), page.get('subtitle',''), page.get('category',''), ' '.join(page.get('tags', []))]).lower())}">
-              <div class="meta">{esc(page.get('category', 'General'))} · {esc(page.get('date', ''))}</div>
-              <h3><a href="{esc(page.get('path', '#'))}">{esc(page.get('title', 'Untitled'))}</a></h3>
-              <p>{esc(page.get('subtitle', ''))}</p>
-              <div class="tags">{tags}</div>
-            </article>
-            """
+      <a class="row" href="{esc(path)}" data-search="{esc(search)}">
+        <div class="meta">{esc(category)}</div>
+        <div>
+          <h2>{esc(title)}</h2>
+          <p>{esc(subtitle)}</p>
+        </div>
+        <div class="go">{go}</div>
+      </a>"""
         )
-    return "\n".join(cards)
+    return "\n".join(rows)
 
 
-def render_links(links: list[dict]) -> str:
-    items = []
-    for link in links:
-        tags = tag_list(link.get("tags", []))
-        items.append(
-            f"""
-            <article class="card link-card" data-search="{esc(' '.join([link.get('title',''), link.get('note',''), link.get('category',''), ' '.join(link.get('tags', []))]).lower())}">
-              <div class="meta">{esc(link.get('category', 'Reference'))}</div>
-              <h3><a href="{esc(link.get('url', '#'))}" target="_blank" rel="noopener noreferrer">{esc(link.get('title', 'Untitled'))}</a></h3>
-              <p>{esc(link.get('note', ''))}</p>
-              <div class="tags">{tags}</div>
-            </article>
-            """
-        )
-    return "\n".join(items)
-
-
-def render_index(pages: list[dict], links: list[dict]) -> str:
+def render_index(pages: list[dict], lang: str) -> str:
     generated = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    page_cards = render_page_cards(pages)
-    link_cards = render_links(links)
-    categories = sorted({p.get("category", "General") for p in pages} | {l.get("category", "Reference") for l in links})
-    category_chips = "".join(f"<button class='chip' data-filter='{esc(c.lower())}'>{esc(c)}</button>" for c in categories)
+    is_zh = lang == "zh"
+    rows = render_rows(pages, lang)
+    latest = max((page.get("date", "") for page in pages), default="")
+    count_text = f"{len(pages)} 个主题 · 最近更新 {latest}" if is_zh else f"{len(pages)} topic · Last updated {latest}"
+    title = "Providence Knowledge Base"
+    description = (
+        "一个为反复复习而写的私人知识入口。"
+        if is_zh
+        else "A private knowledge entry designed for repeated study."
+    )
+    h1 = "为复习而写。" if is_zh else "Written for return."
+    lead = (
+        "这里的页面像书里的章节：有路径、有节奏、有证据边界。首页只做一件事，把你带回值得重读的知识。"
+        if is_zh
+        else "These pages behave like chapters: paced, evidenced, and meant to be revisited. The home page has one job: bring you back to what is worth rereading."
+    )
+    placeholder = "搜索主题、标签或概念" if is_zh else "Search topics, tags, or concepts"
+    aria = "搜索学习页面" if is_zh else "Search learning pages"
+    principle = (
+        "建议复习路径：先读核心模型，再看知识层次，最后回到实践策略。"
+        if is_zh
+        else "Suggested review path: start with the core model, move through the learning layers, then return to practical strategy."
+    )
+    lang_href = "en/" if is_zh else "../"
+    lang_label = "English" if is_zh else "中文"
+    html_lang = "zh-CN" if is_zh else "en"
 
     return f"""<!doctype html>
-<html lang="en">
+<html lang="{html_lang}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Providence Knowledge Base</title>
-  <meta name="description" content="A private, curated knowledge base of in-depth learning pages and high-signal references. Designed for repeated study.">
+  <title>{esc(title)}</title>
+  <meta name="description" content="{esc(description)}">
   <style>
-    :root {{
-      --bg: #ffffff;
-      --fg: #1d1d1f;
-      --muted: #6e6e73;
-      --border: #d2d2d7;
-      --surface: #ffffff;
-      --accent: #007aff;
-      --chip: #f5f5f7;
-      --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
-      --radius: 12px;
-    }}
-    * {{ box-sizing: border-box; }}
-    body {{
-      margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }}
-    a {{ color: var(--accent); text-underline-offset: 2px; text-decoration-thickness: 1px; }}
-    a:hover {{ text-decoration-thickness: 1.5px; }}
-    .wrap {{ width: min(1080px, calc(100vw - 48px)); margin: 0 auto; }}
-    header {{
-      padding: 72px 0 48px;
-    }}
-    .eyebrow {{
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }}
-    h1 {{
-      margin: 0 0 12px;
-      font-size: clamp(42px, 7vw, 64px);
-      line-height: 1.05;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      max-width: 22ch;
-    }}
-    .lead {{
-      max-width: 620px;
-      color: var(--muted);
-      font-size: 18px;
-      margin: 0 0 32px;
-      line-height: 1.55;
-    }}
-    .toolbar {{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 8px;
-    }}
-    input[type="search"] {{
-      flex: 1 1 320px;
-      min-width: 220px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: 10px;
-      padding: 12px 16px;
-      font: inherit;
-      font-size: 15px;
-      outline: none;
-      transition: border-color .15s, box-shadow .15s;
-    }}
-    input[type="search"]:focus {{
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.12);
-    }}
-    .chips {{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }}
-    .chip {{
-      border: 1px solid var(--border);
-      background: var(--chip);
-      border-radius: 999px;
-      padding: 6px 14px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--fg);
-      cursor: pointer;
-      transition: all .1s ease;
-    }}
-    .chip:hover {{ background: #eeeef0; }}
-    .chip.active {{
-      background: var(--fg);
-      color: #fff;
-      border-color: var(--fg);
-    }}
-    main {{ padding-bottom: 40px; }}
-    section {{
-      padding: 48px 0 24px;
-    }}
-    h2 {{
-      font-size: 21px;
-      font-weight: 600;
-      margin: 0 0 20px;
-      letter-spacing: -0.01em;
-    }}
-    .grid {{
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 16px;
-    }}
-    .card {{
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px 20px 18px;
-      transition: transform .12s ease, box-shadow .12s ease, border-color .12s;
-    }}
-    .card:hover {{
-      transform: translateY(-1px);
-      box-shadow: var(--shadow);
-      border-color: #c7c7cc;
-    }}
-    .card.featured {{
-      border-color: #c7d2ff;
-    }}
-    .meta {{
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-    }}
-    .card h3 {{
-      font-size: 17px;
-      font-weight: 600;
-      margin: 0 0 6px;
-      line-height: 1.3;
-    }}
-    .card h3 a {{
-      color: inherit;
-      text-decoration: none;
-    }}
-    .card h3 a:hover {{ color: var(--accent); }}
-    .card p {{
-      color: var(--muted);
-      margin: 0 0 14px;
-      font-size: 14.5px;
-      line-height: 1.5;
-    }}
-    .tags {{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }}
-    .tag {{
-      font-size: 11px;
-      color: #515154;
-      background: #f5f5f7;
-      border: 1px solid #e5e5e7;
-      border-radius: 999px;
-      padding: 2px 9px;
-      font-weight: 500;
-    }}
-    .empty {{
-      display: none;
-      color: var(--muted);
-      padding: 12px 0;
-      font-size: 14px;
-    }}
-    footer {{
-      padding: 40px 0 60px;
-      color: var(--muted);
-      font-size: 12px;
-      border-top: 1px solid var(--border);
-    }}
-    @media (max-width: 720px) {{
-      header {{ padding: 48px 0 32px; }}
-      .grid {{ grid-template-columns: 1fr; }}
-      .toolbar {{ flex-direction: column; align-items: stretch; }}
-      input[type="search"] {{ width: 100%; }}
-    }}
+    :root {{ --bg:#f7f3ea; --fg:#202523; --muted:#68716d; --line:#d8cfbf; --ink:#163d3a; --accent:#b24b2f; }}
+    * {{ box-sizing:border-box; }}
+    body {{ margin:0; background:var(--bg); color:var(--fg); font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.68; -webkit-font-smoothing:antialiased; }}
+    a {{ color:inherit; }}
+    .wrap {{ width:min(1040px, calc(100vw - 40px)); margin:0 auto; }}
+    .lang {{ position:fixed; top:18px; right:22px; z-index:5; text-decoration:none; color:var(--ink); border:1px solid var(--line); background:rgba(247,243,234,.88); backdrop-filter:blur(16px); border-radius:999px; padding:7px 12px; font-size:13px; font-weight:800; }}
+    .lang:focus-visible, .row:focus-visible {{ outline:2px solid var(--accent); outline-offset:6px; }}
+    header {{ padding:88px 0 54px; }}
+    .kicker {{ color:var(--accent); font-size:13px; font-weight:900; letter-spacing:.04em; text-transform:uppercase; }}
+    h1 {{ font-family:Georgia,"Times New Roman",serif; font-size:clamp(44px, 8vw, 86px); line-height:.98; letter-spacing:-.035em; margin:14px 0 20px; max-width:11ch; }}
+    .lead {{ font-size:21px; color:var(--muted); max-width:700px; margin:0; }}
+    .tools {{ margin-top:36px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:18px 0; display:flex; gap:14px; align-items:center; flex-wrap:wrap; }}
+    .tools input {{ flex:1 1 360px; border:0; border-bottom:1px solid var(--line); background:transparent; padding:10px 0; font:inherit; font-size:18px; outline:none; color:var(--fg); }}
+    .tools input:focus {{ border-color:var(--accent); }}
+    .tools span {{ font-size:14px; color:var(--muted); }}
+    main {{ padding-bottom:80px; }}
+    .list {{ border-top:1px solid var(--line); }}
+    .row {{ display:grid; grid-template-columns:140px 1fr auto; gap:24px; align-items:baseline; padding:28px 0; border-bottom:1px solid var(--line); text-decoration:none; }}
+    .row .meta {{ color:var(--accent); font-size:13px; font-weight:900; }}
+    .row h2 {{ font-family:Georgia,"Times New Roman",serif; font-size:34px; line-height:1.08; margin:0 0 8px; letter-spacing:-.025em; }}
+    .row p {{ color:var(--muted); margin:0; max-width:720px; }}
+    .row .go {{ color:var(--ink); font-weight:900; }}
+    .empty {{ display:none; color:var(--muted); padding:24px 0; }}
+    .principle {{ margin-top:40px; max-width:720px; color:var(--muted); font-size:15px; }}
+    footer {{ border-top:1px solid var(--line); color:var(--muted); font-size:12px; padding:30px 0 50px; }}
+    @media(max-width:760px) {{ header {{ padding-top:70px; }} .row {{ grid-template-columns:1fr; gap:8px; }} .row h2 {{ font-size:29px; }} .tools input {{ flex-basis:100%; }} }}
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <div class="eyebrow">knowledge.prov1dence.top</div>
-      <h1>Knowledge Base</h1>
-      <p class="lead">A private collection of focused learning pages and references. Built for depth, clarity, and repeated returns.</p>
-      <div class="toolbar">
-        <input id="search" type="search" placeholder="Search pages, links, or tags (e.g. glucose, training)">
-        <div class="chips">
-          <button class="chip active" data-filter="">All</button>
-          {category_chips}
-        </div>
-      </div>
-    </div>
+  <a class="lang" href="{lang_href}">{lang_label}</a>
+  <header class="wrap">
+    <div class="kicker">Providence Knowledge Base</div>
+    <h1>{esc(h1)}</h1>
+    <p class="lead">{esc(lead)}</p>
+    <div class="tools"><input id="q" type="search" placeholder="{esc(placeholder)}" aria-label="{esc(aria)}"><span>{esc(count_text)}</span></div>
   </header>
-
-  <main>
-    <section>
-      <div class="wrap">
-        <h2>Articles</h2>
-        <div class="grid searchable" id="pages">
-          {page_cards}
-        </div>
-        <div class="empty" id="pagesEmpty">No matching articles.</div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <h2>References</h2>
-        <div class="grid searchable" id="links">
-          {link_cards}
-        </div>
-        <div class="empty" id="linksEmpty">No matching references.</div>
-      </div>
-    </section>
+  <main class="wrap">
+    <div class="list" id="list">
+{rows}
+    </div>
+    <div class="empty" id="empty">{'没有匹配的主题。' if is_zh else 'No matching topics.'}</div>
+    <p class="principle">{esc(principle)}</p>
   </main>
-
-  <footer>
-    <div class="wrap">Generated {esc(generated)} · Static site on GitHub Pages · All content in English</div>
-  </footer>
-
+  <footer><div class="wrap">{'生成时间' if is_zh else 'Generated'} {esc(generated)} · knowledge.prov1dence.top</div></footer>
   <script>
-    const search = document.getElementById('search');
-    const chips = document.querySelectorAll('.chip');
-    let filter = '';
-
-    function applyFilter() {{
-      const query = search.value.trim().toLowerCase();
-      for (const group of ['pages', 'links']) {{
-        let visible = 0;
-        document.querySelectorAll('#' + group + ' .card').forEach(card => {{
-          const text = card.dataset.search || '';
-          const okQuery = !query || text.includes(query);
-          const okFilter = !filter || text.includes(filter);
-          const show = okQuery && okFilter;
-          card.style.display = show ? '' : 'none';
-          if (show) visible += 1;
-        }});
-        const empty = document.getElementById(group + 'Empty');
-        if (empty) empty.style.display = visible ? 'none' : 'block';
-      }}
-    }}
-
-    search.addEventListener('input', applyFilter);
-    chips.forEach(chip => {{
-      chip.addEventListener('click', () => {{
-        chips.forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        filter = chip.dataset.filter || '';
-        applyFilter();
+    const q = document.getElementById('q');
+    const empty = document.getElementById('empty');
+    q.addEventListener('input', () => {{
+      const s = q.value.trim().toLowerCase();
+      let visible = 0;
+      document.querySelectorAll('.row').forEach((row) => {{
+        const show = !s || row.dataset.search.toLowerCase().includes(s);
+        row.style.display = show ? 'grid' : 'none';
+        if (show) visible += 1;
       }});
+      empty.style.display = visible ? 'none' : 'block';
     }});
   </script>
 </body>
@@ -337,18 +162,30 @@ def render_index(pages: list[dict], links: list[dict]) -> str:
 """
 
 
+def copy_tree(src_name: str, dest_name: str | None = None) -> None:
+    src = ROOT / src_name
+    if not src.exists():
+        return
+    dest = DIST / (dest_name or src_name)
+    if dest.exists():
+        shutil.rmtree(dest)
+    shutil.copytree(src, dest)
+
+
 def build() -> None:
     pages = load_json(ROOT / "data" / "pages.json")
-    links = load_json(ROOT / "data" / "links.json")
     if DIST.exists():
         shutil.rmtree(DIST)
     DIST.mkdir(parents=True)
-    shutil.copytree(ROOT / "pages", DIST / "pages")
+    copy_tree("articles")
+    copy_tree("en/articles", "en/articles")
+    (DIST / "en").mkdir(exist_ok=True)
     for name in ("CNAME", ".nojekyll"):
         src = ROOT / name
         if src.exists():
             shutil.copy2(src, DIST / name)
-    (DIST / "index.html").write_text(render_index(pages, links), encoding="utf-8")
+    (DIST / "index.html").write_text(render_index(pages, "zh"), encoding="utf-8")
+    (DIST / "en" / "index.html").write_text(render_index(pages, "en"), encoding="utf-8")
 
 
 if __name__ == "__main__":
