@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>血糖、碳水与代谢：从小学到硕士的系统复习课</title>
+  <meta name="description" content="系统解释单糖、多糖、淀粉、碳水、消化吸收、血糖控制、胰岛素、淀粉过量风险和力量训练对血糖的影响。">
+  <style>
+    :root {
+      --paper: #f8f4ea;
+      --ink: #1f2728;
+      --muted: #5e6a6c;
+      --line: #d9d0bd;
+      --panel: #fffaf0;
+      --panel-2: #eef6f2;
+      --blue: #315f9c;
+      --teal: #23736c;
+      --green: #317a46;
+      --amber: #a96714;
+      --red: #a2413e;
+      --purple: #6d4e91;
+      --shadow: 0 14px 34px rgba(38, 32, 21, .09);
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.72;
+    }
+    a { color: var(--blue); text-underline-offset: 3px; }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: rgba(31, 39, 40, .07);
+      border: 1px solid rgba(31, 39, 40, .08);
+      border-radius: 5px;
+      padding: 1px 5px;
+    }
+    .wrap { width: min(1160px, calc(100vw - 32px)); margin: 0 auto; }
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(248, 244, 234, .92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .nav strong { color: var(--teal); margin-right: 8px; }
+    .nav a {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 7px 9px;
+      border-radius: 6px;
+    }
+    .nav a:hover { background: rgba(35, 115, 108, .12); }
+    header {
+      padding: 42px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+    h1 {
+      margin: 10px 0 12px;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.05;
+      letter-spacing: 0;
+      max-width: 980px;
+    }
+    .lead {
+      max-width: 900px;
+      font-size: 19px;
+      color: #344244;
+      margin: 0;
+    }
+    .hero-grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .hero-card, .card, .tool, details {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-card { padding: 20px; }
+    .hero-card h2 { margin: 0 0 8px; font-size: 22px; }
+    .hero-card p { margin: 8px 0 0; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 10px;
+      background: rgba(255,255,255,.55);
+      font-size: 13px;
+      color: #394547;
+    }
+    .route {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .route span {
+      min-height: 76px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 10px;
+      border-radius: 7px;
+      border: 1px solid #c9d9d4;
+      background: var(--panel-2);
+      font-weight: 800;
+      color: var(--teal);
+    }
+    section {
+      padding: 38px 0;
+      border-bottom: 1px solid rgba(217, 208, 189, .82);
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+    h3 { margin: 0 0 8px; font-size: 20px; }
+    .intro { max-width: 900px; margin: 0 0 20px; color: var(--muted); }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .card, .tool { padding: 18px; box-shadow: none; }
+    .kicker {
+      display: inline-block;
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 5px;
+    }
+    .callout {
+      border-left: 5px solid var(--teal);
+      background: #edf6f2;
+    }
+    .warn { border-left: 5px solid var(--amber); background: #fff6e3; }
+    .danger { border-left: 5px solid var(--red); background: #fff0ec; }
+    .deep { border-left: 5px solid var(--purple); background: #f4eff8; }
+    .small { color: var(--muted); font-size: 13px; }
+    .diagram {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .node {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.58);
+      border-radius: var(--radius);
+      padding: 12px;
+    }
+    .node b { color: var(--blue); }
+    .arrow {
+      text-align: center;
+      color: var(--muted);
+      font-weight: 900;
+    }
+    .tabs, .segmented { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
+    button {
+      font: inherit;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      background: #fff8e8;
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 800;
+    }
+    button.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .level-panel, .meal-panel { display: none; }
+    .level-panel.active, .meal-panel.active { display: block; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px 13px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #efe5d1; font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+    .tool label {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin: 12px 0;
+      font-weight: 800;
+    }
+    input[type="range"] { width: 100%; accent-color: var(--teal); }
+    .result {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: var(--radius);
+      background: #edf6f2;
+      border: 1px solid #c7ddd4;
+    }
+    .bar {
+      height: 12px;
+      border-radius: 999px;
+      background: #e2d8c7;
+      overflow: hidden;
+      margin: 8px 0 4px;
+    }
+    .bar span {
+      display: block;
+      height: 100%;
+      width: 40%;
+      background: linear-gradient(90deg, var(--green), var(--amber), var(--red));
+    }
+    .quiz-choice {
+      display: block;
+      width: 100%;
+      text-align: left;
+      border-radius: 7px;
+      margin: 8px 0;
+    }
+    details { padding: 14px 16px; margin: 10px 0; box-shadow: none; }
+    summary { cursor: pointer; font-weight: 900; }
+    .footer {
+      padding: 30px 0 52px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 880px) {
+      .hero-grid, .grid-2, .grid-3, .route { grid-template-columns: 1fr; }
+      header { padding-top: 28px; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <nav class="wrap nav" aria-label="页面导航">
+      <strong>血糖课</strong>
+      <a href="../index.html">知识库首页</a>
+      <a href="#map">总图</a>
+      <a href="#levels">分级理解</a>
+      <a href="#digestion">消化</a>
+      <a href="#control">控制</a>
+      <a href="#insulin">胰岛素</a>
+      <a href="#starch">淀粉过量</a>
+      <a href="#training">训练</a>
+      <a href="#tools">工具</a>
+      <a href="#practical">实践</a>
+      <a href="#sources">来源</a>
+    </nav>
+  </div>
+
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Knowledge Base · Nutrition & Metabolism</div>
+      <h1>血糖、碳水与代谢：从小学到硕士的一次系统复习</h1>
+      <p class="lead">
+        这页不是节食口号，而是一张认知地图：什么是单糖、多糖、淀粉和碳水；碳水进入身体后怎样被拆成葡萄糖；身体为什么必须控制血糖；胰岛素为什么重要；吃太多精制淀粉会发生什么；力量训练为什么能改善血糖管理。
+      </p>
+      <div class="hero-grid">
+        <div class="hero-card callout">
+          <h2>最短定义</h2>
+          <p><strong>血糖</strong>就是血液里的葡萄糖浓度。葡萄糖是很多细胞喜欢用的燃料，但它必须被维持在合适范围：太低会供能不足，太高会伤害血管、神经、肾脏、眼睛等组织。</p>
+          <div class="pill-row">
+            <span class="pill">碳水不是糖的同义词</span>
+            <span class="pill">淀粉会被拆成葡萄糖</span>
+            <span class="pill">胰岛素是能量分配信号</span>
+            <span class="pill">肌肉是葡萄糖仓库</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>餐后一条主线</h2>
+          <div class="route">
+            <span>吃下碳水</span>
+            <span>消化成单糖</span>
+            <span>吸收入血</span>
+            <span>胰岛素升高</span>
+            <span>细胞储存或使用</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="map">
+      <div class="wrap">
+        <h2>先看总图：碳水、糖、淀粉到底是什么关系？</h2>
+        <p class="intro">“碳水化合物”是大类，里面包括糖、淀粉、糖原、膳食纤维等。关键区别不是名字甜不甜，而是分子有多长、能不能被人体消化、进入血液的速度有多快。</p>
+        <div class="grid-3">
+          <div class="card">
+            <span class="kicker">单糖</span>
+            <h3>最小单位</h3>
+            <p>葡萄糖、果糖、半乳糖。它们像一颗颗积木，其中葡萄糖是血糖的核心形式。</p>
+          </div>
+          <div class="card">
+            <span class="kicker">双糖</span>
+            <h3>两颗积木</h3>
+            <p>蔗糖 = 葡萄糖 + 果糖；乳糖 = 葡萄糖 + 半乳糖；麦芽糖 = 葡萄糖 + 葡萄糖。</p>
+          </div>
+          <div class="card">
+            <span class="kicker">多糖</span>
+            <h3>长链积木</h3>
+            <p>淀粉、糖原、纤维都属于多糖。日常饮食里重要的是淀粉；糖原更多是身体把葡萄糖存在肝脏和肌肉里的形式；多数膳食纤维不能被人体酶直接拆开。</p>
+          </div>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3>关系图</h3>
+          <div class="diagram">
+            <div class="node"><b>碳水化合物</b>：糖 + 淀粉 + 糖原 + 膳食纤维</div>
+            <div class="arrow">↓ 按分子长度和可消化性拆分</div>
+            <div class="node"><b>糖</b>：单糖/双糖，常见液体糖吸收很快；<b>淀粉</b>：很多葡萄糖连成长链；<b>纤维</b>：多不能被人体消化吸收成葡萄糖。实际速度还受食物结构、烹饪、颗粒大小、脂肪、蛋白质和纤维影响。</div>
+            <div class="arrow">↓ 餐后真正影响血糖的主角</div>
+            <div class="node"><b>可消化碳水</b>：糖 + 可消化淀粉。它们最终主要以葡萄糖等形式进入血液。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="levels">
+      <div class="wrap">
+        <h2>同一件事，按学习阶段逐层加深</h2>
+        <p class="intro">你可以按自己的状态阅读：只想复习就看小学/初中；想建立机制理解就看到高中/本科；想知道深层调控和长期风险就看硕士层。</p>
+        <div class="grid-3" style="margin-bottom:16px">
+          <div class="card"><h3>直觉层</h3><p>葡萄糖是燃料，血糖是燃料在血液里的浓度。</p></div>
+          <div class="card"><h3>机制层</h3><p>碳水被拆成单糖，胰岛素和胰高血糖素维持动态平衡。</p></div>
+          <div class="card"><h3>策略层</h3><p>控制入口速度，提升肌肉清除能力，减少长期代谢压力。</p></div>
+        </div>
+        <div class="tabs">
+          <button class="level-tab active" data-level="primary">小学</button>
+          <button class="level-tab" data-level="middle">初中</button>
+          <button class="level-tab" data-level="high">高中</button>
+          <button class="level-tab" data-level="undergrad">本科</button>
+          <button class="level-tab" data-level="master">硕士</button>
+        </div>
+        <div class="card level-panel active" id="level-primary">
+          <h3>小学版：身体像城市，葡萄糖像电池</h3>
+          <p>吃米饭、面包、土豆后，身体会把里面的淀粉拆成葡萄糖。葡萄糖进入血液，送到身体各处。血糖太少，人会没力气；血糖太多，血管就像被长期泡在太浓的糖水里，会受伤。</p>
+        </div>
+        <div class="card level-panel" id="level-middle">
+          <h3>初中版：碳水被消化成能吸收的小分子</h3>
+          <p>淀粉是很多葡萄糖连起来的长链。唾液和胰腺分泌的淀粉酶会把长链剪短，小肠刷状缘酶再把双糖剪成单糖。葡萄糖被小肠吸收进入血液，引起餐后血糖升高。</p>
+        </div>
+        <div class="card level-panel" id="level-high">
+          <h3>高中版：血糖是动态平衡，不是越低越好</h3>
+          <p>身体用胰岛素和胰高血糖素维持血糖稳定。饭后血糖升高，胰岛素帮助肌肉和脂肪细胞摄取葡萄糖，并让肝脏把一部分葡萄糖储存为糖原。空腹或运动时，胰高血糖素帮助肝脏释放葡萄糖。</p>
+        </div>
+        <div class="card level-panel" id="level-undergrad">
+          <h3>本科版：关键是流量、容量和敏感性</h3>
+          <p>同样 50 克碳水，液体糖、白面包、糙米、豆类、带蛋白脂肪的一餐，血糖曲线不同。原因包括胃排空速度、淀粉结构、膳食纤维、食物加工、肌肉糖原空位、胰岛素敏感性。身体不是只看“吃了多少糖”，而是处理“葡萄糖进入血液的速度”和“组织清除葡萄糖的能力”。</p>
+        </div>
+        <div class="card level-panel" id="level-master">
+          <h3>硕士版：长期高波动会改变代谢环境</h3>
+          <p>长期能量过剩、精制碳水高负荷、内脏脂肪增加、睡眠不足和久坐，会让肌肉、肝脏、脂肪组织对胰岛素反应变差。肌肉细胞里，胰岛素信号会促使 GLUT4 转运蛋白把葡萄糖带进细胞；训练时肌肉收缩也能部分不依赖胰岛素地促进 GLUT4 转位。肝脏则在糖原分解、糖异生和胰岛素抑制之间调节血糖输出。肠促胰素、皮质醇、肾上腺素、睡眠和压力都会改变这套系统。胰腺 β 细胞早期会补偿性分泌更多胰岛素；若压力持续，可能进入胰岛素抵抗、糖耐量异常甚至 2 型糖尿病路径。这里讨论的是一般机制，不替代诊断或治疗。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="digestion">
+      <div class="wrap">
+        <h2>碳水进入身体后，怎么被分解？</h2>
+        <p class="intro">碳水消化的目标，是把“大分子”拆成小肠能吸收的单糖。不同碳水被拆的速度不同，所以餐后血糖曲线也不同。</p>
+        <div class="grid-2">
+          <div class="card">
+            <h3>淀粉路径</h3>
+            <div class="diagram">
+              <div class="node">米饭/面条/土豆里的 <b>淀粉</b></div>
+              <div class="arrow">↓ 唾液淀粉酶、胰淀粉酶</div>
+              <div class="node">糊精、麦芽糖等较短片段</div>
+              <div class="arrow">↓ 小肠刷状缘酶</div>
+              <div class="node"><b>葡萄糖</b> 被吸收入血</div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>糖路径</h3>
+            <div class="diagram">
+              <div class="node">蔗糖、乳糖、麦芽糖</div>
+              <div class="arrow">↓ 小肠酶切开</div>
+              <div class="node">葡萄糖、果糖、半乳糖</div>
+              <div class="arrow">↓ 肠道转运</div>
+              <div class="node">葡萄糖直接影响血糖；果糖主要先到肝脏处理。</div>
+            </div>
+          </div>
+        </div>
+        <div class="card warn" style="margin-top:16px">
+          <h3>为什么“白米饭不甜也会升血糖”？</h3>
+          <p>因为白米饭里的主要碳水是淀粉，而淀粉本质上是葡萄糖长链。它不一定尝起来甜，但消化后可以变成大量葡萄糖。一般来说，越精制、越软烂、颗粒越小、越缺少纤维和蛋白质缓冲，进入血液越快；但也要看整体食物矩阵，某些完整水果虽然有糖，却因为水分、纤维和结构，血糖反应未必比精制淀粉更猛烈。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="control">
+      <div class="wrap">
+        <h2>身体为什么要控制血糖？</h2>
+        <p class="intro">血糖不是道德指标，而是一个生命体必须维持的变量。大脑、红细胞、运动肌肉都需要能量；但血液里的葡萄糖浓度过高，会让组织长期承受氧化压力、炎症和糖化损伤。</p>
+        <div class="grid-3">
+          <div class="card callout">
+            <span class="kicker">太低</span>
+            <h3>供能风险</h3>
+            <p>低血糖可能导致心慌、出汗、手抖、意识模糊，严重时很危险。尤其是使用胰岛素或某些降糖药的人要格外注意。</p>
+          </div>
+          <div class="card">
+            <span class="kicker">合适</span>
+            <h3>稳定供能</h3>
+            <p>血糖稳定时，身体能把葡萄糖按需送给大脑、肌肉和其他组织，同时把多余能量存起来。</p>
+          </div>
+          <div class="card danger">
+            <span class="kicker">太高</span>
+            <h3>长期损伤</h3>
+            <p>长期高血糖与血管、神经、肾脏和眼部并发症风险相关。餐后频繁大幅波动也不利于代谢健康。</p>
+          </div>
+        </div>
+        <div class="card deep" style="margin-top:16px">
+          <h3>常见指标怎么读？</h3>
+          <p>这不是诊断表，只是帮你看懂语言。血糖常用单位有 mg/dL 和 mmol/L，换算大约是 <code>mg/dL ÷ 18 = mmol/L</code>。空腹血糖看一夜未进食后的基础状态；餐后血糖看身体处理一餐葡萄糖负荷的能力；HbA1c 反映约 2 到 3 个月平均血糖暴露。低血糖常以低于 70 mg/dL（约 3.9 mmol/L）作为警戒线，但目标范围会因年龄、疾病、妊娠、用药和医生建议而不同。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="insulin">
+      <div class="wrap">
+        <h2>为什么身体需要胰岛素？处方胰岛素又是什么？</h2>
+        <p class="intro">先分清两件事：这里主要讲身体自己分泌的胰岛素，它是正常代谢必需的激素；处方胰岛素是糖尿病治疗药物，只适用于医生判断需要的人。胰岛素不是“坏东西”，也不是单纯让人长胖的激素。它是身体在“营养进入后”分配能量、降低血糖、促进储存和修复的重要信号。</p>
+        <div class="grid-2">
+          <div class="card">
+            <h3>胰岛素像钥匙，也像交通指挥</h3>
+            <p>饭后血糖升高，胰腺 β 细胞分泌胰岛素。胰岛素让肌肉和脂肪细胞更容易吸收葡萄糖，让肝脏合成糖原，并抑制肝脏继续释放葡萄糖。这样血糖能回到较稳定范围。</p>
+          </div>
+          <div class="card">
+            <h3>它的好处</h3>
+            <ul>
+              <li>降低餐后过高血糖，保护组织免受长期高糖环境伤害。</li>
+              <li>帮助肌肉储存糖原，为下一次运动提供燃料。</li>
+              <li>参与蛋白质合成和组织修复的营养信号。</li>
+              <li>让肝脏在“进食状态”和“空腹状态”之间切换。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card deep" style="margin-top:16px">
+          <h3>关键不是“胰岛素越少越好”，而是“敏感性越好越轻松”</h3>
+          <p>胰岛素敏感性高时，少量胰岛素就能让组织有效处理葡萄糖。胰岛素抵抗时，身体需要分泌更多胰岛素才能完成同样任务。长期高胰岛素需求会给胰腺带来压力，也常与脂肪肝、内脏脂肪增加、血脂异常等问题纠缠在一起。</p>
+        </div>
+        <div class="card warn" style="margin-top:16px">
+          <h3>处方胰岛素的边界</h3>
+          <p>1 型糖尿病通常需要外源胰岛素维持生命；部分 2 型糖尿病、妊娠糖尿病或特殊情况下也可能需要。是否使用、剂量如何调整、运动前后如何防低血糖，都必须由医疗专业人员指导。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="starch">
+      <div class="wrap">
+        <h2>如果吃太多淀粉，可能会怎样？</h2>
+        <p class="intro">淀粉本身不是敌人。全谷物、豆类、土豆、玉米等淀粉类食物可以是健康饮食的一部分。问题通常出现在“总量太大、太精制、太快吸收、长期活动不足、总能量过剩”这些条件叠加时；液体糖和添加糖则是另一类更容易过量的入口。</p>
+        <table>
+          <thead>
+            <tr><th>情况</th><th>短期结果</th><th>长期风险</th><th>改善思路</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>大量精制淀粉</td><td>餐后血糖快速上升，胰岛素需求增加</td><td>频繁波动、能量过剩、脂肪堆积</td><td>控制份量，替换为全谷物/豆类，增加蛋白质和蔬菜</td></tr>
+            <tr><td>甜饮和液体糖</td><td>吸收快，饱腹弱，容易喝过量</td><td>总糖负荷和总能量更容易超标</td><td>优先用水、无糖茶、咖啡替代，保留水果而不是果汁</td></tr>
+            <tr><td>久坐后吃高碳水</td><td>肌肉葡萄糖清除能力较低</td><td>胰岛素敏感性下降</td><td>餐后散步，规律力量训练</td></tr>
+            <tr><td>加工精制淀粉</td><td>更快消化，饱腹感较差</td><td>更容易总能量超标</td><td>选低加工、带纤维、有咀嚼感的主食</td></tr>
+            <tr><td>睡眠不足/压力大</td><td>血糖更难稳定</td><td>代谢恢复能力下降</td><td>睡眠、压力管理和运动一起做</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="training">
+      <div class="wrap">
+        <h2>力量训练为什么对血糖有好处？</h2>
+        <p class="intro">肌肉不是只负责好看。它是身体最大的葡萄糖处理器之一。力量训练能增加肌肉量、提高肌肉对胰岛素的反应，并在训练后补充肌糖原时吸收更多葡萄糖。更细一点说，肌肉收缩会促进 GLUT4 转运蛋白移动到细胞膜上，让葡萄糖进入肌肉；长期训练则提高胰岛素敏感性和储存容量。</p>
+        <div class="grid-3">
+          <div class="card callout">
+            <h3>1. 增加“储糖仓库”</h3>
+            <p>肌肉可以把葡萄糖储存为糖原。肌肉越活跃，越像一个愿意收货的仓库。</p>
+          </div>
+          <div class="card callout">
+            <h3>2. 提高胰岛素敏感性</h3>
+            <p>规律运动让细胞更容易响应胰岛素。CDC 也强调体力活动有助于管理血糖并让胰岛素工作更好。</p>
+          </div>
+          <div class="card callout">
+            <h3>3. 降低餐后压力</h3>
+            <p>餐后轻度活动和长期训练都能帮助肌肉摄取葡萄糖，降低餐后血糖负担。</p>
+          </div>
+        </div>
+        <div class="card warn" style="margin-top:16px">
+          <h3>训练建议的底层逻辑</h3>
+          <p>不要只问“吃什么降糖”，也要问“我的身体有没有地方存这些葡萄糖”。一个常见起点是每周做 2 天以上覆盖大肌群的力量训练，同时配合中等强度有氧或餐后步行；训练用渐进超负荷，逐步增加重量、次数或组数。若你正在使用胰岛素或降糖药，或有视网膜病变、神经病变、肾病、足部问题，运动计划需要遵医嘱调整，避免低血糖和运动损伤。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <div class="wrap">
+        <h2>互动工具：把机制变成直觉</h2>
+        <div class="grid-2">
+          <div class="tool">
+            <h3>教学压力分估算器</h3>
+            <p class="small">这是未验证的教学模型，不预测真实血糖，也不是医疗计算器。它只帮助你理解碳水量、纤维、活动和精制度如何共同影响餐后压力。</p>
+            <label>可消化碳水克数 <span id="carbVal">70g</span></label>
+            <input id="carbs" type="range" min="10" max="160" value="70">
+            <label>膳食纤维/蛋白质缓冲 <span id="bufferVal">4</span></label>
+            <input id="buffer" type="range" min="0" max="10" value="4">
+            <label>餐后活动/训练基础 <span id="activityVal">5</span></label>
+            <input id="activity" type="range" min="0" max="10" value="5">
+            <label>精制度 <span id="refinedVal">6</span></label>
+            <input id="refined" type="range" min="0" max="10" value="6">
+            <div class="result" id="mealResult"></div>
+          </div>
+          <div class="tool">
+            <h3>快速测验</h3>
+            <p id="quizQuestion"><strong>问题：</strong>白米饭不甜，为什么仍然能升血糖？</p>
+            <button class="quiz-choice" data-ok="0">因为它含有很多脂肪，脂肪会直接变成葡萄糖。</button>
+            <button class="quiz-choice" data-ok="1">因为淀粉是葡萄糖长链，消化后会释放葡萄糖。</button>
+            <button class="quiz-choice" data-ok="0">因为所有不甜的食物都会升高血糖。</button>
+            <div class="result" id="quizResult">选择一个答案。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="practical">
+      <div class="wrap">
+        <h2>实践框架：不是戒掉碳水，而是管理通量</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>吃饭顺序和组合</h3>
+            <ul>
+              <li>主食份量先可视化：一餐先从拳头大小的熟主食估算。</li>
+              <li>同餐加入蛋白质、蔬菜和膳食纤维，让吸收更平缓。</li>
+              <li>少喝含糖饮料，液体糖通常吸收快且饱腹弱。</li>
+              <li>精制主食可以吃，但不要让它成为每餐唯一主体。</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>运动和生活方式</h3>
+            <ul>
+              <li>餐后 10 到 20 分钟轻走，常比饭后久坐更利于血糖曲线。</li>
+              <li>每周安排 2 到 4 次力量训练，优先练大肌群。</li>
+              <li>睡眠不足会让血糖更难控制，别只盯着食物。</li>
+              <li>如果已有糖尿病、低血糖风险或用药，运动和饮食调整要和医生沟通。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="wrap">
+        <h2>来源与边界</h2>
+        <p class="intro">这页用于学习和复习，不是诊断或个体化医疗建议。涉及糖尿病、低血糖、用药、妊娠、肾病、进食障碍等情况时，应咨询医生或注册营养师。</p>
+        <details>
+          <summary>参考资料</summary>
+          <ul>
+            <li>CDC: <a href="https://www.cdc.gov/diabetes/healthy-eating/carb-counting-manage-blood-sugar.html">Carb Counting</a>，关于糖、淀粉、纤维和血糖关系。</li>
+            <li>CDC: <a href="https://www.cdc.gov/diabetes/treatment/index.html">Manage Blood Sugar</a>，关于血糖目标、监测和管理。</li>
+            <li>CDC: <a href="https://www.cdc.gov/diabetes/about/insulin-resistance-type-2-diabetes.html">Insulin Resistance and Type 2 Diabetes</a>，关于胰岛素像钥匙、身体活动提高敏感性。</li>
+            <li>CDC: <a href="https://www.cdc.gov/diabetes/living-with/physical-activity.html">Get Active</a>，关于体力活动与血糖管理。</li>
+            <li>Mayo Clinic: <a href="https://www.mayoclinic.org/diseases-conditions/diabetes/in-depth/diabetes-treatment/art-20044084">Using insulin to manage blood sugar</a>，关于碳水分解为葡萄糖和胰岛素治疗。</li>
+            <li>American Diabetes Association: <a href="https://professional.diabetes.org/standards-of-care/practice-guidelines-resources">Standards of Care in Diabetes 2026</a>，当前临床指南入口。</li>
+            <li>Harvard Health: <a href="https://www.health.harvard.edu/staying-healthy/choosing-good-carbs-with-the-glycemic-index">Choosing good carbs with the glycemic index</a>，关于淀粉、纤维、GI 和血糖。</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <div class="wrap footer">
+    <p>最后记住一句：血糖管理不是把碳水妖魔化，而是让葡萄糖进入血液的速度、身体清除葡萄糖的能力、肌肉储存能力和总能量状态重新匹配。</p>
+  </div>
+
+  <script>
+    const levelTabs = document.querySelectorAll('.level-tab');
+    const levelPanels = document.querySelectorAll('.level-panel');
+    levelTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        levelTabs.forEach(t => t.classList.remove('active'));
+        levelPanels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('level-' + tab.dataset.level).classList.add('active');
+      });
+    });
+
+    const sliders = ['carbs', 'buffer', 'activity', 'refined'];
+    const labels = {
+      carbs: document.getElementById('carbVal'),
+      buffer: document.getElementById('bufferVal'),
+      activity: document.getElementById('activityVal'),
+      refined: document.getElementById('refinedVal')
+    };
+    function updateMeal() {
+      const carbs = Number(document.getElementById('carbs').value);
+      const buffer = Number(document.getElementById('buffer').value);
+      const activity = Number(document.getElementById('activity').value);
+      const refined = Number(document.getElementById('refined').value);
+      labels.carbs.textContent = carbs + 'g';
+      labels.buffer.textContent = buffer;
+      labels.activity.textContent = activity;
+      labels.refined.textContent = refined;
+      const raw = carbs * (1 + refined / 14) - buffer * 5 - activity * 4;
+      const score = Math.max(5, Math.min(100, Math.round(raw)));
+      let label = '温和';
+      let advice = '这餐的餐后压力较低，关键是继续保持组合和活动。';
+      if (score > 45) {
+        label = '中等';
+        advice = '这餐可能需要注意份量或搭配。可以增加蔬菜、蛋白质，或餐后轻走。';
+      }
+      if (score > 70) {
+        label = '偏高';
+        advice = '这更像高负荷餐：可消化碳水多、精制度高或活动基础不足。优先减少液体糖和精制主食总量。';
+      }
+      document.getElementById('mealResult').innerHTML =
+        '<strong>餐后压力：' + label + '（' + score + '/100）</strong>' +
+        '<div class="bar"><span style="width:' + score + '%"></span></div>' +
+        '<span>' + advice + '</span>';
+    }
+    sliders.forEach(id => document.getElementById(id).addEventListener('input', updateMeal));
+    updateMeal();
+
+    document.querySelectorAll('.quiz-choice').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const ok = btn.dataset.ok === '1';
+        document.getElementById('quizResult').innerHTML = ok
+          ? '<strong>答对了。</strong> 淀粉由很多葡萄糖单位组成，消化后能释放葡萄糖，所以不甜也能升血糖。'
+          : '<strong>再想想。</strong> 关键不是甜味，而是它能不能被消化成葡萄糖。';
+      });
+    });
+  </script>
+</body>
+</html>
