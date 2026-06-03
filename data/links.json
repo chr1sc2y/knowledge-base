@@ -2,29 +2,29 @@
   {
     "title": "CDC: Carb Counting",
     "url": "https://www.cdc.gov/diabetes/healthy-eating/carb-counting-manage-blood-sugar.html",
-    "category": "健康与营养",
-    "tags": ["血糖", "碳水", "CDC"],
-    "note": "解释糖、淀粉、纤维和血糖管理的基础关系。"
+    "category": "Health & Nutrition",
+    "tags": ["glucose", "carbs", "CDC"],
+    "note": "Explains the basic relationships between sugars, starches, fiber, and blood sugar management."
   },
   {
     "title": "CDC: Physical Activity and Diabetes",
     "url": "https://www.cdc.gov/diabetes/living-with/physical-activity.html",
-    "category": "健康与营养",
-    "tags": ["运动", "血糖", "胰岛素敏感性"],
-    "note": "说明规律体力活动对血糖管理和心血管风险的意义。"
+    "category": "Health & Nutrition",
+    "tags": ["exercise", "glucose", "insulin sensitivity"],
+    "note": "Describes the importance of regular physical activity for blood sugar management and cardiovascular risk."
   },
   {
     "title": "ADA Standards of Care in Diabetes 2026",
     "url": "https://professional.diabetes.org/standards-of-care/practice-guidelines-resources",
-    "category": "健康与营养",
-    "tags": ["糖尿病", "指南", "ADA"],
-    "note": "美国糖尿病协会临床指南入口，适合查当前诊断和治疗标准。"
+    "category": "Health & Nutrition",
+    "tags": ["diabetes", "guidelines", "ADA"],
+    "note": "American Diabetes Association clinical guidelines portal for current diagnostic and treatment standards."
   },
   {
     "title": "GitHub Pages Deploy Action Pattern",
     "url": "https://github.com/actions/deploy-pages",
-    "category": "工具与工程",
-    "tags": ["GitHub Pages", "部署", "静态站"],
-    "note": "这个知识库使用的静态发布动作。"
+    "category": "Tools & Engineering",
+    "tags": ["GitHub Pages", "deployment", "static site"],
+    "note": "The static publishing action used by this knowledge base."
   }
 ]

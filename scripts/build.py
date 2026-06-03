@@ -33,7 +33,7 @@ def render_page_cards(pages: list[dict]) -> str:
         cards.append(
             f"""
             <article class="card page-card{featured}" data-search="{esc(' '.join([page.get('title',''), page.get('subtitle',''), page.get('category',''), ' '.join(page.get('tags', []))]).lower())}">
-              <div class="meta">{esc(page.get('category', '未分类'))} · {esc(page.get('date', ''))}</div>
+              <div class="meta">{esc(page.get('category', 'General'))} · {esc(page.get('date', ''))}</div>
               <h3><a href="{esc(page.get('path', '#'))}">{esc(page.get('title', 'Untitled'))}</a></h3>
               <p>{esc(page.get('subtitle', ''))}</p>
               <div class="tags">{tags}</div>
@@ -50,7 +50,7 @@ def render_links(links: list[dict]) -> str:
         items.append(
             f"""
             <article class="card link-card" data-search="{esc(' '.join([link.get('title',''), link.get('note',''), link.get('category',''), ' '.join(link.get('tags', []))]).lower())}">
-              <div class="meta">{esc(link.get('category', '链接'))}</div>
+              <div class="meta">{esc(link.get('category', 'Reference'))}</div>
               <h3><a href="{esc(link.get('url', '#'))}" target="_blank" rel="noopener noreferrer">{esc(link.get('title', 'Untitled'))}</a></h3>
               <p>{esc(link.get('note', ''))}</p>
               <div class="tags">{tags}</div>
@@ -64,127 +64,197 @@ def render_index(pages: list[dict], links: list[dict]) -> str:
     generated = datetime.now(timezone.utc).isoformat(timespec="seconds")
     page_cards = render_page_cards(pages)
     link_cards = render_links(links)
-    categories = sorted({p.get("category", "未分类") for p in pages} | {l.get("category", "链接") for l in links})
+    categories = sorted({p.get("category", "General") for p in pages} | {l.get("category", "Reference") for l in links})
     category_chips = "".join(f"<button class='chip' data-filter='{esc(c.lower())}'>{esc(c)}</button>" for c in categories)
 
     return f"""<!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Providence Knowledge Base</title>
-  <meta name="description" content="私人知识入口：收藏 Codex 生成的系统学习页、有用链接和复习材料。">
+  <meta name="description" content="A private, curated knowledge base of in-depth learning pages and high-signal references. Designed for repeated study.">
   <style>
     :root {{
-      --paper: #f8f4ea;
-      --ink: #1f2728;
-      --muted: #5d686a;
-      --line: #d9d0bd;
-      --panel: #fffaf0;
-      --panel2: #edf6f2;
-      --teal: #23736c;
-      --blue: #315f9c;
-      --amber: #a96714;
-      --shadow: 0 14px 34px rgba(38, 32, 21, .09);
-      --radius: 8px;
+      --bg: #ffffff;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --border: #d2d2d7;
+      --surface: #ffffff;
+      --accent: #007aff;
+      --chip: #f5f5f7;
+      --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+      --radius: 12px;
     }}
     * {{ box-sizing: border-box; }}
     body {{
       margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.68;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }}
-    a {{ color: var(--blue); text-underline-offset: 3px; }}
-    .wrap {{ width: min(1120px, calc(100vw - 32px)); margin: 0 auto; }}
+    a {{ color: var(--accent); text-underline-offset: 2px; text-decoration-thickness: 1px; }}
+    a:hover {{ text-decoration-thickness: 1.5px; }}
+    .wrap {{ width: min(1080px, calc(100vw - 48px)); margin: 0 auto; }}
     header {{
-      padding: 48px 0 28px;
-      border-bottom: 1px solid var(--line);
+      padding: 72px 0 48px;
     }}
     .eyebrow {{
-      color: var(--teal);
-      font-size: 13px;
-      font-weight: 900;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
     }}
     h1 {{
-      margin: 10px 0 12px;
-      font-size: clamp(36px, 6vw, 70px);
-      line-height: 1.02;
-      letter-spacing: 0;
-      max-width: 980px;
+      margin: 0 0 12px;
+      font-size: clamp(42px, 7vw, 64px);
+      line-height: 1.05;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      max-width: 22ch;
     }}
     .lead {{
-      max-width: 840px;
-      color: #344244;
-      font-size: 19px;
-      margin: 0;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0 0 32px;
+      line-height: 1.55;
     }}
     .toolbar {{
-      display: grid;
-      grid-template-columns: 1fr auto;
+      display: flex;
+      flex-wrap: wrap;
       gap: 12px;
-      margin-top: 24px;
       align-items: center;
+      margin-bottom: 8px;
     }}
     input[type="search"] {{
-      width: 100%;
-      border: 1px solid var(--line);
-      background: var(--panel);
-      border-radius: var(--radius);
-      padding: 13px 14px;
+      flex: 1 1 320px;
+      min-width: 220px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 10px;
+      padding: 12px 16px;
       font: inherit;
-      box-shadow: var(--shadow);
+      font-size: 15px;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
     }}
-    .chips {{ display: flex; flex-wrap: wrap; gap: 8px; }}
+    input[type="search"]:focus {{
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.12);
+    }}
+    .chips {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }}
     .chip {{
-      border: 1px solid var(--line);
-      background: #fff8e8;
+      border: 1px solid var(--border);
+      background: var(--chip);
       border-radius: 999px;
-      padding: 8px 12px;
-      font-weight: 800;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--fg);
       cursor: pointer;
+      transition: all .1s ease;
     }}
-    .chip.active {{ background: var(--ink); color: white; border-color: var(--ink); }}
+    .chip:hover {{ background: #eeeef0; }}
+    .chip.active {{
+      background: var(--fg);
+      color: #fff;
+      border-color: var(--fg);
+    }}
+    main {{ padding-bottom: 40px; }}
     section {{
-      padding: 34px 0;
-      border-bottom: 1px solid rgba(217, 208, 189, .8);
+      padding: 48px 0 24px;
     }}
-    h2 {{ font-size: clamp(26px, 3vw, 38px); margin: 0 0 14px; line-height: 1.15; }}
-    .grid {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }}
+    h2 {{
+      font-size: 21px;
+      font-weight: 600;
+      margin: 0 0 20px;
+      letter-spacing: -0.01em;
+    }}
+    .grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }}
     .card {{
-      background: var(--panel);
-      border: 1px solid var(--line);
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 18px;
+      padding: 20px 20px 18px;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s;
+    }}
+    .card:hover {{
+      transform: translateY(-1px);
       box-shadow: var(--shadow);
+      border-color: #c7c7cc;
     }}
-    .card.featured {{ border-left: 6px solid var(--teal); }}
-    .meta {{ color: var(--teal); font-size: 13px; font-weight: 900; margin-bottom: 6px; }}
-    .card h3 {{ font-size: 21px; margin: 0 0 8px; }}
-    .card p {{ color: var(--muted); margin: 0 0 12px; }}
-    .tags {{ display: flex; flex-wrap: wrap; gap: 6px; }}
-    .tag {{
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.55);
-      border-radius: 999px;
-      padding: 3px 8px;
+    .card.featured {{
+      border-color: #c7d2ff;
+    }}
+    .meta {{
+      color: var(--accent);
       font-size: 12px;
-      color: #3d484a;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
     }}
-    .note {{
-      background: var(--panel2);
-      border: 1px solid #c7ddd4;
-      border-radius: var(--radius);
-      padding: 16px;
-      margin-top: 18px;
+    .card h3 {{
+      font-size: 17px;
+      font-weight: 600;
+      margin: 0 0 6px;
+      line-height: 1.3;
     }}
-    .empty {{ display: none; color: var(--muted); padding: 16px 0; }}
-    footer {{ padding: 28px 0 48px; color: var(--muted); font-size: 14px; }}
-    @media (max-width: 900px) {{
-      .toolbar {{ grid-template-columns: 1fr; }}
+    .card h3 a {{
+      color: inherit;
+      text-decoration: none;
+    }}
+    .card h3 a:hover {{ color: var(--accent); }}
+    .card p {{
+      color: var(--muted);
+      margin: 0 0 14px;
+      font-size: 14.5px;
+      line-height: 1.5;
+    }}
+    .tags {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }}
+    .tag {{
+      font-size: 11px;
+      color: #515154;
+      background: #f5f5f7;
+      border: 1px solid #e5e5e7;
+      border-radius: 999px;
+      padding: 2px 9px;
+      font-weight: 500;
+    }}
+    .empty {{
+      display: none;
+      color: var(--muted);
+      padding: 12px 0;
+      font-size: 14px;
+    }}
+    footer {{
+      padding: 40px 0 60px;
+      color: var(--muted);
+      font-size: 12px;
+      border-top: 1px solid var(--border);
+    }}
+    @media (max-width: 720px) {{
+      header {{ padding: 48px 0 32px; }}
       .grid {{ grid-template-columns: 1fr; }}
+      .toolbar {{ flex-direction: column; align-items: stretch; }}
+      input[type="search"] {{ width: 100%; }}
     }}
   </style>
 </head>
@@ -192,12 +262,12 @@ def render_index(pages: list[dict], links: list[dict]) -> str:
   <header>
     <div class="wrap">
       <div class="eyebrow">knowledge.prov1dence.top</div>
-      <h1>Providence Knowledge Base</h1>
-      <p class="lead">一个专门存放高价值学习页面和链接的私人知识入口。这里不是信息流，而是可以反复打开、复习、校准理解的系统化知识库。</p>
+      <h1>Knowledge Base</h1>
+      <p class="lead">A private collection of focused learning pages and references. Built for depth, clarity, and repeated returns.</p>
       <div class="toolbar">
-        <input id="search" type="search" placeholder="搜索页面、链接、标签，例如：血糖、GitHub、营养">
+        <input id="search" type="search" placeholder="Search pages, links, or tags (e.g. glucose, training)">
         <div class="chips">
-          <button class="chip active" data-filter="">全部</button>
+          <button class="chip active" data-filter="">All</button>
           {category_chips}
         </div>
       </div>
@@ -207,28 +277,27 @@ def render_index(pages: list[dict], links: list[dict]) -> str:
   <main>
     <section>
       <div class="wrap">
-        <h2>学习页面</h2>
+        <h2>Articles</h2>
         <div class="grid searchable" id="pages">
           {page_cards}
         </div>
-        <div class="empty" id="pagesEmpty">没有匹配的学习页面。</div>
+        <div class="empty" id="pagesEmpty">No matching articles.</div>
       </div>
     </section>
 
     <section>
       <div class="wrap">
-        <h2>有用链接</h2>
+        <h2>References</h2>
         <div class="grid searchable" id="links">
           {link_cards}
         </div>
-        <div class="empty" id="linksEmpty">没有匹配的链接。</div>
-        <div class="note">添加新知识时：把 HTML 放进 <code>pages/</code>，在 <code>data/pages.json</code> 登记；把外部链接放进 <code>data/links.json</code>。push 后 GitHub Actions 会自动发布。</div>
+        <div class="empty" id="linksEmpty">No matching references.</div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">Generated at {esc(generated)} · Static site on GitHub Pages</div>
+    <div class="wrap">Generated {esc(generated)} · Static site on GitHub Pages · All content in English</div>
   </footer>
 
   <script>
@@ -248,7 +317,8 @@ def render_index(pages: list[dict], links: list[dict]) -> str:
           card.style.display = show ? '' : 'none';
           if (show) visible += 1;
         }});
-        document.getElementById(group + 'Empty').style.display = visible ? 'none' : 'block';
+        const empty = document.getElementById(group + 'Empty');
+        if (empty) empty.style.display = visible ? 'none' : 'block';
       }}
     }}
 
