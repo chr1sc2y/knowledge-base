@@ -1,6 +1,6 @@
 # Providence Knowledge Base
 
-A calm, bilingual knowledge base for high-value learning pages and repeated review.  
+A calm, bilingual knowledge base for clear, durable explanations.  
 Deployed at https://knowledge.prov1dence.top/
 
 ## Why "Not Secure"?
@@ -29,18 +29,18 @@ open dist/index.html
 
 ## Adding Content
 
-1. Place Chinese articles in `articles/`.
-2. Place matching English articles in `en/articles/`.
+1. Place Chinese articles in `articles/cn/`.
+2. Place matching English articles in `articles/en/`.
 3. Register both paths and localized metadata in `data/pages.json`.
 4. Add external references in `data/links.json` if needed, but keep references off the home page.
 5. Push to `master`. GitHub Actions builds `dist/` and deploys to GitHub Pages.
 
 ## Design Notes
 
-- Editorial learning template: warm paper background, serif display headings, restrained accent color, and section-by-section reading flow.
+- Editorial template: warm paper background, serif display headings, restrained accent color, and section-by-section reading flow.
 - Every public page should have Simplified Chinese and English versions with a matching language switch.
 - Home page is a quiet index, not a card grid and not a references wall.
-- Articles should teach progressively from intuition to mechanism to practice. Do not label the depth progression as literal school stages unless explicitly requested.
+- Articles explain topics progressively from basic concepts and mechanisms to practical implications. Avoid labeling depth of explanation as literal school stages unless explicitly requested.
 - Use cards sparingly. Prefer typography, rules, tables, notes, and a small number of framed interactive tools.
 
 ## Tech

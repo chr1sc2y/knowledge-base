@@ -6,8 +6,8 @@ language rules, or project status changes.
 
 ## Product Goal
 
-Build a public static Knowledge Base at `knowledge.prov1dence.top` for durable
-learning pages. The site should feel calm, direct, and study-oriented. It should
+Build a public static Knowledge Base at `knowledge.prov1dence.top` for clear,
+structured explanatory pages. The site should feel calm, direct, and reference-oriented. It should
 not feel like a dashboard, blog feed, marketing page, or card-heavy template.
 
 ## Design Rules
@@ -24,8 +24,8 @@ not feel like a dashboard, blog feed, marketing page, or card-heavy template.
   elements. Do not use cards as the default content container.
 - Simplicity means reducing friction and visual competition, not merely using
   white backgrounds and rounded rectangles.
-- Prefer progressive learning structure: intuition, vocabulary, mechanism,
-  regulation, practice, sources. Do not label learning depth as literal school
+- Prefer progressive explanatory structure: basic concepts, terminology, mechanism,
+  regulation, application, sources. Do not label depth of explanation as literal school
   stages such as elementary/middle/high/undergraduate/master unless the user
   explicitly asks for that metaphor on screen.
 
@@ -39,13 +39,20 @@ The selected visual direction is the warmer editorial template:
 
 ## Bilingual Architecture
 
-Current URL shape:
+Public URL shape (unchanged):
 
 ```text
 /
 /en/
 /articles/<slug>.html
 /en/articles/<slug>.html
+```
+
+Source layout (consolidated):
+
+```
+articles/cn/<slug>.html   # Chinese
+articles/en/<slug>.html   # English
 ```
 
 Each language page is a real HTML page. The language button links to the
@@ -70,11 +77,11 @@ Implemented:
 - Bilingual home pages: `/` and `/en/`.
 - Bilingual blood glucose article: `/articles/blood-glucose.html` and
   `/en/articles/blood-glucose.html`.
-- Editorial learning template selected for production.
+- Editorial template selected for production.
 - Data files for pages and useful links.
 - Two local design demos:
   - `demos/apple/` for an Apple-like minimal direction.
-  - `demos/editorial/` for a warmer editorial learning direction.
+  - `demos/editorial/` for a warmer editorial direction.
 
 Pending:
 
@@ -83,8 +90,8 @@ Pending:
 
 ## Maintenance Workflow
 
-1. Add or edit content in both Chinese and English.
-2. Keep language-pair links in sync.
+1. Add or edit Chinese content in `articles/cn/` and the matching English version in `articles/en/`.
+2. Keep language-pair links (in nav and index data) in sync.
 3. Run the build script or local demo server.
 4. Verify:
    - HTML parses.

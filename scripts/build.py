@@ -70,23 +70,18 @@ def render_index(pages: list[dict], lang: str) -> str:
     count_text = f"{len(pages)} 个主题 · 最近更新 {latest}" if is_zh else f"{len(pages)} topic · Last updated {latest}"
     title = "Providence Knowledge Base"
     description = (
-        "一个为反复复习而写的私人知识入口。"
+        "双语知识库，提供结构化、清晰的解释。"
         if is_zh
-        else "A private knowledge entry designed for repeated study."
+        else "A bilingual knowledge base of structured explanations."
     )
-    h1 = "为复习而写。" if is_zh else "Written for return."
+    h1 = "知识库" if is_zh else "Knowledge Base"
     lead = (
-        "这里的页面像书里的章节：有路径、有节奏、有证据边界。首页只做一件事，把你带回值得重读的知识。"
+        "页面从基本概念出发，逐步介绍机制与实践策略。搜索或浏览主题。"
         if is_zh
-        else "These pages behave like chapters: paced, evidenced, and meant to be revisited. The home page has one job: bring you back to what is worth rereading."
+        else "Pages present concepts from basic ideas through mechanisms to practical strategies. Search or browse topics."
     )
     placeholder = "搜索主题、标签或概念" if is_zh else "Search topics, tags, or concepts"
-    aria = "搜索学习页面" if is_zh else "Search learning pages"
-    principle = (
-        "建议复习路径：先读核心模型，再看知识层次，最后回到实践策略。"
-        if is_zh
-        else "Suggested review path: start with the core model, move through the learning layers, then return to practical strategy."
-    )
+    aria = "搜索页面" if is_zh else "Search pages"
     lang_href = "en/" if is_zh else "../"
     lang_label = "English" if is_zh else "中文"
     html_lang = "zh-CN" if is_zh else "en"
@@ -122,7 +117,6 @@ def render_index(pages: list[dict], lang: str) -> str:
     .row p {{ color:var(--muted); margin:0; max-width:720px; }}
     .row .go {{ color:var(--ink); font-weight:900; }}
     .empty {{ display:none; color:var(--muted); padding:24px 0; }}
-    .principle {{ margin-top:40px; max-width:720px; color:var(--muted); font-size:15px; }}
     footer {{ border-top:1px solid var(--line); color:var(--muted); font-size:12px; padding:30px 0 50px; }}
     @media(max-width:760px) {{ header {{ padding-top:70px; }} .row {{ grid-template-columns:1fr; gap:8px; }} .row h2 {{ font-size:29px; }} .tools input {{ flex-basis:100%; }} }}
   </style>
@@ -140,7 +134,6 @@ def render_index(pages: list[dict], lang: str) -> str:
 {rows}
     </div>
     <div class="empty" id="empty">{'没有匹配的主题。' if is_zh else 'No matching topics.'}</div>
-    <p class="principle">{esc(principle)}</p>
   </main>
   <footer><div class="wrap">{'生成时间' if is_zh else 'Generated'} {esc(generated)} · knowledge.prov1dence.top</div></footer>
   <script>
@@ -177,8 +170,8 @@ def build() -> None:
     if DIST.exists():
         shutil.rmtree(DIST)
     DIST.mkdir(parents=True)
-    copy_tree("articles")
-    copy_tree("en/articles", "en/articles")
+    copy_tree("articles/cn", "articles")
+    copy_tree("articles/en", "en/articles")
     (DIST / "en").mkdir(exist_ok=True)
     for name in ("CNAME", ".nojekyll"):
         src = ROOT / name
