@@ -4,137 +4,228 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blood Glucose, Carbohydrates, and Metabolism</title>
-  <meta name="description" content="Explanations of blood glucose regulation, carbohydrate digestion and metabolism, insulin function, starch intake effects, and strength training.">
+  <meta name="description" content="A systematic, in-depth exploration of blood glucose homeostasis: carbohydrate chemistry and food structure, digestion and absorption physiology, hormonal regulation, insulin action and resistance, liver-muscle interplay, modulators of glycemic response (food order, resistant starch, vinegar, activity), measurement, individual variability, and practical implications.">
   <style>
-    :root{--bg:#f7f3ea;--fg:#202523;--muted:#68716d;--line:#d8cfbf;--ink:#163d3a;--accent:#b24b2f;--note:#fffaf0;--soft:#efe7d8}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.78;-webkit-font-smoothing:antialiased}.top{position:sticky;top:0;background:rgba(247,243,234,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:4}.nav{width:min(1040px,calc(100vw - 40px));margin:0 auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:14px}.nav a{color:var(--ink);font-size:13px;font-weight:900;text-decoration:none}.lang{border:1px solid var(--line);border-radius:999px;padding:7px 12px}.wrap{width:min(820px,calc(100vw - 40px));margin:0 auto}header{padding:48px 0 32px}.kicker{color:var(--accent);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,5.8vw,52px);line-height:1.05;letter-spacing:-.03em;margin:10px 0 14px}.lead{font-size:19px;color:var(--muted);margin:0}.spine{border-top:1px solid var(--line)}section{padding:28px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,"Times New Roman",serif;font-size:26px;line-height:1.15;letter-spacing:-.015em;margin:0 0 10px}h3{font-size:18px;margin:24px 0 8px}p{margin:0 0 15px}.quiet{color:var(--muted)}.note{background:var(--note);border-left:4px solid var(--accent);padding:16px 18px;margin:18px 0}.soft{background:var(--soft);border-left-color:var(--ink)}.flow{display:grid;gap:8px;margin:16px 0}.node{border-top:1px solid rgba(216,207,191,.85);padding:12px 0}.node b{color:var(--ink)}table{width:100%;border-collapse:collapse;font-size:15px;margin-top:14px}th,td{border-bottom:1px solid var(--line);padding:10px 6px;text-align:left;vertical-align:top}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}.tool{background:var(--note);border:1px solid var(--line);padding:18px;border-radius:10px}.tool label{display:flex;justify-content:space-between;font-weight:900;font-size:13px;margin-top:12px}.tool input{width:100%;accent-color:var(--accent)}.result{margin-top:14px;color:var(--muted)}details{color:var(--muted)}details a{color:var(--ink);text-underline-offset:3px}.footer-note{padding:30px 0 56px;color:var(--muted);font-size:14px}.nav a:focus-visible,.lang:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:4px}@media(max-width:720px){.layer{grid-template-columns:1fr;gap:4px}h2{font-size:29px}.nav{align-items:flex-start;padding:12px 0}}
+    :root{--bg:#f7f3ea;--fg:#202523;--muted:#68716d;--line:#d8cfbf;--ink:#163d3a;--accent:#b24b2f;--note:#fffaf0;--soft:#efe7d8}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.78;-webkit-font-smoothing:antialiased}.top{position:sticky;top:0;background:rgba(247,243,234,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:4}.nav{width:min(1040px,calc(100vw - 40px));margin:0 auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:14px}.nav a{color:var(--ink);font-size:13px;font-weight:900;text-decoration:none}.lang{border:1px solid var(--line);border-radius:999px;padding:7px 12px}.wrap{width:min(820px,calc(100vw - 40px));margin:0 auto}header{padding:48px 0 32px}.kicker{color:var(--accent);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,5.8vw,52px);line-height:1.05;letter-spacing:-.03em;margin:10px 0 14px}.lead{font-size:19px;color:var(--muted);margin:0}.spine{border-top:1px solid var(--line)}section{padding:28px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,"Times New Roman",serif;font-size:26px;line-height:1.15;letter-spacing:-.015em;margin:0 0 10px}h3{font-size:18px;margin:24px 0 8px}p{margin:0 0 15px}.quiet{color:var(--muted)}.note{background:var(--note);border-left:4px solid var(--accent);padding:16px 18px;margin:18px 0}.soft{background:var(--soft);border-left-color:var(--ink)}.flow{display:grid;gap:8px;margin:16px 0}.node{border-top:1px solid rgba(216,207,191,.85);padding:12px 0}.node b{color:var(--ink)}table{width:100%;border-collapse:collapse;font-size:15px;margin-top:14px}th,td{border-bottom:1px solid var(--line);padding:10px 6px;text-align:left;vertical-align:top}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}tr:last-child td{border-bottom:none}.tool{margin:18px 0 10px;padding:18px;border:1px solid var(--line);background:#fffdf8}.tool label{display:block;font-size:13px;color:var(--muted);margin:14px 0 4px}.tool input[type=range]{width:100%}.result{margin:16px 0 4px;font-weight:600}.footer-note{margin:32px auto 60px;color:var(--muted);font-size:14px;max-width:820px;padding:0 20px}
   </style>
 </head>
 <body>
   <div class="top"><nav class="nav"><a href="../index.html">Knowledge Base</a><a class="lang" href="../../articles/blood-glucose.html">中文</a></nav></div>
   <header class="wrap">
-    <div class="kicker">Health & Nutrition</div>
+    <div class="kicker">Health &amp; Nutrition</div>
     <h1>Blood Glucose, Carbohydrates, and Metabolism</h1>
-    <p class="lead">Blood glucose management centers on matching the rate at which glucose enters the blood, the capacity of muscle and liver to clear it, and the body's overall energy state.</p>
+    <p class="lead">Blood glucose homeostasis reflects the continuous matching of the rate at which glucose enters the circulation (Ra), the capacity of tissues (primarily muscle and liver) to clear and store it (Rd), endogenous glucose production (EGP), and the body’s overall energy state and clearance capacity. Understanding this dynamic matching is more useful than debating whether “carbs are good or bad.”</p>
   </header>
   <main class="wrap spine">
+
     <section id="model">
-      <h2>Core Model</h2>
-      <p>Blood glucose management is the matching of three variables: how quickly glucose enters the blood, how well muscle and liver clear it, and the long-term energy state of the body. Most useful nutrition and training advice can be placed inside that model.</p>
-      <div class="note">The better question is not “are carbs good or bad?” It is “how fast does this carbohydrate enter, and does the body have somewhere to put the glucose?”</div>
+      <h2>Core Framework: Matching Multiple Variables</h2>
+      <p>The simplest useful model of blood glucose management is the real-time matching of three (or more) variables: the speed at which glucose appears in the blood, the ability of muscle, liver, and other tissues to clear and store that glucose, and the body’s longer-term energy state together with its hormonal and inflammatory background. Most practical dietary, exercise, and lifestyle recommendations can be re-interpreted inside this framework, which also reveals their limits and boundary conditions.</p>
+      <p>A more complete physiological picture adds a fourth dynamic: endogenous glucose production, primarily from hepatic glycogenolysis and gluconeogenesis. In the postprandial state, insulin suppresses hepatic output while accelerating peripheral uptake and storage. In the fasting state the opposite occurs. Muscle is the largest glucose “sink,” but its effective capacity depends on muscle mass, glycogen storage space, mitochondrial function, and capillary density. The liver acts both as a buffer and as a command center.</p>
+      <div class="note">The central question is never simply “should carbohydrates be eaten?” It is: “At what rate, in what food matrix, together with what co-nutrients, and inside an individual with what clearance capacity and hormonal milieu does this carbohydrate enter the blood?” The same meal can impose very different physiological loads in different people or in the same person under different conditions.</div>
+      <h3>Rate, Capacity, and State</h3>
+      <p>Rate of appearance (Ra) is shaped by food matrix, cooking method, degree of mastication, gastric emptying rate, intestinal transporter activity, and incretin responses. Disposal capacity (Rd) depends on muscle mass, insulin sensitivity, recent exercise, hepatic glycogen fill, and vascular delivery. “State” includes sleep debt, psychological stress, inflammatory tone, the second-meal effect from the previous meal, and circadian hormonal rhythms. Ignoring any of these turns the problem into simplistic advice such as “eat fewer carbs” or “just look at GI,” both of which frequently fail in real life.</p>
     </section>
 
     <section id="terms">
-      <h2>How Carbs, Sugars, and Starches Relate</h2>
-      <p>To understand blood glucose management, it helps to first clarify what carbohydrates actually are. The practical differences are molecular length, digestibility, and the speed at which glucose appears in the blood.</p>
+      <h2>Carbohydrates: From Molecular Structure to Food Matrix</h2>
+      <p>To understand glycemic responses, one must first appreciate the chemical and physical differences among carbohydrates. These differences govern enzymatic accessibility, the rate of glucose release, and the fraction that escapes small-intestinal absorption.</p>
       <table>
-        <thead><tr><th>Concept</th><th>Meaning</th><th>Relation to blood glucose</th></tr></thead>
+        <thead><tr><th>Category</th><th>Structure &amp; Examples</th><th>Digestion &amp; Glycemic Implications</th></tr></thead>
         <tbody>
-          <tr><td>Monosaccharides</td><td>Single sugar units such as glucose, fructose, and galactose.</td><td>Glucose directly raises blood glucose; fructose is primarily handled by the liver first.</td></tr>
-          <tr><td>Disaccharides</td><td>Two sugar units, such as sucrose, lactose, and maltose.</td><td>They are split in the small intestine into absorbable sugars.</td></tr>
-          <tr><td>Polysaccharides</td><td>Long chains of sugar units.</td><td>Starch is digestible; many fibers are not directly digestible by human enzymes.</td></tr>
-          <tr><td>Starch</td><td>The main carbohydrate in rice, noodles, potatoes, and corn; essentially long glucose chains.</td><td>It may not taste sweet, but digestion releases glucose.</td></tr>
-          <tr><td>Glycogen</td><td>The body’s stored glucose chains in liver and muscle.</td><td>Liver glycogen helps maintain fasting glucose; muscle glycogen mainly fuels muscle itself.</td></tr>
-          <tr><td>Dietary fiber</td><td>Carbohydrate structures the body mostly cannot digest directly.</td><td>It often slows gastric emptying and absorption, helping reduce post-meal swings.</td></tr>
+          <tr><td>Monosaccharides</td><td>Glucose, fructose, galactose</td><td>Glucose is absorbed directly and raises blood glucose promptly; fructose is largely taken up and metabolized by the liver first via the portal vein, producing a smaller direct glycemic effect but potentially contributing to hepatic de novo lipogenesis.</td></tr>
+          <tr><td>Disaccharides</td><td>Sucrose (glucose + fructose), lactose (glucose + galactose), maltose (glucose + glucose)</td><td>Require brush-border enzymes (sucrase-isomaltase complex, lactase) for hydrolysis before absorption. Liquid forms are absorbed extremely rapidly.</td></tr>
+          <tr><td>Digestible polysaccharides (starch)</td><td>Amylose (linear α-1,4 linkages), amylopectin (branched with α-1,6 linkages)</td><td>Amylopectin is hydrolyzed more rapidly. Higher-amylose starches (certain rice varieties, high-amylose maize) digest more slowly. Cooking causes gelatinization, greatly increasing enzyme accessibility.</td></tr>
+          <tr><td>Resistant starch (RS)</td><td>RS1 (physically inaccessible, e.g., whole grains), RS2 (raw banana, raw potato starch), RS3 (retrograded starch formed on cooling after cooking), RS4 (chemically modified)</td><td>Resists or greatly slows digestion in the small intestine and reaches the colon for microbial fermentation to short-chain fatty acids (SCFAs). RS3 can be increased by cooking then cooling; even after reheating, some resistance remains and can blunt postprandial glucose.</td></tr>
+          <tr><td>Dietary fiber</td><td>Soluble (β-glucans, pectins, some inulin), insoluble (cellulose, some hemicelluloses), oligosaccharides (FODMAPs)</td><td>Soluble fibers increase chyme viscosity and slow gastric emptying and absorption; fermentable fibers yield SCFAs (acetate, propionate, butyrate) that can improve insulin sensitivity and modulate incretin secretion.</td></tr>
+          <tr><td>Glycogen</td><td>Highly branched glucose polymer stored in animals/humans</td><td>Liver glycogen (~70–100 g) helps maintain fasting glucose; muscle glycogen (300–600+ g depending on training status) is used locally by myocytes and cannot directly replenish blood glucose.</td></tr>
         </tbody>
       </table>
+      <p>Glycemic index (GI) and glycemic load (GL) are convenient tools but were measured under standardized, single-food conditions. In mixed meals, with different individuals, cooking methods, and eating sequences, they show substantial variability. GI is a relative speed indicator under ideal test conditions, not an absolute predictor of real-world responses. GL accounts for portion size but still omits co-nutrients and personal factors. A better mental model treats GI/GL as directional hints rather than precise forecasts.</p>
+      <div class="note soft">White rice is not sweet, yet it contains large amounts of rapidly hydrolyzable amylopectin. Sweetness is driven by free mono- and disaccharides and is a poor proxy for the rate or quantity of glucose that will ultimately appear in the blood.</div>
     </section>
 
     <section id="digestion">
-      <h2>What Happens After Carbs Enter the Body</h2>
-      <p>You do not eat “blood sugar.” You eat carbohydrate structures. The body has to break the digestible parts into small absorbable molecules.</p>
+      <h2>From Plate to Portal Vein: Digestion, Absorption, and the Incretin Effect</h2>
+      <p>What we ingest is not “blood sugar” but carbohydrate structures with specific physical and chemical properties. The body must perform mechanical disruption, enzymatic hydrolysis, and membrane transport before glucose (and other monosaccharides) enter the circulation.</p>
+      <h3>Mechanical and Enzymatic Cascade</h3>
       <div class="flow">
-        <div class="node"><b>Food matrix</b>: rice, bread, potatoes, fruit, or drinks enter the digestive tract.</div>
-        <div class="node"><b>Mechanical and chemical processing</b>: chewing, gastric emptying, amylase, and intestinal enzymes shape the pace.</div>
-        <div class="node"><b>Absorption</b>: glucose is transported through the small intestine into blood, and post-meal glucose begins to rise.</div>
-        <div class="node"><b>Distribution</b>: insulin rises, sending glucose toward muscle, liver, and adipose tissue while reducing liver glucose output.</div>
+        <div class="node"><b>Oral and gastric phase</b>: Mastication increases surface area; salivary amylase initiates hydrolysis; gastric grinding and acidity partially inactivate amylase, but partially digested dextrins enter the duodenum.</div>
+        <div class="node"><b>Pancreatic and brush-border phase</b>: Pancreatic amylase continues cleaving dextrins to maltose, maltotriose, and α-limit dextrins; brush-border enzymes (maltase, isomaltase, sucrase) release free glucose and fructose.</div>
+        <div class="node"><b>Absorption</b>: Glucose is primarily absorbed via SGLT1 (Na⁺-coupled active transport) on the apical membrane of enterocytes, then exits basolaterally via GLUT2 facilitated diffusion into the portal vein. Fructose uses GLUT5 entry and GLUT2 exit.</div>
       </div>
-      <div class="note soft">White rice can raise blood glucose even though it is not sweet because its primary carbohydrate is starch: long glucose chains. Sweetness is a poor proxy for glucose impact.</div>
+      <h3>Gastric Emptying as the First Gatekeeper</h3>
+      <p>Gastric emptying rate is the single most important upstream determinant of glucose appearance rate. Hypertonicity, large solid particle size, higher fat and protein content, acidity, and (especially soluble) fiber all slow emptying. Liquid sugars (sugary drinks, juices) lack solid matrix and empty extremely rapidly, often producing sharp glucose and insulin peaks.</p>
+      <h3>The Incretin Effect</h3>
+      <p>Oral glucose elicits 50–70% more insulin secretion than an identical intravenous glucose load. This amplification is largely mediated by GLP-1 from intestinal L-cells and GIP from K-cells. These incretins “prime” the β-cell in anticipation, suppress glucagon, slow gastric emptying, and increase satiety. This physiology explains much of the difference between liquid sugars and solid meals containing protein, fat, and fiber.</p>
+      <div class="note">In mixed meals, protein and fat do more than add their own calories: they slow gastric emptying and stimulate additional GLP-1/GIP, thereby reshaping the appearance curve of the carbohydrate component that follows. This is not simple arithmetic; it is systemic rate control.</div>
     </section>
 
     <section id="control">
-      <h2>Why the Body Controls Blood Glucose</h2>
-      <p>Glucose is essential, but it has to move within a useful range. Too little threatens brain and nervous system energy supply; too much for too long increases oxidative stress, glycation, and vascular burden.</p>
+      <h2>Glucose Homeostasis: Why and How It Is Tightly Regulated</h2>
+      <p>Glucose is an obligate fuel for red blood cells, renal medulla, and (in the absence of significant ketosis) the brain, yet its extracellular concentration must be kept within narrow limits. Too low threatens cerebral function rapidly; sustained excess drives damage through multiple pathways.</p>
       <table>
-        <thead><tr><th>State</th><th>Immediate picture</th><th>Longer-term meaning</th></tr></thead>
+        <thead><tr><th>State</th><th>Typical plasma range</th><th>Physiological &amp; clinical meaning</th></tr></thead>
         <tbody>
-          <tr><td>Too low</td><td>Shaking, sweating, palpitations, poor focus; severe hypoglycemia can be dangerous.</td><td>People using insulin or certain glucose-lowering drugs need special attention.</td></tr>
-          <tr><td>Stable</td><td>Energy supply is steady and post-meal glucose returns toward baseline.</td><td>Entry rate and clearance capacity are better matched.</td></tr>
-          <tr><td>Chronically high or highly variable</td><td>It may not feel obvious in the short term.</td><td>Associated with vascular, neural, kidney, and eye complications over time.</td></tr>
+          <tr><td>Fasting normal</td><td>70–99 mg/dL (3.9–5.5 mmol/L)</td><td>Hepatic glycogenolysis (primary) plus gluconeogenesis maintain supply; glucagon, epinephrine, and other counter-regulatory signals remain vigilant.</td></tr>
+          <tr><td>Postprandial healthy peak</td><td>Usually &lt;140–160 mg/dL, returning toward baseline within 2–3 h</td><td>Rapid insulin rise suppresses hepatic output and promotes peripheral uptake and glycogen synthesis.</td></tr>
+          <tr><td>Hypoglycemia</td><td>&lt;70 mg/dL (symptom threshold varies)</td><td>Autonomic symptoms (sweating, palpitations, tremor) → neuroglycopenic symptoms (impaired cognition, consciousness). Risk is markedly elevated in people using insulin or insulin secretagogues.</td></tr>
+          <tr><td>Chronic hyperglycemia</td><td>Fasting ≥126 mg/dL or HbA1c ≥6.5% (diagnostic thresholds)</td><td>Drives complications via advanced glycation end-products (AGEs), polyol pathway, hexosamine flux, PKC activation, and oxidative stress (Brownlee’s unifying mechanism).</td></tr>
         </tbody>
       </table>
+      <p>The body does not aim for “the lowest possible glucose.” It aims to keep glucose within a window that meets obligatory needs while avoiding toxicity across different physiological states (fasting, fed, exercise, stress). Healthy people exhibit real excursions; the relevant variables are amplitude, duration, and speed of return relative to the individual’s clearance capacity.</p>
     </section>
 
     <section id="insulin">
-      <h2>Insulin Is Not the Enemy</h2>
-      <p>The discussion here concerns insulin secreted by the body. It is the post-meal nutrient-partitioning signal: it helps glucose enter muscle and adipose tissue, promotes glycogen synthesis in liver and muscle, and tells the liver to reduce glucose output.</p>
-      <div class="note">The goal is not “less insulin at all costs.” The goal is better insulin sensitivity. When sensitivity is high, a modest amount of insulin can handle the same glucose load. When resistance rises, more insulin is required for the same effect.</div>
-      <p class="quiet">Prescribed insulin is medication, mainly for type 1 diabetes and some type 2, gestational, or special clinical situations. Dose, exercise timing, and hypoglycemia prevention require clinical guidance.</p>
+      <h2>Insulin: Nutrient-Partitioning Signal, Not the Enemy</h2>
+      <p>Insulin is the dominant postprandial anabolic hormone. It is secreted by pancreatic β-cells in a biphasic pattern: a rapid first phase (minutes) from pre-stored granules that is critical for limiting early glucose peaks, followed by a sustained second phase supporting ongoing uptake and storage.</p>
+      <h3>Primary Actions</h3>
+      <ul>
+        <li>Promotes GLUT4-mediated glucose uptake into skeletal muscle and adipose tissue.</li>
+        <li>Activates glycogen synthase and inhibits glycogen phosphorylase in liver and muscle via PP1 and GSK3 regulation.</li>
+        <li>Potently suppresses hepatic glucose production (HGP)—often the quantitatively largest contributor to keeping postprandial glucose from rising excessively.</li>
+        <li>Inhibits lipolysis (lowers free fatty acids), reducing substrate competition at muscle and limiting hepatic lipotoxicity.</li>
+        <li>Promotes protein synthesis and inhibits proteolysis.</li>
+      </ul>
+      <h3>Sensitivity versus Level</h3>
+      <p>The goal is not to drive insulin “as low as possible.” In a sensitive state, modest insulin concentrations suffice to clear glucose and restrain HGP. In an insulin-resistant state, higher concentrations are required for the same effect. Chronic hyperinsulinemia can itself worsen resistance (via receptor downregulation, inflammation, etc.), creating a vicious cycle.</p>
+      <div class="note">Prescribed (exogenous) insulin is a medication used primarily in type 1 diabetes and selected cases of type 2, gestational diabetes, or other clinical situations. Dose adjustment around exercise, carbohydrate matching, and hypoglycemia prevention require clinical supervision. The mechanistic discussion here does not authorize self-adjustment of medications.</div>
+      <h3>Common Mechanisms of Insulin Resistance</h3>
+      <p>Include ectopic lipid deposition (liver, muscle, pancreas), chronic low-grade inflammation (TNF-α, IL-6, macrophage infiltration), endoplasmic reticulum stress, mitochondrial dysfunction, gut-derived metabolites, elevated glucocorticoids from poor sleep or stress, and reduced GLUT4 expression/translocation from prolonged sedentary behavior. There is rarely a single cause.</p>
+    </section>
+
+    <section id="liver-muscle">
+      <h2>Liver and Muscle: The Two Central Players</h2>
+      <h3>The Liver: Buffer and Command Center</h3>
+      <p>The liver receives intestinal nutrient output directly via the portal vein and is the first major station for postprandial glucose handling. It expresses high-Km glucokinase, which phosphorylates glucose substantially only when concentrations are elevated. Insulin, via Akt, activates protein phosphatase-1 (PP1) and inhibits GSK3, promoting glycogen synthase while restraining glycogen phosphorylase. Glucagon opposes these actions through cAMP-PKA signaling.</p>
+      <p>Postprandially the liver may extract roughly 30–40% (or more) of incoming portal glucose; the remainder enters systemic circulation for peripheral disposal. The liver also performs gluconeogenesis (from lactate, glycerol, amino acids, fructose) and, under chronic carbohydrate surplus (especially fructose), engages in de novo lipogenesis (DNL)—a pathway fructose enters more readily than glucose because it bypasses the main regulatory step at phosphofructokinase-1.</p>
+      <h3>Muscle: The Capacity Determinant</h3>
+      <p>Skeletal muscle comprises ~40% of body weight in healthy adults and is the largest single site of postprandial glucose disposal. While insulin-dependent GLUT4 translocation is important, muscle contraction itself (via AMPK, Ca²⁺/CaMK, Rac1, and other signals) can recruit GLUT4 to the membrane independently of insulin. This is why “a walk after eating” reliably lowers glucose excursions—it directly engages insulin-independent disposal capacity.</p>
+      <p>Chronic resistance training increases muscle cross-sectional area (more “warehouse” space), total GLUT4 content, capillary density (better delivery), mitochondrial biogenesis and fat-oxidative capacity, and overall insulin sensitivity. These are structural adaptations that persist for many hours to days after a session, not merely acute calorie burn.</p>
+      <div class="note">A more useful framing is to ask not only “what should I eat to keep glucose lower?” but also “does my muscle mass, muscle metabolic quality, and habitual activity provide enough clearance capacity to handle the glucose flux from this meal at an acceptable hormonal cost?”</div>
     </section>
 
     <section id="starch">
-      <h2>What Happens When Starch Intake Is Too High</h2>
-      <p>Starch is not inherently bad. Problems usually come from the combination of large total amount, highly refined form, fast absorption, low activity, and chronic energy surplus. Sugary drinks and liquid sugars are especially easy to overconsume.</p>
+      <h2>Starch Quantity, Quality, and Context</h2>
+      <p>Starch is not inherently harmful. Problems almost always arise from the combination of large total amount + highly refined or gelatinized form + rapid absorption + low physical activity + chronic energy surplus. Sugary beverages and liquid sugars are particularly efficient “over-delivery systems” because they bypass most of the physical and chemical buffers present in solid foods.</p>
+      <h3>How Processing Changes Starch</h3>
+      <p>Milling, extrusion, and high-heat/high-pressure cooking destroy food matrices and fully gelatinize starch granules, dramatically increasing enzymatic accessibility. Conversely, “al dente” pasta, intact whole grains, and larger particle sizes preserve physical barriers. Cooking followed by cooling (especially 4 °C overnight) allows amylose and some amylopectin to recrystallize into RS3 (retrograded starch). Even after reheating, a portion remains resistant. Controlled studies show that cooked-then-cooled-and-reheated white rice increases resistant starch content and reduces the glycemic response area by roughly 15–20% compared with freshly cooked rice.</p>
+      <h3>The Distinct Path of Fructose</h3>
+      <p>Fructose is almost entirely metabolized in the liver, stimulates little or no insulin secretion, and is not directly used by muscle. It can enter DNL without passing the primary regulatory step, increases triglyceride and VLDL output, and can raise uric acid. The physiological consequences of fructose from intact fruit (accompanied by fiber, polyphenols, and cell walls) differ substantially from equivalent amounts delivered in sugar-sweetened beverages.</p>
+    </section>
+
+    <section id="modulators">
+      <h2>Major Modulators of Postprandial Glycemic Responses</h2>
+      <p>Even when total carbohydrate is held constant, several factors can materially change the appearance curve and the metabolic cost of handling it. The following have relatively solid mechanistic and clinical evidence, ordered roughly by actionability.</p>
       <table>
-        <thead><tr><th>Situation</th><th>Short-term effect</th><th>Better direction</th></tr></thead>
+        <thead><tr><th>Modulator</th><th>Key mechanisms</th><th>Typical effect size (examples)</th></tr></thead>
         <tbody>
-          <tr><td>Large refined-starch meal eaten alone</td><td>Faster post-meal rise and higher insulin demand.</td><td>Reduce portion size; pair with protein, vegetables, and higher-fiber foods.</td></tr>
-          <tr><td>Frequent sugary drinks</td><td>Fast absorption, weak satiety, easy excess intake.</td><td>Prefer water or unsweetened tea/coffee; keep fruit in whole form.</td></tr>
-          <tr><td>High-carb meal followed by sitting</td><td>Muscle glucose disposal is less involved.</td><td>Walk 10-20 minutes or do light activity after meals.</td></tr>
-          <tr><td>Chronic poor sleep or high stress</td><td>Glucose is harder to stabilize.</td><td>Treat sleep and stress management as metabolic tools.</td></tr>
+          <tr><td>Food order (vegetables/protein before carbohydrate)</td><td>Slower gastric emptying + increased GLP-1/GIP + protein-stimulated insulin with concurrent glucagon dynamics</td><td>Shukla et al. (2015): in type 2 diabetes, vegetables + protein first reduced glucose at 30/60/120 min by ~29%/37%/17% and lowered insulin excursions significantly.</td></tr>
+          <tr><td>Vinegar / acetic acid</td><td>Delays gastric emptying, inhibits disaccharidases, may improve insulin sensitivity</td><td>Multiple studies show ~20–30% GI reduction depending on dose and food matrix.</td></tr>
+          <tr><td>Cook-cool-reheat (RS3 formation)</td><td>Retrogradation renders a fraction of starch resistant to small-intestinal digestion</td><td>Sonia et al. (2015): white rice cooled 24 h at 4 °C then reheated increased RS and lowered glycemic iAUC by ~18%.</td></tr>
+          <tr><td>Co-ingestion of protein and fat</td><td>Delays emptying + hormonal stimulation + lowers carbohydrate density</td><td>Mixed meals produce lower peaks and faster return than iso-carbohydrate pure-starch loads.</td></tr>
+          <tr><td>Mastication and particle size</td><td>Alters salivary amylase exposure and effective surface area</td><td>Thorough chewing or larger intact particles generally blunt the response.</td></tr>
+          <tr><td>Post-meal activity (especially walking)</td><td>Contraction-mediated GLUT4 translocation + increased perfusion</td><td>10–30 min of light walking after meals frequently flattens peaks substantially.</td></tr>
+          <tr><td>Sleep, stress, circadian alignment</td><td>Cortisol, sympathetic tone, melatonin, and circadian variation in insulin sensitivity</td><td>Sleep restriction or high stress elevates glucose for the same carbohydrate load; late-night eating often produces larger responses.</td></tr>
         </tbody>
       </table>
+      <div class="note">These modulators are additive. Combining “vegetables and protein first + minimize liquid sugar + cook-cool-reheat staple + post-meal walk + protect sleep” produces cumulative effects far larger than any single change in isolation.</div>
     </section>
 
     <section id="training">
-      <h2>Why Strength Training Helps</h2>
-      <p>Muscle is a major destination for glucose. Strength training is not only about “burning calories.” It increases muscle mass, expands glycogen storage capacity, improves insulin sensitivity, and contraction helps GLUT4 transporters move glucose into cells.</p>
-      <div class="note">A more useful question is not only “what should I eat to lower glucose?” but also “does the body have enough active muscle capacity to receive this meal’s glucose?”</div>
-      <p>For many adults, a realistic starting point is at least two full-body strength sessions per week plus daily walking. Individuals with diabetes, hypoglycemia risk, retinal/nerve/kidney complications, or who take glucose-affecting medication should coordinate exercise changes with a clinician.</p>
+      <h2>Strength Training and Metabolic Health: Structural Change</h2>
+      <p>The benefits of strength training for glucose handling are multi-layered and structural, not merely the acute “burn” of a session.</p>
+      <ul>
+        <li><b>Capacity expansion</b>: Increased muscle cross-sectional area provides more glycogen storage “warehouse” space and more total GLUT4 transporters.</li>
+        <li><b>Quality improvement</b>: Training enhances insulin signaling (IR/IRS/PI3K/Akt/AS160), capillary density, mitochondrial biogenesis, and fatty-acid oxidative capacity, reducing lipotoxicity.</li>
+        <li><b>Acute effects</b>: A single bout of contraction recruits GLUT4 via insulin-independent routes; the improvement in insulin sensitivity can persist 24–48 hours or longer.</li>
+        <li><b>Indirect hepatic benefit</b>: Better peripheral sensitivity allows the liver to be restrained at lower insulin concentrations, reducing the drive for DNL.</li>
+      </ul>
+      <p>For most adults, two to three weekly sessions of progressive resistance training covering major muscle groups, plus habitual daily walking (roughly 7,000–10,000 steps), is a realistic starting point. Individuals with diabetic retinopathy, neuropathy, nephropathy, prior severe hypoglycemia, or those on glucose-lowering medications that increase hypoglycemia risk require individualized, medically supervised exercise prescriptions.</p>
     </section>
 
-    <section id="strategy">
-      <h2>Practical Strategies</h2>
+    <section id="measurement">
+      <h2>Measurement, Interpretation, and Individual Variability</h2>
+      <p>No single metric captures “glucose management quality” perfectly. Common markers each have blind spots:</p>
+      <ul>
+        <li><b>HbA1c</b> reflects 2–3 month average glycemia but is affected by red-cell lifespan, hemoglobin variants, anemia, and ethnicity; it reveals nothing about within-day peaks or variability.</li>
+        <li><b>Fasting glucose</b> is simple but samples only one time point and misses postprandial problems.</li>
+        <li><b>Oral glucose tolerance test (OGTT)</b> provides dynamic information but is a one-time, laboratory, non-habitual condition.</li>
+        <li><b>Continuous glucose monitoring (CGM)</b> yields time-in-range (TIR), coefficient of variation (CV), mean amplitude of glycemic excursions (MAGE), and glucose management indicator (GMI). TIR 70–180 mg/dL &gt;70–80% (without hypoglycemia) correlates with lower complication risk in many populations, yet target ranges for healthy, non-diabetic individuals are still being refined. CGM also has sensor error, calibration issues, and cost/access barriers.</li>
+      </ul>
+      <p>Individual responses vary widely. Genetics (e.g., TCF7L2 variants), gut microbiome composition, prior dietary pattern (glycogen supercompensation after low-carb periods or keto-adaptation), ethnicity (East Asian populations often show higher visceral fat and insulin resistance at lower BMI), age, muscle mass, and hormonal status (menopause, thyroid function) all alter the glucose and insulin curves produced by an identical carbohydrate load.</p>
+      <div class="note">For healthy adults without metabolic disease, pursuing “zero fluctuation” is neither necessary nor realistic. A reasonable target for most meals is a peak below ~140–160 mg/dL with return toward &lt;100 mg/dL within 2–3 hours and no symptomatic hypoglycemia. Frequent or severe excursions outside this envelope merit clinical evaluation.</div>
+    </section>
+
+    <section id="misconceptions">
+      <h2>Common Misconceptions and Clarifications</h2>
       <table>
-        <thead><tr><th>Strategy</th><th>Why it works</th></tr></thead>
+        <thead><tr><th>Misconception</th><th>More accurate view</th></tr></thead>
         <tbody>
-          <tr><td>Vegetables and protein before starch</td><td>Slows gastric emptying and glucose appearance, often lowering the peak.</td></tr>
-          <tr><td>Choose less processed, chewier staples</td><td>Fiber and food structure improve satiety and usually slow release.</td></tr>
-          <tr><td>Do not eat starch alone</td><td>Protein, fat, and fiber change the curve from the same carbohydrate amount.</td></tr>
-          <tr><td>Walk after meals</td><td>Directly recruits muscle into glucose clearance.</td></tr>
-          <tr><td>Train strength long term</td><td>Improves capacity and efficiency for receiving glucose.</td></tr>
+          <tr><td>“All carbohydrates are the same; if it raises glucose, eat less of it.”</td><td>Different carbohydrate sources differ enormously in speed, accompanying nutrients, and the physiological cost they impose on a given individual’s clearance capacity. Intact grains, legumes, and whole fruit are not metabolically equivalent to refined sugars or liquid sugars.</td></tr>
+          <tr><td>“Starch isn’t sweet, so it has little effect.”</td><td>White rice and many breads consist primarily of glucose chains that release large amounts of glucose upon digestion. Sweetness is unrelated to glycemic impact.</td></tr>
+          <tr><td>“Low-carbohydrate diets are optimal for everyone.”</td><td>They can be useful for selected people with type 2 diabetes, metabolic syndrome, or specific athletic or preference profiles. For others—particularly high-volume athletes, those needing high glycogen stores, or individuals with eating-disorder history—they may be overly restrictive and unsustainable. There is no universally optimal macronutrient ratio.</td></tr>
+          <tr><td>“Insulin is bad; we should try to keep it low.”</td><td>Insulin is an essential nutrient-partitioning hormone. The problem is usually resistance rather than insulin per se. Improving sensitivity is generally more productive than simply lowering levels.</td></tr>
+          <tr><td>“Fruit sugar is the same as added sugar in drinks.”</td><td>Whole fruit delivers fructose inside a fiber- and polyphenol-rich matrix that slows absorption and provides other benefits. Juice and sugar-sweetened beverages do not.</td></tr>
+          <tr><td>“If my post-meal glucose is high, I must have eaten too much carbohydrate.”</td><td>It could also reflect insufficient clearance capacity (low muscle mass, sedentary behavior, resistance), inadequate hepatic suppression, stress/sleep effects, or carry-over from the previous meal. Context matters.</td></tr>
         </tbody>
       </table>
     </section>
 
+    <section id="strategy">
+      <h2>Practical Framework: From Mechanisms to Repeatable Actions</h2>
+      <p>The following strategies are ordered by clarity of mechanism, operational feasibility, and strength of supporting evidence. They are not mutually exclusive; they are combinable levers. Effects are individual; whenever possible, use personal feedback (symptoms, energy, body composition, and if available, glucose data) to calibrate.</p>
+      <table>
+        <thead><tr><th>Strategy</th><th>Primary mechanisms</th><th>Implementation notes &amp; caveats</th></tr></thead>
+        <tbody>
+          <tr><td>Vegetables and protein before starch</td><td>Delays gastric emptying + augments incretins + lowers effective carbohydrate appearance rate</td><td>Consume a large serving of non-starchy vegetables plus protein/fat first; wait 10–15 min before the starch component. Multiple randomized crossover trials support reductions in peak and iAUC.</td></tr>
+          <tr><td>Minimize or eliminate liquid sugars and juices</td><td>Removes physical matrix and fiber; extremely rapid emptying and absorption</td><td>Prefer water, unsweetened tea, or black coffee. Whole fruit in place of juice. Sugar-sweetened beverages are among the highest-leverage single changes for many people.</td></tr>
+          <tr><td>Choose more structured, chewier carbohydrate sources</td><td>Preserves cell walls and particle size; lowers enzymatic accessibility</td><td>Whole grains, al dente pasta, skin-on root vegetables, intact legumes. Avoid finely milled or highly expanded products.</td></tr>
+          <tr><td>Leverage retrograded starch (cook-cool-reheat)</td><td>Forms RS3 so a portion of starch escapes small-intestinal digestion</td><td>Cook rice, potatoes, or pasta, cool overnight in the refrigerator (4 °C), then reheat. Reheating does not fully reverse the resistance already formed.</td></tr>
+          <tr><td>Add vinegar or lemon juice</td><td>Acetic acid delays emptying and inhibits disaccharidases</td><td>1–2 tablespoons of vinegar (diluted) or lemon juice with or before the meal. Modest but safe and easy effect.</td></tr>
+          <tr><td>Post-meal light-to-moderate activity</td><td>Contraction-mediated GLUT4 recruitment + increased blood flow</td><td>10–30 min of walking or light housework after meals. Duration often matters more than intensity.</td></tr>
+          <tr><td>Maintain muscle mass and strength long term</td><td>Structurally increases glucose disposal capacity and insulin sensitivity</td><td>Two to three full-body progressive resistance sessions per week is a realistic target for most adults. The metabolic marginal value of resistance training rises with age.</td></tr>
+          <tr><td>Protect sleep, manage stress, and respect circadian timing</td><td>Cortisol, sympathetic activity, and circadian insulin sensitivity</td><td>Consistent sleep schedule, avoid large late-night meals, and address chronic stress. These are foundational metabolic hygiene.</td></tr>
+        </tbody>
+      </table>
+      <p>No single strategy covers every context. A high-training-volume athlete may need larger amounts of rapidly available carbohydrate on heavy days; a sedentary person with metabolic impairment will often benefit most from sequence, retrogradation, and activity levers. Personalization requires a feedback loop.</p>
+    </section>
+
     <section id="tool">
-      <h2>An Interactive Illustration</h2>
+      <h2>Illustrative Interactive Model (Conceptual Demonstration Only)</h2>
       <div class="tool">
-        <p class="quiet">This is not a medical calculator. It is an illustrative model showing how available carbohydrate, food buffering, post-meal activity, and refinement can change post-meal pressure.</p>
-        <label for="carbs">Available carbohydrate <span id="carbVal">70g</span></label>
+        <p class="quiet">This is not a clinical calculator or individualized predictor. It is a deliberately simplified teaching model intended to illustrate how four conceptual variables—available digestible carbohydrate, buffering from protein/fiber/fat, post-meal muscle activity participation, and degree of refinement/gelatinization—can jointly shape “modeled pressure.” Real physiology involves far more nonlinear interactions, baseline individual differences, and hormonal dynamics.</p>
+        <label for="carbs">Available digestible carbohydrate <span id="carbVal">70g</span></label>
         <input id="carbs" type="range" min="10" max="160" value="70" aria-describedby="mealResult">
-        <label for="buffer">Protein/fiber buffer <span id="bufferVal">4</span></label>
+        <label for="buffer">Buffering factor (protein/fiber/fat composite) <span id="bufferVal">4</span></label>
         <input id="buffer" type="range" min="0" max="10" value="4" aria-describedby="mealResult">
-        <label for="activity">Post-meal activity <span id="activityVal">5</span></label>
+        <label for="activity">Post-meal muscle activity participation <span id="activityVal">5</span></label>
         <input id="activity" type="range" min="0" max="10" value="5" aria-describedby="mealResult">
-        <label for="refined">Refinement <span id="refinedVal">6</span></label>
+        <label for="refined">Refinement / gelatinization <span id="refinedVal">6</span></label>
         <input id="refined" type="range" min="0" max="10" value="6" aria-describedby="mealResult">
         <p class="result" id="mealResult" aria-live="polite"></p>
+        <p class="quiet" style="font-size:13px;margin-top:12px;">Model notes: Available carbohydrate directly increases load; the buffer factor approximates gastric-emptying delay and additional hormonal responses; activity participation represents contraction-mediated disposal; refinement amplifies effective appearance rate. Values are for illustration only and do not represent any individual’s actual glucose response.</p>
       </div>
     </section>
 
     <section id="sources">
-      <h2>Sources &amp; Limitations</h2>
-      <p class="quiet">The following provides general educational information and is not a substitute for professional medical advice, diagnosis, or treatment. People with diabetes, risk of hypoglycemia, who are pregnant, have kidney disease, a history of eating disorders, or take medications that affect blood glucose should consult a physician or registered dietitian.</p>
+      <h2>Sources, Scope, and Professional Guidance</h2>
+      <p class="quiet">This page presents general educational information synthesized from peer-reviewed physiology, nutrition, and clinical literature. <strong>It is not a substitute for professional medical advice, diagnosis, or individualized treatment.</strong> Anyone with diabetes (including gestational), hypoglycemia risk, kidney disease, eating-disorder history, cardiovascular disease, or who is taking medications that affect glucose or insulin (insulin, sulfonylureas, GLP-1 receptor agonists, etc.), or who is considering major dietary or exercise changes, should consult a physician, endocrinologist, or registered dietitian for personalized assessment and monitoring.</p>
       <ul>
-        <li><a href="https://www.cdc.gov/diabetes/healthy-eating/carb-counting-manage-blood-sugar.html">CDC: Carb Counting</a></li>
-        <li><a href="https://www.cdc.gov/diabetes/living-with/physical-activity.html">CDC: Physical Activity and Diabetes</a></li>
-        <li><a href="https://www.cdc.gov/diabetes/about/insulin-resistance-type-2-diabetes.html">CDC: Insulin Resistance and Type 2 Diabetes</a></li>
-        <li><a href="https://professional.diabetes.org/standards-of-care/practice-guidelines-resources">American Diabetes Association: Standards of Care in Diabetes 2026</a></li>
-        <li><a href="https://www.health.harvard.edu/staying-healthy/choosing-good-carbs-with-the-glycemic-index">Harvard Health: Choosing good carbs with the glycemic index</a></li>
+        <li>Nakrani MN, et al. Physiology, Glucose Metabolism. StatPearls. NCBI Bookshelf. (continuously updated)</li>
+        <li>Shukla AP, Iliescu RG, Thomas CE, Aronne LJ. Food order has a significant impact on postprandial glucose and insulin levels. Diabetes Care. 2015;38(7):e98-e99. doi:10.2337/dc15-0429</li>
+        <li>Sonia S, Witjaksono F, Ridwan R. Effect of cooling of cooked white rice on resistant starch content and glycemic response. Asia Pac J Clin Nutr. 2015;24(4):620-625. doi:10.6133/apjcn.2015.24.4.13</li>
+        <li>American Diabetes Association. Standards of Care in Diabetes—2026. Diabetes Care. 2026;49(Suppl 1)</li>
+        <li>CDC resources on carbohydrate counting, physical activity and diabetes, and insulin resistance (current online materials)</li>
+        <li>Harvard Health. Choosing good carbs with the glycemic index (educational overview)</li>
+        <li>Han HS, et al. Regulation of glucose metabolism from a liver-centric perspective. Exp Mol Med. 2016</li>
+        <li>Additional supporting literature includes systematic reviews and randomized trials on incretins, GLUT4 trafficking, resistant starch/retrogradation, and postprandial physiology (searchable via PubMed with terms such as “resistant starch retrogradation glycemic” and “carbohydrate food order postprandial”).</li>
       </ul>
     </section>
+
   </main>
-  <div class="wrap footer-note">In summary, glucose management is not about fearing carbohydrates. It centers on matching glucose entry speed, muscle clearance capacity, storage capacity, and long-term energy state.</div>
+  <div class="wrap footer-note">Glucose management is not about fearing carbohydrates. It is about keeping the rate of glucose entry, tissue clearance and storage capacity, regulation of endogenous production, and the body’s overall energy and hormonal state in an adaptive matching relationship. Muscle quantity and quality, hepatic function, thoughtful food structure and eating behavior, and adequate recovery are all integral parts of that matching system.</div>
+
   <script>
     const ids = ['carbs', 'buffer', 'activity', 'refined'];
     const labels = {
@@ -152,11 +243,12 @@
       labels.buffer.textContent = buffer;
       labels.activity.textContent = activity;
       labels.refined.textContent = refined;
+      // Teaching model only — real physiology is highly nonlinear
       const raw = carbs * (1 + refined / 14) - buffer * 5 - activity * 4;
       const score = Math.max(5, Math.min(100, Math.round(raw)));
-      const level = score < 45 ? 'lower' : score < 72 ? 'moderate' : 'higher';
-      const advice = score < 45 ? 'Entry speed and buffering look relatively friendly.' : score < 72 ? 'More vegetables/protein or a post-meal walk could help.' : 'Available carbohydrate and refinement are high; reduce liquid sugars and large refined-starch portions first.';
-      document.getElementById('mealResult').textContent = `Modeled pressure: ${level} (${score}/100). ${advice}`;
+      const level = score < 45 ? 'lower modeled load' : score < 72 ? 'moderate modeled load' : 'higher modeled load';
+      const advice = score < 45 ? 'Buffering and activity participation appear reasonably matched to entry rate.' : score < 72 ? 'Consider increasing buffering (vegetables/protein/fiber) or post-meal activity.' : 'Available carbohydrate and refinement are high; prioritize reducing liquid sugars, adding co-ingested buffers, post-meal movement, or altering staple food form.';
+      document.getElementById('mealResult').textContent = `Teaching-modeled pressure: ${level} (${score}/100). ${advice}`;
     }
     ids.forEach((id) => document.getElementById(id).addEventListener('input', updateMeal));
     updateMeal();

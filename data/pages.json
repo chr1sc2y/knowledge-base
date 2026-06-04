@@ -3,8 +3,8 @@
     "slug": "blood-glucose",
     "zh_title": "血糖、碳水与代谢",
     "en_title": "Blood Glucose, Carbohydrates, and Metabolism",
-    "zh_subtitle": "碳水化合物的结构、消化、血糖调控、胰岛素、淀粉摄入、力量训练以及日常策略。",
-    "en_subtitle": "Carbohydrate structure, digestion, blood glucose control, insulin, starch intake, strength training, and daily strategies.",
+    "zh_subtitle": "从碳水分子结构、消化吸收生理、激素调控、胰岛素抵抗、肝肌协同到餐后反应调节因素（进餐顺序、回生淀粉、醋、活动等），系统讲解血糖稳态机制与实践意义。",
+    "en_subtitle": "From carbohydrate chemistry and food structure, digestion/absorption physiology, hormonal control, insulin resistance, liver-muscle interplay, to modulators of postprandial responses (food order, resistant starch, vinegar, activity), a systematic treatment of glucose homeostasis mechanisms and practical implications.",
     "zh_category": "健康与营养",
     "en_category": "Health & Nutrition",
     "tags": ["glucose", "carbs", "nutrition", "metabolism", "strength training", "血糖", "碳水", "胰岛素", "力量训练"],
@@ -12,7 +12,7 @@
     "en_search": "glucose carbohydrates monosaccharides disaccharides polysaccharides starch fiber insulin glucagon metabolism strength training postprandial",
     "zh_path": "articles/blood-glucose.html",
     "en_path": "articles/blood-glucose.html",
-    "date": "2026-06-03",
+    "date": "2026-06-04",
     "featured": true
   }
 ]
