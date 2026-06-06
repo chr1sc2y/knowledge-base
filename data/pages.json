@@ -14,5 +14,21 @@
     "en_path": "articles/blood-glucose.html",
     "date": "2026-06-04",
     "featured": true
+  },
+  {
+    "slug": "xinjiang-northern-photography",
+    "zh_title": "新疆初夏北疆摄影环线",
+    "en_title": "A Photography Journey Through Northern Xinjiang in Early Summer",
+    "zh_subtitle": "2026年6月13天北疆行程完整分析：从吐鲁番坎儿井火焰山、江布拉克、巴音布鲁克九曲十八弯、喀拉峻草原，到赛里木湖、阿拉山口、乌尔禾魔鬼城、喀纳斯禾木。历史人文风景 + 各景点摄影题材与推荐焦段。",
+    "en_subtitle": "Complete 13-day Northern Xinjiang loop analysis (June 2026): Turpan Karez & Flaming Mountain, Jiangbulak, Bayanbulak Nine Bends, Kalajun Grassland, Sayram Lake, Alashankou, Wuerhe Devil City, Kanas & Hemu Tuva village. History, culture, scenery plus photography subjects and focal-length recommendations for every stop.",
+    "zh_category": "旅行与摄影",
+    "en_category": "Travel & Photography",
+    "tags": ["新疆", "摄影", "旅行", "北疆", "草原", "湖泊", "沙漠", "喀纳斯", "禾木", "巴音布鲁克", "喀拉峻", "魔鬼城", "xinjiang", "photography", "travel", "grassland", "lake", "desert", "kanas", "hemu"],
+    "zh_search": "新疆 摄影 旅行 北疆 吐鲁番 坎儿井 火焰山 库木塔格 江布拉克 巴音布鲁克 九曲十八弯 特克斯 喀拉峻 赛里木湖 阿拉山口 魔鬼城 雅丹 喀纳斯 观鱼台 禾木 图瓦 阿勒泰 沙漠公路 镜头 焦段 广角 长焦 草原 湖光 山色 边境 游牧",
+    "en_search": "xinjiang photography travel northern loop turpan karez flaming mountain kumtag jiangbulak bayanbulak nine bends tekes kalajun sayram alashankou devil city yardang kanas guanyu terrace hemu tuva altay desert highway lens focal length wide tele grassland lake mountain border nomad",
+    "zh_path": "articles/xinjiang-northern-photography.html",
+    "en_path": "articles/xinjiang-northern-photography.html",
+    "date": "2026-06-06",
+    "featured": false
   }
 ]
