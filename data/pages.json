@@ -30,5 +30,21 @@
     "en_path": "articles/xinjiang-northern-photography.html",
     "date": "2025-06-06",
     "featured": false
+  },
+  {
+    "slug": "asset-allocation-operating-system",
+    "zh_title": "资产配置作为个人操作系统",
+    "en_title": "Asset Allocation as a Personal Operating System",
+    "zh_subtitle": "用系统思维重新理解资产配置：功能模块设计、维护成本控制、足够好就执行的纪律，以及兼容人性的实用框架。",
+    "en_subtitle": "Rethinking asset allocation through systems thinking: defining functional roles, minimizing maintenance cost, the discipline of 'good enough to execute', and designing rules compatible with real human behavior.",
+    "zh_category": "个人系统与决策",
+    "en_category": "Personal Systems & Decision Making",
+    "tags": ["asset allocation", "portfolio construction", "systems thinking", "behavioral finance", "investment discipline", "资产配置", "系统思维", "行为金融", "投资纪律"],
+    "zh_search": "资产配置 操作系统 功能模块 维护成本 足够好 执行 冻结 复盘频率 择时 回撤 兼容人性 第二层思维 钟摆 市场阶段 分散 核心仓 卫星仓 缓冲 风控",
+    "en_search": "asset allocation operating system functional modules maintenance cost good enough execute freeze review frequency timing drawdown human compatibility second level thinking pendulum market stages diversification core position satellite cash buffer risk control",
+    "zh_path": "articles/asset-allocation-operating-system.html",
+    "en_path": "articles/asset-allocation-operating-system.html",
+    "date": "2026-06-20",
+    "featured": false
   }
 ]

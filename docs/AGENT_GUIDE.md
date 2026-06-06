@@ -4,6 +4,8 @@ This document is the single operating guide for agents maintaining this
 Knowledge Base. Keep it concise and update it whenever the site architecture,
 language rules, or project status changes.
 
+**Important**: All article content must also follow the stricter rules in [ARTICLE_WRITING_STANDARDS.md](./ARTICLE_WRITING_STANDARDS.md). That document takes precedence on matters of factual objectivity, tone, and what may or may not appear in public pages.
+
 ## Product Goal
 
 Build a public static Knowledge Base at `knowledge.prov1dence.top` for clear,
@@ -91,23 +93,28 @@ Pending:
 ## Maintenance Workflow
 
 1. Add or edit Chinese content in `articles/cn/` and the matching English version in `articles/en/`.
-2. Keep language-pair links (in nav and index data) in sync.
-3. Run the build script or local demo server.
-4. Verify:
+2. Ensure the content fully complies with [ARTICLE_WRITING_STANDARDS.md](./ARTICLE_WRITING_STANDARDS.md) (objective facts only, no subjective language, no privacy leaks).
+3. Keep language-pair links (in nav and index data) in sync.
+4. Run the build script or local demo server.
+5. Verify:
    - HTML parses.
    - JavaScript parses.
    - Language switch links resolve.
    - Homepage has no visible References section.
    - Article pages are not dominated by cards.
-5. Commit only after verification.
+   - Content passes the standards checklist in ARTICLE_WRITING_STANDARDS.md.
+6. Commit only after verification.
 
 ## Privacy & Public Content Guidelines
 
-When creating or editing public articles based on personal travel, experiences, or private documents (e.g. Notion notes):
+When creating or editing public articles based on personal travel, experiences, or private documents (e.g. Notion notes or diaries):
 
 - **Strip all itinerary details**: Remove any day-by-day sequencing, specific trip structure, "Day 1", "after visiting X then Y", loop descriptions, or references to how the places were visited in order.
 - **Remove all time-sensitive and personal information**: No specific dates, years, flight times, costs, budgets, return details, or any personally identifying logistics.
-- **Focus only on the destinations themselves**: Articles must read as standalone guides to places, their history, culture, scenery characteristics, and photography opportunities (subjects, light, focal length recommendations). Do not frame content around a personal journey or schedule.
+- **Focus only on the destinations themselves** (for travel) or **only on generalizable knowledge** (for other personal sources): Articles must read as standalone explanatory resources. Do not frame content around any individual's journey, decisions, or realizations.
 - The less privacy-related information, the better. Treat every public page as if it could be read by anyone on the open internet.
 - Apply this rule to titles, subtitles, metadata, body text, tables, notes, and footers.
-- Update this AGENT_GUIDE.md whenever the rule needs reinforcement.
+
+See [ARTICLE_WRITING_STANDARDS.md](./ARTICLE_WRITING_STANDARDS.md) for the full, stricter rules on factual objectivity, prohibited language, and tone.
+
+Update this AGENT_GUIDE.md whenever the high-level privacy rules change.
