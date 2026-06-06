@@ -100,3 +100,14 @@ Pending:
    - Homepage has no visible References section.
    - Article pages are not dominated by cards.
 5. Commit only after verification.
+
+## Privacy & Public Content Guidelines
+
+When creating or editing public articles based on personal travel, experiences, or private documents (e.g. Notion notes):
+
+- **Strip all itinerary details**: Remove any day-by-day sequencing, specific trip structure, "Day 1", "after visiting X then Y", loop descriptions, or references to how the places were visited in order.
+- **Remove all time-sensitive and personal information**: No specific dates, years, flight times, costs, budgets, return details, or any personally identifying logistics.
+- **Focus only on the destinations themselves**: Articles must read as standalone guides to places, their history, culture, scenery characteristics, and photography opportunities (subjects, light, focal length recommendations). Do not frame content around a personal journey or schedule.
+- The less privacy-related information, the better. Treat every public page as if it could be read by anyone on the open internet.
+- Apply this rule to titles, subtitles, metadata, body text, tables, notes, and footers.
+- Update this AGENT_GUIDE.md whenever the rule needs reinforcement.
