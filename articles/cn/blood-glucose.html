@@ -6,7 +6,7 @@
   <title>血糖、碳水与代谢</title>
   <meta name="description" content="用大白话讲清楚血糖是怎么回事：碳水吃进去后身体怎么处理、为什么会波动、哪些小动作能让它更稳。重点讲实用、不绕弯子。">
   <style>
-    :root{--bg:#f7f3ea;--fg:#202523;--muted:#68716d;--line:#d8cfbf;--ink:#163d3a;--accent:#b24b2f;--note:#fffaf0;--soft:#efe7d8}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.78;-webkit-font-smoothing:antialiased}.top{position:sticky;top:0;background:rgba(247,243,234,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:4}.nav{width:min(1040px,calc(100vw - 40px));margin:0 auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:14px}.nav a{color:var(--ink);font-size:13px;font-weight:900;text-decoration:none}.lang{border:1px solid var(--line);border-radius:999px;padding:7px 12px}.wrap{width:min(820px,calc(100vw - 40px));margin:0 auto}header{padding:48px 0 32px}.kicker{color:var(--accent);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,5.8vw,52px);line-height:1.05;letter-spacing:-.03em;margin:10px 0 14px}.lead{font-size:19px;color:var(--muted);margin:0}.spine{border-top:1px solid var(--line)}section{padding:28px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,"Times New Roman",serif;font-size:26px;line-height:1.15;letter-spacing:-.015em;margin:0 0 10px}h3{font-size:18px;margin:24px 0 8px}p{margin:0 0 15px}.quiet{color:var(--muted)}.note{background:var(--note);border-left:4px solid var(--accent);padding:16px 18px;margin:18px 0}.soft{background:var(--soft);border-left-color:var(--ink)}.flow{display:grid;gap:8px;margin:16px 0}.node{border-top:1px solid rgba(216,207,191,.85);padding:12px 0}.node b{color:var(--ink)}table{width:100%;border-collapse:collapse;font-size:15px;margin-top:14px}th,td{border-bottom:1px solid var(--line);padding:10px 6px;text-align:left;vertical-align:top}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}tr:last-child td{border-bottom:none}.tool{margin:18px 0 10px;padding:18px;border:1px solid var(--line);background:#fffdf8}.tool label{display:block;font-size:13px;color:var(--muted);margin:14px 0 4px}.tool input[type=range]{width:100%}.result{margin:16px 0 4px;font-weight:600}.footer-note{margin:32px auto 60px;color:var(--muted);font-size:14px;max-width:820px;padding:0 20px}
+    :root{--bg:#f7f3ea;--fg:#202523;--muted:#68716d;--line:#d8cfbf;--ink:#163d3a;--accent:#b24b2f;--note:#fffaf0;--soft:#efe7d8}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.78;-webkit-font-smoothing:antialiased}.top{position:sticky;top:0;background:rgba(247,243,234,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:4}.nav{width:min(1040px,calc(100vw - 40px));margin:0 auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:14px}.nav a{color:var(--ink);font-size:13px;font-weight:900;text-decoration:none}.lang{border:1px solid var(--line);border-radius:999px;padding:7px 12px}.wrap{width:min(820px,calc(100vw - 40px));margin:0 auto}header{padding:48px 0 32px}.kicker{color:var(--accent);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,5.8vw,52px);line-height:1.05;letter-spacing:-.03em;margin:10px 0 14px}.lead{font-size:19px;color:var(--muted);margin:0}.spine{border-top:1px solid var(--line)}section{padding:28px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,"Times New Roman",serif;font-size:26px;line-height:1.15;letter-spacing:-.015em;margin:0 0 10px}h3{font-size:18px;margin:24px 0 8px}p{margin:0 0 15px}.quiet{color:var(--muted)}.note{background:var(--note);border-left:4px solid var(--accent);padding:16px 18px;margin:18px 0}.soft{background:var(--soft);border-left-color:var(--ink)}.flow{display:grid;gap:8px;margin:16px 0}.node{border-top:1px solid rgba(216,207,191,.85);padding:12px 0}.node b{color:var(--ink)}table{width:100%;border-collapse:collapse;font-size:15px;margin-top:14px}th,td{border-bottom:1px solid var(--line);padding:10px 6px;text-align:left;vertical-align:top}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}tr:last-child td{border-bottom:none}.food-guide{margin-top:20px}.macro-legend,.risk-grid,.food-grid,.decision-grid{display:grid;gap:12px}.macro-legend{grid-template-columns:repeat(4,1fr);margin:18px 0}.macro-card,.risk-card,.food-card,.decision-card{border:1px solid var(--line);background:#fffdf8;border-radius:8px}.macro-card{padding:14px}.macro-card b{display:block;color:var(--ink);font-size:15px;line-height:1.25}.macro-card span{display:block;color:var(--muted);font-size:13px;line-height:1.45;margin-top:6px}.risk-grid{grid-template-columns:repeat(2,1fr);margin:18px 0 24px}.risk-card{padding:15px 16px}.risk-card strong{display:block;color:var(--accent);font-size:13px;letter-spacing:.03em;text-transform:uppercase}.risk-card p{margin:6px 0 0;font-size:14px;line-height:1.55}.food-band{margin-top:26px}.food-band h3{margin-bottom:4px}.band-lead{color:var(--muted);font-size:14px;margin-bottom:12px}.food-grid{grid-template-columns:repeat(2,1fr)}.food-card{padding:14px;min-width:0}.food-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:10px}.food-head h4{margin:0;color:var(--fg);font-size:17px;line-height:1.25}.food-head p{margin:4px 0 0;color:var(--muted);font-size:13px;line-height:1.35}.tag{flex:0 0 auto;border:1px solid rgba(22,61,58,.25);border-radius:999px;color:var(--ink);font-size:12px;font-weight:800;line-height:1;padding:6px 8px;background:#f4efe4}.tag.hot{border-color:rgba(178,75,47,.32);color:var(--accent);background:#fff4ec}.tag.easy{border-color:rgba(22,61,58,.28);background:#edf3ed}.metric{display:grid;grid-template-columns:54px 1fr 42px;gap:8px;align-items:center;margin:7px 0;font-size:13px}.metric b{color:var(--muted);font-weight:800}.metric span:last-child{text-align:right;color:var(--fg);font-weight:800}.bar{height:8px;border-radius:999px;background:#e6dccb;overflow:hidden}.bar i{display:block;height:100%;width:var(--v);border-radius:999px;background:var(--ink)}.bar.carbs i{background:var(--accent)}.bar.sugar i{background:#c48743}.bar.protein i{background:#28665f}.bar.fiber i{background:#5f7f3a}.food-tip{border-top:1px solid var(--line);margin:12px 0 0;padding-top:10px;color:var(--fg);font-size:14px;line-height:1.55}.decision-grid{grid-template-columns:repeat(2,1fr);margin-top:12px}.decision-card{padding:14px 16px}.decision-card b{display:block;color:var(--ink);line-height:1.3}.decision-card p{margin:6px 0 0;color:var(--muted);font-size:14px;line-height:1.55}@media(max-width:760px){.macro-legend,.risk-grid,.food-grid,.decision-grid{grid-template-columns:1fr}.food-head{align-items:flex-start}.metric{grid-template-columns:50px 1fr 40px}}.tool{margin:18px 0 10px;padding:18px;border:1px solid var(--line);background:#fffdf8}.tool label{display:block;font-size:13px;color:var(--muted);margin:14px 0 4px}.tool input[type=range]{width:100%}.result{margin:16px 0 4px;font-weight:600}.footer-note{margin:32px auto 60px;color:var(--muted);font-size:14px;max-width:820px;padding:0 20px}
   </style>
 </head>
 <body>
@@ -119,98 +119,217 @@
       <p>下面的数值按常见熟重、每 100g 可食部分粗略估算。不同品种、含水量、烹饪方式、是否带皮、是否加油加糖，都会让数字变化。看血糖时，最重要的是“可消化碳水总量”，不是只看食物甜不甜。</p>
       <div class="note soft">“糖”只是碳水的一小部分。白米饭、馒头、面条不甜，但淀粉很多，消化后照样变成葡萄糖；鸡肉、牛肉、羊肉几乎没有碳水和糖，主要提供蛋白质和脂肪。</div>
 
-      <h3>精米精面和薯类</h3>
-      <table>
-        <thead><tr><th>食物（熟重约 100g）</th><th>可消化碳水 / 糖</th><th>蛋白质 / 膳食纤维</th><th>血糖提示</th></tr></thead>
-        <tbody>
-          <tr><td>白米饭</td><td>碳水约 28g；糖约 0g</td><td>蛋白约 2.5g；纤维约 0.3-0.5g</td><td>不甜但升糖很直接。半碗到一碗的差别很大，最好配菜和肉。</td></tr>
-          <tr><td>白粥</td><td>碳水约 10-16g；糖约 0g</td><td>蛋白约 1-2g；纤维很少</td><td>单看 100g 碳水少，但粥很容易吃多、消化快，餐后峰值可能不低。</td></tr>
-          <tr><td>白面条</td><td>碳水约 24-27g；糖约 0-1g</td><td>蛋白约 4-6g；纤维约 1-2g</td><td>煮得越软烂越容易升。配肉蛋菜，比单吃一大碗面稳很多。</td></tr>
-          <tr><td>馒头 / 白面包</td><td>碳水约 45-55g；糖约 2-6g</td><td>蛋白约 7-9g；纤维约 1-3g</td><td>含水少、单位重量碳水高，两个馒头的碳水压力通常比一碗饭大。</td></tr>
-          <tr><td>土豆</td><td>碳水约 17-20g；糖约 1g</td><td>蛋白约 2g；纤维约 1.5-2.5g</td><td>蒸煮土豆不算可怕，但炸薯条会多很多油和热量。放凉后抗性淀粉会增加一些。</td></tr>
-          <tr><td>红薯</td><td>碳水约 18-24g；糖约 5-7g</td><td>蛋白约 1.5-2g；纤维约 2.5-4g</td><td>比白米饭纤维和微量营养多，也更甜；别把它当“随便吃不升糖”的零食。</td></tr>
-          <tr><td>玉米</td><td>碳水约 18-22g；糖约 3-6g</td><td>蛋白约 3-4g；纤维约 2-3g</td><td>纤维比精米面多，但仍然是主食。吃玉米就相应少吃饭面。</td></tr>
-        </tbody>
-      </table>
+      <div class="food-guide">
+        <div class="macro-legend">
+          <div class="macro-card"><b>碳水看“升糖压力”</b><span>米饭、馒头、粉面不一定甜，但淀粉消化后就是葡萄糖。</span></div>
+          <div class="macro-card"><b>糖看“甜和液体风险”</b><span>水果和牛奶有天然糖；甜饮、甜拿铁、果汁吸收最快。</span></div>
+          <div class="macro-card"><b>蛋白看“缓冲和饱腹”</b><span>肉、蛋、豆制品、酸奶能让一餐更稳，也更不容易饿。</span></div>
+          <div class="macro-card"><b>纤维看“刹车能力”</b><span>绿叶菜、全谷、豆类和带皮薯类会拖慢糖进入血液。</span></div>
+        </div>
 
-      <h3>蔬菜和水果</h3>
-      <table>
-        <thead><tr><th>食物（约 100g）</th><th>可消化碳水 / 糖</th><th>蛋白质 / 膳食纤维</th><th>血糖提示</th></tr></thead>
-        <tbody>
-          <tr><td>西蓝花</td><td>碳水约 4-5g；糖约 1-2g</td><td>蛋白约 3g；纤维约 2.5-3g</td><td>低碳水、高纤维，适合放在一餐前半段吃，给主食“垫底”。</td></tr>
-          <tr><td>小青菜 / 油菜类</td><td>碳水约 2-4g；糖约 1g</td><td>蛋白约 1.5-2g；纤维约 1-2g</td><td>血糖压力很小，主要价值是体积、纤维、钾和镁。注意少油炒。</td></tr>
-          <tr><td>菠菜</td><td>碳水约 2-4g；糖约 0-1g</td><td>蛋白约 2-3g；纤维约 2g</td><td>很适合配主食和肉。草酸较多，焯水后再炒或拌会更舒服。</td></tr>
-          <tr><td>苹果</td><td>碳水约 14g；糖约 10g</td><td>蛋白约 0.3g；纤维约 2-3g</td><td>完整吃比榨汁稳很多。一个中等苹果通常约 20-25g 碳水。</td></tr>
-          <tr><td>香蕉</td><td>碳水约 22-23g；糖约 12g</td><td>蛋白约 1g；纤维约 2-3g</td><td>比苹果碳水更集中，越熟越容易升。运动前后可以，控糖时注意份量。</td></tr>
-        </tbody>
-      </table>
+        <div class="risk-grid">
+          <div class="risk-card"><strong>最容易误判</strong><p>白粥、米线、肠粉、凉皮看起来轻，其实消化快、容易吃多。</p></div>
+          <div class="risk-card"><strong>不甜但碳水高</strong><p>白米饭、馒头、全麦馕、全麦面包都要按主食算。</p></div>
+          <div class="risk-card"><strong>不升糖但别无限吃</strong><p>肥牛、羊排、鸡翅、奶酪主要问题是脂肪、热量和钠。</p></div>
+          <div class="risk-card"><strong>更稳的组合</strong><p>先吃菜和蛋白，再吃一小拳主食，比单吃一大碗粉面稳很多。</p></div>
+        </div>
 
-      <h3>粗粮、全麦和坚果</h3>
-      <table>
-        <thead><tr><th>食物（约 100g）</th><th>可消化碳水 / 糖</th><th>蛋白质 / 膳食纤维</th><th>血糖提示</th></tr></thead>
-        <tbody>
-          <tr><td>粗粮饭 / 杂粮饭（熟）</td><td>碳水约 22-28g；糖约 0-1g</td><td>蛋白约 3-5g；纤维约 1.5-4g</td><td>比白米饭纤维和矿物质更多，但仍然是主食。别因为“粗粮”就翻倍吃。</td></tr>
-          <tr><td>全麦面包</td><td>碳水约 35-45g；糖约 3-7g</td><td>蛋白约 9-13g；纤维约 5-8g</td><td>看配料表很关键：全麦粉排第一、纤维高、少加糖的更好。</td></tr>
-          <tr><td>腰果</td><td>碳水约 30g；糖约 5-6g</td><td>蛋白约 18g；纤维约 3g</td><td>坚果里碳水偏高，但份量通常小。每天一小把即可，别按 100g 吃。</td></tr>
-          <tr><td>杏仁</td><td>碳水约 20-22g；糖约 4g</td><td>蛋白约 21g；纤维约 10-13g</td><td>纤维和蛋白都不错，血糖压力相对小；热量高，适合 15-25g 小份量。</td></tr>
-          <tr><td>核桃</td><td>碳水约 14g；糖约 2-3g</td><td>蛋白约 15g；纤维约 6-7g</td><td>碳水不高，脂肪很高。更像“健康脂肪补充”，不是低热量零食。</td></tr>
-        </tbody>
-      </table>
+        <div class="food-band">
+          <h3>主食和薯类：先看碳水条</h3>
+          <p class="band-lead">这些食物的关键不是甜不甜，而是每份主食里有多少可消化碳水。</p>
+          <div class="food-grid">
+            <article class="food-card">
+              <div class="food-head"><div><h4>白米饭</h4><p>熟重 100g</p></div><span class="tag hot">直接升糖</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:51%"></i></span><span>28g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:2%"></i></span><span>0g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:8%"></i></span><span>2.5g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:4%"></i></span><span>低</span></div>
+              <p class="food-tip">不甜也会升糖。半碗到一碗差别很大，最好配菜和肉。</p>
+            </article>
 
-      <h3>蛋白粉和低脂奶酪</h3>
-      <table>
-        <thead><tr><th>食物（约 100g，蛋白粉另看说明）</th><th>可消化碳水 / 糖</th><th>蛋白质 / 膳食纤维</th><th>血糖提示</th></tr></thead>
-        <tbody>
-          <tr><td>乳清蛋白粉（每勺约 30g）</td><td>碳水约 1-5g；糖约 0-3g</td><td>蛋白约 20-25g；纤维通常 0g</td><td>本身升糖压力小，适合补蛋白。注意调味款可能加糖，别用它替代正常饭菜。</td></tr>
-          <tr><td>低脂奶酪 / cottage cheese</td><td>碳水约 3-5g；糖约 2-4g</td><td>蛋白约 10-13g；纤维 0g</td><td>蛋白质不错，碳水低。注意钠含量和是否额外加糖。</td></tr>
-          <tr><td>低脂硬质奶酪</td><td>碳水约 1-3g；糖约 0-1g</td><td>蛋白约 25-32g；纤维 0g</td><td>很低碳水、高蛋白，但钠和饱和脂肪不低，适合少量搭配。</td></tr>
-        </tbody>
-      </table>
+            <article class="food-card">
+              <div class="food-head"><div><h4>白粥</h4><p>熟重 100g</p></div><span class="tag hot">容易吃多</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:24%"></i></span><span>10-16g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:2%"></i></span><span>0g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:5%"></i></span><span>1-2g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:2%"></i></span><span>很少</span></div>
+              <p class="food-tip">100g 数字不高，但粥消化快、份量常常被低估。</p>
+            </article>
 
-      <h3>健身、咖啡和外食场景里常见的选择</h3>
-      <table>
-        <thead><tr><th>食物（常见份量）</th><th>可消化碳水 / 糖</th><th>蛋白质 / 膳食纤维</th><th>血糖提示</th></tr></thead>
-        <tbody>
-          <tr><td>燕麦片（干 40g）</td><td>碳水约 24-27g；糖约 0-1g</td><td>蛋白约 5g；纤维约 4g</td><td>比白粥更有纤维和饱腹感。用无糖酸奶、牛奶、蛋白粉搭配，比加蜂蜜果干更稳。</td></tr>
-          <tr><td>鸡蛋（2 个）</td><td>碳水约 1g；糖约 0g</td><td>蛋白约 12-14g；纤维 0g</td><td>几乎不升糖，适合早餐或训练后补蛋白。真正要注意的是烹调用油和搭配的主食。</td></tr>
-          <tr><td>北豆腐 / 老豆腐（100g）</td><td>碳水约 2-4g；糖约 0-1g</td><td>蛋白约 8-12g；纤维约 0.5-1g</td><td>低碳水、蛋白不错，适合替代一部分肥肉。红烧、麻辣做法里的油盐另算。</td></tr>
-          <tr><td>无糖豆浆（250ml）</td><td>碳水约 3-6g；糖约 1-3g</td><td>蛋白约 7-10g；纤维约 1-2g</td><td>比甜豆浆稳很多。买现成的要看配料表，很多“豆乳饮料”糖不低。</td></tr>
-          <tr><td>无糖希腊酸奶（170g）</td><td>碳水约 5-8g；糖约 4-7g（乳糖为主）</td><td>蛋白约 15-20g；纤维 0g</td><td>适合补蛋白。加水果可以，别再叠加蜂蜜、麦片脆、果酱一大堆。</td></tr>
-          <tr><td>牛奶 / 拿铁（250ml）</td><td>碳水约 10-13g；糖约 10-13g（乳糖）</td><td>蛋白约 8g；纤维 0g</td><td>黑咖啡几乎不升糖，拿铁要把牛奶里的乳糖算进去。甜拿铁、奶茶另按甜饮处理。</td></tr>
-          <tr><td>黑麦馕 / 全麦馕（100g）</td><td>碳水约 45-55g；糖约 1-4g</td><td>蛋白约 8-12g；纤维约 5-10g</td><td>纤维比普通白面饼好，但单位重量碳水仍然高。适合替代白馕，不适合无限加量。</td></tr>
-          <tr><td>肠粉 / 凉皮 / 米线粉类（100g）</td><td>碳水约 20-30g；糖约 0-2g</td><td>蛋白约 1-4g；纤维很少</td><td>口感轻，但本质多是精制淀粉。加蛋、肉、豆制品和青菜，比只吃粉皮稳。</td></tr>
-          <tr><td>火锅 / 麻辣烫里的主食和丸子</td><td>宽粉、土豆粉、年糕、鱼豆腐等碳水差异很大</td><td>肉片、虾滑、豆腐蛋白较高；蔬菜纤维高</td><td>先选肉、豆腐、绿叶菜、菌菇，再少量粉面年糕。甜蘸料、油碟、饮料是隐藏变量。</td></tr>
-        </tbody>
-      </table>
+            <article class="food-card">
+              <div class="food-head"><div><h4>白面条</h4><p>熟重 100g</p></div><span class="tag hot">精制淀粉</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:47%"></i></span><span>24-27g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:5%"></i></span><span>0-1g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:16%"></i></span><span>4-6g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:12%"></i></span><span>1-2g</span></div>
+              <p class="food-tip">煮得越软烂越容易升。加肉蛋菜，比单吃面稳。</p>
+            </article>
 
-      <h3>鸡肉、牛肉、羊肉：不同部位差在哪？</h3>
-      <p>肉类本身基本不升血糖，因为几乎没有可消化碳水；但脂肪高的部位会让一餐热量更高，也可能让胃排空变慢。对控血糖和减脂来说，优先看“蛋白质够不够、脂肪是否超出需要”。</p>
-      <table>
-        <thead><tr><th>肉类部位（熟重约 100g）</th><th>碳水 / 糖 / 纤维</th><th>蛋白质 / 脂肪</th><th>怎么选更实用</th></tr></thead>
-        <tbody>
-          <tr><td>鸡胸肉（去皮）</td><td>基本 0g</td><td>蛋白约 30-32g；脂肪约 3-5g</td><td>高蛋白、低脂，适合想控热量的人；注意别只吃鸡胸导致饮食太单调。</td></tr>
-          <tr><td>鸡腿肉（去皮）</td><td>基本 0g</td><td>蛋白约 25-27g；脂肪约 8-12g</td><td>比鸡胸更有脂肪和口感，仍然是不错蛋白来源。去皮能明显降脂肪。</td></tr>
-          <tr><td>鸡翅 / 鸡皮较多部位</td><td>基本 0g</td><td>蛋白约 25-28g；脂肪约 13-20g</td><td>血糖不一定升，但热量容易高；烧烤、炸、蜜汁做法还会额外加油加糖。</td></tr>
-          <tr><td>牛里脊 / 瘦牛肉</td><td>基本 0g</td><td>蛋白约 26-29g；脂肪约 5-10g</td><td>优质蛋白和铁、锌较多。想控脂肪时选瘦肉、少油烹饪。</td></tr>
-          <tr><td>牛腱 / 牛腿肉</td><td>基本 0g</td><td>蛋白约 28-31g；脂肪约 4-8g</td><td>蛋白密度高，适合卤、炖。卤汁和蘸料里的糖盐另算。</td></tr>
-          <tr><td>牛腩 / 肋眼 / 肥牛卷</td><td>基本 0g</td><td>蛋白约 18-28g；脂肪约 15-30g</td><td>脂肪高，饱腹强但热量也高。火锅肥牛不升糖，不代表能无限吃。</td></tr>
-          <tr><td>羊腿 / 羊里脊</td><td>基本 0g</td><td>蛋白约 25-29g；脂肪约 6-12g</td><td>相对瘦，蛋白质不错。搭配蔬菜和少量主食，血糖压力通常小。</td></tr>
-          <tr><td>羊排 / 羊腩 / 肥羊卷</td><td>基本 0g</td><td>蛋白约 18-26g；脂肪约 18-35g</td><td>脂肪和热量很高，适合少量搭配；别让油脂把总热量悄悄拉爆。</td></tr>
-        </tbody>
-      </table>
+            <article class="food-card">
+              <div class="food-head"><div><h4>馒头 / 白面包</h4><p>约 100g</p></div><span class="tag hot">高密度主食</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:91%"></i></span><span>45-55g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:27%"></i></span><span>2-6g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:25%"></i></span><span>7-9g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:15%"></i></span><span>1-3g</span></div>
+              <p class="food-tip">含水少，单位重量碳水高。两个馒头通常比一碗饭压力更大。</p>
+            </article>
 
-      <h3>把这些数字换成吃饭决策</h3>
-      <ul>
-        <li>一顿饭先估主食：熟米饭 100g 大约 28g 碳水，馒头 100g 可能接近 50g 碳水，差别很大。</li>
-        <li>蛋白质负责“缓冲”和饱腹：每餐有一掌心鸡肉、鱼、牛羊瘦肉、蛋、豆制品，通常比只吃主食稳。</li>
-        <li>纤维负责“刹车”：绿叶菜、菌菇、豆类、全谷物和带皮薯类，能让糖进血液慢一点。</li>
-        <li>水果不是不能吃：苹果、香蕉这类要按“一个水果里的碳水”算，完整吃，少榨汁。</li>
-        <li>坚果和奶酪主要看份量：它们通常不怎么升糖，但脂肪、热量、钠容易被低估。</li>
-        <li>蛋白粉只是补缺口：如果正餐蛋白不够，一勺有用；如果已经吃够肉蛋奶豆，就不是必须。</li>
-        <li>外食优先拆结构：这顿里哪些是主食粉面，哪些是蛋白质，哪些是蔬菜，哪些是油和糖。拆清楚之后就不容易被“看起来不甜”的淀粉骗到。</li>
-        <li>肉不升糖，不等于随便吃：肥肉、炸鸡、肥牛、羊排主要问题是脂肪和热量，不是糖。</li>
-        <li>最稳的盘子通常长这样：半盘非淀粉蔬菜 + 一掌心蛋白质 + 一小拳主食 + 少量油脂。</li>
-      </ul>
+            <article class="food-card">
+              <div class="food-head"><div><h4>土豆</h4><p>蒸煮 100g</p></div><span class="tag">中等主食</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:35%"></i></span><span>17-20g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:7%"></i></span><span>1g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:6%"></i></span><span>2g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:15%"></i></span><span>1.5-2.5g</span></div>
+              <p class="food-tip">蒸煮不算可怕；炸薯条的问题是油和热量。放凉后抗性淀粉会多一些。</p>
+            </article>
+
+            <article class="food-card">
+              <div class="food-head"><div><h4>红薯 / 玉米</h4><p>熟重 100g</p></div><span class="tag">主食替换</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:38%"></i></span><span>18-24g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:40%"></i></span><span>3-7g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:9%"></i></span><span>2-4g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:24%"></i></span><span>2-4g</span></div>
+              <p class="food-tip">比精米面更有纤维，但仍然是主食。吃了它，就相应少吃饭面。</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="food-band">
+          <h3>蔬菜、水果、粗粮和坚果：看“刹车”够不够</h3>
+          <p class="band-lead">蔬菜负责垫底，水果要看整颗份量，坚果和全麦不能因为“健康”就放大份量。</p>
+          <div class="food-grid">
+            <article class="food-card">
+              <div class="food-head"><div><h4>西蓝花 / 绿叶菜</h4><p>约 100g</p></div><span class="tag easy">低压力</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:8%"></i></span><span>2-5g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:10%"></i></span><span>0-2g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:9%"></i></span><span>2-3g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:20%"></i></span><span>1-3g</span></div>
+              <p class="food-tip">血糖压力小，适合放在一餐前半段吃，给主食垫底。</p>
+            </article>
+
+            <article class="food-card">
+              <div class="food-head"><div><h4>苹果 / 香蕉</h4><p>约 100g</p></div><span class="tag">完整吃</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:36%"></i></span><span>14-23g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:80%"></i></span><span>10-12g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:3%"></i></span><span>0-1g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:20%"></i></span><span>2-3g</span></div>
+              <p class="food-tip">水果不是不能吃，关键是完整吃、少榨汁。香蕉比苹果碳水更集中。</p>
+            </article>
+
+            <article class="food-card">
+              <div class="food-head"><div><h4>粗粮饭 / 全麦面包</h4><p>约 100g</p></div><span class="tag">仍是主食</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:72%"></i></span><span>22-45g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:30%"></i></span><span>0-7g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:28%"></i></span><span>3-13g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:45%"></i></span><span>1.5-8g</span></div>
+              <p class="food-tip">比白米面更有纤维和矿物质，但不能因为“粗粮”就翻倍吃。</p>
+            </article>
+
+            <article class="food-card">
+              <div class="food-head"><div><h4>腰果 / 杏仁 / 核桃</h4><p>约 100g</p></div><span class="tag">小份量</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:55%"></i></span><span>14-30g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:33%"></i></span><span>2-6g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:58%"></i></span><span>15-21g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:76%"></i></span><span>3-13g</span></div>
+              <p class="food-tip">血糖压力通常不大，但热量很高。更适合 15-25g 一小把。</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="food-band">
+          <h3>蛋白质食物：升糖小，但看脂肪、钠和搭配</h3>
+          <p class="band-lead">肉蛋奶豆和蛋白粉主要解决蛋白质缺口；它们不等于“越多越好”。</p>
+          <div class="food-grid">
+            <article class="food-card">
+              <div class="food-head"><div><h4>鸡蛋 / 豆腐 / 无糖豆浆</h4><p>常见份量</p></div><span class="tag easy">稳</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:9%"></i></span><span>1-6g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:10%"></i></span><span>0-3g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:40%"></i></span><span>7-14g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:10%"></i></span><span>0-2g</span></div>
+              <p class="food-tip">适合早餐或正餐补蛋白。真正要注意的是烹调用油和搭配的主食。</p>
+            </article>
+
+            <article class="food-card">
+              <div class="food-head"><div><h4>蛋白粉 / 希腊酸奶</h4><p>一勺或 170g</p></div><span class="tag easy">补缺口</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:12%"></i></span><span>1-8g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:27%"></i></span><span>0-7g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:72%"></i></span><span>15-25g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:2%"></i></span><span>0g</span></div>
+              <p class="food-tip">本身升糖压力小。调味款、蜂蜜、果酱和麦片脆会把糖叠上去。</p>
+            </article>
+
+            <article class="food-card">
+              <div class="food-head"><div><h4>鸡胸 / 鸡腿 / 瘦牛羊</h4><p>熟重 100g</p></div><span class="tag easy">高蛋白</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:1%"></i></span><span>0g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:1%"></i></span><span>0g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:95%"></i></span><span>25-32g</span></div>
+              <div class="metric"><b>脂肪</b><span class="bar fiber"><i style="--v:35%"></i></span><span>3-12g</span></div>
+              <p class="food-tip">几乎不升糖，是稳定一餐的好搭配。去皮、少油做法更利于控热量。</p>
+            </article>
+
+            <article class="food-card">
+              <div class="food-head"><div><h4>鸡翅 / 肥牛 / 羊排 / 奶酪</h4><p>约 100g</p></div><span class="tag hot">看脂肪</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:3%"></i></span><span>0-3g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:7%"></i></span><span>0-1g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:78%"></i></span><span>18-32g</span></div>
+              <div class="metric"><b>脂肪</b><span class="bar fiber"><i style="--v:88%"></i></span><span>13-35g</span></div>
+              <p class="food-tip">血糖不一定升，但热量容易高。烧烤、炸、蜜汁和蘸料还会额外加油加糖。</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="food-band">
+          <h3>健身、咖啡和外食：把一餐拆开看</h3>
+          <p class="band-lead">外食最难的是隐藏变量：粉面、丸子、甜蘸料、油碟和饮料常常混在一起。</p>
+          <div class="food-grid">
+            <article class="food-card">
+              <div class="food-head"><div><h4>燕麦片</h4><p>干 40g</p></div><span class="tag">早餐主食</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:47%"></i></span><span>24-27g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:5%"></i></span><span>0-1g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:16%"></i></span><span>5g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:31%"></i></span><span>4g</span></div>
+              <p class="food-tip">比白粥更有纤维和饱腹感。用无糖奶、酸奶或蛋白粉搭配更稳。</p>
+            </article>
+
+            <article class="food-card">
+              <div class="food-head"><div><h4>牛奶 / 拿铁</h4><p>250ml</p></div><span class="tag">乳糖要算</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:22%"></i></span><span>10-13g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:80%"></i></span><span>10-13g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:25%"></i></span><span>8g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:1%"></i></span><span>0g</span></div>
+              <p class="food-tip">黑咖啡几乎不升糖，拿铁要把牛奶里的乳糖算进去。甜拿铁另算。</p>
+            </article>
+
+            <article class="food-card">
+              <div class="food-head"><div><h4>黑麦馕 / 全麦馕</h4><p>约 100g</p></div><span class="tag hot">高碳水</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:91%"></i></span><span>45-55g</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:20%"></i></span><span>1-4g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:31%"></i></span><span>8-12g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:58%"></i></span><span>5-10g</span></div>
+              <p class="food-tip">纤维比普通白面饼好，但单位重量碳水仍然高，适合替代而不是加量。</p>
+            </article>
+
+            <article class="food-card">
+              <div class="food-head"><div><h4>肠粉 / 凉皮 / 米线 / 麻辣烫粉类</h4><p>常见外食</p></div><span class="tag hot">隐藏主食</span></div>
+              <div class="metric"><b>碳水</b><span class="bar carbs"><i style="--v:55%"></i></span><span>20-30g+</span></div>
+              <div class="metric"><b>糖</b><span class="bar sugar"><i style="--v:13%"></i></span><span>0-2g</span></div>
+              <div class="metric"><b>蛋白</b><span class="bar protein"><i style="--v:12%"></i></span><span>1-4g</span></div>
+              <div class="metric"><b>纤维</b><span class="bar fiber"><i style="--v:5%"></i></span><span>很少</span></div>
+              <p class="food-tip">口感轻，本质多是精制淀粉。先选肉、豆腐、绿叶菜、菌菇，再少量粉面年糕。</p>
+            </article>
+          </div>
+        </div>
+
+        <h3>把数字换成吃饭决策</h3>
+        <div class="decision-grid">
+          <div class="decision-card"><b>看到主食条很长</b><p>先减份量，再加菜和蛋白。熟米饭 100g 约 28g 碳水，馒头 100g 可能接近 50g。</p></div>
+          <div class="decision-card"><b>看到糖条很长</b><p>优先判断是不是液体糖。完整水果可以吃，果汁、甜咖啡、甜豆浆更容易冲高。</p></div>
+          <div class="decision-card"><b>看到蛋白条很短</b><p>这一餐容易饿，也缺少缓冲。加一掌心肉、蛋、豆制品或无糖酸奶。</p></div>
+          <div class="decision-card"><b>看到纤维条很短</b><p>糖会来得更快。补绿叶菜、菌菇、豆类或全谷，吃饭顺序也尽量菜肉先行。</p></div>
+          <div class="decision-card"><b>看到肉类碳水为 0</b><p>看脂肪和做法。肥牛、羊排、炸鸡、蜜汁鸡翅的问题通常不是糖，而是油和总热量。</p></div>
+          <div class="decision-card"><b>外食看不清数字</b><p>把盘子拆成四类：主食粉面、蛋白质、蔬菜、油糖蘸料。先拆清楚，就不容易被“看起来不甜”骗到。</p></div>
+        </div>
+      </div>
     </section>
 
     <section id="modulators">
