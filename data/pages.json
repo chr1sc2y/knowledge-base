@@ -46,5 +46,21 @@
     "en_path": "articles/asset-allocation-operating-system.html",
     "date": "2026-06-20",
     "featured": false
+  },
+  {
+    "slug": "industrial-agent-development-roadmap",
+    "zh_title": "工业级 Agent 开发路线图",
+    "en_title": "Industrial-Grade Agent Development Roadmap",
+    "zh_subtitle": "从系统工程角度理解 Agent：模型与 harness 的关系、开源框架选择、工具权限、评测、状态恢复、demo 练习和 AWS 部署路径。",
+    "en_subtitle": "A systems view of agents: model-harness architecture, open-source frameworks, tool permissions, evaluations, state recovery, demo practice, and AWS deployment paths.",
+    "zh_category": "Agent 工程",
+    "en_category": "Agent Engineering",
+    "tags": ["agent", "AI agent", "harness", "tool calling", "evals", "LangGraph", "OpenAI Agents SDK", "MCP", "Langfuse", "Phoenix", "AWS", "代理", "智能体", "评测", "工具调用", "权限", "状态机", "部署"],
+    "zh_search": "工业级 agent agent 开发 roadmap 路线图 harness 模型 工具调用 openai agents sdk langgraph microsoft agent framework crewai dify openhands langfuse phoenix mcp 评测 eval trace observability 工具权限 审批 状态机 checkpoint resume memory context workflow graph human in the loop sandbox aws app runner fargate step functions demo 照片工作流",
+    "en_search": "industrial agent development roadmap harness model tools openai agents sdk langgraph microsoft agent framework crewai dify openhands langfuse phoenix mcp evals trace observability tool permissions approval state machine checkpoint resume memory context workflow graph human in the loop sandbox aws app runner fargate step functions photos workflow demo",
+    "zh_path": "articles/industrial-agent-development-roadmap.html",
+    "en_path": "articles/industrial-agent-development-roadmap.html",
+    "date": "2026-06-10",
+    "featured": false
   }
 ]
