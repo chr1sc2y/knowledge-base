@@ -76,6 +76,11 @@ class ArticleTocTests(unittest.TestCase):
                     set(parser.toc_hrefs).issubset(parser.section_ids),
                     "TOC contains links without matching sections",
                 )
+                self.assertNotIn(
+                    ".toc ol{columns:",
+                    path.read_text(encoding="utf-8"),
+                    "TOC should remain single-column",
+                )
 
 
 if __name__ == "__main__":
