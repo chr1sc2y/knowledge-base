@@ -204,12 +204,7 @@ def render_index(pages: list[dict], lang: str) -> str:
         if is_zh
         else "A bilingual knowledge base organized by expandable topic modules."
     )
-    h1 = "知识有结构，阅读有入口" if is_zh else "Structured Knowledge, Clear Entry Points"
-    lead = (
-        "AI、健康、摄影、认知。按主题展开，找到当前最值得读的一篇。"
-        if is_zh
-        else "AI, health, photography, and cognition. Expand a topic and start with the most useful article."
-    )
+    h1 = "Knowledge Base"
     lang_href = "en/" if is_zh else "../"
     lang_label = "English" if is_zh else "中文"
     html_lang = "zh-CN" if is_zh else "en"
@@ -293,7 +288,6 @@ def render_index(pages: list[dict], lang: str) -> str:
       <div>
         <div class="kicker">Providence Knowledge Base</div>
         <h1>{esc(h1)}</h1>
-        <p class="lead">{esc(lead)}</p>
       </div>
       <div class="overview">
         <div class="metric"><b>{len(modules)}</b><span>{esc(module_count_label)}</span></div>
