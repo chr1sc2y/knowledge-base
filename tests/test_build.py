@@ -6,28 +6,28 @@ from scripts import build
 
 
 class BuildIndexTests(unittest.TestCase):
-    def test_index_lists_newest_pages_first(self):
+    def test_index_defaults_to_latest_module(self):
         pages = [
             {
                 "slug": "older",
-                "zh_title": "旧文章",
-                "en_title": "Older Article",
+                "zh_title": "旧 AI 文章",
+                "en_title": "Older AI Article",
                 "zh_subtitle": "旧内容",
                 "en_subtitle": "Older content",
-                "zh_category": "测试",
-                "en_category": "Test",
+                "zh_category": "Agent 工程",
+                "en_category": "Agent Engineering",
                 "zh_path": "articles/older.html",
                 "en_path": "articles/older.html",
                 "date": "2025-01-01",
             },
             {
                 "slug": "newer",
-                "zh_title": "新文章",
-                "en_title": "Newer Article",
+                "zh_title": "新认知文章",
+                "en_title": "Newer Cognition Article",
                 "zh_subtitle": "新内容",
                 "en_subtitle": "Newer content",
-                "zh_category": "测试",
-                "en_category": "Test",
+                "zh_category": "个人系统与决策",
+                "en_category": "Personal Systems & Decision Making",
                 "zh_path": "articles/newer.html",
                 "en_path": "articles/newer.html",
                 "date": "2026-01-01",
@@ -36,7 +36,31 @@ class BuildIndexTests(unittest.TestCase):
 
         html = build.render_index(pages, "en")
 
-        self.assertLess(html.index("Newer Article"), html.index("Older Article"))
+        self.assertIn('<details class="module cognition" id="cognition" open>', html)
+        self.assertIn('<details class="module ai" id="ai">', html)
+        self.assertLess(html.index("AI"), html.index("Cognition"))
+
+    def test_index_keeps_future_categories_in_more_module(self):
+        pages = [
+            {
+                "slug": "future",
+                "zh_title": "未来主题",
+                "en_title": "Future Topic",
+                "zh_subtitle": "未来内容",
+                "en_subtitle": "Future content",
+                "zh_category": "新模块",
+                "en_category": "New Module",
+                "zh_path": "articles/future.html",
+                "en_path": "articles/future.html",
+                "date": "2026-01-01",
+            }
+        ]
+
+        html = build.render_index(pages, "zh")
+
+        self.assertIn('<details class="module more" id="more" open>', html)
+        self.assertIn("更多主题", html)
+        self.assertIn("未来主题", html)
 
 
 class ArticleTocParser(HTMLParser):
