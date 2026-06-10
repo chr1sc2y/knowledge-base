@@ -252,9 +252,9 @@ def render_index(pages: list[dict], lang: str) -> str:
     details.module::before{{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--green);opacity:.18}}
     details.module[open]{{background:var(--paper-soft);border-color:var(--line);box-shadow:var(--shadow)}}
     details.module[open]::before{{opacity:1}}
-    summary{{list-style:none;cursor:pointer;display:grid;grid-template-columns:150px 1fr auto;gap:24px;align-items:center;padding:26px 28px}}
+    summary{{list-style:none;cursor:pointer;display:grid;grid-template-columns:112px 1fr auto;gap:24px;align-items:center;padding:26px 28px}}
     summary::-webkit-details-marker{{display:none}}
-    .code{{font-family:var(--font-display);font-size:52px;font-weight:800;line-height:1;color:var(--green);letter-spacing:0}}
+    .code{{font-family:var(--font-display);font-size:40px;font-weight:800;line-height:1;color:var(--green);letter-spacing:0}}
     .summary-copy h2{{font-family:var(--font-display);font-size:32px;font-weight:700;line-height:1.12;margin:0 0 8px;letter-spacing:0}}
     .summary-copy p{{color:var(--muted);margin:0;max-width:720px}}
     .indicator{{width:34px;height:34px;border:1px solid var(--line);border-radius:999px;display:grid;place-items:center;color:var(--green);font-weight:900;background:rgba(255,255,255,.35)}}
@@ -278,7 +278,7 @@ def render_index(pages: list[dict], lang: str) -> str:
     .module.photo{{--green:var(--rust)}}
     .module.cognition{{--green:var(--gold)}}
     footer{{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:28px 0 46px}}
-    @media(max-width:900px){{.panel{{grid-template-columns:1fr}}summary{{grid-template-columns:1fr auto}}.code{{font-size:46px}}.summary-copy{{grid-column:1 / -1;grid-row:2}}}}
+    @media(max-width:900px){{.panel{{grid-template-columns:1fr}}summary{{grid-template-columns:1fr auto}}.code{{font-size:36px}}.summary-copy{{grid-column:1 / -1;grid-row:2}}}}
     @media(max-width:560px){{.language-row{{padding-top:18px}}header{{padding-top:34px}}summary{{padding:19px}}.panel{{padding:19px}}.article h3{{font-size:26px}}}}
   </style>
 </head>

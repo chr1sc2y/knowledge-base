@@ -111,6 +111,8 @@ class BuildIndexTests(unittest.TestCase):
         self.assertIn("Newsreader", html)
         self.assertIn('--font-display:"Noto Serif SC"', html)
         self.assertIn("border-radius:6px", html)
+        self.assertIn("grid-template-columns:112px 1fr auto", html)
+        self.assertIn(".code{font-family:var(--font-display);font-size:40px", html)
         self.assertIn("box-shadow:var(--shadow)", html)
         self.assertIn(".article{border-top:1px solid var(--line)", html)
         self.assertNotIn("letter-spacing:-", html)
