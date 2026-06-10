@@ -89,6 +89,32 @@ class BuildIndexTests(unittest.TestCase):
         self.assertIn('<nav class="module-jump" aria-label="Quick Navigation">', html)
         self.assertLess(html.index('class="module-jump"'), html.index('class="modules"'))
 
+    def test_index_uses_publication_type_and_light_cards(self):
+        pages = [
+            {
+                "slug": "photo",
+                "zh_title": "摄影文章",
+                "en_title": "Photo Article",
+                "zh_subtitle": "内容",
+                "en_subtitle": "Content",
+                "zh_category": "旅行与摄影",
+                "en_category": "Travel & Photography",
+                "zh_path": "articles/photo.html",
+                "en_path": "articles/photo.html",
+                "date": "2026-01-01",
+            }
+        ]
+
+        html = build.render_index(pages, "zh")
+
+        self.assertIn("Noto+Serif+SC", html)
+        self.assertIn("Newsreader", html)
+        self.assertIn('--font-display:"Noto Serif SC"', html)
+        self.assertIn("border-radius:6px", html)
+        self.assertIn("box-shadow:var(--shadow)", html)
+        self.assertIn(".article{border-top:1px solid var(--line)", html)
+        self.assertNotIn("letter-spacing:-", html)
+
 
 class ArticleTocParser(HTMLParser):
     def __init__(self):

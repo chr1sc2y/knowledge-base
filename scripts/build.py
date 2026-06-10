@@ -229,49 +229,54 @@ def render_index(pages: list[dict], lang: str) -> str:
   <title>{esc(title)}</title>
   <meta name="description" content="{esc(description)}">
   <style>
-    :root{{--bg:#f6f1e8;--paper:#fffaf1;--fg:#1d2420;--muted:#69716c;--line:#d9ceb9;--green:#173f3a;--rust:#a9462d;--gold:#b98f45;--blue:#2f5b72}}
+    @import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500..800&family=Noto+Serif+SC:wght@500;600;700;800&display=swap");
+    :root{{--bg:#f6f1e8;--paper:#fffaf1;--paper-soft:#fffdf8;--fg:#1d2420;--muted:#69716c;--line:#d9ceb9;--line-soft:#e7decd;--green:#173f3a;--rust:#a9462d;--gold:#b98f45;--blue:#2f5b72;--shadow:0 18px 45px rgba(29,36,32,.07);--font-body:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--font-display:"Newsreader",Georgia,"Times New Roman",serif}}
+    html[lang="zh-CN"]{{--font-display:"Noto Serif SC",Georgia,"Times New Roman",serif}}
     *{{box-sizing:border-box}}
     html{{scroll-behavior:smooth}}
-    body{{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.64;-webkit-font-smoothing:antialiased}}
+    body{{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);line-height:1.64;-webkit-font-smoothing:antialiased}}
     a{{color:inherit;text-decoration:none}}
     .wrap{{width:min(1160px,calc(100vw - 40px));margin:0 auto}}
     .language-row{{display:flex;justify-content:flex-end;padding-top:24px}}
-    .lang{{border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:var(--green);font-weight:800;font-size:13px;white-space:nowrap}}
+    .lang{{border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--green);font-weight:800;font-size:13px;white-space:nowrap;background:rgba(255,250,241,.7)}}
+    .lang:hover{{background:var(--paper);border-color:var(--green)}}
     header{{padding:54px 0 28px}}
-    h1{{font-family:Georgia,"Times New Roman",serif;font-size:clamp(64px,11vw,128px);line-height:.9;letter-spacing:-.04em;margin:0}}
+    h1{{font-family:var(--font-display);font-size:clamp(64px,11vw,128px);font-weight:800;line-height:.94;letter-spacing:0;margin:0}}
     main{{padding:6px 0 80px}}
     .module-jump{{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--line)}}
     .jump-label{{color:var(--muted);font-size:13px;margin-right:4px}}
-    .module-jump a{{border:1px solid var(--line);background:rgba(255,250,241,.72);padding:8px 12px;color:var(--green);font-weight:800;font-size:14px}}
-    .module-jump a:hover{{border-color:var(--green);background:var(--paper)}}
-    .modules{{display:grid;gap:12px;margin-top:22px}}
-    details.module{{border:1px solid var(--line);background:var(--paper)}}
-    details.module[open]{{background:#fffdf8}}
-    summary{{list-style:none;cursor:pointer;display:grid;grid-template-columns:160px 1fr auto;gap:22px;align-items:center;padding:24px}}
+    .module-jump a{{border:1px solid var(--line);background:rgba(255,250,241,.72);border-radius:999px;padding:8px 13px;color:var(--green);font-weight:800;font-size:14px;transition:background .18s ease,border-color .18s ease,transform .18s ease}}
+    .module-jump a:hover{{border-color:var(--green);background:var(--paper);transform:translateY(-1px)}}
+    .modules{{display:grid;gap:14px;margin-top:22px}}
+    details.module{{position:relative;border:1px solid var(--line-soft);border-radius:6px;background:rgba(255,250,241,.7);overflow:hidden;transition:background .18s ease,border-color .18s ease,box-shadow .18s ease}}
+    details.module::before{{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--green);opacity:.18}}
+    details.module[open]{{background:var(--paper-soft);border-color:var(--line);box-shadow:var(--shadow)}}
+    details.module[open]::before{{opacity:1}}
+    summary{{list-style:none;cursor:pointer;display:grid;grid-template-columns:150px 1fr auto;gap:24px;align-items:center;padding:26px 28px}}
     summary::-webkit-details-marker{{display:none}}
-    .code{{font-family:Georgia,"Times New Roman",serif;font-size:52px;line-height:1;color:var(--green);letter-spacing:-.04em}}
-    .summary-copy h2{{font-family:Georgia,"Times New Roman",serif;font-size:32px;line-height:1.08;margin:0 0 8px;letter-spacing:-.02em}}
+    .code{{font-family:var(--font-display);font-size:52px;font-weight:800;line-height:1;color:var(--green);letter-spacing:0}}
+    .summary-copy h2{{font-family:var(--font-display);font-size:32px;font-weight:700;line-height:1.12;margin:0 0 8px;letter-spacing:0}}
     .summary-copy p{{color:var(--muted);margin:0;max-width:720px}}
-    .indicator{{width:34px;height:34px;border:1px solid var(--line);border-radius:999px;display:grid;place-items:center;color:var(--green);font-weight:900}}
+    .indicator{{width:34px;height:34px;border:1px solid var(--line);border-radius:999px;display:grid;place-items:center;color:var(--green);font-weight:900;background:rgba(255,255,255,.35)}}
     details[open] .indicator{{background:var(--green);color:white;border-color:var(--green)}}
     details[open] .indicator::before{{content:"-"}}
     .indicator::before{{content:"+"}}
-    .panel{{border-top:1px solid var(--line);display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;padding:24px}}
-    .panel-note{{color:var(--muted)}}
-    .panel-note b{{display:block;color:var(--rust);font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}}
-    .article-list{{display:grid;gap:12px}}
-    .article{{border:1px solid var(--line);background:#fff;padding:18px;display:grid;gap:12px}}
-    .article:hover{{border-color:var(--green)}}
+    .panel{{border-top:1px solid var(--line-soft);display:grid;grid-template-columns:.78fr 1.22fr;gap:28px;padding:28px}}
+    .panel-note{{color:var(--muted);font-size:15px;max-width:32rem}}
+    .panel-note b{{display:block;color:var(--green);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}}
+    .article-list{{display:grid;gap:10px}}
+    .article{{border-top:1px solid var(--line);background:rgba(255,255,255,.42);padding:18px 2px 4px;display:grid;gap:12px;transition:background .18s ease,padding .18s ease}}
+    .article:hover{{background:rgba(255,255,255,.72);padding-left:14px;padding-right:14px}}
     .article-top{{display:flex;justify-content:space-between;gap:14px;color:var(--muted);font-size:12px}}
-    .article h3{{font-family:Georgia,"Times New Roman",serif;font-size:30px;line-height:1.05;margin:0;letter-spacing:-.02em}}
+    .article h3{{font-family:var(--font-display);font-size:30px;font-weight:700;line-height:1.1;margin:0;letter-spacing:0}}
     .article p{{margin:0;color:var(--muted)}}
     .tags{{display:flex;gap:6px;flex-wrap:wrap}}
-    .tags span{{border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted);font-size:12px}}
+    .tags span{{border:1px solid var(--line-soft);border-radius:999px;padding:4px 8px;color:var(--muted);font-size:12px;background:rgba(255,250,241,.5)}}
     .go{{display:inline-flex;width:max-content;align-items:center;gap:8px;color:var(--green);font-weight:900;border-bottom:1px solid var(--green)}}
-    .module.ai .code,.module.ai .go{{color:var(--blue)}}
-    .module.health .code,.module.health .go{{color:#2f6b4f}}
-    .module.photo .code,.module.photo .go{{color:var(--rust)}}
-    .module.cognition .code,.module.cognition .go{{color:var(--gold)}}
+    .module.ai{{--green:var(--blue)}}
+    .module.health{{--green:#2f6b4f}}
+    .module.photo{{--green:var(--rust)}}
+    .module.cognition{{--green:var(--gold)}}
     footer{{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:28px 0 46px}}
     @media(max-width:900px){{.panel{{grid-template-columns:1fr}}summary{{grid-template-columns:1fr auto}}.code{{font-size:46px}}.summary-copy{{grid-column:1 / -1;grid-row:2}}}}
     @media(max-width:560px){{.language-row{{padding-top:18px}}header{{padding-top:34px}}summary{{padding:19px}}.panel{{padding:19px}}.article h3{{font-size:26px}}}}

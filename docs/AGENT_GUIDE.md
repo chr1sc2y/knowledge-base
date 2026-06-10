@@ -37,6 +37,10 @@ not feel like a dashboard, blog feed, marketing page, or card-heavy template.
   elements. Do not use cards as the default content container.
 - Simplicity means reducing friction and visual competition, not merely using
   white backgrounds and rounded rectangles.
+- Use a publication-oriented type system on the home page: `Noto Serif SC` for
+  Chinese display text, `Newsreader` for English display text, and system sans
+  for body/UI text. Keep module surfaces light, with soft borders and subtle
+  open-state emphasis rather than heavy card grids.
 - Prefer progressive explanatory structure: basic concepts, terminology, mechanism,
   regulation, application, sources. Do not label depth of explanation as literal school
   stages such as elementary/middle/high/undergraduate/master unless the user
@@ -100,6 +104,10 @@ Pending:
 
 - Confirm DNS points `knowledge.prov1dence.top` to GitHub Pages.
 - Enable HTTPS enforcement after GitHub issues the certificate.
+- Extract shared home page CSS and template fragments from `scripts/build.py`
+  once the home page design stabilizes. The current inline template is still
+  acceptable, but future category pages and additional demos should not copy
+  large CSS blocks by hand.
 
 ## Maintenance Workflow
 
