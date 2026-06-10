@@ -18,6 +18,8 @@ not feel like a dashboard, blog feed, marketing page, or card-heavy template.
 - Provide a language switch in the same location on every page, preferably the
   top-right corner of the viewport/header.
 - Home page should be a quiet index, not a card grid.
+- Home page hero title should stay concise: Chinese uses `知识库`, English uses
+  `Knowledge Base`. Update Chinese and English home pages together.
 - Home page should not show References. References belong at the bottom of an
   article or on a dedicated links page.
 - Article pages should primarily use typography, spacing, headings, diagrams,

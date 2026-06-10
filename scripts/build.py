@@ -204,7 +204,7 @@ def render_index(pages: list[dict], lang: str) -> str:
         if is_zh
         else "A bilingual knowledge base organized by expandable topic modules."
     )
-    h1 = "Knowledge Base"
+    h1 = "知识库" if is_zh else "Knowledge Base"
     lang_href = "en/" if is_zh else "../"
     lang_label = "English" if is_zh else "中文"
     html_lang = "zh-CN" if is_zh else "en"
