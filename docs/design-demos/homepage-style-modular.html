@@ -13,14 +13,9 @@
     .wrap{width:min(1160px,calc(100vw - 40px));margin:0 auto}
     .language-row{display:flex;justify-content:flex-end;padding-top:24px}
     .lang{border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:var(--green);font-weight:800;font-size:13px}
-    header{padding:48px 0 34px}
-    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:end}
-    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(54px,9vw,112px);line-height:.92;letter-spacing:-.04em;margin:0}
-    .overview{border:1px solid var(--line);background:var(--paper);padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .metric{border-top:1px solid var(--line);padding-top:14px}
-    .metric b{display:block;font-family:Georgia,"Times New Roman",serif;font-size:38px;line-height:1;color:var(--green)}
-    .metric span{color:var(--muted);font-size:13px}
-    main{padding:12px 0 80px}
+    header{padding:54px 0 28px}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(64px,11vw,128px);line-height:.9;letter-spacing:-.04em;margin:0}
+    main{padding:6px 0 80px}
     .module-jump{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--line)}
     .jump-label{color:var(--muted);font-size:13px;margin-right:4px}
     .module-jump a{border:1px solid var(--line);background:rgba(255,250,241,.72);padding:8px 12px;color:var(--green);font-weight:800;font-size:14px}
@@ -52,8 +47,8 @@
     .module.photo .code,.module.photo .go{color:var(--rust)}
     .module.cognition .code,.module.cognition .go{color:var(--gold)}
     footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:28px 0 46px}
-    @media(max-width:900px){.hero,.panel{grid-template-columns:1fr}.overview{grid-template-columns:1fr 1fr}summary{grid-template-columns:1fr auto}.code{font-size:46px}.summary-copy{grid-column:1 / -1;grid-row:2}}
-    @media(max-width:560px){.language-row{padding-top:18px}header{padding-top:34px}.overview{grid-template-columns:1fr}summary{padding:19px}.panel{padding:19px}.article h3{font-size:26px}}
+    @media(max-width:900px){.panel{grid-template-columns:1fr}summary{grid-template-columns:1fr auto}.code{font-size:46px}.summary-copy{grid-column:1 / -1;grid-row:2}}
+    @media(max-width:560px){.language-row{padding-top:18px}header{padding-top:34px}summary{padding:19px}.panel{padding:19px}.article h3{font-size:26px}}
   </style>
 </head>
 <body>
@@ -61,24 +56,31 @@
     <a class="lang">English</a>
   </div>
   <header class="wrap">
-    <div class="hero">
-      <div>
-        <h1>知识库</h1>
-      </div>
-      <div class="overview">
-        <div class="metric"><b>4</b><span>当前模块</span></div>
-        <div class="metric"><b>4</b><span>文章</span></div>
-        <div class="metric"><b>2026</b><span>最近更新</span></div>
-        <div class="metric"><b>+</b><span>点击展开</span></div>
-      </div>
-    </div>
+    <h1>知识库</h1>
   </header>
   <main class="wrap">
     <nav class="module-jump" aria-label="快速导航">
       <span class="jump-label">快速导航</span>
-      <a href="#ai">AI</a><a href="#health">健康</a><a href="#photo">摄影</a><a href="#cognition">认知</a>
+      <a href="#photo">摄影</a><a href="#ai">AI</a><a href="#cognition">认知</a><a href="#health">健康</a>
     </nav>
     <section class="modules">
+      <details class="module photo" id="photo" open>
+        <summary>
+          <div class="code">摄影</div>
+          <div class="summary-copy"><h2>路线、审美、器材与后期</h2><p>把旅行摄影从目的地列表升级为视觉主题、镜头选择和成片方法。</p></div>
+          <div class="indicator"></div>
+        </summary>
+        <div class="panel">
+          <div class="panel-note"><b>Module Role</b>这里可以放路线指南、镜头策略、调色风格、AI 出样、Lightroom 工作流和成片复盘。</div>
+          <a class="article" href="../../articles/cn/xinjiang-northern-photography.html">
+            <div class="article-top"><span>摄影</span><span>2026-06-10</span></div>
+            <h3>新疆初夏北疆摄影环线</h3>
+            <p>按行驶顺序和视觉主题整理北疆摄影目的地：坎儿井、火焰山、库木塔格、江布拉克、伊犁草原、赛里木湖、雅丹、喀纳斯、禾木。</p>
+            <div class="tags"><span>新疆</span><span>路线</span><span>镜头</span><span>视觉主题</span></div>
+            <span class="go">进入文章</span>
+          </a>
+        </div>
+      </details>
       <details class="module ai" id="ai">
         <summary>
           <div class="code">AI</div>
@@ -96,6 +98,23 @@
           </a>
         </div>
       </details>
+      <details class="module cognition" id="cognition">
+        <summary>
+          <div class="code">认知</div>
+          <div class="summary-copy"><h2>决策系统与长期框架</h2><p>把复杂问题转成可维护的个人操作系统：资产配置、判断、复盘和行动纪律。</p></div>
+          <div class="indicator"></div>
+        </summary>
+        <div class="panel">
+          <div class="panel-note"><b>Module Role</b>这个模块不是泛泛的思考文章，而是沉淀可复用的决策方法、长期主义框架和个人系统设计。</div>
+          <a class="article" href="../../articles/cn/asset-allocation-operating-system.html">
+            <div class="article-top"><span>认知</span><span>2026-06-06</span></div>
+            <h3>资产配置作为个人操作系统</h3>
+            <p>用系统思维重新理解资产配置：功能模块设计、维护成本控制、足够好就执行的纪律，以及兼容人性的实用框架。</p>
+            <div class="tags"><span>资产配置</span><span>系统思维</span><span>决策</span><span>纪律</span></div>
+            <span class="go">进入文章</span>
+          </a>
+        </div>
+      </details>
       <details class="module health" id="health">
         <summary>
           <div class="code">健康</div>
@@ -109,40 +128,6 @@
             <h3>血糖、碳水与代谢</h3>
             <p>用大白话讲血糖：碳水吃进去后身体怎么处理、为什么会波动、哪些日常小动作能让它更稳。</p>
             <div class="tags"><span>血糖</span><span>碳水</span><span>代谢</span><span>食物</span></div>
-            <span class="go">进入文章</span>
-          </a>
-        </div>
-      </details>
-      <details class="module photo" id="photo">
-        <summary>
-          <div class="code">摄影</div>
-          <div class="summary-copy"><h2>路线、审美、器材与后期</h2><p>把旅行摄影从目的地列表升级为视觉主题、镜头选择和成片方法。</p></div>
-          <div class="indicator"></div>
-        </summary>
-        <div class="panel">
-          <div class="panel-note"><b>Module Role</b>这里可以放路线指南、镜头策略、调色风格、AI 出样、Lightroom 工作流和成片复盘。</div>
-          <a class="article" href="../../articles/cn/xinjiang-northern-photography.html">
-            <div class="article-top"><span>摄影</span><span>2025-06-06</span></div>
-            <h3>新疆初夏北疆摄影环线</h3>
-            <p>按行驶顺序和视觉主题整理北疆摄影目的地：坎儿井、火焰山、库木塔格、江布拉克、伊犁草原、赛里木湖、雅丹、喀纳斯、禾木。</p>
-            <div class="tags"><span>新疆</span><span>路线</span><span>镜头</span><span>视觉主题</span></div>
-            <span class="go">进入文章</span>
-          </a>
-        </div>
-      </details>
-      <details class="module cognition" id="cognition" open>
-        <summary>
-          <div class="code">认知</div>
-          <div class="summary-copy"><h2>决策系统与长期框架</h2><p>把复杂问题转成可维护的个人操作系统：资产配置、判断、复盘和行动纪律。</p></div>
-          <div class="indicator"></div>
-        </summary>
-        <div class="panel">
-          <div class="panel-note"><b>Module Role</b>这个模块不是泛泛的思考文章，而是沉淀可复用的决策方法、长期主义框架和个人系统设计。</div>
-          <a class="article" href="../../articles/cn/asset-allocation-operating-system.html">
-            <div class="article-top"><span>认知</span><span>2026-06-20</span></div>
-            <h3>资产配置作为个人操作系统</h3>
-            <p>用系统思维重新理解资产配置：功能模块设计、维护成本控制、足够好就执行的纪律，以及兼容人性的实用框架。</p>
-            <div class="tags"><span>资产配置</span><span>系统思维</span><span>决策</span><span>纪律</span></div>
             <span class="go">进入文章</span>
           </a>
         </div>

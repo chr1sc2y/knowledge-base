@@ -102,13 +102,22 @@ def module_for_page(page: dict) -> dict | None:
 def group_pages(pages: list[dict]) -> list[dict]:
     grouped = {module["key"]: {**module, "pages": []} for module in CATEGORY_MODULES}
     extras: list[dict] = []
-    for page in newest_first(pages):
+    ordered_pages = newest_first(pages)
+    module_first_seen: dict[str, int] = {}
+    more_first_seen: int | None = None
+    for index, page in enumerate(ordered_pages):
         module = module_for_page(page)
         if module is None:
             extras.append(page)
+            if more_first_seen is None:
+                more_first_seen = index
         else:
             grouped[module["key"]]["pages"].append(page)
-    modules = [grouped[module["key"]] for module in CATEGORY_MODULES if grouped[module["key"]]["pages"]]
+            module_first_seen.setdefault(module["key"], index)
+    modules = sorted(
+        [grouped[module["key"]] for module in CATEGORY_MODULES if grouped[module["key"]]["pages"]],
+        key=lambda module: module_first_seen[module["key"]],
+    )
     if extras:
         modules.append(
             {
@@ -124,15 +133,18 @@ def group_pages(pages: list[dict]) -> list[dict]:
                 "pages": extras,
             }
         )
+        modules.sort(
+            key=lambda module: more_first_seen
+            if module["key"] == "more"
+            else module_first_seen[module["key"]]
+        )
     return modules
 
 
 def latest_module_key(modules: list[dict]) -> str:
-    dated_modules = [
-        (max((page.get("date", "") for page in module["pages"]), default=""), module["key"])
-        for module in modules
-    ]
-    return max(dated_modules, default=("", ""))[1]
+    if not modules:
+        return ""
+    return modules[0]["key"]
 
 
 def render_tags(page: dict, limit: int = 4) -> str:
@@ -197,7 +209,6 @@ def render_index(pages: list[dict], lang: str) -> str:
     generated = datetime.now(timezone.utc).isoformat(timespec="seconds")
     modules = group_pages(pages)
     is_zh = lang == "zh"
-    latest = max((page.get("date", "") for page in pages), default="")
     title = "Providence Knowledge Base"
     description = (
         "按主题模块组织的双语知识库。"
@@ -208,10 +219,6 @@ def render_index(pages: list[dict], lang: str) -> str:
     lang_href = "en/" if is_zh else "../"
     lang_label = "English" if is_zh else "中文"
     html_lang = "zh-CN" if is_zh else "en"
-    module_count_label = "模块" if is_zh else "Modules"
-    article_count_label = "文章" if is_zh else "Articles"
-    latest_label = "最近更新" if is_zh else "Latest"
-    expand_label = "点击展开" if is_zh else "Click to expand"
     jump_label = "快速导航" if is_zh else "Quick Navigation"
 
     return f"""<!doctype html>
@@ -230,14 +237,9 @@ def render_index(pages: list[dict], lang: str) -> str:
     .wrap{{width:min(1160px,calc(100vw - 40px));margin:0 auto}}
     .language-row{{display:flex;justify-content:flex-end;padding-top:24px}}
     .lang{{border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:var(--green);font-weight:800;font-size:13px;white-space:nowrap}}
-    header{{padding:48px 0 34px}}
-    .hero{{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:end}}
-    h1{{font-family:Georgia,"Times New Roman",serif;font-size:clamp(54px,9vw,112px);line-height:.92;letter-spacing:-.04em;margin:0}}
-    .overview{{border:1px solid var(--line);background:var(--paper);padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:12px}}
-    .metric{{border-top:1px solid var(--line);padding-top:14px}}
-    .metric b{{display:block;font-family:Georgia,"Times New Roman",serif;font-size:38px;line-height:1;color:var(--green)}}
-    .metric span{{color:var(--muted);font-size:13px}}
-    main{{padding:12px 0 80px}}
+    header{{padding:54px 0 28px}}
+    h1{{font-family:Georgia,"Times New Roman",serif;font-size:clamp(64px,11vw,128px);line-height:.9;letter-spacing:-.04em;margin:0}}
+    main{{padding:6px 0 80px}}
     .module-jump{{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--line)}}
     .jump-label{{color:var(--muted);font-size:13px;margin-right:4px}}
     .module-jump a{{border:1px solid var(--line);background:rgba(255,250,241,.72);padding:8px 12px;color:var(--green);font-weight:800;font-size:14px}}
@@ -271,8 +273,8 @@ def render_index(pages: list[dict], lang: str) -> str:
     .module.photo .code,.module.photo .go{{color:var(--rust)}}
     .module.cognition .code,.module.cognition .go{{color:var(--gold)}}
     footer{{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:28px 0 46px}}
-    @media(max-width:900px){{.hero,.panel{{grid-template-columns:1fr}}.overview{{grid-template-columns:1fr 1fr}}summary{{grid-template-columns:1fr auto}}.code{{font-size:46px}}.summary-copy{{grid-column:1 / -1;grid-row:2}}}}
-    @media(max-width:560px){{.language-row{{padding-top:18px}}header{{padding-top:34px}}.overview{{grid-template-columns:1fr}}summary{{padding:19px}}.panel{{padding:19px}}.article h3{{font-size:26px}}}}
+    @media(max-width:900px){{.panel{{grid-template-columns:1fr}}summary{{grid-template-columns:1fr auto}}.code{{font-size:46px}}.summary-copy{{grid-column:1 / -1;grid-row:2}}}}
+    @media(max-width:560px){{.language-row{{padding-top:18px}}header{{padding-top:34px}}summary{{padding:19px}}.panel{{padding:19px}}.article h3{{font-size:26px}}}}
   </style>
 </head>
 <body>
@@ -280,17 +282,7 @@ def render_index(pages: list[dict], lang: str) -> str:
     <a class="lang" href="{esc(lang_href)}">{esc(lang_label)}</a>
   </div>
   <header class="wrap">
-    <div class="hero">
-      <div>
-        <h1>{esc(h1)}</h1>
-      </div>
-      <div class="overview">
-        <div class="metric"><b>{len(modules)}</b><span>{esc(module_count_label)}</span></div>
-        <div class="metric"><b>{len(pages)}</b><span>{esc(article_count_label)}</span></div>
-        <div class="metric"><b>{esc(latest)}</b><span>{esc(latest_label)}</span></div>
-        <div class="metric"><b>+</b><span>{esc(expand_label)}</span></div>
-      </div>
-    </div>
+    <h1>{esc(h1)}</h1>
   </header>
   <main class="wrap">
     <nav class="module-jump" aria-label="{esc(jump_label)}">

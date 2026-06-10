@@ -6,10 +6,10 @@ from scripts import build
 
 
 class BuildIndexTests(unittest.TestCase):
-    def test_index_defaults_to_latest_module(self):
+    def test_index_orders_modules_by_latest_article_and_opens_first(self):
         pages = [
             {
-                "slug": "older",
+                "slug": "older-ai",
                 "zh_title": "旧 AI 文章",
                 "en_title": "Older AI Article",
                 "zh_subtitle": "旧内容",
@@ -21,13 +21,13 @@ class BuildIndexTests(unittest.TestCase):
                 "date": "2025-01-01",
             },
             {
-                "slug": "newer",
-                "zh_title": "新认知文章",
-                "en_title": "Newer Cognition Article",
+                "slug": "newer-photo",
+                "zh_title": "新摄影文章",
+                "en_title": "Newer Photo Article",
                 "zh_subtitle": "新内容",
                 "en_subtitle": "Newer content",
-                "zh_category": "个人系统与决策",
-                "en_category": "Personal Systems & Decision Making",
+                "zh_category": "旅行与摄影",
+                "en_category": "Travel & Photography",
                 "zh_path": "articles/newer.html",
                 "en_path": "articles/newer.html",
                 "date": "2026-01-01",
@@ -36,9 +36,10 @@ class BuildIndexTests(unittest.TestCase):
 
         html = build.render_index(pages, "en")
 
-        self.assertIn('<details class="module cognition" id="cognition" open>', html)
+        self.assertIn('<details class="module photo" id="photo" open>', html)
         self.assertIn('<details class="module ai" id="ai">', html)
-        self.assertLess(html.index("AI"), html.index("Cognition"))
+        self.assertLess(html.index('id="photo"'), html.index('id="ai"'))
+        self.assertLess(html.index('<a href="#photo">Photo</a>'), html.index('<a href="#ai">AI</a>'))
 
     def test_index_keeps_future_categories_in_more_module(self):
         pages = [

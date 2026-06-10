@@ -23,6 +23,8 @@ not feel like a dashboard, blog feed, marketing page, or card-heavy template.
 - Avoid a sticky top category menu on the home page. Put module jump links
   near the expandable modules and generate them from the module data so future
   categories are included automatically.
+- Order home page modules by the newest article inside each module. The newest
+  module appears first and is the only module opened by default.
 - Home page should not show References. References belong at the bottom of an
   article or on a dedicated links page.
 - Article pages should primarily use typography, spacing, headings, diagrams,
