@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>知识库首页风格 Demo</title>
+  <style>
+    :root{--bg:#f6f1e8;--fg:#1e2421;--muted:#69726e;--line:#d9cfbd;--green:#173f3a;--rust:#ad4b2f;--paper:#fffaf1;--blue:#2e5572}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+    .wrap{width:min(1080px,calc(100vw - 40px));margin:0 auto}
+    header{padding:72px 0 38px;border-bottom:1px solid var(--line)}
+    .kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rust);font-weight:900}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,8vw,84px);line-height:.96;margin:12px 0 18px;max-width:760px}
+    .lead{font-size:20px;color:var(--muted);max-width:720px;margin:0}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:34px 0 80px}
+    a{color:inherit;text-decoration:none}
+    .choice{background:var(--paper);border:1px solid var(--line);padding:24px;min-height:320px;display:flex;flex-direction:column;justify-content:space-between}
+    .choice:hover{border-color:var(--rust)}
+    .label{display:flex;justify-content:space-between;gap:16px;color:var(--rust);font-size:13px;font-weight:900}
+    h2{font-family:Georgia,"Times New Roman",serif;font-size:38px;line-height:1.02;margin:18px 0 10px}
+    p{color:var(--muted);margin:0}
+    .mini{display:grid;gap:10px;margin-top:24px}
+    .row{display:grid;grid-template-columns:56px 1fr;gap:12px;border-top:1px solid var(--line);padding-top:10px}
+    .tag{color:var(--green);font-weight:900}
+    .system{background:#f8faf7}
+    .system .tag{color:var(--blue)}
+    footer{border-top:1px solid var(--line);padding:22px 0 42px;color:var(--muted);font-size:13px}
+    @media(max-width:780px){.grid{grid-template-columns:1fr}.choice{min-height:auto}h2{font-size:32px}}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="kicker">Providence Knowledge Base</div>
+    <h1>两个首页方向</h1>
+    <p class="lead">四个主类固定为 AI、健康、摄影、认知。下面是两个不改生产站的静态风格 demo，用同一批真实文章数据测试信息架构和视觉气质。</p>
+  </header>
+  <main class="wrap grid">
+    <a class="choice" href="homepage-style-editorial.html">
+      <div>
+        <div class="label"><span>Style A</span><span>Magazine</span></div>
+        <h2>编辑部 / 杂志感</h2>
+        <p>更像一本持续更新的个人知识刊物。强调标题、栏目、留白和阅读气质，适合把内容做成有品牌感的知识地图。</p>
+        <div class="mini">
+          <div class="row"><span class="tag">AI</span><span>大标题入口 + 最新文章</span></div>
+          <div class="row"><span class="tag">健康</span><span>栏目式摘要，视觉更舒展</span></div>
+          <div class="row"><span class="tag">摄影</span><span>适合旅行、审美、长期专题</span></div>
+        </div>
+      </div>
+      <p>打开 Style A</p>
+    </a>
+    <a class="choice system" href="homepage-style-system.html">
+      <div>
+        <div class="label"><span>Style B</span><span>System</span></div>
+        <h2>知识系统 / 工具感</h2>
+        <p>更像一个可检索、可扩展的个人知识操作台。分类清晰、信息密度更高，后续文章变多时更稳。</p>
+        <div class="mini">
+          <div class="row"><span class="tag">AI</span><span>左侧分类 + 右侧内容流</span></div>
+          <div class="row"><span class="tag">健康</span><span>搜索、标签、更新日期更突出</span></div>
+          <div class="row"><span class="tag">认知</span><span>适合长期沉淀和维护</span></div>
+        </div>
+      </div>
+      <p>打开 Style B</p>
+    </a>
+  </main>
+  <footer><div class="wrap">本页仅为本地视觉 demo，不参与生产构建。</div></footer>
+</body>
+</html>

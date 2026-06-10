@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Style B · 知识系统首页</title>
+  <style>
+    :root{--bg:#f7f8f4;--panel:#ffffff;--fg:#19221f;--muted:#66706b;--line:#d7ded6;--green:#123f37;--rust:#a34b35;--blue:#2c5d78;--gold:#a47c33}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.58;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .shell{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+    aside{border-right:1px solid var(--line);padding:24px;position:sticky;top:0;height:100vh;background:rgba(255,255,255,.68);backdrop-filter:blur(16px)}
+    .brand{font-family:Georgia,"Times New Roman",serif;font-size:25px;line-height:1.05;margin-bottom:28px}
+    .nav{display:grid;gap:8px}
+    .nav a{display:flex;justify-content:space-between;align-items:center;border:1px solid transparent;border-radius:8px;padding:10px 12px;color:var(--muted)}
+    .nav a:first-child{background:var(--green);color:white}
+    .nav b{font-size:15px}
+    .nav span{font-size:12px;opacity:.75}
+    .side-foot{position:absolute;left:24px;right:24px;bottom:24px;color:var(--muted);font-size:12px}
+    main{padding:30px 34px 70px}
+    .topbar{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:34px}
+    .search{flex:1;border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:13px 14px;color:var(--muted)}
+    .lang{border:1px solid var(--line);border-radius:999px;padding:10px 13px;font-weight:800;color:var(--green);background:var(--panel)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch;margin-bottom:18px}
+    .intro{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:28px}
+    .kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rust);font-weight:900}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,7vw,82px);line-height:.94;margin:14px 0 18px;letter-spacing:-.035em}
+    .lead{font-size:19px;color:var(--muted);margin:0;max-width:720px}
+    .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+    .stat{border-top:1px solid var(--line);padding-top:12px}
+    .stat b{display:block;font-family:Georgia,"Times New Roman",serif;font-size:34px}
+    .stat span{color:var(--muted);font-size:13px}
+    .priority{background:#173f3a;color:#f8faf5;border-radius:8px;padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+    .priority .kicker{color:#d8bc78}
+    .priority h2{font-family:Georgia,"Times New Roman",serif;font-size:38px;line-height:1.02;margin:16px 0 12px}
+    .priority p{color:#dce8e2;margin:0}
+    .priority .go{margin-top:34px;font-weight:900}
+    .band{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+    .cat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;min-height:132px}
+    .cat b{font-size:27px;color:var(--green)}
+    .cat p{margin:10px 0 0;color:var(--muted);font-size:14px}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+    .article{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px}
+    .article:hover{border-color:var(--green)}
+    .meta{display:flex;justify-content:space-between;gap:14px;color:var(--muted);font-size:12px;margin-bottom:14px}
+    .article h3{font-size:23px;line-height:1.15;margin:0 0 10px}
+    .article p{color:var(--muted);margin:0}
+    .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px}
+    .tags span{border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted);font-size:12px}
+    footer{color:var(--muted);font-size:12px;margin-top:36px}
+    @media(max-width:980px){.shell{grid-template-columns:1fr}aside{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}.side-foot{position:static;margin-top:24px}.hero,.content-grid{grid-template-columns:1fr}.band{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){main{padding:22px 20px 52px}.topbar{align-items:stretch;flex-direction:column}.band,.stats{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside>
+      <a class="brand" href="homepage-demo-index.html">Providence<br>Knowledge</a>
+      <nav class="nav">
+        <a><b>全部</b><span>4</span></a>
+        <a><b>AI</b><span>1</span></a>
+        <a><b>健康</b><span>1</span></a>
+        <a><b>摄影</b><span>1</span></a>
+        <a><b>认知</b><span>1</span></a>
+      </nav>
+      <div class="side-foot">Style B demo · 知识系统 / 工具感</div>
+    </aside>
+    <main>
+      <div class="topbar"><div class="search">搜索主题、标签或概念</div><a class="lang">English</a></div>
+      <section class="hero">
+        <div class="intro">
+          <div class="kicker">Knowledge Operating System</div>
+          <h1>一个更可维护的知识入口</h1>
+          <p class="lead">首页按四个高层模块组织内容。分类承担导航，文章卡片承担检索，最新和精选内容都留在第一屏下方。</p>
+          <div class="stats">
+            <div class="stat"><b>4</b><span>模块</span></div>
+            <div class="stat"><b>4</b><span>文章</span></div>
+          </div>
+        </div>
+        <a class="priority" href="../../articles/cn/industrial-agent-development-roadmap.html">
+          <div>
+            <div class="kicker">当前重点 · AI</div>
+            <h2>工业级 Agent 开发路线图</h2>
+            <p>模型、harness、工具权限、评测、状态恢复、demo 练习和 AWS 部署路径。</p>
+          </div>
+          <div class="go">进入文章</div>
+        </a>
+      </section>
+      <section class="band">
+        <a class="cat"><b>AI</b><p>Agent 工程、模型工具和部署。</p></a>
+        <a class="cat"><b>健康</b><p>血糖、营养、训练和代谢。</p></a>
+        <a class="cat"><b>摄影</b><p>路线、器材、审美和后期。</p></a>
+        <a class="cat"><b>认知</b><p>资产配置、决策和个人系统。</p></a>
+      </section>
+      <section class="content-grid">
+        <a class="article" href="../../articles/cn/asset-allocation-operating-system.html"><div class="meta"><span>认知</span><span>2026-06-20</span></div><h3>资产配置作为个人操作系统</h3><p>系统思维、维护成本、执行纪律与兼容人性的框架。</p><div class="tags"><span>系统思维</span><span>决策</span><span>资产配置</span></div></a>
+        <a class="article" href="../../articles/cn/industrial-agent-development-roadmap.html"><div class="meta"><span>AI</span><span>2026-06-10</span></div><h3>工业级 Agent 开发路线图</h3><p>从系统工程角度理解 Agent、harness、eval 和部署。</p><div class="tags"><span>Agent</span><span>Harness</span><span>AWS</span></div></a>
+        <a class="article" href="../../articles/cn/blood-glucose.html"><div class="meta"><span>健康</span><span>2026-06-04</span></div><h3>血糖、碳水与代谢</h3><p>碳水吃进去后身体怎么处理，以及如何让波动更稳。</p><div class="tags"><span>血糖</span><span>碳水</span><span>代谢</span></div></a>
+        <a class="article" href="../../articles/cn/xinjiang-northern-photography.html"><div class="meta"><span>摄影</span><span>2025-06-06</span></div><h3>新疆初夏北疆摄影环线</h3><p>按行驶顺序和视觉主题整理北疆摄影目的地。</p><div class="tags"><span>新疆</span><span>路线</span><span>镜头</span></div></a>
+      </section>
+      <footer>本页仅为本地视觉 demo，不参与生产构建。</footer>
+    </main>
+  </div>
+</body>
+</html>
