@@ -62,10 +62,15 @@ def render_rows(pages: list[dict], lang: str) -> str:
     return "\n".join(rows)
 
 
+def newest_first(pages: list[dict]) -> list[dict]:
+    return sorted(pages, key=lambda page: page.get("date", ""), reverse=True)
+
+
 def render_index(pages: list[dict], lang: str) -> str:
     generated = datetime.now(timezone.utc).isoformat(timespec="seconds")
     is_zh = lang == "zh"
-    rows = render_rows(pages, lang)
+    display_pages = newest_first(pages)
+    rows = render_rows(display_pages, lang)
     latest = max((page.get("date", "") for page in pages), default="")
     count_text = f"{len(pages)} 个主题 · 最近更新 {latest}" if is_zh else f"{len(pages)} topic · Last updated {latest}"
     title = "Providence Knowledge Base"
