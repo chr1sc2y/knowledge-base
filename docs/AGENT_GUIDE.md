@@ -22,6 +22,9 @@ not feel like a dashboard, blog feed, marketing page, or card-heavy template.
   article or on a dedicated links page.
 - Article pages should primarily use typography, spacing, headings, diagrams,
   lists, and tables. Avoid making every concept a card.
+- Every article page must include a table of contents immediately after the
+  header and before the main article body. The TOC should link to each top-level
+  `section id` / `h2` section in the article.
 - Cards are reserved for truly framed tools, quizzes, warnings, or interactive
   elements. Do not use cards as the default content container.
 - Simplicity means reducing friction and visual competition, not merely using

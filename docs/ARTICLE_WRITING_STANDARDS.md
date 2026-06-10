@@ -65,6 +65,8 @@ Existing privacy rules in AGENT_GUIDE.md (itinerary stripping, time-sensitive in
 
 - Follow the progressive explanatory model used in existing articles (see blood-glucose.html for reference).
 - Use headings, tables, lists, and callout notes (`.note`) for clarity.
+- Every article must include a table of contents linking to the top-level
+  sections.
 - Interactive elements are permitted only when they illustrate objective relationships (not when they deliver advice).
 - Every article must have matching Simplified Chinese and English versions.
 - End with a neutral "Sources and Notes" section that includes disclaimers.
