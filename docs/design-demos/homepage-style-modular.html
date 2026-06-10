@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Style C · 展开式知识地图</title>
+  <style>
+    :root{--bg:#f6f1e8;--paper:#fffaf1;--fg:#1d2420;--muted:#69716c;--line:#d9ceb9;--green:#173f3a;--rust:#a9462d;--gold:#b98f45;--blue:#2f5b72;--sage:#dfe7dd}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.64;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1160px,calc(100vw - 40px));margin:0 auto}
+    .top{position:sticky;top:0;z-index:3;border-bottom:1px solid var(--line);background:rgba(246,241,232,.9);backdrop-filter:blur(16px)}
+    .nav{min-height:58px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700}
+    .nav nav{display:flex;gap:16px;color:var(--muted);font-size:14px}
+    .lang{border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:var(--green);font-weight:800;font-size:13px}
+    header{padding:70px 0 34px}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:end}
+    .kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rust);font-weight:900}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(46px,8vw,98px);line-height:.92;letter-spacing:-.04em;margin:14px 0 18px}
+    .lead{font-size:21px;color:var(--muted);max-width:720px;margin:0}
+    .overview{border:1px solid var(--line);background:var(--paper);padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .metric{border-top:1px solid var(--line);padding-top:14px}
+    .metric b{display:block;font-family:Georgia,"Times New Roman",serif;font-size:38px;line-height:1;color:var(--green)}
+    .metric span{color:var(--muted);font-size:13px}
+    main{padding:12px 0 80px}
+    .modules{display:grid;gap:12px;margin-top:22px}
+    details.module{border:1px solid var(--line);background:var(--paper)}
+    details.module[open]{background:#fffdf8}
+    summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:160px 1fr auto;gap:22px;align-items:center;padding:24px}
+    summary::-webkit-details-marker{display:none}
+    .code{font-family:Georgia,"Times New Roman",serif;font-size:52px;line-height:1;color:var(--green);letter-spacing:-.04em}
+    .summary-copy h2{font-family:Georgia,"Times New Roman",serif;font-size:32px;line-height:1.08;margin:0 0 8px;letter-spacing:-.02em}
+    .summary-copy p{color:var(--muted);margin:0;max-width:720px}
+    .indicator{width:34px;height:34px;border:1px solid var(--line);border-radius:999px;display:grid;place-items:center;color:var(--green);font-weight:900}
+    details[open] .indicator{background:var(--green);color:white;border-color:var(--green)}
+    details[open] .indicator::before{content:"-"}
+    .indicator::before{content:"+"}
+    .panel{border-top:1px solid var(--line);display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;padding:24px}
+    .panel-note{color:var(--muted)}
+    .panel-note b{display:block;color:var(--rust);font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+    .article{border:1px solid var(--line);background:#fff;padding:18px;display:grid;gap:12px}
+    .article-top{display:flex;justify-content:space-between;gap:14px;color:var(--muted);font-size:12px}
+    .article h3{font-family:Georgia,"Times New Roman",serif;font-size:30px;line-height:1.05;margin:0;letter-spacing:-.02em}
+    .article p{margin:0;color:var(--muted)}
+    .tags{display:flex;gap:6px;flex-wrap:wrap}
+    .tags span{border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted);font-size:12px}
+    .go{display:inline-flex;width:max-content;align-items:center;gap:8px;color:var(--green);font-weight:900;border-bottom:1px solid var(--green)}
+    .module.ai .code,.module.ai .go{color:var(--blue)}
+    .module.health .code,.module.health .go{color:#2f6b4f}
+    .module.photo .code,.module.photo .go{color:var(--rust)}
+    .module.cognition .code,.module.cognition .go{color:var(--gold)}
+    footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:28px 0 46px}
+    @media(max-width:900px){.hero,.panel{grid-template-columns:1fr}.overview{grid-template-columns:1fr 1fr}summary{grid-template-columns:1fr auto}.code{font-size:46px}.summary-copy{grid-column:1 / -1;grid-row:2}}
+    @media(max-width:560px){header{padding-top:46px}.nav nav{display:none}.overview{grid-template-columns:1fr}summary{padding:19px}.panel{padding:19px}.article h3{font-size:26px}}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="nav wrap">
+      <a class="brand" href="homepage-demo-index.html">Providence KB</a>
+      <nav><a href="#ai">AI</a><a href="#health">健康</a><a href="#photo">摄影</a><a href="#cognition">认知</a></nav>
+      <a class="lang">English</a>
+    </div>
+  </div>
+  <header class="wrap">
+    <div class="hero">
+      <div>
+        <div class="kicker">Modular Knowledge Map</div>
+        <h1>首页先给结构，再展开内容</h1>
+        <p class="lead">四个大类不是普通卡片，而是可以展开的知识模块。默认让用户先理解知识版图，再按兴趣展开具体文章。</p>
+      </div>
+      <div class="overview">
+        <div class="metric"><b>4</b><span>长期模块：AI / 健康 / 摄影 / 认知</span></div>
+        <div class="metric"><b>1-2</b><span>每个模块首屏只露出重点文章</span></div>
+        <div class="metric"><b>0</b><span>首页不再堆成文章列表</span></div>
+        <div class="metric"><b>+</b><span>点击展开，逐步发现内容</span></div>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="modules">
+      <details class="module ai" id="ai" open>
+        <summary>
+          <div class="code">AI</div>
+          <div class="summary-copy"><h2>Agent 工程与 AI 系统</h2><p>关注模型之外的工程外壳：harness、工具权限、评测、部署、状态恢复和开源框架。</p></div>
+          <div class="indicator"></div>
+        </summary>
+        <div class="panel">
+          <div class="panel-note"><b>Module Role</b>这里是技术系统类内容的入口。未来可以继续容纳 OpenAI API、MCP、agent 评测、部署架构和工具链。</div>
+          <a class="article" href="../../articles/cn/industrial-agent-development-roadmap.html">
+            <div class="article-top"><span>AI</span><span>2026-06-10</span></div>
+            <h3>工业级 Agent 开发路线图</h3>
+            <p>从系统工程角度理解 Agent：模型与 harness 的关系、开源框架选择、工具权限、评测、状态恢复、demo 练习和 AWS 部署路径。</p>
+            <div class="tags"><span>Agent</span><span>Harness</span><span>Eval</span><span>AWS</span></div>
+            <span class="go">进入文章</span>
+          </a>
+        </div>
+      </details>
+      <details class="module health" id="health">
+        <summary>
+          <div class="code">健康</div>
+          <div class="summary-copy"><h2>身体指标、营养与日常实践</h2><p>把健康问题拆成可理解、可执行、可长期维护的知识模块。</p></div>
+          <div class="indicator"></div>
+        </summary>
+        <div class="panel">
+          <div class="panel-note"><b>Module Role</b>适合承载血糖、营养、训练、睡眠、体检指标和生活方式实验，不做医疗建议，只做清晰解释和实践框架。</div>
+          <a class="article" href="../../articles/cn/blood-glucose.html">
+            <div class="article-top"><span>健康</span><span>2026-06-04</span></div>
+            <h3>血糖、碳水与代谢</h3>
+            <p>用大白话讲血糖：碳水吃进去后身体怎么处理、为什么会波动、哪些日常小动作能让它更稳。</p>
+            <div class="tags"><span>血糖</span><span>碳水</span><span>代谢</span><span>食物</span></div>
+            <span class="go">进入文章</span>
+          </a>
+        </div>
+      </details>
+      <details class="module photo" id="photo">
+        <summary>
+          <div class="code">摄影</div>
+          <div class="summary-copy"><h2>路线、审美、器材与后期</h2><p>把旅行摄影从目的地列表升级为视觉主题、镜头选择和成片方法。</p></div>
+          <div class="indicator"></div>
+        </summary>
+        <div class="panel">
+          <div class="panel-note"><b>Module Role</b>这里可以放路线指南、镜头策略、调色风格、AI 出样、Lightroom 工作流和成片复盘。</div>
+          <a class="article" href="../../articles/cn/xinjiang-northern-photography.html">
+            <div class="article-top"><span>摄影</span><span>2025-06-06</span></div>
+            <h3>新疆初夏北疆摄影环线</h3>
+            <p>按行驶顺序和视觉主题整理北疆摄影目的地：坎儿井、火焰山、库木塔格、江布拉克、伊犁草原、赛里木湖、雅丹、喀纳斯、禾木。</p>
+            <div class="tags"><span>新疆</span><span>路线</span><span>镜头</span><span>视觉主题</span></div>
+            <span class="go">进入文章</span>
+          </a>
+        </div>
+      </details>
+      <details class="module cognition" id="cognition">
+        <summary>
+          <div class="code">认知</div>
+          <div class="summary-copy"><h2>决策系统与长期框架</h2><p>把复杂问题转成可维护的个人操作系统：资产配置、判断、复盘和行动纪律。</p></div>
+          <div class="indicator"></div>
+        </summary>
+        <div class="panel">
+          <div class="panel-note"><b>Module Role</b>这个模块不是泛泛的思考文章，而是沉淀可复用的决策方法、长期主义框架和个人系统设计。</div>
+          <a class="article" href="../../articles/cn/asset-allocation-operating-system.html">
+            <div class="article-top"><span>认知</span><span>2026-06-20</span></div>
+            <h3>资产配置作为个人操作系统</h3>
+            <p>用系统思维重新理解资产配置：功能模块设计、维护成本控制、足够好就执行的纪律，以及兼容人性的实用框架。</p>
+            <div class="tags"><span>资产配置</span><span>系统思维</span><span>决策</span><span>纪律</span></div>
+            <span class="go">进入文章</span>
+          </a>
+        </div>
+      </details>
+    </section>
+  </main>
+  <footer><div class="wrap">Style C demo · 展开式知识地图 · 不参与生产构建</div></footer>
+</body>
+</html>

@@ -13,9 +13,12 @@
     .kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rust);font-weight:900}
     h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,8vw,84px);line-height:.96;margin:12px 0 18px;max-width:760px}
     .lead{font-size:20px;color:var(--muted);max-width:720px;margin:0}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:34px 0 80px}
+    .grid{display:grid;grid-template-columns:1.2fr .9fr .9fr;gap:18px;padding:34px 0 80px}
     a{color:inherit;text-decoration:none}
     .choice{background:var(--paper);border:1px solid var(--line);padding:24px;min-height:320px;display:flex;flex-direction:column;justify-content:space-between}
+    .choice.recommended{background:#173f3a;color:#fffaf1;border-color:#173f3a}
+    .choice.recommended p,.choice.recommended .row,.choice.recommended .tag{color:#dfe9e2}
+    .choice.recommended .label{color:#e1bd79}
     .choice:hover{border-color:var(--rust)}
     .label{display:flex;justify-content:space-between;gap:16px;color:var(--rust);font-size:13px;font-weight:900}
     h2{font-family:Georgia,"Times New Roman",serif;font-size:38px;line-height:1.02;margin:18px 0 10px}
@@ -26,7 +29,7 @@
     .system{background:#f8faf7}
     .system .tag{color:var(--blue)}
     footer{border-top:1px solid var(--line);padding:22px 0 42px;color:var(--muted);font-size:13px}
-    @media(max-width:780px){.grid{grid-template-columns:1fr}.choice{min-height:auto}h2{font-size:32px}}
+    @media(max-width:980px){.grid{grid-template-columns:1fr}.choice{min-height:auto}h2{font-size:32px}}
   </style>
 </head>
 <body>
@@ -36,6 +39,19 @@
     <p class="lead">四个主类固定为 AI、健康、摄影、认知。下面是两个不改生产站的静态风格 demo，用同一批真实文章数据测试信息架构和视觉气质。</p>
   </header>
   <main class="wrap grid">
+    <a class="choice recommended" href="homepage-style-modular.html">
+      <div>
+        <div class="label"><span>Style C</span><span>Recommended</span></div>
+        <h2>展开式知识地图</h2>
+        <p>首页主体就是四个可展开模块。默认聚焦一个主题，点击 AI / 健康 / 摄影 / 认知 展开后再看到文章、标签、摘要和入口。</p>
+        <div class="mini">
+          <div class="row"><span class="tag">AI</span><span>模块级视觉重点，不再平铺文章</span></div>
+          <div class="row"><span class="tag">健康</span><span>展开后看文章，不展开时保持安静</span></div>
+          <div class="row"><span class="tag">摄影</span><span>更像知识地图，不像文件夹列表</span></div>
+        </div>
+      </div>
+      <p>打开 Style C</p>
+    </a>
     <a class="choice" href="homepage-style-editorial.html">
       <div>
         <div class="label"><span>Style A</span><span>Magazine</span></div>
