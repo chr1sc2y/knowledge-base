@@ -61,6 +61,32 @@ class BuildIndexTests(unittest.TestCase):
         self.assertIn('<details class="module more" id="more" open>', html)
         self.assertIn("更多主题", html)
         self.assertIn("未来主题", html)
+        self.assertIn('<nav class="module-jump" aria-label="快速导航">', html)
+        self.assertIn('<a href="#more">更多</a>', html)
+
+    def test_index_keeps_module_navigation_near_content(self):
+        pages = [
+            {
+                "slug": "ai",
+                "zh_title": "AI 文章",
+                "en_title": "AI Article",
+                "zh_subtitle": "内容",
+                "en_subtitle": "Content",
+                "zh_category": "Agent 工程",
+                "en_category": "Agent Engineering",
+                "zh_path": "articles/ai.html",
+                "en_path": "articles/ai.html",
+                "date": "2026-01-01",
+            }
+        ]
+
+        html = build.render_index(pages, "en")
+
+        self.assertNotIn('class="top"', html)
+        self.assertNotIn('class="brand"', html)
+        self.assertNotIn("Providence KB", html)
+        self.assertIn('<nav class="module-jump" aria-label="Quick Navigation">', html)
+        self.assertLess(html.index('class="module-jump"'), html.index('class="modules"'))
 
 
 class ArticleTocParser(HTMLParser):

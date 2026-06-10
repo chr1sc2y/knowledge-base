@@ -186,7 +186,7 @@ def render_modules(modules: list[dict], lang: str) -> str:
     return "\n".join(rendered)
 
 
-def render_nav(modules: list[dict], lang: str) -> str:
+def render_module_jump(modules: list[dict], lang: str) -> str:
     return "".join(
         f'<a href="#{esc(module["key"])}">{esc(page_value(module, "label", lang))}</a>'
         for module in modules
@@ -212,6 +212,7 @@ def render_index(pages: list[dict], lang: str) -> str:
     article_count_label = "文章" if is_zh else "Articles"
     latest_label = "最近更新" if is_zh else "Latest"
     expand_label = "点击展开" if is_zh else "Click to expand"
+    jump_label = "快速导航" if is_zh else "Quick Navigation"
 
     return f"""<!doctype html>
 <html lang="{html_lang}">
@@ -227,21 +228,20 @@ def render_index(pages: list[dict], lang: str) -> str:
     body{{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.64;-webkit-font-smoothing:antialiased}}
     a{{color:inherit;text-decoration:none}}
     .wrap{{width:min(1160px,calc(100vw - 40px));margin:0 auto}}
-    .top{{position:sticky;top:0;z-index:3;border-bottom:1px solid var(--line);background:rgba(246,241,232,.9);backdrop-filter:blur(16px)}}
-    .nav{{min-height:58px;display:flex;align-items:center;justify-content:space-between;gap:18px}}
-    .brand{{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700}}
-    .nav nav{{display:flex;gap:16px;color:var(--muted);font-size:14px;flex-wrap:wrap;justify-content:flex-end}}
+    .language-row{{display:flex;justify-content:flex-end;padding-top:24px}}
     .lang{{border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:var(--green);font-weight:800;font-size:13px;white-space:nowrap}}
-    header{{padding:70px 0 34px}}
+    header{{padding:48px 0 34px}}
     .hero{{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:end}}
-    .kicker{{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rust);font-weight:900}}
-    h1{{font-family:Georgia,"Times New Roman",serif;font-size:clamp(46px,8vw,98px);line-height:.92;letter-spacing:-.04em;margin:14px 0 18px}}
-    .lead{{font-size:21px;color:var(--muted);max-width:660px;margin:0}}
+    h1{{font-family:Georgia,"Times New Roman",serif;font-size:clamp(54px,9vw,112px);line-height:.92;letter-spacing:-.04em;margin:0}}
     .overview{{border:1px solid var(--line);background:var(--paper);padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:12px}}
     .metric{{border-top:1px solid var(--line);padding-top:14px}}
     .metric b{{display:block;font-family:Georgia,"Times New Roman",serif;font-size:38px;line-height:1;color:var(--green)}}
     .metric span{{color:var(--muted);font-size:13px}}
     main{{padding:12px 0 80px}}
+    .module-jump{{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--line)}}
+    .jump-label{{color:var(--muted);font-size:13px;margin-right:4px}}
+    .module-jump a{{border:1px solid var(--line);background:rgba(255,250,241,.72);padding:8px 12px;color:var(--green);font-weight:800;font-size:14px}}
+    .module-jump a:hover{{border-color:var(--green);background:var(--paper)}}
     .modules{{display:grid;gap:12px;margin-top:22px}}
     details.module{{border:1px solid var(--line);background:var(--paper)}}
     details.module[open]{{background:#fffdf8}}
@@ -272,21 +272,16 @@ def render_index(pages: list[dict], lang: str) -> str:
     .module.cognition .code,.module.cognition .go{{color:var(--gold)}}
     footer{{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:28px 0 46px}}
     @media(max-width:900px){{.hero,.panel{{grid-template-columns:1fr}}.overview{{grid-template-columns:1fr 1fr}}summary{{grid-template-columns:1fr auto}}.code{{font-size:46px}}.summary-copy{{grid-column:1 / -1;grid-row:2}}}}
-    @media(max-width:560px){{header{{padding-top:46px}}.nav nav{{display:none}}.overview{{grid-template-columns:1fr}}summary{{padding:19px}}.panel{{padding:19px}}.article h3{{font-size:26px}}}}
+    @media(max-width:560px){{.language-row{{padding-top:18px}}header{{padding-top:34px}}.overview{{grid-template-columns:1fr}}summary{{padding:19px}}.panel{{padding:19px}}.article h3{{font-size:26px}}}}
   </style>
 </head>
 <body>
-  <div class="top">
-    <div class="nav wrap">
-      <a class="brand" href="./">Providence KB</a>
-      <nav>{render_nav(modules, lang)}</nav>
-      <a class="lang" href="{esc(lang_href)}">{esc(lang_label)}</a>
-    </div>
+  <div class="language-row wrap">
+    <a class="lang" href="{esc(lang_href)}">{esc(lang_label)}</a>
   </div>
   <header class="wrap">
     <div class="hero">
       <div>
-        <div class="kicker">Providence Knowledge Base</div>
         <h1>{esc(h1)}</h1>
       </div>
       <div class="overview">
@@ -298,6 +293,10 @@ def render_index(pages: list[dict], lang: str) -> str:
     </div>
   </header>
   <main class="wrap">
+    <nav class="module-jump" aria-label="{esc(jump_label)}">
+      <span class="jump-label">{esc(jump_label)}</span>
+      {render_module_jump(modules, lang)}
+    </nav>
     <section class="modules">
 {render_modules(modules, lang)}
     </section>
