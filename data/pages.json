@@ -32,6 +32,22 @@
     "featured": false
   },
   {
+    "slug": "landscape-photography-field-workflow",
+    "zh_title": "风光摄影现场工作流",
+    "en_title": "Landscape Photography Field Workflow",
+    "zh_subtitle": "把风光摄影拆解为计划、曝光、构图、对焦、题材策略和现场风险控制，形成可复用的拍摄工作流。",
+    "en_subtitle": "A structured field workflow for landscape photography: planning, exposure, composition, focusing, subject strategy, and equipment care.",
+    "zh_category": "旅行与摄影",
+    "en_category": "Travel & Photography",
+    "tags": ["landscape photography", "photography workflow", "exposure", "composition", "focus stacking", "coast", "waterfall", "forest", "night sky", "风光摄影", "摄影工作流", "曝光", "构图", "景深合成", "海岸", "瀑布", "森林", "星空"],
+    "zh_search": "风光摄影 现场工作流 计划 机位 地图 谷歌地球 windy 巧摄 曝光 直方图 向右曝光 包围曝光 炫光 构图 层次 前景 远景 引导线 框景 极简 对焦 景深合成 通透 偏振镜 星空 极光 海岸 海浪 瀑布 森林 山川 沙漠 ND CPL 三脚架 快门线",
+    "en_search": "landscape photography field workflow planning location map google earth windy exposure histogram expose to the right bracketing flare composition layers foreground background leading lines framing minimalism focus stacking clarity polarizer night sky aurora coast waves waterfall forest mountains desert ND CPL tripod cable release",
+    "zh_path": "articles/landscape-photography-field-workflow.html",
+    "en_path": "articles/landscape-photography-field-workflow.html",
+    "date": "2026-06-17",
+    "featured": false
+  },
+  {
     "slug": "asset-allocation-operating-system",
     "zh_title": "资产配置作为个人操作系统",
     "en_title": "Asset Allocation as a Personal Operating System",
@@ -61,6 +77,38 @@
     "zh_path": "articles/industrial-agent-development-roadmap.html",
     "en_path": "articles/industrial-agent-development-roadmap.html",
     "date": "2026-06-10",
+    "featured": false
+  },
+  {
+    "slug": "pte-academic-preparation-framework",
+    "zh_title": "PTE Academic 备考框架",
+    "en_title": "PTE Academic Preparation Framework",
+    "zh_subtitle": "围绕 PTE Academic 的考试结构、题型权重、口语流利度、写作模板和听读任务，整理一套去个人化的备考框架。",
+    "en_subtitle": "A neutral preparation framework for PTE Academic: test structure, task weights, oral fluency, writing templates, reading tasks, and listening tasks.",
+    "zh_category": "学习与考试",
+    "en_category": "Learning & Exams",
+    "tags": ["PTE", "PTE Academic", "English test", "exam preparation", "speaking", "writing", "reading", "listening", "oral fluency", "pronunciation", "PTE考试", "备考", "英语考试", "口语", "写作", "阅读", "听力", "流利度", "发音"],
+    "zh_search": "PTE PTE Academic 备考 框架 英语考试 机考 Speaking Writing Reading Listening 口语 写作 阅读 听力 Read Aloud Repeat Sentence Describe Image Retell Lecture Summarize Written Text Write Essay Fill in the Blanks Re-order Paragraph Write from Dictation Highlight Incorrect Words Summarize Spoken Text 流利度 发音 内容 语法 拼写 模板",
+    "en_search": "PTE PTE Academic preparation framework English test computer based exam Speaking Writing Reading Listening Read Aloud Repeat Sentence Describe Image Retell Lecture Summarize Written Text Write Essay Fill in the Blanks Re-order Paragraph Write from Dictation Highlight Incorrect Words Summarize Spoken Text oral fluency pronunciation content grammar spelling template",
+    "zh_path": "articles/pte-academic-preparation-framework.html",
+    "en_path": "articles/pte-academic-preparation-framework.html",
+    "date": "2026-06-17",
+    "featured": false
+  },
+  {
+    "slug": "resistance-training-nutrition-framework",
+    "zh_title": "阻力训练、营养与能量平衡",
+    "en_title": "Resistance Training, Nutrition, and Energy Balance",
+    "zh_subtitle": "将训练动作模式、训练拆分、宏量营养素、备餐与补剂整理为一套结构化的健身知识框架。",
+    "en_subtitle": "A structured framework for resistance-training movement patterns, program splits, macronutrients, meal prep, and supplements.",
+    "zh_category": "健康与营养",
+    "en_category": "Health & Nutrition",
+    "tags": ["fitness", "resistance training", "strength training", "nutrition", "macronutrients", "meal prep", "supplements", "健身", "力量训练", "阻力训练", "营养", "宏量营养素", "备餐", "补剂"],
+    "zh_search": "健身 阻力训练 力量训练 动作模式 胸 背 肩 腿 肱二头 肱三头 推胸 夹胸 下拉 划船 推举 飞鸟 深蹲 硬拉 弯举 臂屈伸 训练拆分 四分化 蛋白质 碳水 脂肪 热量 备餐 隔夜燕麦 鱼油 维生素 锌 镁",
+    "en_search": "fitness resistance training strength training movement patterns chest back shoulders legs biceps triceps press fly pulldown row overhead press rear delt squat deadlift curl triceps extension training split four day split protein carbohydrate fat calories meal prep overnight oats fish oil multivitamin zinc magnesium",
+    "zh_path": "articles/resistance-training-nutrition-framework.html",
+    "en_path": "articles/resistance-training-nutrition-framework.html",
+    "date": "2026-06-17",
     "featured": false
   }
 ]
