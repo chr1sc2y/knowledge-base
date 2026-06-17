@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AWS SAP-C02 / DOP-C02 Certification Cheatsheet</title>
-  <meta name="description" content="A complete AWS certification cheatsheet organized by the original preparation structure: Identity, Compute, Data, Security, Network, Operations, Deployment, Migration, DR, Cost, and DOP-C02 addenda.">
+  <title>AWS SAP-C02 Certification Cheatsheet</title>
+  <meta name="description" content="A complete AWS certification cheatsheet organized by the original preparation structure: Identity, Compute, Data, Security, Network, Operations, Deployment, Migration, DR, and Cost.">
   <style>
     :root{--bg:#f6f2e8;--fg:#202523;--muted:#68716d;--line:#d8cfbf;--ink:#173f39;--accent:#9f5136;--note:#fff9ec;--soft:#ebe2d2}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.72;-webkit-font-smoothing:antialiased}.top{position:sticky;top:0;background:rgba(246,242,232,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:4}.nav{width:min(1080px,calc(100vw - 40px));margin:0 auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:14px}.nav a{color:var(--ink);font-size:13px;font-weight:900;text-decoration:none}.lang{border:1px solid var(--line);border-radius:999px;padding:7px 12px}.wrap{width:min(980px,calc(100vw - 40px));margin:0 auto}header{padding:48px 0 32px}.kicker{color:var(--accent);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,5.8vw,52px);line-height:1.05;letter-spacing:-.02em;margin:10px 0 14px}.lead{font-size:19px;color:var(--muted);margin:0}.toc{border-top:1px solid var(--line);padding:18px 0 10px}.toc h2{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}.toc ol{margin:0;padding-left:20px}.toc a{color:var(--ink);text-decoration:none}.toc a:hover{text-decoration:underline}main{border-top:1px solid var(--line)}section{padding:28px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,"Times New Roman",serif;font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:0 0 12px}h3{font-size:20px;margin:26px 0 8px}h4,h5{font-size:16px;margin:20px 0 8px}p{margin:0 0 13px}ul,ol{margin:0 0 14px 22px;padding:0}li{margin:3px 0}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#fff8e8;padding:1px 4px;border-radius:4px}pre{background:#fff8e8;border:1px solid var(--line);padding:14px 16px;overflow:auto;font-size:13px;line-height:1.55}.table-scroll{width:100%;overflow-x:auto;margin:14px 0 22px;border-top:1px solid var(--line)}table{width:100%;min-width:760px;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}td:first-child{font-weight:800;color:var(--ink);width:28%}figure{margin:18px 0;padding:12px;background:#fffaf0;border:1px solid var(--line)}figure img{max-width:100%;height:auto;display:block;margin:0 auto}figcaption{font-size:12px;color:var(--muted);margin-top:8px;text-align:center}.note{background:var(--note);border-left:4px solid var(--accent);padding:14px 16px;margin:18px 0}.footer-note{margin:32px auto 60px;color:var(--muted);font-size:14px;max-width:980px;padding:0 20px}@media(max-width:760px){table{font-size:13px}}
@@ -14,1119 +14,481 @@
   <div class="top"><nav class="nav"><a href="../index.html">Knowledge Base</a><a class="lang" href="../../articles/aws-certification-cheatsheet.html">中文</a></nav></div>
   <header class="wrap">
     <div class="kicker">Cloud Architecture</div>
-    <h1>AWS SAP-C02 / DOP-C02 Certification Cheatsheet</h1>
-    <p class="lead">A complete AWS certification cheatsheet organized by the original preparation structure: Identity, Compute, Data, Security, Network, Operations, Deployment, Migration, DR, Cost, and DOP-C02 addenda.</p>
+    <h1>AWS SAP-C02 Certification Cheatsheet</h1>
+    <p class="lead">A complete AWS certification cheatsheet organized by the original preparation structure: Identity, Compute, Data, Security, Network, Operations, Deployment, Migration, DR, and Cost.</p>
   </header>
   <nav class="toc wrap" aria-label="Contents">
     <h2>Contents</h2>
-    <ol><li><a href="#identity">Identity</a></li>
-<li><a href="#computing">Computing</a></li>
-<li><a href="#data">Data</a></li>
-<li><a href="#security">Security</a></li>
-<li><a href="#network">Network</a></li>
-<li><a href="#os">OS</a></li>
-<li><a href="#workflow">Workflow</a></li>
-<li><a href="#organization">Organization</a></li>
-<li><a href="#deployment">Deployment</a></li>
-<li><a href="#infra-migration-dr-charge">Infra, migration, DR &amp; Charge</a></li>
-<li><a href="#others">Others</a></li>
-<li><a href="#dr">DR</a></li>
-<li><a href="#错题笔记">错题笔记</a></li>
-<li><a href="#dop-c02-cheatsheet">DOP-C02 Cheatsheet</a></li>
-<li><a href="#s3">S3</a></li>
-<li><a href="#lambda-2">Lambda</a></li>
-<li><a href="#aurora-2">Aurora</a></li>
-<li><a href="#ebs">EBS</a></li>
-<li><a href="#kms">KMS</a></li>
-<li><a href="#control-tower">Control Tower</a></li>
-<li><a href="#cloudwatch">CloudWatch</a></li></ol>
+    <ol>
+      <li><a href="#identity">Identity</a></li>
+      <li><a href="#computing">Computing</a></li>
+      <li><a href="#data">Data</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#network">Network</a></li>
+      <li><a href="#os">OS</a></li>
+      <li><a href="#workflow">Workflow</a></li>
+      <li><a href="#organization">Organization</a></li>
+      <li><a href="#deployment">Deployment</a></li>
+      <li><a href="#infra-migration-dr-charge">Infra, Migration, DR &amp; Charge</a></li>
+      <li><a href="#others">Others</a></li>
+      <li><a href="#dr">DR</a></li>
+      <li><a href="#mistakes">Common Exam Mistakes</a></li>
+    </ol>
   </nav>
   <main class="wrap">
-    <div class="note">This is a certification-preparation cheatsheet organized by service domain and exam pitfalls. AWS service capabilities and exam scopes change over time; use current AWS documentation and exam guides for final verification.</div>
-<section id="identity">
-<h2>Identity</h2>
-<div class="table-scroll"><table>
-<thead><tr>
-<th>AWS Service</th>
-<th>Purpose</th>
-</tr></thead><tbody>
-<tr>
-<td>IAM</td>
-<td>cannot assume role cross account</td>
-</tr>
-</tbody></table></div>
-<p>IAM Service Role: 将权限授予 AWS 服务从而执行操作 |</p>
-<p>| STS (AWS Security Token Service) | Create temporary limited-privilege credentials</p>
-<p>SAML (Security Assertion Markup Language)</p>
-<ul>
-<li>在身份提供商 IdP 和服务提供商 SP 之间交换认证和授权数据</li>
-<li>通常用于实现单点登录 SSO |</li>
-</ul>
-<p>| Cognito | identity and access management</p>
-<ul>
-<li>identity pool: grant temporary access to AWS</li>
-<li>user pool: for user registration and authentication |</li>
-</ul>
-<h3 id="identity-based-policy-vs-resource-based-policy">Identity-based Policy vs. Resource-based Policy</h3>
-<figure><img src="assets/aws-certification-cheatsheet/diagram-9.png" alt="AWS diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
-<h3 id="iam-permission-boundary">IAM Permission Boundary</h3>
-<p>（权限边界）: 限制 IAM User/Role 能获得的最大权限</p>
-<figure><img src="assets/aws-certification-cheatsheet/diagram-1.png" alt="AWS diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
-<h3 id="sts-aws-security-token-service">STS (AWS Security Token Service)</h3>
-<p>创建临时安全凭证</p>
-<figure><img src="assets/aws-certification-cheatsheet/diagram-2.png" alt="AWS diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
-<figure><img src="assets/aws-certification-cheatsheet/diagram-3.png" alt="AWS diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
-<h3 id="trust-policy-permission-policy">Trust Policy &amp; Permission Policy</h3>
-<p>Trust Policy 可以指定主体 (Principal) 可以进行什么操作 (Action)</p>
-<pre><code>{
-  &quot;Version&quot;: &quot;2012-10-17&quot;,
-  &quot;Statement&quot;: [
+    <div class="note">This is an exam-preparation cheatsheet organized by service domain and commonly-missed points. AWS service capabilities and exam scope change over time; for actual preparation, rely on the latest official AWS documentation and exam guides.</div>
+
+    <section id="identity">
+      <h2>Identity</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>AWS Service</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>IAM</td><td>Cannot assume a role cross-account</td></tr>
+          <tr><td>IAM Service Role</td><td>Grants permissions to an AWS service so it can act on your behalf</td></tr>
+          <tr><td>STS (Security Token Service)</td><td>Creates temporary, limited-privilege credentials</td></tr>
+          <tr><td>SAML (Security Assertion Markup Language)</td><td>Exchanges authentication and authorization data between an identity provider (IdP) and a service provider (SP); commonly used for single sign-on (SSO)</td></tr>
+          <tr><td>Cognito</td><td>Identity and access management:<br>· identity pool: grant temporary access to AWS<br>· user pool: for user registration and authentication</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>Identity-based Policy vs. Resource-based Policy</h3>
+      <figure><img src="assets/aws-certification-cheatsheet/diagram-9.png" alt="Identity-based vs resource-based policy diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
+
+      <h3>IAM Permission Boundary</h3>
+      <p>A permission boundary limits the maximum permissions an IAM user/role can obtain.</p>
+      <figure><img src="assets/aws-certification-cheatsheet/diagram-1.png" alt="IAM permission boundary diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
+
+      <h3>STS (AWS Security Token Service)</h3>
+      <p>Creates temporary security credentials.</p>
+      <figure><img src="assets/aws-certification-cheatsheet/diagram-2.png" alt="STS diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
+      <figure><img src="assets/aws-certification-cheatsheet/diagram-3.png" alt="STS diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
+
+      <h3>Trust Policy &amp; Permission Policy</h3>
+      <p>A trust policy specifies which principal can perform which action.</p>
+      <pre><code>{
+  "Version": "2012-10-17",
+  "Statement": [
     {
-      &quot;Effect&quot;: &quot;Allow&quot;,
-      &quot;Principal&quot;: {
-        &quot;AWS&quot;: &quot;arn:aws:iam::123456789012:user/Alice&quot;
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::123456789012:user/Alice"
       },
-      &quot;Action&quot;: &quot;sts:AssumeRole&quot;
+      "Action": "sts:AssumeRole"
     }
   ]
-}
-</code></pre>
-<p>Permission Policy 定义了拥有该角色的用户或服务可以对哪些AWS资源进行哪些操作</p>
-<pre><code>{
-  &quot;Version&quot;: &quot;2012-10-17&quot;,
-  &quot;Statement&quot;: [
+}</code></pre>
+      <p>A permission policy defines which AWS resources and actions the user or service holding the role can access.</p>
+      <pre><code>{
+  "Version": "2012-10-17",
+  "Statement": [
     {
-      &quot;Effect&quot;: &quot;Allow&quot;,
-      &quot;Action&quot;: &quot;s3:ListBucket&quot;,
-      &quot;Resource&quot;: &quot;arn:aws:s3:::example_bucket&quot;
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::example_bucket"
     },
     {
-      &quot;Effect&quot;: &quot;Allow&quot;,
-      &quot;Action&quot;: &quot;s3:GetObject&quot;,
-      &quot;Resource&quot;: &quot;arn:aws:s3:::example_bucket/*&quot;
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::example_bucket/*"
     }
   ]
-}
-</code></pre>
-<section id="computing">
-<h2>Computing</h2>
-<div class="table-scroll"><table>
-<thead><tr>
-<th>AWS Service</th>
-<th>Purpose</th>
-</tr></thead><tbody>
-<tr>
-<td><strong>EC2</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>EC2 Graviton</td>
-<td>Better performance</td>
-</tr>
-</tbody></table></div>
-<p>Lambda@Edge</p>
-<ul>
-<li>在 <strong>CloudFront</strong> 上运行 Lambda</li>
-<li>在 CloudFront <strong>分发阶段</strong>运行 | max 15 min</li>
-<li>in VPC: use NAT Gateway to access internet</li>
-</ul>
-<ul>
-<li>credentials 不能存储在环境变量中</li>
-</ul>
-<p>Provisioned Concurrency</p>
-<ul>
-<li>减少冷启动时间</li>
-<li>成本高，始终保持一定数量的实例就绪</li>
-</ul>
-<p>Reserved Concurrency</p>
-<ul>
-<li>限制函数运行的最大实例数</li>
-</ul>
-<p><strong>SnapStart</strong></p>
-<ul>
-<li>减少冷启动时间</li>
-<li>不和 Provisioned Concurrency 一起使用 |</li>
-</ul>
-<p>| Step Function | Combine Lambda and other AWS services</p>
-<p>Standard workflow: exactly-once, up to 1 year, for <strong>long-time auditable workflow</strong></p>
-<p>Express workflow: at-least-once, up to 5 min, for <strong>high-event-rate workload</strong> |</p>
-<p>| Elastic Kubernetes Service</p>
-<p>EKS | kubernetes</p>
-<p>more complex</p>
-<p><strong>EKS</strong></p>
-<ul>
-<li>run Kubernetes on <strong>EKS-managed clusters/infra</strong> from **AWS</li>
-</ul>
-<p>EKS Anywhere**</p>
-<ul>
-<li>run Kubernetes on <strong>EKS-managed clusters/infra</strong> from **on-premises</li>
-</ul>
-<p>EKS Distro**</p>
-<ul>
-<li>run Kubernetes on your own clusters/infra from on-premises</li>
-</ul>
-<p><strong>Topology Spread Constraints</strong></p>
-<ul>
-<li>确保 pods 在多个 AZ 之间分布</li>
-<li>提高弹性 resilience</li>
-</ul>
-<p>Cluster AutoScaler |</p>
-<p>| ECS: Elastic Container Service | container orchestration</p>
-<ul>
-<li>set enableECSManagedTags to true for run-task |</li>
-</ul>
-<p>| Fargate | run ECS containers</p>
-<p>serverless |</p>
-<p>| App2Container | - 将现有应用程序打包成容器</p>
-<ul>
-<li>部署到 ECS 或 EKS</li>
-<li>减少代码修改和手动配置</li>
-</ul>
-<p><strong>containerize</strong> and <strong>migrate</strong> existing app |</p>
-<p>| Compute Optimizer | analyse utilisation metrics</p>
-<p>generates optimisation recommendations</p>
-<p><strong>Enhanced infrastructure metrics</strong>:</p>
-<ul>
-<li>长期的数据分析，扩展到 3 个月</li>
-<li>额外费用 |</li>
-</ul>
-<p>| SES: Simple Email Servics | send email, store email template |</p>
-<p>| AppSync | 扩展的 GraphQL API</p>
-<ul>
-<li>实时数据查询和同步</li>
-<li>支持 GraphQL 和 WebSocket |</li>
-</ul>
-<figure><img src="assets/aws-certification-cheatsheet/diagram-4.png" alt="AWS diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
-<h3 id="ec2">EC2</h3>
-<h4 id="launch-types">Launch Types</h4>
-<ol>
-<li>1. on-demand</li>
-<li>2. spot</li>
-<li>3. reserved</li>
-</ol>
-<h4 id="placement-groups">Placement Groups</h4>
-<figure><img src="assets/aws-certification-cheatsheet/diagram-5.png" alt="AWS diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
-<ol>
-<li>1. Cluster</li>
-<li>1. <strong>single AZ</strong>, close to each other</li>
-<li>2. <strong>low latency</strong> application, e.g. HPC, big data</li>
-<li>2. Partition</li>
-<li>1. <strong>spread in multiple partitions</strong></li>
-<li>2. <strong>prevent single hardware failure</strong></li>
-<li>3. large-scale distributed, fault-tolerant system, e.g. Hadoop</li>
-<li>3. Spread</li>
-<li>1. spread underlying hardware</li>
-</ol>
-<h4 id="metrics">Metrics</h4>
-<figure><img src="assets/aws-certification-cheatsheet/diagram-6.png" alt="AWS diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
-<h3 id="lambda">Lambda</h3>
-<figure><img src="assets/aws-certification-cheatsheet/diagram-7.png" alt="AWS diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
-<section id="data">
-<h2>Data</h2>
-<div class="table-scroll"><table>
-<thead><tr>
-<th>AWS Service</th>
-<th>Purpose</th>
-</tr></thead><tbody>
-</tbody></table></div>
-<p>| - object-level</p>
-<ul>
-<li>speed: <strong>slowest</strong></li>
-<li>event source notification: use Lambda to process object uploaded</li>
-</ul>
-<ul>
-<li>apache parquet: for S3 inventory reports, speed up big data jobs</li>
-<li>s3 replication time control: data replication, 99.99% objects within 15 mins</li>
-</ul>
-<ul>
-<li>cross region: create bucket in new region, configure cross-region replication</li>
-</ul>
-<p><strong>S3 Storage Lens</strong></p>
-<p>分析 S3 存储的使用情况和成本</p>
-<p><strong>S3 Select</strong></p>
-<ul>
-<li>适用于查询特定数据</li>
-<li>不适合大规模数据分析</li>
-</ul>
-<p><strong>S3 Transfer Acceleration</strong></p>
-<ul>
-<li>使用 CloudFront 的全球边缘位置来加速向 S3 存储桶上传文件的速度</li>
-</ul>
-<p><strong>S3 Server Access Logging</strong></p>
-<ul>
-<li>只能记录请求, 不能记录对象访问</li>
-</ul>
-<p><strong>S3 Object Lock</strong></p>
-<ul>
-<li>数据保护</li>
-<li>通过使用 WORM (Write Once, Read Many) 来防止对象被删除或覆盖 |</li>
-</ul>
-<p>| EBS | block-level</p>
-<p>maximun 16TB</p>
-<p>persistent</p>
-<p>single instance</p>
-<p>speed: <strong>fastest</strong> |</p>
-<p>| Amazon Data Lifecycle Manager (DLM) | 创建、保留和删除 EBS 卷快照和 AMI，以实现更高效的数据备份和管理 |</p>
-<p>| EFS | file-level</p>
-<p><strong>shared</strong></p>
-<p>serverless</p>
-<p><strong>only Linux</strong> |</p>
-<p>| **Amazon FSx for</p>
-<p>FSx<strong> Lustre: </strong>Linux**</p>
-<p><strong>FSx</strong> Windows</p>
-<p><strong>FSx</strong> OpenZFS | shared</p>
-<p>high-performance</p>
-<p>big data analytics</p>
-<p><strong>Linux, Windows</strong></p>
-<p>扩容：update-file-system |</p>
-<p>| DDB: DynamoDB</p>
-<p>DAX: DynamoDB Accelerator</p>
-<p><strong>WCU</strong>: write capacity unit</p>
-<p><strong>RCU</strong>: read capacity unit</p>
-<p><strong>Provisioned Throughput</strong>: specify the number of RCUs and WCUs you want to reserve</p>
-<p><strong>On-Demand Capacity Mode</strong>: automatically scales  based on the actual traffic | On-Demand: no capacity planning, pay-per-request</p>
-<ul>
-<li>cannot notify other service, use <strong>EventBridge</strong></li>
-</ul>
-<ul>
-<li>DAX: for <strong>read</strong>, not for write; at least 3 nodes for cluster</li>
-</ul>
-<ul>
-<li>TTL: automatically expire items after a specified timestamp</li>
-</ul>
-<p>****- convert DDB table to global:</p>
-<p>A: directly change to global</p>
-<p>B:</p>
-<ul>
-<li>enable DDB Stream</li>
-<li>create a new replication table in a second region |</li>
-</ul>
-<p>| Aurora | - fully managed</p>
-<ul>
-<li>only MySQL, PostgreSQL</li>
-<li>better performance than RDS</li>
-</ul>
-<p><strong>Aurora Serverless v1</strong></p>
-<ul>
-<li>处理突发的大量流量，在无使用期间降低成本</li>
-<li>适用于不确定的, 间歇性的负载</li>
-</ul>
-<p><strong>Aurora multi-master DB cluster</strong></p>
-<ul>
-<li>improve write, expensive</li>
-<li>无法跨 region 写</li>
-</ul>
-<p><strong>Cluster Endpoint</strong></p>
-<ul>
-<li>连接到集群的唯一端点</li>
-<li>将数据库请求路由到集群中的主实例</li>
-<li>处理读写操作</li>
-</ul>
-<p>**Reader Endpoint</p>
-<p>-** 连接到集群中的 read replica</p>
-<ul>
-<li>处理读操作 |</li>
-</ul>
-<p>| RDS | Fully managed service</p>
-<p><strong>RDS Proxy</strong></p>
-<p>管理应用程序和数据库实例之间的连接池</p>
-<p>减少对数据库连接管理的开销</p>
-<p><strong>Multi-AZ Deployment</strong></p>
-<p>提供了高可用性和数据冗余 |</p>
-<p>| Timestream | time-series database |</p>
-<p>| CloudFront | CDN 全球内容分发网络</p>
-<p>根据用户位置自动选择最优的边缘位置提供内容</p>
-<ul>
-<li>可以有 multiple origins, 可以在任何 region</li>
-<li>可以通过 origin group 实现自动的区域切换</li>
-</ul>
-<ul>
-<li>只提供域名</li>
-<li>没有复杂功能 |</li>
-</ul>
-<p>| Kinesis Data Stream | data streaming service</p>
-<ul>
-<li>复杂事件</li>
-<li>实时处理和分析数据流</li>
-<li>不能用作 store 或 buffer |</li>
-</ul>
-<p>| Kinesis Data Firehouse | capture, transform, load streams into stores</p>
-<ul>
-<li>简单事件</li>
-<li>fully managed 完全托管, 自动扩展</li>
-<li>将数据传输到 S3, Redshift, Elasticsearch, Splunk</li>
-<li>可以用作 buffer |</li>
-</ul>
-<p>|  |  |</p>
-<p>| MQ | 场景: 已经在使用 <strong>ActiveMQ</strong> 或 <strong>RabbitMQ</strong>，并且希望迁移到AWS上 |</p>
-<p>| SQS | fully managed queue |</p>
-<p>|  |  |</p>
-<p>| OpenSearch | log analytics, real-time search</p>
-<p>derived from elastic search</p>
-<ul>
-<li>general node: EBS, <strong>expensive</strong> for large volume</li>
-<li>instance-backed: EBS or instance storage, <strong>limited capacity</strong></li>
-<li>UltraWarm: SSD for index, S3 for other; <strong>cheapest</strong>;  <strong>complement</strong> for others |</li>
-</ul>
-<p>| EMR | big data analytics</p>
-<p>Apache Spark, Hive, Presto |</p>
-<p>| Athena | analyze data</p>
-<p>SQL, Apache Spark</p>
-<p>|</p>
-<p>| QuickSight | Business Intelligence</p>
-<p>Dashboard |</p>
-<p>| Data Pipeline | automate <strong>movement</strong> and <strong>transformation</strong> of data |</p>
-<p>|  |  |</p>
-<p>| <strong>DataSync</strong> | - 将文件数据迁移到 AWS, e.g. S3, EFS, FSx for Windows File Server |</p>
-<p>| <strong>Data Migration Service</strong> | - 将数据库迁移到 AWS, e.g. MySQL, PostgreSQL, Oracle, SQL Server, etc.</p>
-<ul>
-<li>支持迁移期间的数据复制</li>
-<li>支持同构 homogeneous 和异构 heterogeneous |</li>
-</ul>
-<p>| Storage Gateway | on-premise access to cloud</p>
-<ul>
-<li>File Gateway: <strong>S3</strong>, glacier</li>
-<li>Tape Gateway: long-term archive</li>
-<li>Volume Gateway: block |</li>
-</ul>
-<p>| Glue | - 自动化 ETL（Extract, Transform, Load）服务</p>
-<p>**Glue Data Catalog</p>
-<ul>
-<li>元数据**管理</li>
-<li>与 <strong>Athena</strong> 集成，可以轻松查询和分析存储在 S3 中的数据 |</li>
-</ul>
-<p>| Transfer Family | file transfers |</p>
-<p>| AWS Transfer for SFTP | S3 的完全托管的 SFTP 服务 |</p>
-<p>| IAM database authentication | - 通过 IAM users 或 roles 进行身份验证</p>
-<ul>
-<li>不再需要 credential |</li>
-</ul>
-<p>| Document DB | - MongoDB 兼容</p>
-<ul>
-<li>高可用性和自动扩展</li>
-<li>适用于迁移 |</li>
-</ul>
-<p>| Redshift | - 数据仓库</p>
-<ul>
-<li>SQL查询</li>
-<li>大规模数据分析</li>
-</ul>
-<p><strong>Redshift Spectrum</strong></p>
-<ul>
-<li>直接查询 Amazon S3 中的数据</li>
-<li>无需将数据加载到 Redshift 集群中 |</li>
-</ul>
-<p>| AWS Backup | - 集中 Backup 管理</p>
-<ul>
-<li>监控</li>
-<li>拷贝 Backup 到其他 Region |</li>
-</ul>
-<p>| ElastiCache | - 使用 auth token |</p>
-<h3 id="cross-region-database">Cross-Region Database</h3>
-<h4 id="rds">RDS</h4>
-<ol>
-<li>1. Cross-Region <strong>Read</strong> <strong>Replicas</strong> 跨区域读副本 (read only <strong>只读</strong>)</li>
-<li>1. promote a read replica</li>
-<li>2. 灾难恢复：在主区域发生故障时，将读副本提升为独立的主数据库实例 standalone DB instance</li>
-<li>2. Cross-Region <strong>Backups</strong> and <strong>Restore</strong> 跨区域自动备份和恢复</li>
-<li>1. 灾难恢复：在主区域发生故障时，可以从备份中恢复数据库</li>
-</ol>
-<h3 id="aurora">Aurora</h3>
-<ol>
-<li>1. Global database</li>
-<li>1. RTO &lt; 1 min</li>
-<li>2. cross region DB cluster</li>
-<li>1. 跨区域<strong>读写</strong> (write/read)</li>
-</ol>
-<figure><img src="assets/aws-certification-cheatsheet/diagram-8.png" alt="AWS diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
-<h4 id="dynamodb">DynamoDB</h4>
-<ol>
-<li>1. <strong>Global Tables</strong> 全球表</li>
-<li>1. 灾难恢复：在一个区域发生故障时，其他区域的副本仍然可用</li>
-<li>2. Cross-Region <strong>Backup</strong> and <strong>Restore</strong> 跨区域备份和恢复</li>
-<li>1. 灾难恢复：在主区域发生故障时，可以从备份中恢复表</li>
-</ol>
-<h3 id="on-demand">On-Demand</h3>
-<ol>
-<li>1. <strong>EC2</strong> On-Demand Instances</li>
-<li>2. <strong>RDS</strong> On-Demand Instances</li>
-<li>3. <strong>DynamoDB</strong> On-Demand Capacity Mode</li>
-</ol>
-<h3 id="edge-optimized">Edge-optimized</h3>
-<ol>
-<li>1. <strong>API Gateway</strong> <strong>Edge-Optimized Endpoints</strong>: 将 API 请求路由到最近的 CloudFront 边缘位置</li>
-<li>2. <strong>S3 Transfer Acceleration</strong>: 利用 CloudFront 边缘位置来加速传输</li>
-<li>3. <strong>Lambda@Edge</strong>: 在 CloudFront 边缘位置运行 Lambda 函数</li>
-</ol>
-<h3 id="saving-plan">Saving Plan</h3>
-<ol>
-<li>1. EC2 Instance Savings Plans</li>
-<li>1. 针对特定的 EC2 instance type</li>
-<li>2. 更高的折扣</li>
-<li>3. 适用于 Reserved Instances</li>
-<li>2. Compute Savings Plans</li>
-<li>1. 应用于所有 AWS 计算资源, 包括 EC2, Lambda, Fargate</li>
-</ol>
-<section id="security">
-<h2>Security</h2>
-<div class="table-scroll"><table>
-<thead><tr>
-<th>AWS Service</th>
-<th>Purpose</th>
-</tr></thead><tbody>
-<tr>
-<td>KMS: Key Management Service</td>
-<td>- cross-account access: 1. key policy; 2. IAM policy<br>- cannot convert key, only create new<br>- use s3 bucket keys to reduce call to KMS</td>
-</tr>
-<tr>
-<td>Secrets Manager</td>
-<td>manage secrets lifecycle<br>- can replicate<br>- not support sharing secrets using AWS RAM</td>
-</tr>
-<tr>
-<td>Macie</td>
-<td>protect <strong>sensitive data</strong></td>
-</tr>
-<tr>
-<td>CloudTrail</td>
-<td>监控 API 调用<br>track API usage</td>
-</tr>
-<tr>
-<td>Security Hub</td>
-<td>centralized view of security state</td>
-</tr>
-</tbody></table></div>
-<ul>
-<li>安全状态管理</li>
-<li>合规性检查 |</li>
-</ul>
-<p>| Detective | analyze date</p>
-<p>investigate potential issues |</p>
-<p>| Audit Manager | audit AWS usage</p>
-<p>simplify risk |</p>
-<p>| Shield | <strong>DDoS</strong> protection |</p>
-<p>| Inspector | Identify <strong>security</strong> vulnerabilities</p>
-<p><strong>security</strong> assessment |</p>
-<p>| GuardDuty | Monitor <strong>malicious</strong> activities</p>
-<p>identify potential security threats</p>
-<ul>
-<li>机器学习, 行为分析, 威胁检测 |</li>
-</ul>
-<p>| Web Application Firewall</p>
-<p>WAF | protect web applicaitons from common exploits</p>
-<ul>
-<li>帮助保护 Web 应用程序免受常见 Web 漏洞和攻击</li>
-<li>定义 Web ACL 允许或阻止流量到达 App</li>
-<li>用于 API Gateway</li>
-</ul>
-<p><strong>rules</strong></p>
-<ul>
-<li>allow</li>
-<li>block</li>
-<li>count</li>
-<li>CAPTCHA |</li>
-</ul>
-<p>| Firewall Manager | 集中管理跨多个账户的 AWS WAF 规则 |</p>
-<p>| Network Access Analyzer | - 识别和分析网络访问路径</p>
-<ul>
-<li>网络安全性和访问分析 |</li>
-</ul>
-<p>| RADIUS Remote Authentication Dial-In User Service | - 网络协议</p>
-<ul>
-<li>提供集中化的身份验证</li>
-<li><strong>MFA</strong> |</li>
-</ul>
-<h3 id="kms-vs-secrets-manager">KMS vs. Secrets Manager</h3>
-<p>KMS</p>
-<ul>
-<li>manage encryption keys</li>
-</ul>
-<p>Secrets Manager</p>
-<ul>
-<li>manage SSH key pairs</li>
-</ul>
-<h3 id="身份验证">身份验证</h3>
-<p><strong>SSO</strong>: Single Sign-On</p>
-<ul>
-<li>身份验证机制</li>
-<li>使用一组凭据（如用户名和密码）登录多个系统</li>
-<li>自动获得访问权限, 不需要重新输入凭据</li>
-</ul>
-<p><strong>IDP</strong>: Identity Provider</p>
-<ul>
-<li>SSO 通常通过 IDP 实现</li>
-<li>负责验证用户的身份</li>
-<li>通过 OIDC, OAuth, SAML 等协议实现</li>
-</ul>
-<section id="network">
-<h2>Network</h2>
-<div class="table-scroll"><table>
-<thead><tr>
-<th>AWS Service</th>
-<th>Purpose</th>
-</tr></thead><tbody>
-<tr>
-<td>ENI: Elastic Network Interface</td>
-<td>- virtual network interface attached to EC2<br>- acts as a <strong>network adapter</strong> and enables communication between EC2 and other resources within the VPC or the internet</td>
-</tr>
-<tr>
-<td>ALB</td>
-<td>HTTP/HTTPS</td>
-</tr>
-</tbody></table></div>
-<p>restrict access to ALB:</p>
-<ul>
-<li>configure CloudFront to add a custom HTTP header</li>
-<li>configure ALB to only forward requests with custom header</li>
-</ul>
-<ul>
-<li>配合 <strong>OIDC</strong> <strong>IDP</strong> 处理<strong>认证</strong>和<strong>授权</strong> |</li>
-</ul>
-<p>|  |  |</p>
-<p>| VPC (Virtual Private Cloud) | 虚拟网络环境</p>
-<p>CIDR block</p>
-<ul>
-<li>地址范围内的 IP 将被用于 VPC 中的资源</li>
-</ul>
-<p>Subnets</p>
-<ul>
-<li>VPC 中的一个逻辑分区，每个子网可以位于不同的可用区。</li>
-<li>Public Subnet 直接访问互联网, Private Subnet 不能</li>
-</ul>
-<p>Route Tables</p>
-<ul>
-<li>将流量定向到目标 |</li>
-</ul>
-<p>| VPC Gateway Endpoint | VPC ↔ <strong>ONLY S3, DDB</strong></p>
-<ul>
-<li>不能从 on-premise 访问</li>
-<li>只能用于 S3, DDB |</li>
-</ul>
-<p>| VPC Interface Endpoint | on-premise, VPC ↔ Other Services |</p>
-<p>| Gateway Load Balancer | - work with AWS PrivateLink to enable secure communication between VPC &amp; AWS Services</p>
-<ul>
-<li>deploy and scale <strong>3rd-party virtual appliances</strong> |</li>
-</ul>
-<p>| <strong>Transit VPC</strong> | multiple VPC |</p>
-<p>| <strong>Transit Gateway</strong> | on-premise ↔ VPCs</p>
-<ul>
-<li>连接多个 VPC 和本地数据中心</li>
-<li>通过单一网关集中管理和路由流量 |</li>
-</ul>
-<p>| <strong>PrivateLink</strong> | VPC ↔ AWS Service</p>
-<p>不经过互联网</p>
-<p><strong>VPC Endpoint Service</strong></p>
-<ul>
-<li>可以在 <strong>CIDR overlap</strong> 的情况下使用 |</li>
-</ul>
-<p>| <strong>Direct Connect</strong> | on-premise ↔ AWS <strong>Single Region</strong></p>
-<p>不经过互联网</p>
-<ul>
-<li>physical, dedicated connection</li>
-<li>no encryption in transit</li>
-<li>时间长，费用高</li>
-</ul>
-<p><strong>Direct Connect Gateway</strong></p>
-<ul>
-<li>跨 <strong>Region</strong> 链接多个 VPC</li>
-<li>无需为每个区域配置单独的 Direct Connect</li>
-<li>高性能 |</li>
-</ul>
-<p>| <strong>Site-to-Site VPN</strong> | on-premise ↔ AWS</p>
-<p>VPN连接需要<strong>通过互联网</strong>进行加密通信</p>
-<p>encrypted by IPSec |</p>
-<p>| VPC Peering | VPC ↔ VPC</p>
-<ul>
-<li>一对一, 需要双方的路由配置和管理</li>
-<li>不经过互联网</li>
-<li>不支持传递路由 |</li>
-</ul>
-<p>| Client VPN | connect remotely to AWS or on-premises |</p>
-<p>| VIF: Virtual Interface | logical link over Direct Connect</p>
-<ul>
-<li>private VIF: to VPC</li>
-<li>public VIF: public AWS Services, S3, DDB…</li>
-<li>transit VIF: to multiple VPCs in a single region |</li>
-</ul>
-<p>| Session Manager | Login to hosts in private subnet</p>
-<p>Session Manager 允许在<strong>没有 SSH key pair</strong> 的情况下安全地访问 EC2 实例，不需要重启实例 |</p>
-<p>| Internet Gateway | VPC ↔ Internet</p>
-<ul>
-<li>配置入站 inbound 和出站 outbound</li>
-</ul>
-<ul>
-<li>allow public IPs to internet |</li>
-</ul>
-<p>| <strong>NAT (Network Address Translation)</strong> | only outbound</p>
-<p>allow private IPs to internet</p>
-<p>cannot span multiAZ |</p>
-<p>| <strong>public</strong> NAT Gateway | <strong>private</strong> subnet → internet</p>
-<p>单向 |</p>
-<p>| <strong>private</strong> NAT Gateway | <strong>private</strong> subnet → VPCs or on-premises network</p>
-<p>单向 |</p>
-<p>| NACL: Network Access Control List | allow all inbound and outbound by default |</p>
-<p>| WorkLink | Mobile Access to Internal Websites |</p>
-<p>|  |  |</p>
-<p>|  |  |</p>
-<p>| Access Control List | <strong>allow all</strong> by default</p>
-<ul>
-<li>stateless |</li>
-</ul>
-<p>| Security Group | for VPC</p>
-<p><strong>block</strong> all <strong>inbound</strong> by default</p>
-<p><strong>allow</strong> all <strong>outbound</strong> by default</p>
-<ul>
-<li>can only specify <strong>allow</strong> rules</li>
-<li>stateful, inbound can reflect to outbound |</li>
-</ul>
-<p>| Elastic IP | - 通常分配给 **EC2, NLB, NAT Gateway</p>
-<p>-<strong> 不分配给 </strong>ALB**</p>
-<ul>
-<li>分配给 <strong>EC2</strong>: <strong>单实例应用</strong>, 需要<strong>直接访问实例</strong></li>
-<li>分配给 <strong>NLB</strong>: <strong>高可用性</strong>, <strong>负载均衡</strong>, <strong>统一访问点</strong> |</li>
-</ul>
-<p>| API Gateway | manage REST, HTTP, WebSocket APIs</p>
-<ul>
-<li>REST API can invoke DDB directly</li>
-<li>synchronous execution returns response immediately</li>
-<li>enable CORS</li>
-<li>配合 OIDC, OAuth, JWT 使用</li>
-</ul>
-<p><strong>edge-optimized</strong></p>
-<ul>
-<li>使用 CloudFront 缓存 API 响应</li>
-<li>将请求路由到最近的 AWS 区域</li>
-<li>减少 API 调用的延迟</li>
-</ul>
-<p><strong>Usage Plan</strong></p>
-<ul>
-<li>管理 API 速率限制和配额 |</li>
-</ul>
-<p>| Route 53 | <strong>global service</strong></p>
-<p><strong>DNS</strong>: domain registration, routing, health check</p>
-<ul>
-<li>hosted zone: container for records (the rules of route traffic)</li>
-<li>alias record: like CNAME record, point to load balancer</li>
-<li>route traffic to API Gateways in different regions |</li>
-</ul>
-<p>| Global Accelerator | - 提供两个 global static public IP</p>
-<ul>
-<li>自动路由流量到最优的端点 endpoint</li>
-</ul>
-<ul>
-<li>适用于非标准 REST 方法 |</li>
-</ul>
-<p>|  |  |</p>
-<p>| IoT | <strong>Greengrass</strong></p>
-<ul>
-<li>offline</li>
-<li>本地设备的边缘计算和数据处理</li>
-</ul>
-<p><strong>IoT Core</strong></p>
-<ul>
-<li>连接数十亿设备，处理数万亿条消息，并将消息路由到 AWS 终端节点和其他设备</li>
-<li>支持 MQTT 协议</li>
-<li>使用 X.509 证书进行设备认证 |</li>
-</ul>
-<h3 id="route53">Route53</h3>
-<p><strong>DNS 解析</strong>：Route 53将域名与AWS资源（如EC2实例、S3存储桶）或外部资源（如外部网站）的IP地址映射起来。它支持以下几种DNS记录类型：</p>
-<ul>
-<li>A记录：将域名映射到IPv4地址。</li>
-<li>AAAA记录：将域名映射到IPv6地址。</li>
-<li>CNAME记录：将一个域名映射到另一个域名。</li>
-<li>MX记录：定义邮件服务器。</li>
-<li>TXT记录：用于存储任意文本数据，常用于域名验证。</li>
-</ul>
-<h3 id="http-api-rest-api">HTTP API &amp; REST API</h3>
-<p><strong>HTTP API</strong></p>
-<ul>
-<li>简单的 microservice 架构</li>
-<li>基本的集成和认证功能</li>
-</ul>
-<p><strong>REST API</strong></p>
-<ul>
-<li>更全面, 直接集成 DDB</li>
-</ul>
-<h3 id="nacl-security-group">NACL &amp; Security Group</h3>
-<p><strong>NACL</strong></p>
-<ul>
-<li>无状态 Stateless: 每个方向 (inbound &amp; outbound) 都需要独立配置</li>
-<li>Allow, Deny</li>
-</ul>
-<p><strong>Security Group</strong></p>
-<ul>
-<li>有状态 Stateful: 如果入站请求 inbound 被允许，返回的出站响应 outbound 自动被允许</li>
-<li>Only Allow</li>
-</ul>
-<h3 id="连接方式">连接方式</h3>
-<h4 id="不经过互联网">不经过互联网</h4>
-<ol>
-<li>1. Direct Connect (on-premise ↔ VPC)</li>
-<li>2. Site-to-Site VPN (on-premise ↔ VPC)</li>
-<li>3. PrivateLink (VPC ↔ services)</li>
-<li>4. VPC Peering (VPC ↔ VPC)</li>
-</ol>
-<section id="os">
-<h2>OS</h2>
-<div class="table-scroll"><table>
-<thead><tr>
-<th>AWS Service</th>
-<th>Purpose</th>
-</tr></thead><tbody>
-<tr>
-<td>**System Manager<br>System Manager Patch Manager**</td>
-<td>1. manage resources<br>2. apply <strong>patch</strong><br>on <strong>hybrid environments</strong> (Windows and Linux, EC2 and on-premises)</td>
-</tr>
-<tr>
-<td>System Manager Parameter Store</td>
-<td>store <strong>values</strong>, passwords<br>as plain text or encrypted data</td>
-</tr>
-<tr>
-<td>System Manager Run Command</td>
-<td>remotely manage <strong>configuration</strong></td>
-</tr>
-<tr>
-<td>System Manager Agent</td>
-<td>允许实例与 AWS Systems Manager 服务进行通信</td>
-</tr>
-<tr>
-<td><strong>OpsWorks</strong></td>
-<td><strong>manage configuration</strong> by Chef, Puppet<br>主要用于配置管理和自动化部署</td>
-</tr>
-</tbody></table></div>
-<section id="workflow">
-<h2>Workflow</h2>
-<div class="table-scroll"><table>
-<thead><tr>
-<th>AWS Service</th>
-<th>Purpose</th>
-</tr></thead><tbody>
-<tr>
-<td>EventBridge</td>
-<td>Event-driven<br><strong>Rule</strong> to Lambda, SNS</td>
-</tr>
-</tbody></table></div>
-<ul>
-<li>事件驱动 |</li>
-</ul>
-<p>| RAM (Resource Access Manager) | Share resource with other <strong>accounts</strong></p>
-<ul>
-<li>在 AWS 账户之间共享 AWS <strong>资源</strong>，包括 VPC, RDS，<strong>不包含 Lambda</strong></li>
-</ul>
-<ul>
-<li>不共享 secrets 或 report |</li>
-</ul>
-<p>| X-Ray | debug app |</p>
-<p>|  |  |</p>
-<p>| Config | assess, audit configurations</p>
-<ul>
-<li>跟踪和检查配置, 包括 Security Group |</li>
-</ul>
-<p>| Secrets Manager | manage, retrieve, rotate credentials |</p>
-<p>| Certificate Manager | manage SSL, TLS |</p>
-<p>|  |  |</p>
-<p>|  |  |</p>
-<p>| Outposts | run AWS infra on premises</p>
-<p>hybrid</p>
-<ul>
-<li>使 AWS 服务可以在本地数据中心运行</li>
-<li>低延迟 |</li>
-</ul>
-<p>| Workspaces | virtual desktops</p>
-<ul>
-<li>桌面即服务 (DaaS), 提供完整的桌面环境</li>
-<li>cloud 虚拟桌面</li>
-</ul>
-<p><strong>Connection Alias</strong></p>
-<ul>
-<li>与一个主要目录关联，触发故障转移 |</li>
-</ul>
-<p>| AppStream | virtual desktops</p>
-<ul>
-<li>桌面应用程序流式传输, 仅访问特定的桌面应用程序 |</li>
-</ul>
-<p>| Batch | batch processing |</p>
-<p>|  |  |</p>
-<h3 id="workspace-appstream">Workspace &amp; Appstream</h3>
-<p><strong>WorkSpaces</strong></p>
-<ul>
-<li>完整的桌面环境</li>
-</ul>
-<p><strong>AppStream 2.0</strong></p>
-<ul>
-<li>特定应用程序环境</li>
-</ul>
-<section id="organization">
-<h2>Organization</h2>
-<section id="deployment">
-<h2>Deployment</h2>
-<div class="table-scroll"><table>
-<thead><tr>
-<th>AWS Service</th>
-<th>Purpose</th>
-</tr></thead><tbody>
-<tr>
-<td><strong>AWS Organizations</strong></td>
-<td>account → OU ← SCP<br>1. <strong>Consolidated Billing Mode</strong>: all accounts are linked together for billing purpose<br>2. <strong>All Features Mode</strong>: create a hierarchy of organizational units (OUs) and apply service control policies (SCPs) at different levels to control permissions and actions across accounts</td>
-</tr>
-<tr>
-<td>SCP (Service control policies)</td>
-<td>set permission that IAM users and roles can perform<br><strong>restrict</strong> permissions by <strong>deny</strong>, not allow<br>****<br>In organization, use SCP to control, not IAM</td>
-</tr>
-</tbody></table></div>
-<p>SCP 和 IAM 策略的关系</p>
-<ul>
-<li>SCP 定义了账户可以执行的最大权限范围，但不授予实际权限</li>
-<li>IAM 策略用于具体授予用户或角色权限 |</li>
-</ul>
-<p>| CUR (Cost and Usage Report) | create from organization management account |</p>
-<p>| Control Tower | 多账户环境的治理</p>
-<p>govern multi-account environment</p>
-<p><strong>Landing Zone</strong>: 预配置的 AWS 环境，包含多个 AWS 账户和组织单元，应用了安全和治理措施</p>
-<p><strong>Guardrails:</strong> 防护措施</p>
-<p>Detective Guardrail: goverance and complicane |</p>
-<p>| Service Catalog | consistent governance and management for IT services</p>
-<ul>
-<li>允许组织创建和管理批准的 aws services</li>
-<li>确保所有部署都符合标准</li>
-<li>限制可访问的 services 类别 |</li>
-</ul>
-<p>|  |  |</p>
-<p>| Pinpoint | Connect with customers through multichannel communications |</p>
-<p>| CodeDeploy | - automate deployments to EC2, on-premises, Lambda, or ECS</p>
-<ul>
-<li>appspec.yml: define the deployment process |</li>
-</ul>
-<p>| CodeArtifact | package management |</p>
-<p>| CloudFormation | - Template: 定义资源及配置, 一般在普通 account 部署</p>
-<ul>
-<li>StackSet: 跨多个账户和 region 的堆栈集合, 提供集中化的管理, 一般在 management account 部署</li>
-</ul>
-<p><strong>CloudFormation StackSets</strong> 允许跨多个 AWS <strong>账户</strong>和 <strong>Region</strong> 自动部署和管理 CloudFormation Stack</p>
-<p><strong>DeletionPolicy</strong></p>
-<ul>
-<li>保护生产环境中关键数据资源</li>
-<li>即使在删除堆栈时，重要的资源仍然保留或被安全备份</li>
-<li>prevent resource deletion: add DeletePolicy to resources in CloudFormation template</li>
-</ul>
-<p>|</p>
-<p>| CloudWatch Logs | - to track <strong>VPC flow logs</strong></p>
-<ul>
-<li>CloudWatch Logs subscription filters: with Lambda or Kinesis</li>
-</ul>
-<p>监控和管理系统 |</p>
-<p>| CloudWatch Events | trigger Lambda, serverless workflow |</p>
-<p>| CloudWatch Synthetic | create canaries</p>
-<p>monitor API |</p>
-<p>| Service Quotas | predefined limitations on the resources |</p>
-<p>| Amplify | build full-stack apps</p>
-<ul>
-<li>适用于 static website 静态网站的部署和管理 |</li>
-</ul>
-<p>|  |  |</p>
-<p>| <strong>App Runner</strong> | build, deploy, run <strong>container</strong></p>
-<p>no infra</p>
-<p>cannot cross region |</p>
-<p>| SAM (Serverless Application Model) | Build <strong>serverless</strong> |</p>
-<p>| Beanstalk | - PaaS</p>
-<ul>
-<li><strong>deploy</strong> and scale app</li>
-</ul>
-<p>cannot span different reigons</p>
-<p>自动处理部署、容量配置、负载均衡、自动扩展和应用程序健康监控</p>
-<p>*swap staging/production to deploy |</p>
-<p>| Lightsail | low-cost, pre-configured cloud resources |</p>
-<section id="infra-migration-dr-charge">
-<h2>Infra, migration, DR &amp; Charge</h2>
-<div class="table-scroll"><table>
-<thead><tr>
-<th>AWS Service</th>
-<th>Purpose</th>
-</tr></thead><tbody>
-<tr>
-<td>AWS Budgets</td>
-<td>budgeting, forecasting</td>
-</tr>
-</tbody></table></div>
-<ul>
-<li>设置预算</li>
-<li>超过设定阈值时<strong>发送警报</strong></li>
-<li>实时监控和控制 AWS 成本 |</li>
-</ul>
-<p>| AWS Cost and Usage Reports | cost and usage data |</p>
-<p>| AWS Auto Scaling | monitor and automatically adjust capacity</p>
-<p>EC2, ECS, DDB tables &amp; indexes, Aurora replicas |</p>
-<p>| <strong>AWS Trusted Advisor</strong> | provide <strong>recommendations</strong> that help you follow AWS best practices |</p>
-<p>|  |  |</p>
-<p>| Migration Evaluator | - 分析现有 IT 资产的成本和性能</p>
-<ul>
-<li>提供在 AWS 上运行的成本和优化建议</li>
-<li>评估总拥有成本 <strong>TCO</strong> |</li>
-</ul>
-<p>| Migration Hub | <strong>discovery</strong> and <strong>migration</strong></p>
-<ul>
-<li><strong>数据探索</strong></li>
-<li>收集和分析数据, 制定迁移规划 |</li>
-</ul>
-<p>| Database Migration Service</p>
-<ul>
-<li>CDC: Change Data Capture</li>
-<li>Full Load Plus CDC | continuous data replication</li>
-</ul>
-<p>CDC: real-time data synchronization for ongoing data change, by detect transaction log</p>
-<p>Full Load Plus CDC: combines <strong>initial full data</strong> with continuous CDC |</p>
-<p>| Application Discovery Service | collect usage</p>
-<ul>
-<li>integrated with AWS <strong>Migration Hub</strong> and AWS <strong>Database Migration Service Fleet Advisor</strong></li>
-</ul>
-<ul>
-<li>发现和收集本地数据中心的配置, 性能, 网络</li>
-</ul>
-<p><strong>Agentless Discovery</strong></p>
-<ul>
-<li>依赖于现有的虚拟化环境，如VMware</li>
-<li>数据不够详细和全面的 |</li>
-</ul>
-<p>| Application Discovery Agent | install on on-premise</p>
-<p><strong>discovery</strong> and <strong>migration</strong></p>
-<p>收集详细的服务器指标 |</p>
-<p>| Application Migration Service (aka CloudEndure<strong>)</strong> | - 自动化从<strong>物理</strong>、<strong>虚拟</strong>或<strong>其他云</strong>到 AWS 的迁移 |</p>
-<p>| Elastic Disaster Recovery</p>
-<p>CloudEndure Disaster Recovery (deprecated) | disaster recovery on AWS</p>
-<p>shift environment to AWS from on-premises when disaster |</p>
-<p>| IAM Access Analyzer | - 分析 AWS 资源的访问策略，识别过度权限或错误配置</p>
-<ul>
-<li>生成关于可疑或不符合最佳实践的访问配置的警报</li>
-<li>支持 S3, Lambda, SQS, KMS, IAM |</li>
-</ul>
-<p>| Cost Explorer | - 管理成本</p>
-<ul>
-<li>设置预算和警报 |</li>
-</ul>
-<p>| Usage Plan | - 管理和控制API的访问和使用</p>
-<ul>
-<li>定义和实施配额, 速率限制以及访问控制 |</li>
-</ul>
-<p>| Active Directory | - Microsoft 的目录服务</p>
-<ul>
-<li>Windows 环境</li>
-<li>管理网络中的用户和计算机资源 |</li>
-</ul>
-<p>| Directory Service  | 设置和运行目录服务</p>
-<p><strong>AWS Managed Microsoft AD</strong></p>
-<ul>
-<li>在 AWS 上运行 Windows Server Active Directory</li>
-</ul>
-<p><strong>Simple AD</strong></p>
-<ul>
-<li>轻量级目录服务</li>
-<li>适用于不需要完整 AD 功能的小型工作负载</li>
-</ul>
-<p><strong>AD Connector</strong></p>
-<ul>
-<li>目录代理</li>
-<li>集成现有的本地 AD 与 AWS |</li>
-</ul>
-<p>| Amazon Connect | <strong>Contact Control Panel (CCP)</strong></p>
-<ul>
-<li>接听和管理电话</li>
-<li>查看客户信息</li>
-<li>记录和标记通话</li>
-</ul>
-<p><strong>Contact Lens</strong></p>
-<ul>
-<li>机器学习驱动, 自动转录通话内容, 分析情绪, 生成报告 |</li>
-</ul>
-<p>| AWS Cost Anomaly Detection | - 自动化的<strong>成本异常检测</strong>和警报</p>
-<ul>
-<li>监控成本的异常变化 |</li>
-</ul>
-<p>| Well Architected Tool | 改进架构 |</p>
-<h3 id="vmware-migration">VMWare Migration</h3>
-<p>从 VMware 基础设施迁移到 Amazon EC2</p>
-<ul>
-<li>Use the VMware vSphere client to export the application as an image in <strong>Open Virtualization Format (OVF)</strong> format</li>
-<li>Create an Amazon S3 bucket to store the image in the destination AWS Region</li>
-<li>Create and apply an IAM role for VM Import</li>
-<li>Use the AWS CLI to run the EC2 import command.</li>
-</ul>
-<section id="others">
-<h2>Others</h2>
-<h3 id="ip地址">IP地址</h3>
-<p>A类: 8位前缀, 如 44.x.x.x</p>
-<p>B类: 16位前缀, 如 44.66.x.x</p>
-<p>C类: 24位前缀, 如 192.168.31.x</p>
-<p>CIDR: 可变前缀, 使用子网掩码 VLSM 来定位, 如 192.0.2.0/24, 有24位前缀</p>
-<p>Network prefixes: <strong>IP address ranges</strong> associated with on-premises network</p>
-<section id="dr">
-<h2>DR</h2>
-<p>Active/Active: both serve traffic, 0 RTO &amp; 0 RPO</p>
-<p>Warm Standby: ready for deployment, mins of RTO &amp; PPO</p>
-<p>Pilot Light: snapshot, 10 mins of RTO &amp; RPO</p>
-<p>Backup &amp; Restore: hours of RTO &amp; RPO</p>
-<h3 id="ssl">SSL</h3>
-<p>Amazon-issued public certificates can’t be installed on an EC2 instance</p>
-<p>To enable <strong>end-to-end encryption</strong>, you must use a third-party <strong>SSL certificate</strong>.</p>
-<h3 id="vocabularies">Vocabularies</h3>
-<p>trail 跟踪</p>
-<p>trial 试炼</p>
-<h3 id="application-auto-scaling">Application Auto Scaling</h3>
-<p>根据需求自动增加或减少资源容量</p>
-<p>用于 EC2, ECS, Lambda, DDB, Aurora</p>
-<section id="错题笔记">
-<h2>错题笔记</h2>
-<p>预留实例（RI）适用于 EC2 实例的长期预留，但它们不适用于其他类型的计算资源（如 Fargate 和 Lambda），并且在需求波动较大的情况下可能不够灵活。</p>
-<p>Compute Savings Plan 为所有类型的计算资源（EC2、Fargate 和 Lambda）提供灵活的节省选项。它允许跨账户和跨区域应用节省计划，提供最大的灵活性和成本节省。这是一个适合组织内不同账户和波动需求的最佳选择。</p>
-<p>处理 API Gateway 的跨域问题，应该直接在 API Gateway 上启用 CORS</p>
-<p>使用预装 CodeDeploy 代理的 AMI 配置 Auto Scaling 组，简化部署管理</p>
-<p>provisioned IOPS don&#x27;t scale on demand</p>
-<p>将 API Gateway 转换为 edge-optimized 端点, 启用 cache, 比 ElastiCache 更便宜</p>
-<p>When using EC2 instances as network proxies (NAT), it is necessary to disable source/destination checks.</p>
-<section id="dop-c02-cheatsheet">
-<h2>DOP-C02 Cheatsheet</h2>
-<section id="s3">
-<h2>S3</h2>
-<p>Bucket Policy: JSON-based access policy for access control</p>
-<p>Cannot delete a bucket when it’s not empty</p>
-<section id="lambda-2">
-<h2>Lambda</h2>
-<h3 id="concurrency">Concurrency</h3>
-<ul>
-<li>by default</li>
-<li>scales automatically based on incoming events</li>
-<li>only charged for the actual execution time</li>
-</ul>
-<p>Provisioned Concurrency</p>
-<ul>
-<li>a specified number of instances of the function are always available</li>
-<li>reduce cold start, ensure consistent performance</li>
-<li>pay for the provisioned concurrency even if it is not active</li>
-</ul>
-<p>Reserved Concurrency</p>
-<ul>
-<li>control the overall concurrency utilization</li>
-<li>cost-effective</li>
-</ul>
-<section id="aurora-2">
-<h2>Aurora</h2>
-<ul>
-<li>turn an existing cluster to multi-AZ by adding a reading instance</li>
-</ul>
-<section id="ebs">
-<h2>EBS</h2>
-<h3 id="tag">Tag</h3>
-<ul>
-<li>Use a <strong>managed rule</strong> to return a compliance failure for EC2::Volume resources that do not have a <strong>Backup_Frequency tag</strong></li>
-</ul>
-<section id="kms">
-<h2>KMS</h2>
-<p>Key rotation: AWS Config custom rule → SNS</p>
-<section id="control-tower">
-<h2>Control Tower</h2>
-<p>Provision Enterprise Support: Account Factory for Terraform (AFT) flag <strong>aft_feature_enterprise_support</strong></p>
-<section id="cloudwatch">
-<h2>CloudWatch</h2>
-<p>CloudWatch subscription filter: route specific logs to Lambda</p>
+}</code></pre>
+    </section>
+
+    <section id="computing">
+      <h2>Computing</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>AWS Service</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>EC2</td><td>Virtual server instances</td></tr>
+          <tr><td>EC2 Graviton</td><td>Better price/performance</td></tr>
+          <tr><td>Lambda@Edge</td><td>Run Lambda on CloudFront:<br>· runs during the CloudFront distribution phase, max 15 min<br>· in a VPC, use a NAT Gateway to reach the internet<br>· credentials must not be stored in environment variables</td></tr>
+          <tr><td>Lambda concurrency</td><td>· Provisioned Concurrency: keeps a set number of instances ready, reduces cold starts, higher cost<br>· Reserved Concurrency: caps the maximum instances a function can run<br>· SnapStart: reduces cold starts, cannot be used with Provisioned Concurrency</td></tr>
+          <tr><td>Step Functions</td><td>Orchestrate Lambda and other AWS services:<br>· Standard workflow: exactly-once, up to 1 year, for long-running auditable workflows<br>· Express workflow: at-least-once, up to 5 min, for high-event-rate workloads</td></tr>
+          <tr><td>EKS (Elastic Kubernetes Service)</td><td>Managed Kubernetes, more complex:<br>· EKS: run Kubernetes on EKS-managed clusters/infra on AWS<br>· EKS Anywhere: run on on-premises infra<br>· EKS Distro: run on your own clusters/infra<br>· Topology Spread Constraints: distribute pods across AZs for resilience<br>· Cluster Autoscaler: scales nodes automatically</td></tr>
+          <tr><td>ECS (Elastic Container Service)</td><td>Container orchestration; set enableECSManagedTags to true for run-task</td></tr>
+          <tr><td>Fargate</td><td>Run ECS containers serverlessly</td></tr>
+          <tr><td>App2Container</td><td>Containerize an existing app and deploy to ECS or EKS with minimal code change and manual configuration (containerize and migrate existing app)</td></tr>
+          <tr><td>Compute Optimizer</td><td>Analyzes utilization metrics and generates optimization recommendations; Enhanced infrastructure metrics extend analysis to 3 months (extra cost)</td></tr>
+          <tr><td>SES (Simple Email Service)</td><td>Send email, store email templates</td></tr>
+          <tr><td>AppSync</td><td>Managed GraphQL API; real-time data query and sync; supports GraphQL and WebSocket</td></tr>
+        </tbody>
+      </table></div>
+      <figure><img src="assets/aws-certification-cheatsheet/diagram-4.png" alt="Compute services diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
+
+      <h3>EC2</h3>
+      <h4>Launch Types</h4>
+      <ol>
+        <li>On-Demand</li>
+        <li>Spot</li>
+        <li>Reserved</li>
+      </ol>
+
+      <h4>Placement Groups</h4>
+      <figure><img src="assets/aws-certification-cheatsheet/diagram-5.png" alt="EC2 placement groups diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
+      <ol>
+        <li><strong>Cluster</strong>: single AZ, close together; for low-latency applications such as HPC and big data</li>
+        <li><strong>Partition</strong>: spread across multiple partitions to prevent single hardware failure; for large-scale distributed, fault-tolerant systems such as Hadoop</li>
+        <li><strong>Spread</strong>: spread across distinct underlying hardware</li>
+      </ol>
+
+      <h4>Metrics</h4>
+      <figure><img src="assets/aws-certification-cheatsheet/diagram-6.png" alt="EC2 metrics diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
+
+      <h3>Lambda</h3>
+      <figure><img src="assets/aws-certification-cheatsheet/diagram-7.png" alt="Lambda diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
+    </section>
+
+    <section id="data">
+      <h2>Data</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>AWS Service</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>S3</td><td>Object-level storage, slowest of the three storage types:<br>· event notification: use Lambda to process uploaded objects<br>· Apache Parquet: for S3 inventory reports, speeds up big-data jobs<br>· S3 Replication Time Control: replicates 99.99% of objects within 15 min<br>· cross-region: create a bucket in the new region and configure cross-region replication</td></tr>
+          <tr><td>S3 Storage Lens</td><td>Analyze S3 storage usage and cost</td></tr>
+          <tr><td>S3 Select</td><td>For querying specific data; not for large-scale analytics</td></tr>
+          <tr><td>S3 Transfer Acceleration</td><td>Uses CloudFront global edge locations to speed up uploads to S3</td></tr>
+          <tr><td>S3 Server Access Logging</td><td>Logs requests only, not object access</td></tr>
+          <tr><td>S3 Object Lock</td><td>Data protection; uses WORM (Write Once, Read Many) to prevent objects being deleted or overwritten</td></tr>
+          <tr><td>EBS</td><td>Block-level storage, up to 16TB, persistent, single-instance attach, fastest</td></tr>
+          <tr><td>Data Lifecycle Manager (DLM)</td><td>Create, retain, and delete EBS volume snapshots and AMIs for efficient backup management</td></tr>
+          <tr><td>EFS</td><td>File-level storage, shared, serverless, Linux only</td></tr>
+          <tr><td>FSx</td><td>Shared, high-performance, good for big-data analytics:<br>· FSx for Lustre: Linux<br>· FSx for Windows: Windows<br>· FSx for OpenZFS: Linux / Windows<br>· scale up: update-file-system</td></tr>
+          <tr><td>DynamoDB (DDB)</td><td>· WCU/RCU: write/read capacity units<br>· Provisioned Throughput: reserve a set number of RCUs/WCUs<br>· On-Demand: pay-per-request, no capacity planning, auto-scales with traffic<br>· cannot notify other services directly, use EventBridge<br>· DAX (DynamoDB Accelerator): read-only, not for writes, at least 3 nodes per cluster<br>· TTL: auto-expire items after a given timestamp<br>· convert to global: A. change directly to global; B. enable DDB Stream and create a replica table in a second region</td></tr>
+          <tr><td>Aurora</td><td>Fully managed, MySQL/PostgreSQL only, better performance than RDS:<br>· Aurora Serverless v1: handles bursty traffic, lowers cost when idle, suits uncertain/intermittent loads<br>· multi-master cluster: improves writes, expensive, cannot write cross-region<br>· Cluster Endpoint: single endpoint, routes to the primary instance, handles read/write<br>· Reader Endpoint: connects to read replicas, handles reads</td></tr>
+          <tr><td>RDS</td><td>Fully managed database service:<br>· RDS Proxy: manages a connection pool between app and database, reducing connection overhead<br>· Multi-AZ Deployment: high availability and data redundancy</td></tr>
+          <tr><td>Timestream</td><td>Time-series database</td></tr>
+          <tr><td>CloudFront</td><td>Global CDN, auto-selects the optimal edge location by user location:<br>· can have multiple origins in any region<br>· origin groups enable automatic regional failover</td></tr>
+          <tr><td>Kinesis Data Streams</td><td>Data streaming service for real-time processing and analysis (complex events); cannot be used as a store or buffer</td></tr>
+          <tr><td>Kinesis Data Firehose</td><td>Capture, transform, and load streams into stores (simple events): fully managed, auto-scaling, delivers to S3, Redshift, OpenSearch, Splunk; can be used as a buffer</td></tr>
+          <tr><td>MQ</td><td>For migrating existing ActiveMQ or RabbitMQ workloads to AWS</td></tr>
+          <tr><td>SQS</td><td>Fully managed message queue</td></tr>
+          <tr><td>OpenSearch</td><td>Log analytics, real-time search (derived from Elasticsearch):<br>· general node: EBS, expensive at large volume<br>· instance-backed: EBS or instance storage, limited capacity<br>· UltraWarm: SSD for index, S3 for the rest, cheapest, complements the others</td></tr>
+          <tr><td>EMR</td><td>Big-data analytics (Apache Spark, Hive, Presto)</td></tr>
+          <tr><td>Athena</td><td>Analyze data using SQL or Apache Spark</td></tr>
+          <tr><td>QuickSight</td><td>Business intelligence (BI), dashboards</td></tr>
+          <tr><td>Data Pipeline</td><td>Automate movement and transformation of data</td></tr>
+          <tr><td>DataSync</td><td>Migrate file data to AWS, e.g. S3, EFS, FSx for Windows File Server</td></tr>
+          <tr><td>Database Migration Service (DMS)</td><td>Migrate databases to AWS (MySQL, PostgreSQL, Oracle, SQL Server, etc.): supports replication during migration, homogeneous and heterogeneous migrations</td></tr>
+          <tr><td>Storage Gateway</td><td>On-premises access to cloud storage:<br>· File Gateway: S3, Glacier<br>· Tape Gateway: long-term archive<br>· Volume Gateway: block</td></tr>
+          <tr><td>Glue</td><td>Automated ETL service; Glue Data Catalog manages metadata and integrates with Athena to query/analyze data in S3</td></tr>
+          <tr><td>Transfer Family</td><td>File transfers; AWS Transfer for SFTP is a fully managed SFTP service for S3</td></tr>
+          <tr><td>IAM database authentication</td><td>Authenticate via IAM users or roles, no database credentials needed</td></tr>
+          <tr><td>DocumentDB</td><td>MongoDB-compatible, high availability and auto-scaling, good for migration</td></tr>
+          <tr><td>Redshift</td><td>Data warehouse with SQL queries and large-scale analytics; Redshift Spectrum queries S3 data directly without loading into the cluster</td></tr>
+          <tr><td>AWS Backup</td><td>Centralized backup management and monitoring; can copy backups to other regions</td></tr>
+          <tr><td>ElastiCache</td><td>In-memory cache; can use an auth token</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>Cross-Region Database</h3>
+      <h4>RDS</h4>
+      <ol>
+        <li><strong>Cross-Region Read Replicas</strong> (read only): a read replica can be promoted to a standalone primary instance for disaster recovery when the primary region fails</li>
+        <li><strong>Cross-Region Backups and Restore</strong>: restore the database from backups when the primary region fails</li>
+      </ol>
+      <h4>Aurora</h4>
+      <ol>
+        <li><strong>Global Database</strong>: RTO &lt; 1 min</li>
+        <li><strong>Cross-region DB cluster</strong>: supports cross-region read/write</li>
+      </ol>
+      <figure><img src="assets/aws-certification-cheatsheet/diagram-8.png" alt="Aurora cross-region database diagram"><figcaption>Source diagram from the certification notes.</figcaption></figure>
+      <h4>DynamoDB</h4>
+      <ol>
+        <li><strong>Global Tables</strong>: replicas in other regions stay available when one region fails</li>
+        <li><strong>Cross-Region Backup and Restore</strong>: restore the table from backups when the primary region fails</li>
+      </ol>
+
+      <h3>On-Demand</h3>
+      <ol>
+        <li>EC2 On-Demand Instances</li>
+        <li>RDS On-Demand Instances</li>
+        <li>DynamoDB On-Demand Capacity Mode</li>
+      </ol>
+
+      <h3>Edge-optimized</h3>
+      <ol>
+        <li><strong>API Gateway Edge-Optimized Endpoints</strong>: route API requests to the nearest CloudFront edge location</li>
+        <li><strong>S3 Transfer Acceleration</strong>: use CloudFront edge locations to accelerate transfers</li>
+        <li><strong>Lambda@Edge</strong>: run Lambda functions at CloudFront edge locations</li>
+      </ol>
+
+      <h3>Saving Plan</h3>
+      <ol>
+        <li><strong>EC2 Instance Savings Plans</strong>: target specific EC2 instance types, higher discount, similar to Reserved Instances</li>
+        <li><strong>Compute Savings Plans</strong>: apply to all AWS compute, including EC2, Lambda, Fargate</li>
+      </ol>
+    </section>
+
+    <section id="security">
+      <h2>Security</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>AWS Service</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>KMS (Key Management Service)</td><td>Manage encryption keys:<br>· cross-account access: 1. key policy; 2. IAM policy<br>· cannot convert a key, only create a new one<br>· use S3 bucket keys to reduce calls to KMS</td></tr>
+          <tr><td>Secrets Manager</td><td>Manage the secrets lifecycle: can replicate; does not support sharing secrets via AWS RAM</td></tr>
+          <tr><td>Macie</td><td>Protect sensitive data</td></tr>
+          <tr><td>CloudTrail</td><td>Monitor API calls, track API usage</td></tr>
+          <tr><td>Security Hub</td><td>Centralized view of security state: posture management and compliance checks</td></tr>
+          <tr><td>Detective</td><td>Analyze data and investigate potential issues</td></tr>
+          <tr><td>Audit Manager</td><td>Audit AWS usage, simplify risk assessment</td></tr>
+          <tr><td>Shield</td><td>DDoS protection</td></tr>
+          <tr><td>Inspector</td><td>Identify security vulnerabilities, run security assessments</td></tr>
+          <tr><td>GuardDuty</td><td>Monitor malicious activity and identify potential threats (machine learning, behavioral analysis, threat detection)</td></tr>
+          <tr><td>WAF (Web Application Firewall)</td><td>Protect web apps from common exploits: define a Web ACL to allow or block traffic, used with API Gateway; rule actions: allow, block, count, CAPTCHA</td></tr>
+          <tr><td>Firewall Manager</td><td>Centrally manage AWS WAF rules across multiple accounts</td></tr>
+          <tr><td>Network Access Analyzer</td><td>Identify and analyze network access paths to assess network security</td></tr>
+          <tr><td>RADIUS</td><td>Network protocol providing centralized authentication, supports MFA</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>KMS vs. Secrets Manager</h3>
+      <ul>
+        <li><strong>KMS</strong>: manage encryption keys</li>
+        <li><strong>Secrets Manager</strong>: manage credentials such as SSH key pairs</li>
+      </ul>
+
+      <h3>Authentication</h3>
+      <p><strong>SSO (Single Sign-On)</strong></p>
+      <ul>
+        <li>an authentication mechanism</li>
+        <li>log in to multiple systems with one set of credentials</li>
+        <li>access is granted automatically without re-entering credentials</li>
+      </ul>
+      <p><strong>IdP (Identity Provider)</strong></p>
+      <ul>
+        <li>SSO is usually implemented through an IdP</li>
+        <li>responsible for verifying user identity</li>
+        <li>implemented via protocols such as OIDC, OAuth, SAML</li>
+      </ul>
+    </section>
+
+    <section id="network">
+      <h2>Network</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>AWS Service</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>ENI (Elastic Network Interface)</td><td>A virtual network interface attached to EC2; acts as a network adapter enabling communication between EC2 and other resources within the VPC or the internet</td></tr>
+          <tr><td>ALB</td><td>HTTP/HTTPS load balancing:<br>· restrict access: CloudFront adds a custom HTTP header and ALB only forwards requests carrying it<br>· works with an OIDC IdP for authentication and authorization</td></tr>
+          <tr><td>VPC (Virtual Private Cloud)</td><td>Virtual network environment:<br>· CIDR block: IPs in this range are used by VPC resources<br>· Subnets: logical partitions, can be in different AZs; public subnets reach the internet directly, private subnets cannot<br>· Route Tables: direct traffic to targets</td></tr>
+          <tr><td>VPC Gateway Endpoint</td><td>VPC ↔ S3 and DynamoDB only; cannot be accessed from on-premises</td></tr>
+          <tr><td>VPC Interface Endpoint</td><td>On-premises / VPC ↔ other services</td></tr>
+          <tr><td>Gateway Load Balancer</td><td>Works with AWS PrivateLink for secure communication between VPC and AWS services; deploy and scale third-party virtual appliances</td></tr>
+          <tr><td>Transit VPC</td><td>Connect multiple VPCs</td></tr>
+          <tr><td>Transit Gateway</td><td>On-premises ↔ multiple VPCs: centrally manage and route traffic through a single gateway</td></tr>
+          <tr><td>PrivateLink</td><td>VPC ↔ AWS service without traversing the internet; VPC Endpoint Service can be used even with overlapping CIDRs</td></tr>
+          <tr><td>Direct Connect</td><td>On-premises ↔ AWS (single region), not over the internet: a physical dedicated line, no encryption in transit, long setup time and higher cost; Direct Connect Gateway links multiple VPCs across regions without per-region configuration</td></tr>
+          <tr><td>Site-to-Site VPN</td><td>On-premises ↔ AWS, encrypted communication over the internet (IPSec)</td></tr>
+          <tr><td>VPC Peering</td><td>VPC ↔ VPC: one-to-one, requires routing config on both sides, not over the internet, no transitive routing</td></tr>
+          <tr><td>Client VPN</td><td>Connect remotely to AWS or on-premises</td></tr>
+          <tr><td>VIF (Virtual Interface)</td><td>Logical link over Direct Connect:<br>· private VIF: to a VPC<br>· public VIF: to public AWS services (S3, DDB…)<br>· transit VIF: to multiple VPCs in a single region</td></tr>
+          <tr><td>Session Manager</td><td>Log in to hosts in a private subnet; access EC2 securely without an SSH key pair and without restarting the instance</td></tr>
+          <tr><td>Internet Gateway</td><td>VPC ↔ internet: configure inbound and outbound, allows public IPs to reach the internet</td></tr>
+          <tr><td>NAT (Network Address Translation)</td><td>Outbound only, lets private IPs reach the internet, cannot span multiple AZs:<br>· public NAT Gateway: private subnet → internet (one-way)<br>· private NAT Gateway: private subnet → other VPCs or on-premises (one-way)</td></tr>
+          <tr><td>NACL (Network Access Control List)</td><td>Allows all inbound and outbound by default; stateless, each direction configured independently; supports Allow and Deny</td></tr>
+          <tr><td>Security Group</td><td>For a VPC: blocks all inbound and allows all outbound by default; only Allow rules; stateful, an allowed inbound reflects to outbound</td></tr>
+          <tr><td>Elastic IP</td><td>Usually assigned to EC2, NLB, NAT Gateway, not to ALB:<br>· to EC2: single-instance apps needing direct access<br>· to NLB: high availability, load balancing, unified access point</td></tr>
+          <tr><td>API Gateway</td><td>Manage REST, HTTP, WebSocket APIs:<br>· REST API can invoke DDB directly<br>· synchronous execution returns the response immediately<br>· can enable CORS<br>· works with OIDC, OAuth, JWT</td></tr>
+          <tr><td>Route 53</td><td>Global service; DNS: domain registration, routing, health checks:<br>· hosted zone: container for records (routing rules)<br>· alias record: like a CNAME, points to a load balancer<br>· route traffic to API Gateways in different regions</td></tr>
+          <tr><td>Global Accelerator</td><td>Provides two global static public IPs and automatically routes traffic to the optimal endpoint</td></tr>
+          <tr><td>IoT</td><td>· Greengrass: offline, edge computing and data processing on local devices<br>· IoT Core: connect billions of devices, route messages; supports MQTT; uses X.509 certificates for device authentication</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>Route 53</h3>
+      <p>DNS resolution maps domain names to AWS resources (e.g. EC2, S3) or external IP addresses, supporting these record types:</p>
+      <ul>
+        <li>A record: maps a domain to an IPv4 address</li>
+        <li>AAAA record: maps a domain to an IPv6 address</li>
+        <li>CNAME record: maps one domain to another domain</li>
+        <li>MX record: defines mail servers</li>
+        <li>TXT record: stores arbitrary text, commonly for domain verification</li>
+      </ul>
+
+      <h3>HTTP API vs. REST API</h3>
+      <ul>
+        <li><strong>HTTP API</strong>: simple microservice architectures, basic integration and authentication</li>
+        <li><strong>REST API</strong>: more comprehensive, integrates directly with DDB</li>
+      </ul>
+
+      <h3>NACL vs. Security Group</h3>
+      <ul>
+        <li><strong>NACL</strong>: stateless, each direction (inbound &amp; outbound) configured independently; supports Allow and Deny</li>
+        <li><strong>Security Group</strong>: stateful, an allowed inbound request automatically allows the returning outbound response; Allow only</li>
+      </ul>
+
+      <h3>Connectivity (not over the internet)</h3>
+      <ol>
+        <li>Direct Connect (on-premises ↔ VPC)</li>
+        <li>Site-to-Site VPN (on-premises ↔ VPC)</li>
+        <li>PrivateLink (VPC ↔ services)</li>
+        <li>VPC Peering (VPC ↔ VPC)</li>
+      </ol>
+    </section>
+
+    <section id="os">
+      <h2>OS</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>AWS Service</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Systems Manager / Patch Manager</td><td>Manage resources and apply patches across hybrid environments (Windows and Linux, EC2 and on-premises)</td></tr>
+          <tr><td>Systems Manager Parameter Store</td><td>Store values and passwords as plain text or encrypted data</td></tr>
+          <tr><td>Systems Manager Run Command</td><td>Remotely manage configuration</td></tr>
+          <tr><td>Systems Manager Agent</td><td>Lets instances communicate with the AWS Systems Manager service</td></tr>
+          <tr><td>OpsWorks</td><td>Configuration management via Chef and Puppet, mainly for configuration management and automated deployment</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="workflow">
+      <h2>Workflow</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>AWS Service</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>EventBridge</td><td>Event-driven; uses Rules to trigger Lambda, SNS</td></tr>
+          <tr><td>RAM (Resource Access Manager)</td><td>Share resources with other accounts (e.g. VPC, RDS, but not Lambda); does not share secrets or reports</td></tr>
+          <tr><td>X-Ray</td><td>Debug applications</td></tr>
+          <tr><td>Config</td><td>Assess and audit configurations; track and inspect configuration, including Security Groups</td></tr>
+          <tr><td>Secrets Manager</td><td>Manage, retrieve, and rotate credentials</td></tr>
+          <tr><td>Certificate Manager</td><td>Manage SSL/TLS certificates</td></tr>
+          <tr><td>Outposts</td><td>Run AWS infrastructure on-premises (hybrid): AWS services run in the local data center with low latency</td></tr>
+          <tr><td>WorkSpaces</td><td>Virtual desktops (DaaS) providing a full desktop environment; Connection Alias links to a primary directory and can trigger failover</td></tr>
+          <tr><td>AppStream</td><td>Virtual desktops: stream desktop applications, access specific apps only</td></tr>
+          <tr><td>Batch</td><td>Batch processing</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>WorkSpaces vs. AppStream</h3>
+      <ul>
+        <li><strong>WorkSpaces</strong>: a full desktop environment</li>
+        <li><strong>AppStream 2.0</strong>: a specific-application environment</li>
+      </ul>
+    </section>
+
+    <section id="organization">
+      <h2>Organization</h2>
+      <p>This domain relates to AWS Organizations, SCP, and Control Tower below, organized around account governance and multi-account management.</p>
+    </section>
+
+    <section id="deployment">
+      <h2>Deployment</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>AWS Service</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>AWS Organizations</td><td>account → OU ← SCP:<br>· Consolidated Billing Mode: all accounts linked for billing<br>· All Features Mode: build a hierarchy of OUs and apply SCPs at different levels to control permissions and actions across accounts</td></tr>
+          <tr><td>SCP (Service Control Policies)</td><td>Set the permission ceiling for IAM users and roles: restrict via deny (not allow); in an organization, control with SCP rather than IAM</td></tr>
+          <tr><td>CUR (Cost and Usage Report)</td><td>Created from the organization management account</td></tr>
+          <tr><td>Control Tower</td><td>Govern multi-account environments:<br>· Landing Zone: a pre-configured AWS environment with multiple accounts and OUs and applied security/governance measures<br>· Guardrails: protective controls; Detective Guardrails for governance and compliance</td></tr>
+          <tr><td>Service Catalog</td><td>Consistent governance and management for IT services: create and manage approved AWS services, ensure deployments meet standards, limit accessible service categories</td></tr>
+          <tr><td>Pinpoint</td><td>Connect with customers through multichannel communications</td></tr>
+          <tr><td>CodeDeploy</td><td>Automate deployments to EC2, on-premises, Lambda, or ECS; define the process with appspec.yml</td></tr>
+          <tr><td>CodeArtifact</td><td>Package management</td></tr>
+          <tr><td>CloudFormation</td><td>· Template: defines resources and configuration, usually deployed in a regular account<br>· StackSets: a set of stacks across multiple accounts and regions, centrally managed, usually deployed from the management account<br>· DeletionPolicy: protects critical resources so important data is retained or safely backed up when a stack is deleted (add it to resources in the template to prevent deletion)</td></tr>
+          <tr><td>CloudWatch Logs</td><td>Track VPC flow logs; CloudWatch Logs subscription filters work with Lambda or Kinesis</td></tr>
+          <tr><td>CloudWatch Events</td><td>Trigger Lambda and serverless workflows</td></tr>
+          <tr><td>CloudWatch Synthetics</td><td>Create canaries to monitor APIs</td></tr>
+          <tr><td>Service Quotas</td><td>Predefined limits on resources</td></tr>
+          <tr><td>Amplify</td><td>Build full-stack apps, suited to deploying and managing static websites</td></tr>
+          <tr><td>App Runner</td><td>Build, deploy, and run containers with no infrastructure to manage; cannot span regions</td></tr>
+          <tr><td>SAM (Serverless Application Model)</td><td>Build serverless applications</td></tr>
+          <tr><td>Elastic Beanstalk</td><td>PaaS: deploy and scale apps, cannot span regions; handles deployment, capacity provisioning, load balancing, auto-scaling, and health monitoring; swap staging/production to deploy</td></tr>
+          <tr><td>Lightsail</td><td>Low-cost, pre-configured cloud resources</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>SCP vs. IAM policies</h3>
+      <ul>
+        <li>SCP defines the maximum permission scope for an account but grants no actual permissions</li>
+        <li>IAM policies grant specific permissions to users or roles</li>
+      </ul>
+    </section>
+
+    <section id="infra-migration-dr-charge">
+      <h2>Infra, Migration, DR &amp; Charge</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>AWS Service</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>AWS Budgets</td><td>Budgeting and forecasting: set budgets, send alerts when thresholds are exceeded, monitor and control cost in real time</td></tr>
+          <tr><td>Cost and Usage Reports</td><td>Cost and usage data</td></tr>
+          <tr><td>AWS Auto Scaling</td><td>Monitor and automatically adjust capacity for EC2, ECS, DynamoDB tables &amp; indexes, and Aurora replicas</td></tr>
+          <tr><td>Trusted Advisor</td><td>Provide recommendations to help follow AWS best practices</td></tr>
+          <tr><td>Migration Evaluator</td><td>Analyze cost and performance of existing IT assets, provide cost and optimization guidance for running on AWS, assess total cost of ownership (TCO)</td></tr>
+          <tr><td>Migration Hub</td><td>Discovery and migration: data discovery, collect and analyze data, build a migration plan</td></tr>
+          <tr><td>Database Migration Service (DMS)</td><td>· CDC (Change Data Capture): real-time synchronization by reading the transaction log<br>· Full Load Plus CDC: combine an initial full load with continuous CDC</td></tr>
+          <tr><td>Application Discovery Service</td><td>Collect usage; integrates with Migration Hub and DMS Fleet Advisor; discovers on-premises configuration, performance, and network; Agentless Discovery relies on VMware-style virtualization and yields less detailed data</td></tr>
+          <tr><td>Application Discovery Agent</td><td>Installed on-premises for discovery and migration, collects detailed server metrics</td></tr>
+          <tr><td>Application Migration Service (formerly CloudEndure)</td><td>Automate migration from physical, virtual, or other clouds to AWS</td></tr>
+          <tr><td>Elastic Disaster Recovery</td><td>Disaster recovery on AWS (formerly CloudEndure Disaster Recovery, deprecated): shift the on-premises environment to AWS during a disaster</td></tr>
+          <tr><td>IAM Access Analyzer</td><td>Analyze resource access policies, identify excessive permissions or misconfigurations, generate alerts; supports S3, Lambda, SQS, KMS, IAM</td></tr>
+          <tr><td>Cost Explorer</td><td>Manage cost, set budgets and alerts</td></tr>
+          <tr><td>Active Directory</td><td>Microsoft's directory service for Windows environments, manages users and computer resources on the network</td></tr>
+          <tr><td>Directory Service</td><td>Set up and run directory services:<br>· AWS Managed Microsoft AD: run Windows Server Active Directory on AWS<br>· Simple AD: lightweight directory for small workloads not needing full AD<br>· AD Connector: a directory proxy that integrates existing on-premises AD with AWS</td></tr>
+          <tr><td>Amazon Connect</td><td>· Contact Control Panel (CCP): take and manage calls, view customer info, record and tag calls<br>· Contact Lens: ML-driven, auto-transcribes calls, analyzes sentiment, generates reports</td></tr>
+          <tr><td>Cost Anomaly Detection</td><td>Automated cost-anomaly detection and alerting, monitors abnormal cost changes</td></tr>
+          <tr><td>Well-Architected Tool</td><td>Improve architecture</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>VMware Migration</h3>
+      <p>Migrating from VMware infrastructure to Amazon EC2:</p>
+      <ol>
+        <li>Use the VMware vSphere client to export the application as an image in Open Virtualization Format (OVF)</li>
+        <li>Create an S3 bucket in the destination AWS region to store the image</li>
+        <li>Create and apply an IAM role for VM Import</li>
+        <li>Use the AWS CLI to run the EC2 import command</li>
+      </ol>
+    </section>
+
+    <section id="others">
+      <h2>Others</h2>
+      <h3>IP Addresses</h3>
+      <ul>
+        <li>Class A: 8-bit prefix, e.g. 44.x.x.x</li>
+        <li>Class B: 16-bit prefix, e.g. 44.66.x.x</li>
+        <li>Class C: 24-bit prefix, e.g. 192.168.31.x</li>
+        <li>CIDR: variable prefix located via a subnet mask (VLSM), e.g. 192.0.2.0/24 (24-bit prefix)</li>
+        <li>Network prefixes: IP address ranges associated with an on-premises network</li>
+      </ul>
+      <h3>SSL</h3>
+      <ul>
+        <li>Amazon-issued public certificates cannot be installed on an EC2 instance</li>
+        <li>To enable end-to-end encryption, you must use a third-party SSL certificate</li>
+      </ul>
+      <h3>Application Auto Scaling</h3>
+      <p>Automatically increases or decreases resource capacity based on demand, for EC2, ECS, Lambda, DynamoDB, and Aurora.</p>
+      <h3>Easily-confused words</h3>
+      <ul>
+        <li>trail: to track</li>
+        <li>trial: a test</li>
+      </ul>
+    </section>
+
+    <section id="dr">
+      <h2>DR (Disaster Recovery)</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Strategy</th><th>Characteristics</th></tr></thead>
+        <tbody>
+          <tr><td>Active/Active</td><td>Both sides serve traffic, RTO and RPO near 0</td></tr>
+          <tr><td>Warm Standby</td><td>Ready to deploy, minutes of RTO and RPO</td></tr>
+          <tr><td>Pilot Light</td><td>Snapshot only, ~10 minutes of RTO and RPO</td></tr>
+          <tr><td>Backup &amp; Restore</td><td>Hours of RTO and RPO</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="mistakes">
+      <h2>Common Exam Mistakes</h2>
+      <ul>
+        <li>Reserved Instances (RI) suit long-term reservation of EC2 instances but do not apply to other compute types (such as Fargate and Lambda) and can be inflexible under fluctuating demand.</li>
+        <li>Compute Savings Plans offer flexible savings across all compute types (EC2, Fargate, Lambda), can be applied across accounts and regions, and provide the most flexibility and savings — the best fit for varied accounts and fluctuating demand within an organization.</li>
+        <li>To handle cross-origin issues for API Gateway, enable CORS directly on API Gateway.</li>
+        <li>Configure the Auto Scaling group with an AMI that has the CodeDeploy agent pre-installed to simplify deployment management.</li>
+        <li>Provisioned IOPS don't scale on demand.</li>
+        <li>Converting API Gateway to an edge-optimized endpoint and enabling caching is cheaper than ElastiCache.</li>
+        <li>When using EC2 instances as network proxies (NAT), disable the source/destination check.</li>
+      </ul>
+    </section>
   </main>
-  <p class="footer-note">This is a general technical reference page and contains no personal private information.</p>
+  <p class="footer-note">This is a general technical reference page and contains no personal private information. AWS service capabilities and exam scope change over time; for actual preparation, rely on the latest official AWS documentation.</p>
 </body>
 </html>
