@@ -133,8 +133,16 @@ Harness =
 
     <section id="agent-built-agent">
       <h2>Using Agents to Build Agents</h2>
-      <p>Agents can participate in building agent systems, but they operate inside a controlled engineering process. Suitable automation targets include tool wrappers, schemas, eval runners, trace integration, UI sketches, documentation, tests, and regression samples derived from failed traces.</p>
-      <p>Parts that require human ownership or explicit governance include permission models, approval boundaries, definitions of task success, evaluation standards, data isolation strategy, production retry limits, and final accountability for high-risk actions.</p>
+      <p>Agents can participate in building agent systems, but they operate inside a controlled engineering process. Tasks can be divided into those suitable for agent automation and those that require human or governance ownership.</p>
+      <table>
+        <thead><tr><th>Suitable for agent automation</th><th>Requires human or governance ownership</th></tr></thead>
+        <tbody>
+          <tr><td>Tool wrappers and schemas</td><td>Permission models and approval boundaries</td></tr>
+          <tr><td>Eval runners and trace integration</td><td>Definitions of task success and evaluation standards</td></tr>
+          <tr><td>UI sketches, documentation, and tests</td><td>Data isolation strategy</td></tr>
+          <tr><td>Regression samples derived from failed traces</td><td>Production retry limits and final accountability for high-risk actions</td></tr>
+        </tbody>
+      </table>
       <div class="diagram">Requirements and acceptance criteria
   -> Design draft
   -> Boundary confirmation

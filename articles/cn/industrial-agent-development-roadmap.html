@@ -133,8 +133,16 @@ Harness =
 
     <section id="agent-built-agent">
       <h2>用 Agent 构建 Agent</h2>
-      <p>Agent 可以参与实现 Agent 系统，但需要处在受控工程流程内。适合自动化的部分包括工具 wrapper、schema、eval runner、trace 集成、UI 草图、文档、测试和根据失败 trace 生成回归样本。</p>
-      <p>需要由人类或明确治理规则决定的部分包括：权限模型、审批边界、任务成功定义、评测标准、数据隔离策略、生产重试上限和高风险动作的最终责任。</p>
+      <p>Agent 可以参与实现 Agent 系统，但需要处在受控工程流程内。任务可以按“适合交给 Agent 自动化”和“需由人类或治理规则决定”两类划分。</p>
+      <table>
+        <thead><tr><th>适合交给 Agent 自动化</th><th>需由人类或治理规则决定</th></tr></thead>
+        <tbody>
+          <tr><td>工具 wrapper 与 schema</td><td>权限模型与审批边界</td></tr>
+          <tr><td>eval runner 与 trace 集成</td><td>任务成功定义与评测标准</td></tr>
+          <tr><td>UI 草图、文档与测试</td><td>数据隔离策略</td></tr>
+          <tr><td>根据失败 trace 生成回归样本</td><td>生产重试上限与高风险动作的最终责任</td></tr>
+        </tbody>
+      </table>
       <div class="diagram">需求与验收标准
   -> 设计草案
   -> 边界确认
