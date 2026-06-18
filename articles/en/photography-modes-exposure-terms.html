@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photography Basics: Exposure, Shooting Modes, and Terms</title>
+  <meta name="description" content="A primer on camera fundamentals: the exposure triangle, PASM shooting modes, metering, white balance, focal length, and common terms.">
+  <style>
+    :root{--bg:#f6f2e8;--fg:#202523;--muted:#68716d;--line:#d8cfbf;--ink:#173f39;--accent:#9f5136;--note:#fff9ec;--soft:#ebe2d2}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.72;-webkit-font-smoothing:antialiased}.top{position:sticky;top:0;background:rgba(246,242,232,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:4}.nav{width:min(1080px,calc(100vw - 40px));margin:0 auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:14px}.nav a{color:var(--ink);font-size:13px;font-weight:900;text-decoration:none}.lang{border:1px solid var(--line);border-radius:999px;padding:7px 12px}.wrap{width:min(980px,calc(100vw - 40px));margin:0 auto}header{padding:48px 0 32px}.kicker{color:var(--accent);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,5.8vw,52px);line-height:1.05;letter-spacing:-.02em;margin:10px 0 14px}.lead{font-size:19px;color:var(--muted);margin:0}.toc{border-top:1px solid var(--line);padding:18px 0 10px}.toc h2{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}.toc ol{margin:0;padding-left:20px}.toc a{color:var(--ink);text-decoration:none}.toc a:hover{text-decoration:underline}main{border-top:1px solid var(--line)}section{padding:28px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,"Times New Roman",serif;font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:0 0 12px}h3{font-size:20px;margin:26px 0 8px}h4,h5{font-size:16px;margin:20px 0 8px}p{margin:0 0 13px}ul,ol{margin:0 0 14px 22px;padding:0}li{margin:3px 0}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#fff8e8;padding:1px 4px;border-radius:4px}pre{background:#fff8e8;border:1px solid var(--line);padding:14px 16px;overflow:auto;font-size:13px;line-height:1.55}.table-scroll{width:100%;overflow-x:auto;margin:14px 0 22px;border-top:1px solid var(--line)}table{width:100%;min-width:760px;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}td:first-child{font-weight:800;color:var(--ink);width:28%}figure{margin:18px 0;padding:12px;background:#fffaf0;border:1px solid var(--line)}figure img{max-width:100%;height:auto;display:block;margin:0 auto}figcaption{font-size:12px;color:var(--muted);margin-top:8px;text-align:center}.note{background:var(--note);border-left:4px solid var(--accent);padding:14px 16px;margin:18px 0}.footer-note{margin:32px auto 60px;color:var(--muted);font-size:14px;max-width:980px;padding:0 20px}@media(max-width:760px){table{font-size:13px}}
+  </style>
+</head>
+<body>
+  <div class="top"><nav class="nav"><a href="../index.html">Knowledge Base</a><a class="lang" href="../../articles/photography-modes-exposure-terms.html">中文</a></nav></div>
+  <header class="wrap">
+    <div class="kicker">Travel &amp; Photography</div>
+    <h1>Photography Basics: Exposure, Shooting Modes, and Terms</h1>
+    <p class="lead">A primer for a general audience: the exposure triangle, PASM shooting modes, metering, white balance, focal length, and common photographic terms.</p>
+  </header>
+  <nav class="toc wrap" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#exposure">The Exposure Triangle</a></li>
+      <li><a href="#modes">Shooting Modes (PASM)</a></li>
+      <li><a href="#metering">Metering and Exposure Compensation</a></li>
+      <li><a href="#white-balance">White Balance</a></li>
+      <li><a href="#focal-length">Focal Length and Angle of View</a></li>
+      <li><a href="#terms">Common Terms</a></li>
+      <li><a href="#sources">Sources and Notes</a></li>
+    </ol>
+  </nav>
+  <main class="wrap">
+    <div class="note">This article covers general camera fundamentals and standard industry terminology. It describes mechanisms and definitions, and contains no personalized shooting presets or stylistic preferences.</div>
+
+    <section id="exposure">
+      <h2>The Exposure Triangle</h2>
+      <p>The brightness (exposure) of a photograph is determined by three interrelated parameters that form a set of trade-offs, commonly called the "exposure triangle".</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Element</th><th>Function</th><th>Side Effect</th></tr></thead>
+        <tbody>
+          <tr><td>Aperture (f-number)</td><td>Controls the amount of light entering the lens and also sets depth of field. A smaller f-number means a larger aperture, more light, and a shallower depth of field.</td><td>A wide aperture produces strong background blur; a narrow aperture increases depth of field but lets in less light.</td></tr>
+          <tr><td>Shutter Speed</td><td>Controls exposure time. Slower speeds let in more light.</td><td>A slow shutter records motion blur; a fast shutter freezes motion but reduces incoming light.</td></tr>
+          <tr><td>ISO</td><td>The sensor's sensitivity to light. Higher ISO produces a brighter image.</td><td>High ISO introduces more noise and reduces image quality.</td></tr>
+        </tbody>
+      </table></div>
+      <p>Adjusting any one parameter usually requires an opposite adjustment of the others to keep the same exposure. For example, increasing shutter speed (less light) can be compensated by opening the aperture or raising ISO.</p>
+    </section>
+
+    <section id="modes">
+      <h2>Shooting Modes (PASM)</h2>
+      <p>Mainstream cameras offer a set of standard shooting modes that control how much of the exposure the camera decides automatically.</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Mode</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>M (Manual)</td><td>Aperture and shutter speed are set manually; exposure is fully controlled by the photographer.</td></tr>
+          <tr><td>A / Av (Aperture Priority)</td><td>The photographer sets the aperture and the camera matches the shutter speed. Often used to control depth of field.</td></tr>
+          <tr><td>S / Tv (Shutter Priority)</td><td>The photographer sets the shutter speed and the camera matches the aperture. Often used to freeze or blur motion.</td></tr>
+          <tr><td>P (Program)</td><td>The camera sets both aperture and shutter speed; the photographer can still adjust ISO, white balance, and so on.</td></tr>
+        </tbody>
+      </table></div>
+      <p>ISO can be set to automatic or manual in any mode. These modes are an industry standard, though letter labels differ slightly across brands (e.g. Canon uses Av/Tv, while Nikon and Sony use A/S).</p>
+    </section>
+
+    <section id="metering">
+      <h2>Metering and Exposure Compensation</h2>
+      <ul>
+        <li><b>Metering</b>: the camera estimates exposure from scene brightness. Common modes include evaluative/matrix metering, center-weighted metering, and spot metering.</li>
+        <li><b>Exposure Compensation (EV)</b>: in automatic or semi-automatic modes, an overall adjustment that brightens or darkens the camera's metered exposure.</li>
+        <li><b>Histogram</b>: a graph of the distribution of pixels from dark to bright, used to judge under- or over-exposure; clipping on the right indicates blown highlights, and clipping on the left indicates crushed shadows.</li>
+      </ul>
+    </section>
+
+    <section id="white-balance">
+      <h2>White Balance</h2>
+      <p>White balance corrects for the color temperature of different light sources so that white objects appear white rather than tinted yellow or blue. Color temperature is measured in kelvin (K); lower values are warmer (orange) and higher values are cooler (blue).</p>
+      <p>Common white-balance presets include auto (AWB), daylight, cloudy, shade, incandescent (tungsten), and fluorescent. Setting the temperature manually or using a gray card yields more precise results.</p>
+    </section>
+
+    <section id="focal-length">
+      <h2>Focal Length and Angle of View</h2>
+      <ul>
+        <li><b>Focal length (mm)</b>: determines the angle of view and magnification. Shorter focal lengths give a wider view; longer focal lengths give a narrower view with stronger compression.</li>
+        <li><b>Wide-angle</b> (e.g. 16–35mm): a broad view, often used for landscapes and architecture.</li>
+        <li><b>Standard</b> (around 50mm): a view close to the human eye with little distortion.</li>
+        <li><b>Telephoto</b> (e.g. 70–200mm and beyond): a narrow view that compresses near and far, often used for portraits, wildlife, and sports.</li>
+      </ul>
+    </section>
+
+    <section id="terms">
+      <h2>Common Terms</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>Depth of Field</td><td>The range of distance that appears acceptably sharp. Affected by aperture, focal length, and shooting distance.</td></tr>
+          <tr><td>Vignette</td><td>Darkening of the corners relative to the center; it can result from lens characteristics or be added deliberately in editing.</td></tr>
+          <tr><td>Incandescent</td><td>A warm artificial light source with a low color temperature, which tends to give images an orange cast.</td></tr>
+          <tr><td>Dynamic Range</td><td>The range of brightest to darkest detail a sensor can record simultaneously.</td></tr>
+          <tr><td>Image Stabilization</td><td>Compensation for shake via the lens or body; usually turned off for long exposures on a tripod.</td></tr>
+          <tr><td>RAW</td><td>A file format containing the sensor's raw data, preserving more latitude for later editing.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="sources">
+      <h2>Sources and Notes</h2>
+      <ul>
+        <li>This article covers general photographic fundamentals and standard camera-industry terminology.</li>
+        <li>Specific mode labels, menu names, and parameter ranges vary by camera brand and model; the official manual for the device takes precedence.</li>
+        <li>This article contains no personalized shooting presets, stylistic preferences, or gear-purchase decisions.</li>
+      </ul>
+    </section>
+  </main>
+  <p class="footer-note">This article is a general photography-fundamentals reference and contains no private personal information. For device-specific operation, refer to the official manual.</p>
+</body>
+</html>

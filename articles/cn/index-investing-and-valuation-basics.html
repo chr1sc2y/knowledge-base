@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>指数投资与估值基础</title>
+  <meta name="description" content="从定期定额投资机制、主要指数构成、ETF 选择标准到常见财务估值与市场概念，整理一套去个人化的指数投资基础知识。">
+  <style>
+    :root{--bg:#f6f2e8;--fg:#202523;--muted:#68716d;--line:#d8cfbf;--ink:#173f39;--accent:#9f5136;--note:#fff9ec;--soft:#ebe2d2}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.72;-webkit-font-smoothing:antialiased}.top{position:sticky;top:0;background:rgba(246,242,232,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:4}.nav{width:min(1080px,calc(100vw - 40px));margin:0 auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:14px}.nav a{color:var(--ink);font-size:13px;font-weight:900;text-decoration:none}.lang{border:1px solid var(--line);border-radius:999px;padding:7px 12px}.wrap{width:min(980px,calc(100vw - 40px));margin:0 auto}header{padding:48px 0 32px}.kicker{color:var(--accent);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,5.8vw,52px);line-height:1.05;letter-spacing:-.02em;margin:10px 0 14px}.lead{font-size:19px;color:var(--muted);margin:0}.toc{border-top:1px solid var(--line);padding:18px 0 10px}.toc h2{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}.toc ol{margin:0;padding-left:20px}.toc a{color:var(--ink);text-decoration:none}.toc a:hover{text-decoration:underline}main{border-top:1px solid var(--line)}section{padding:28px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,"Times New Roman",serif;font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:0 0 12px}h3{font-size:20px;margin:26px 0 8px}h4,h5{font-size:16px;margin:20px 0 8px}p{margin:0 0 13px}ul,ol{margin:0 0 14px 22px;padding:0}li{margin:3px 0}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#fff8e8;padding:1px 4px;border-radius:4px}pre{background:#fff8e8;border:1px solid var(--line);padding:14px 16px;overflow:auto;font-size:13px;line-height:1.55}.table-scroll{width:100%;overflow-x:auto;margin:14px 0 22px;border-top:1px solid var(--line)}table{width:100%;min-width:760px;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}td:first-child{font-weight:800;color:var(--ink);width:28%}figure{margin:18px 0;padding:12px;background:#fffaf0;border:1px solid var(--line)}figure img{max-width:100%;height:auto;display:block;margin:0 auto}figcaption{font-size:12px;color:var(--muted);margin-top:8px;text-align:center}.note{background:var(--note);border-left:4px solid var(--accent);padding:14px 16px;margin:18px 0}.footer-note{margin:32px auto 60px;color:var(--muted);font-size:14px;max-width:980px;padding:0 20px}@media(max-width:760px){table{font-size:13px}}
+  </style>
+</head>
+<body>
+  <div class="top"><nav class="nav"><a href="../index.html">知识库</a><a class="lang" href="../en/articles/index-investing-and-valuation-basics.html">English</a></nav></div>
+  <header class="wrap">
+    <div class="kicker">个人系统与决策</div>
+    <h1>指数投资与估值基础</h1>
+    <p class="lead">从定期定额投资机制、主要指数构成、ETF 选择标准，到常见的财务估值与市场概念，整理一套面向公开读者的指数投资基础知识。</p>
+  </header>
+  <nav class="toc wrap" aria-label="目录">
+    <h2>目录</h2>
+    <ol>
+      <li><a href="#dca">定期定额投资</a></li>
+      <li><a href="#etf-selection">ETF 选择中的常见考量</a></li>
+      <li><a href="#indices">主要美股指数</a></li>
+      <li><a href="#valuation">财务与估值术语</a></li>
+      <li><a href="#concepts">市场与经济概念</a></li>
+      <li><a href="#allocation">经典资产配置框架</a></li>
+      <li><a href="#sources">参考与说明</a></li>
+    </ol>
+  </nav>
+  <main class="wrap">
+    <div class="note">本文为通用金融知识整理，描述的是机制、定义与公开记录的框架，不包含任何个人持仓、配置比例或交易决策，也不构成投资建议。</div>
+
+    <section id="dca">
+      <h2>定期定额投资</h2>
+      <p>定期定额投资（Dollar-Cost Averaging）指按固定时间间隔、以固定金额持续买入某一资产或基金的方式。其核心特征是把买入行为规则化，从而减少对单一时点价格判断的依赖。</p>
+      <h3>频率与长期结果</h3>
+      <p>研究与长期实践表明，投资频率本身（例如每月、每两周）对最终收益的影响相对有限。对长期结果影响更大的，是能否在多个市场周期中持续执行。频率优化与择时优化的边际收益，通常小于持续性带来的影响。</p>
+      <h3>闲置资金与交易成本</h3>
+      <ul>
+        <li><b>闲置资金（Cash Drag）</b>：等待投资的现金若未参与市场，会产生机会成本。将投资周期与现金流入（如薪资到账周期）对齐，可降低闲置资金占比。</li>
+        <li><b>交易成本</b>：频率越高，累计的交易费用、点差与税费可能上升。频率选择本质上是资金效率与交易成本之间的权衡。</li>
+      </ul>
+      <h3>自动化与执行纪律</h3>
+      <p>自动扣款机制将买入从一次次主动决策转变为默认流程，可减少情绪与拖延对持续执行的干扰。行为金融研究普遍指出，执行纪律对长期结果的影响往往超过频率或时点的细节优化。</p>
+      <div class="note">一个常被观察到的失败模式是：因市场波动而中断既定的定投计划，使长期复利效应被打断。</div>
+    </section>
+
+    <section id="etf-selection">
+      <h2>ETF 选择中的常见考量</h2>
+      <p>在长期持有的语境下，评估 ETF 时常见的几个维度如下。这些是中性的评估角度，而非针对具体产品的推荐。</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>维度</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>长期趋势确定性</td><td>主题型、趋势型 ETF（如短期热点、单一行业赛道）波动较大，长期趋势确定性较低；宽基指数 ETF 覆盖面更广，长期趋势相对明确。</td></tr>
+          <tr><td>成本</td><td>总费用率（Expense Ratio）与隐性交易成本会在长期持有中持续侵蚀收益，因此成本是长期投资中的关键变量。</td></tr>
+          <tr><td>税务结构</td><td>分红税、资本利得税等会影响税后收益。即使税前表现良好，税务结构不利也可能降低实际回报。</td></tr>
+        </tbody>
+      </table></div>
+      <p>跟踪主流宽基指数的代表性 ETF 包括跟踪标普 500 的 VOO、SPY，以及跟踪纳斯达克 100 的 QQQ。列举这些产品仅用于说明"宽基指数 ETF"这一类别，并非推荐。</p>
+    </section>
+
+    <section id="indices">
+      <h2>主要美股指数</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>指数</th><th>构成与含义</th></tr></thead>
+        <tbody>
+          <tr><td>标普 500（S&amp;P 500）</td><td>由约 500 家市值最大的美国上市公司组成，覆盖各主要行业，是衡量美国整体股市表现的代表性指标。</td></tr>
+          <tr><td>纳斯达克综合指数（NASDAQ Composite）</td><td>包含 3000 余家在纳斯达克交易所上市的公司，构成上偏重科技行业，因而更能反映科技板块表现。</td></tr>
+          <tr><td>道琼斯工业平均指数（DJIA）</td><td>由 30 家代表性美国企业组成，历史悠久；但成分股数量较少，覆盖面不如标普 500 全面。</td></tr>
+          <tr><td>小盘股（Small Cap）</td><td>指市值较小的公司的股票，通常波动性高于大盘股。</td></tr>
+        </tbody>
+      </table></div>
+      <p>标准普尔（Standard &amp; Poor's，S&amp;P）是提供市场指数、信用评级、研究与数据服务的金融服务公司，标普 500 指数是其代表性产品之一。</p>
+    </section>
+
+    <section id="valuation">
+      <h2>财务与估值术语</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>术语</th><th>含义</th></tr></thead>
+        <tbody>
+          <tr><td>净利润（Net Profit）</td><td>企业在扣除全部成本、费用与税款后的最终利润。</td></tr>
+          <tr><td>总收入（Total Revenue）</td><td>企业在一定期间内的全部营业收入。</td></tr>
+          <tr><td>净利润率（Net Margin）</td><td>净利润 / 总收入 × 100%，反映每单位收入转化为利润的比例。</td></tr>
+          <tr><td>资本支出（CapEx）</td><td>用于长期发展与运营的资本性投资，例如设备、厂房等。</td></tr>
+          <tr><td>每股收益（EPS）</td><td>Earnings per Share，归属于每一股普通股的利润。</td></tr>
+          <tr><td>市盈率（P/E）</td><td>每股价格 / 每股盈利，衡量为单位盈利所支付的价格。</td></tr>
+          <tr><td>市销率（P/S）</td><td>每股价格 / 每股销售额，常用于盈利尚不稳定的公司估值。</td></tr>
+          <tr><td>短期国债（T-bill）</td><td>Treasury bills，美国政府发行的短期债务工具，通常被视为低风险资产。</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="concepts">
+      <h2>市场与经济概念</h2>
+      <h3>零和博弈（Zero-sum Game）</h3>
+      <p>指在严格竞争的博弈中，一方的收益必然对应另一方等量的损失，各方收益与损失之和恒为零。该模型常用于刻画纯粹的对抗性交易场景。</p>
+      <h3>财富效应（Wealth Effect）</h3>
+      <p>指资产价格上涨时，即使持有者并未变现，账面收益的增加也会提升其消费意愿与对未来的乐观预期。市场情绪与预期的变化，可能在尚未发生实际现金流变动的情况下影响经济行为。</p>
+      <h3>中等收入陷阱（Middle Income Trap）</h3>
+      <p>指一个经济体在达到中等收入水平后长期停滞的现象：随着薪资上涨，其低成本制造的出口竞争力下降，又难以进入高附加值市场与发达经济体行列，从而停留在中等收入区间。</p>
+    </section>
+
+    <section id="allocation">
+      <h2>经典资产配置框架</h2>
+      <p>全天候组合（All Weather Portfolio）是由桥水基金（Bridgewater）的 Ray Dalio 提出的配置框架，目标是在不同经济环境（增长/衰退、通胀/通缩）下保持相对稳健。公开流传的一个简化版本权重如下：</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>资产类别</th><th>权重</th><th>代表性产品</th></tr></thead>
+        <tbody>
+          <tr><td>股票</td><td>30%</td><td>如 SPY</td></tr>
+          <tr><td>长期国债</td><td>40%</td><td>如 TLT</td></tr>
+          <tr><td>中期国债</td><td>15%</td><td>如 IEI</td></tr>
+          <tr><td>大宗商品</td><td>7.5%</td><td>如 DBC</td></tr>
+          <tr><td>黄金</td><td>7.5%</td><td>如 GLD</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note">上述权重为公开流传的简化示例，不同来源的具体比例略有差异，并非唯一或官方版本。列举的产品代码仅用于说明对应资产类别。</div>
+    </section>
+
+    <section id="sources">
+      <h2>参考与说明</h2>
+      <ul>
+        <li>文中概念基于公开的金融教育资料与广泛记录的投资框架（如指数定义、估值指标、全天候组合）。</li>
+        <li>指数构成、产品代码、费率与配置权重会随时间变化，具体应以发行方与交易所的最新官方信息为准。</li>
+        <li>本文为通用知识整理，不含个人持仓、配置比例或交易决策，不构成投资建议。投资决策涉及个体风险承受能力，应咨询具备资质的专业人士。</li>
+      </ul>
+    </section>
+  </main>
+  <p class="footer-note">本文是通用金融知识整理，不包含个人隐私信息，也不构成投资建议。市场数据与产品信息会随时间变化，请以官方最新信息为准。</p>
+</body>
+</html>

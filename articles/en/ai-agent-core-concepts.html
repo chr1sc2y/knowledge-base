@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Core Concepts of AI Agents</title>
+  <meta name="description" content="Core AI-agent concepts: the ReAct loop, single vs multi-agent design, context and memory management, tool-call reliability, observability, and evaluation.">
+  <style>
+    :root{--bg:#f6f2e8;--fg:#202523;--muted:#68716d;--line:#d8cfbf;--ink:#173f39;--accent:#9f5136;--note:#fff9ec;--soft:#ebe2d2}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.72;-webkit-font-smoothing:antialiased}.top{position:sticky;top:0;background:rgba(246,242,232,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:4}.nav{width:min(1080px,calc(100vw - 40px));margin:0 auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:14px}.nav a{color:var(--ink);font-size:13px;font-weight:900;text-decoration:none}.lang{border:1px solid var(--line);border-radius:999px;padding:7px 12px}.wrap{width:min(980px,calc(100vw - 40px));margin:0 auto}header{padding:48px 0 32px}.kicker{color:var(--accent);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,5.8vw,52px);line-height:1.05;letter-spacing:-.02em;margin:10px 0 14px}.lead{font-size:19px;color:var(--muted);margin:0}.toc{border-top:1px solid var(--line);padding:18px 0 10px}.toc h2{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}.toc ol{margin:0;padding-left:20px}.toc a{color:var(--ink);text-decoration:none}.toc a:hover{text-decoration:underline}main{border-top:1px solid var(--line)}section{padding:28px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,"Times New Roman",serif;font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:0 0 12px}h3{font-size:20px;margin:26px 0 8px}h4,h5{font-size:16px;margin:20px 0 8px}p{margin:0 0 13px}ul,ol{margin:0 0 14px 22px;padding:0}li{margin:3px 0}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#fff8e8;padding:1px 4px;border-radius:4px}pre{background:#fff8e8;border:1px solid var(--line);padding:14px 16px;overflow:auto;font-size:13px;line-height:1.55}.table-scroll{width:100%;overflow-x:auto;margin:14px 0 22px;border-top:1px solid var(--line)}table{width:100%;min-width:760px;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}td:first-child{font-weight:800;color:var(--ink);width:28%}figure{margin:18px 0;padding:12px;background:#fffaf0;border:1px solid var(--line)}figure img{max-width:100%;height:auto;display:block;margin:0 auto}figcaption{font-size:12px;color:var(--muted);margin-top:8px;text-align:center}.note{background:var(--note);border-left:4px solid var(--accent);padding:14px 16px;margin:18px 0}.footer-note{margin:32px auto 60px;color:var(--muted);font-size:14px;max-width:980px;padding:0 20px}@media(max-width:760px){table{font-size:13px}}
+  </style>
+</head>
+<body>
+  <div class="top"><nav class="nav"><a href="../index.html">Knowledge Base</a><a class="lang" href="../../articles/ai-agent-core-concepts.html">中文</a></nav></div>
+  <header class="wrap">
+    <div class="kicker">Agent Engineering</div>
+    <h1>Core Concepts of AI Agents</h1>
+    <p class="lead">Core concepts and common design trade-offs for AI agents: the ReAct loop, single vs multi-agent design, context and memory management, tool-call reliability, observability, and evaluation.</p>
+  </header>
+  <nav class="toc wrap" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#react">The ReAct Loop</a></li>
+      <li><a href="#single-multi">Single-Agent vs Multi-Agent</a></li>
+      <li><a href="#communication">Inter-Agent Communication</a></li>
+      <li><a href="#context">Context and Memory Management</a></li>
+      <li><a href="#reliability">Tool-Call Reliability</a></li>
+      <li><a href="#observability">Observability and Debugging</a></li>
+      <li><a href="#evaluation">Non-Determinism and Evaluation</a></li>
+      <li><a href="#sources">Sources and Notes</a></li>
+    </ol>
+  </nav>
+  <main class="wrap">
+    <div class="note">This article describes general mechanisms and design trade-offs in AI-agent systems as public engineering concepts. It contains no implementation details from any specific project, company, or individual.</div>
+
+    <section id="react">
+      <h2>The ReAct Loop</h2>
+      <p>ReAct (Reason + Act) is an agent execution pattern that interleaves reasoning and action, composed of "reason → act → observe → repeat".</p>
+      <ul>
+        <li><b>Reason</b>: the model reasons about the next step from the current context, decomposing the task into subtasks where needed.</li>
+        <li><b>Act</b>: it issues a concrete tool call, such as fetching data, running code, or calling an API.</li>
+        <li><b>Observe</b>: the tool returns a result, which is added to the context for the model to read.</li>
+        <li><b>Repeat</b>: the model reads the updated context and reasons again; the loop continues until the task is complete or a step limit is reached.</li>
+      </ul>
+      <p>Its key property is that the model can adjust its plan based on real feedback rather than executing a fixed script.</p>
+    </section>
+
+    <section id="single-multi">
+      <h2>Single-Agent vs Multi-Agent</h2>
+      <p>A large language model has a finite context window. When a single agent handles everything, the context fills up quickly, reasoning quality degrades, and a failure at any step can derail the whole task.</p>
+      <p>A multi-agent architecture splits work across roles: each worker holds a relatively clean context, failures are localized, and some subtasks can run in parallel. The cost is the added complexity of orchestration and communication.</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Dimension</th><th>Single-Agent</th><th>Multi-Agent</th></tr></thead>
+        <tbody>
+          <tr><td>Context</td><td>All tasks share one context and fill it quickly</td><td>Each worker has an independent, cleaner context</td></tr>
+          <tr><td>Failure</td><td>A single point of failure affects the whole</td><td>Failures are locally isolated</td></tr>
+          <tr><td>Parallelism</td><td>Hard to parallelize</td><td>Subtasks can run in parallel</td></tr>
+          <tr><td>Complexity</td><td>Simple to implement</td><td>Requires orchestration and communication</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="communication">
+      <h2>Inter-Agent Communication</h2>
+      <p>Results between agents are typically passed in one of two ways:</p>
+      <ul>
+        <li><b>Shared memory</b>: agents read and write a common shared state. Simple to implement, but it scales poorly in distributed settings and the origin of state is hard to trace.</li>
+        <li><b>Message passing</b>: workers return results explicitly to an orchestrator. The path is clearer and easier to trace, and it suits distributed systems better.</li>
+      </ul>
+      <p>Where traceability and cross-node scaling matter, message passing is often preferred.</p>
+    </section>
+
+    <section id="context">
+      <h2>Context and Memory Management</h2>
+      <h3>Long Tool Outputs</h3>
+      <p>When a tool returns a large amount of content, a common approach is to store the full result outside the context and keep only a reference token in the conversation, retrieving it by reference when needed. This controls context size without losing the data.</p>
+      <h3>Memory Compaction</h3>
+      <p>When the context approaches a token limit, older history can be summarized and less important observations dropped. The difficulty is deciding what is safe to discard — removing something needed later can cause the agent to fail silently, without an error.</p>
+      <h3>Skill Discovery</h3>
+      <p>Rather than loading all tools into the prompt at once, skills can register themselves and the agent queries for the capabilities it needs at runtime. This reduces token waste and keeps the context clean, mechanically similar to service discovery in backend systems.</p>
+    </section>
+
+    <section id="reliability">
+      <h2>Tool-Call Reliability</h2>
+      <p>Common ways to improve the reliability of tool calls include:</p>
+      <ul>
+        <li>Validating the model's output before execution, confirming the arguments are valid before running.</li>
+        <li>Writing clear tool descriptions. An ambiguous schema makes the model more likely to guess arguments wrong.</li>
+        <li>Providing a few examples (few-shot) in the prompt to align the model with the expected call format.</li>
+      </ul>
+    </section>
+
+    <section id="observability">
+      <h2>Observability and Debugging</h2>
+      <p>Diagnosing failures in a multi-agent system depends on tracing across all agents, usually linked by a shared trace ID. Without tracing, it is hard to locate which worker failed and why. Observability therefore needs to be built in from the start rather than added afterward.</p>
+    </section>
+
+    <section id="evaluation">
+      <h2>Non-Determinism and Evaluation</h2>
+      <p>One of the main engineering challenges of agent systems is non-determinism: the same input can produce different behavior across runs, so testing by exact output matching does not work.</p>
+      <p>A more applicable approach is to build evaluations (evals) that measure performance by metrics such as task completion and failure patterns, rather than comparing output character by character.</p>
+    </section>
+
+    <section id="sources">
+      <h2>Sources and Notes</h2>
+      <ul>
+        <li>This article covers widely discussed general concepts in AI-agent engineering (ReAct, multi-agent design, memory management, evaluation).</li>
+        <li>Specific frameworks, APIs, and best practices evolve quickly; implementation should follow the latest official documentation of the relevant projects.</li>
+        <li>This article contains no implementation details from any specific project, company, or individual.</li>
+      </ul>
+    </section>
+  </main>
+  <p class="footer-note">This article is a general AI-agent engineering reference and contains no private personal information. Technical details change as the ecosystem evolves; refer to the latest official sources.</p>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Index Investing and Valuation Basics</title>
+  <meta name="description" content="A neutral primer on index investing: dollar-cost averaging mechanics, major index composition, ETF selection criteria, and common valuation and market concepts.">
+  <style>
+    :root{--bg:#f6f2e8;--fg:#202523;--muted:#68716d;--line:#d8cfbf;--ink:#173f39;--accent:#9f5136;--note:#fff9ec;--soft:#ebe2d2}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.72;-webkit-font-smoothing:antialiased}.top{position:sticky;top:0;background:rgba(246,242,232,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:4}.nav{width:min(1080px,calc(100vw - 40px));margin:0 auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:14px}.nav a{color:var(--ink);font-size:13px;font-weight:900;text-decoration:none}.lang{border:1px solid var(--line);border-radius:999px;padding:7px 12px}.wrap{width:min(980px,calc(100vw - 40px));margin:0 auto}header{padding:48px 0 32px}.kicker{color:var(--accent);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,5.8vw,52px);line-height:1.05;letter-spacing:-.02em;margin:10px 0 14px}.lead{font-size:19px;color:var(--muted);margin:0}.toc{border-top:1px solid var(--line);padding:18px 0 10px}.toc h2{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}.toc ol{margin:0;padding-left:20px}.toc a{color:var(--ink);text-decoration:none}.toc a:hover{text-decoration:underline}main{border-top:1px solid var(--line)}section{padding:28px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,"Times New Roman",serif;font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:0 0 12px}h3{font-size:20px;margin:26px 0 8px}h4,h5{font-size:16px;margin:20px 0 8px}p{margin:0 0 13px}ul,ol{margin:0 0 14px 22px;padding:0}li{margin:3px 0}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#fff8e8;padding:1px 4px;border-radius:4px}pre{background:#fff8e8;border:1px solid var(--line);padding:14px 16px;overflow:auto;font-size:13px;line-height:1.55}.table-scroll{width:100%;overflow-x:auto;margin:14px 0 22px;border-top:1px solid var(--line)}table{width:100%;min-width:760px;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}td:first-child{font-weight:800;color:var(--ink);width:28%}figure{margin:18px 0;padding:12px;background:#fffaf0;border:1px solid var(--line)}figure img{max-width:100%;height:auto;display:block;margin:0 auto}figcaption{font-size:12px;color:var(--muted);margin-top:8px;text-align:center}.note{background:var(--note);border-left:4px solid var(--accent);padding:14px 16px;margin:18px 0}.footer-note{margin:32px auto 60px;color:var(--muted);font-size:14px;max-width:980px;padding:0 20px}@media(max-width:760px){table{font-size:13px}}
+  </style>
+</head>
+<body>
+  <div class="top"><nav class="nav"><a href="../index.html">Knowledge Base</a><a class="lang" href="../../articles/index-investing-and-valuation-basics.html">中文</a></nav></div>
+  <header class="wrap">
+    <div class="kicker">Personal Systems &amp; Decision Making</div>
+    <h1>Index Investing and Valuation Basics</h1>
+    <p class="lead">A primer for a general audience: the mechanics of dollar-cost averaging, the composition of major indices, common ETF selection criteria, and frequently used valuation and market concepts.</p>
+  </header>
+  <nav class="toc wrap" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#dca">Dollar-Cost Averaging</a></li>
+      <li><a href="#etf-selection">Common Considerations in ETF Selection</a></li>
+      <li><a href="#indices">Major US Equity Indices</a></li>
+      <li><a href="#valuation">Financial and Valuation Terms</a></li>
+      <li><a href="#concepts">Market and Economic Concepts</a></li>
+      <li><a href="#allocation">A Classic Asset-Allocation Framework</a></li>
+      <li><a href="#sources">Sources and Notes</a></li>
+    </ol>
+  </nav>
+  <main class="wrap">
+    <div class="note">This article is a general financial-knowledge reference. It describes mechanisms, definitions, and publicly documented frameworks. It contains no personal holdings, allocation percentages, or trading decisions, and is not investment advice.</div>
+
+    <section id="dca">
+      <h2>Dollar-Cost Averaging</h2>
+      <p>Dollar-cost averaging refers to buying a fixed monetary amount of an asset or fund at fixed time intervals. Its defining feature is that purchases follow a rule, which reduces dependence on judging the price at any single point in time.</p>
+      <h3>Frequency and Long-Term Outcomes</h3>
+      <p>Research and long-term practice indicate that the frequency of investment itself (for example, monthly versus biweekly) has a relatively limited effect on final returns. What matters more for long-term outcomes is whether contributions continue across multiple market cycles. The marginal benefit of optimizing frequency or timing is generally smaller than the effect of consistency.</p>
+      <h3>Cash Drag and Transaction Costs</h3>
+      <ul>
+        <li><b>Cash drag</b>: cash waiting to be invested carries an opportunity cost while it remains outside the market. Aligning the investment cycle with incoming cash flow (such as a salary cycle) reduces the proportion of idle cash.</li>
+        <li><b>Transaction costs</b>: higher frequency can raise cumulative fees, spreads, and taxes. Choosing a frequency is essentially a trade-off between capital efficiency and transaction cost.</li>
+      </ul>
+      <h3>Automation and Execution Discipline</h3>
+      <p>Automatic deductions turn buying from a series of active decisions into a default process, reducing the influence of emotion and procrastination on consistency. Behavioral-finance research broadly notes that execution discipline tends to affect long-term outcomes more than fine-tuning frequency or timing.</p>
+      <div class="note">A commonly observed failure mode is interrupting a planned contribution schedule during market volatility, which breaks the long-term compounding effect.</div>
+    </section>
+
+    <section id="etf-selection">
+      <h2>Common Considerations in ETF Selection</h2>
+      <p>In a long-term holding context, several dimensions are commonly used when evaluating ETFs. These are neutral evaluation angles rather than recommendations of specific products.</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Dimension</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Long-term trend certainty</td><td>Thematic or trend ETFs (short-lived hot sectors, single-industry bets) tend to be more volatile with lower long-term trend certainty; broad-market index ETFs cover more of the market and have a relatively clearer long-term trend.</td></tr>
+          <tr><td>Cost</td><td>The expense ratio and implicit trading costs erode returns continuously over a long holding period, making cost a key variable in long-term investing.</td></tr>
+          <tr><td>Tax structure</td><td>Dividend and capital-gains taxes affect after-tax returns. Even with strong pre-tax performance, an unfavorable tax structure can lower the realized return.</td></tr>
+        </tbody>
+      </table></div>
+      <p>Representative ETFs tracking mainstream broad indices include VOO and SPY (tracking the S&amp;P 500) and QQQ (tracking the Nasdaq 100). These are listed to illustrate the category of "broad-market index ETFs", not as recommendations.</p>
+    </section>
+
+    <section id="indices">
+      <h2>Major US Equity Indices</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Index</th><th>Composition and Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>S&amp;P 500</td><td>Composed of roughly 500 of the largest US listed companies by market capitalization, spanning all major sectors; a representative gauge of overall US equity-market performance.</td></tr>
+          <tr><td>NASDAQ Composite</td><td>Includes more than 3,000 companies listed on the Nasdaq exchange, weighted toward technology, so it more strongly reflects the technology sector.</td></tr>
+          <tr><td>Dow Jones Industrial Average (DJIA)</td><td>Composed of 30 representative US companies with a long history; with fewer constituents, its coverage is less comprehensive than the S&amp;P 500.</td></tr>
+          <tr><td>Small Cap</td><td>Stocks of smaller-capitalization companies, typically more volatile than large-cap stocks.</td></tr>
+        </tbody>
+      </table></div>
+      <p>Standard &amp; Poor's (S&amp;P) is a financial-services company providing market indices, credit ratings, research, and data; the S&amp;P 500 index is one of its representative products.</p>
+    </section>
+
+    <section id="valuation">
+      <h2>Financial and Valuation Terms</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>Net Profit</td><td>The final profit after deducting all costs, expenses, and taxes.</td></tr>
+          <tr><td>Total Revenue</td><td>All operating income over a given period.</td></tr>
+          <tr><td>Net Margin</td><td>Net profit / total revenue × 100%, showing the share of each unit of revenue that becomes profit.</td></tr>
+          <tr><td>Capital Expenditure (CapEx)</td><td>Capital investment for long-term growth and operations, such as equipment and facilities.</td></tr>
+          <tr><td>Earnings per Share (EPS)</td><td>The profit attributable to each share of common stock.</td></tr>
+          <tr><td>Price-to-Earnings (P/E)</td><td>Price per share / earnings per share; the price paid per unit of earnings.</td></tr>
+          <tr><td>Price-to-Sales (P/S)</td><td>Price per share / sales per share; often used to value companies with unstable earnings.</td></tr>
+          <tr><td>Treasury Bill (T-bill)</td><td>A short-term debt instrument issued by the US government, generally regarded as a low-risk asset.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="concepts">
+      <h2>Market and Economic Concepts</h2>
+      <h3>Zero-sum Game</h3>
+      <p>In a strictly competitive game, one party's gain corresponds to an equal loss for another, so the sum of gains and losses is always zero. The model is often used to describe purely adversarial trading scenarios.</p>
+      <h3>Wealth Effect</h3>
+      <p>When asset prices rise, an increase in paper gains can raise holders' willingness to spend and their optimism about the future, even without realizing those gains. Changes in market sentiment and expectations can influence economic behavior before any actual cash-flow change occurs.</p>
+      <h3>Middle Income Trap</h3>
+      <p>The phenomenon of an economy stagnating after reaching a middle-income level: as wages rise, its low-cost manufacturing loses export competitiveness, while it struggles to enter high-value-added markets and join the ranks of developed economies, remaining in the middle-income band.</p>
+    </section>
+
+    <section id="allocation">
+      <h2>A Classic Asset-Allocation Framework</h2>
+      <p>The All Weather Portfolio is an allocation framework proposed by Ray Dalio of Bridgewater, designed to stay relatively stable across different economic environments (growth/recession, inflation/deflation). One widely circulated simplified version uses the following weights:</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Asset Class</th><th>Weight</th><th>Representative Product</th></tr></thead>
+        <tbody>
+          <tr><td>Equities</td><td>30%</td><td>e.g. SPY</td></tr>
+          <tr><td>Long-term Treasuries</td><td>40%</td><td>e.g. TLT</td></tr>
+          <tr><td>Intermediate Treasuries</td><td>15%</td><td>e.g. IEI</td></tr>
+          <tr><td>Commodities</td><td>7.5%</td><td>e.g. DBC</td></tr>
+          <tr><td>Gold</td><td>7.5%</td><td>e.g. GLD</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note">These weights are a widely circulated simplified example; specific proportions differ across sources and this is not a single or official version. The product tickers are listed only to illustrate the corresponding asset classes.</div>
+    </section>
+
+    <section id="sources">
+      <h2>Sources and Notes</h2>
+      <ul>
+        <li>The concepts here are based on public financial-education material and widely documented investment frameworks (index definitions, valuation metrics, the All Weather Portfolio).</li>
+        <li>Index composition, product tickers, expense ratios, and allocation weights change over time; the latest official information from issuers and exchanges takes precedence.</li>
+        <li>This article is a general-knowledge reference. It contains no personal holdings, allocation percentages, or trading decisions, and is not investment advice. Investment decisions depend on individual risk tolerance and should involve a qualified professional.</li>
+      </ul>
+    </section>
+  </main>
+  <p class="footer-note">This article is a general financial-knowledge reference. It contains no private personal information and is not investment advice. Market data and product information change over time; refer to the latest official sources.</p>
+</body>
+</html>

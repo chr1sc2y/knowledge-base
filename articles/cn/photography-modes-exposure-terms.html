@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>摄影基础：曝光、拍摄模式与术语</title>
+  <meta name="description" content="从曝光三要素、PASM 拍摄模式、白平衡到常见摄影术语，整理一套面向公开读者的相机基础知识。">
+  <style>
+    :root{--bg:#f6f2e8;--fg:#202523;--muted:#68716d;--line:#d8cfbf;--ink:#173f39;--accent:#9f5136;--note:#fff9ec;--soft:#ebe2d2}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.72;-webkit-font-smoothing:antialiased}.top{position:sticky;top:0;background:rgba(246,242,232,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:4}.nav{width:min(1080px,calc(100vw - 40px));margin:0 auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:14px}.nav a{color:var(--ink);font-size:13px;font-weight:900;text-decoration:none}.lang{border:1px solid var(--line);border-radius:999px;padding:7px 12px}.wrap{width:min(980px,calc(100vw - 40px));margin:0 auto}header{padding:48px 0 32px}.kicker{color:var(--accent);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,5.8vw,52px);line-height:1.05;letter-spacing:-.02em;margin:10px 0 14px}.lead{font-size:19px;color:var(--muted);margin:0}.toc{border-top:1px solid var(--line);padding:18px 0 10px}.toc h2{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}.toc ol{margin:0;padding-left:20px}.toc a{color:var(--ink);text-decoration:none}.toc a:hover{text-decoration:underline}main{border-top:1px solid var(--line)}section{padding:28px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,"Times New Roman",serif;font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:0 0 12px}h3{font-size:20px;margin:26px 0 8px}h4,h5{font-size:16px;margin:20px 0 8px}p{margin:0 0 13px}ul,ol{margin:0 0 14px 22px;padding:0}li{margin:3px 0}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#fff8e8;padding:1px 4px;border-radius:4px}pre{background:#fff8e8;border:1px solid var(--line);padding:14px 16px;overflow:auto;font-size:13px;line-height:1.55}.table-scroll{width:100%;overflow-x:auto;margin:14px 0 22px;border-top:1px solid var(--line)}table{width:100%;min-width:760px;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}td:first-child{font-weight:800;color:var(--ink);width:28%}figure{margin:18px 0;padding:12px;background:#fffaf0;border:1px solid var(--line)}figure img{max-width:100%;height:auto;display:block;margin:0 auto}figcaption{font-size:12px;color:var(--muted);margin-top:8px;text-align:center}.note{background:var(--note);border-left:4px solid var(--accent);padding:14px 16px;margin:18px 0}.footer-note{margin:32px auto 60px;color:var(--muted);font-size:14px;max-width:980px;padding:0 20px}@media(max-width:760px){table{font-size:13px}}
+  </style>
+</head>
+<body>
+  <div class="top"><nav class="nav"><a href="../index.html">知识库</a><a class="lang" href="../en/articles/photography-modes-exposure-terms.html">English</a></nav></div>
+  <header class="wrap">
+    <div class="kicker">旅行与摄影</div>
+    <h1>摄影基础：曝光、拍摄模式与术语</h1>
+    <p class="lead">从曝光三要素、PASM 拍摄模式、白平衡，到常见摄影术语，整理一套面向公开读者的相机基础知识。</p>
+  </header>
+  <nav class="toc wrap" aria-label="目录">
+    <h2>目录</h2>
+    <ol>
+      <li><a href="#exposure">曝光三要素</a></li>
+      <li><a href="#modes">拍摄模式（PASM）</a></li>
+      <li><a href="#metering">测光与曝光补偿</a></li>
+      <li><a href="#white-balance">白平衡</a></li>
+      <li><a href="#focal-length">焦距与视角</a></li>
+      <li><a href="#terms">常见术语</a></li>
+      <li><a href="#sources">参考与说明</a></li>
+    </ol>
+  </nav>
+  <main class="wrap">
+    <div class="note">本文整理的是相机行业的通用基础知识与标准术语，描述的是机制与定义，不包含任何个人化的拍摄参数预设或风格偏好。</div>
+
+    <section id="exposure">
+      <h2>曝光三要素</h2>
+      <p>一张照片的明暗（曝光）由三个相互关联的参数共同决定，三者构成权衡关系，通常称为"曝光三角"。</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>要素</th><th>作用</th><th>副作用</th></tr></thead>
+        <tbody>
+          <tr><td>光圈（Aperture，f 值）</td><td>控制镜头进光量；同时决定景深。f 值越小，光圈越大，进光越多，景深越浅。</td><td>大光圈背景虚化强；小光圈景深大但进光少。</td></tr>
+          <tr><td>快门速度（Shutter Speed）</td><td>控制曝光时间。速度越慢，进光越多。</td><td>慢快门会记录运动模糊，快快门可凝固动作，但进光减少。</td></tr>
+          <tr><td>感光度（ISO）</td><td>传感器对光的敏感度。ISO 越高，画面越亮。</td><td>高 ISO 会引入更多噪点，降低画质。</td></tr>
+        </tbody>
+      </table></div>
+      <p>三者任意调整其一，通常需要反向调整其余参数以维持相同曝光。例如提高快门速度（减少进光）时，可通过开大光圈或提高 ISO 来补偿。</p>
+    </section>
+
+    <section id="modes">
+      <h2>拍摄模式（PASM）</h2>
+      <p>主流相机提供一组标准的拍摄模式，控制相机在多大程度上自动决定曝光参数。</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>模式</th><th>含义</th></tr></thead>
+        <tbody>
+          <tr><td>M（Manual，手动）</td><td>手动控制光圈与快门速度，曝光完全由拍摄者决定。</td></tr>
+          <tr><td>A / Av（Aperture Priority，光圈优先）</td><td>手动设定光圈，相机自动匹配快门速度。常用于控制景深。</td></tr>
+          <tr><td>S / Tv（Shutter Priority，快门优先）</td><td>手动设定快门速度，相机自动匹配光圈。常用于控制运动的凝固或模糊。</td></tr>
+          <tr><td>P（Program，程序自动）</td><td>相机自动控制光圈与快门，拍摄者仍可调整 ISO、白平衡等。</td></tr>
+        </tbody>
+      </table></div>
+      <p>ISO 在各模式下都可设为自动或手动。这些模式是相机行业的通用标准，不同品牌的字母标识可能略有差异（如佳能用 Av/Tv，尼康/索尼用 A/S）。</p>
+    </section>
+
+    <section id="metering">
+      <h2>测光与曝光补偿</h2>
+      <ul>
+        <li><b>测光（Metering）</b>：相机根据画面亮度估算曝光。常见模式包括评价/矩阵测光、中央重点测光和点测光。</li>
+        <li><b>曝光补偿（Exposure Compensation，EV）</b>：在自动或半自动模式下，对相机给出的曝光进行整体加亮或压暗的微调。</li>
+        <li><b>直方图（Histogram）</b>：以图形展示画面从暗到亮的像素分布，用于判断是否欠曝或过曝；右侧溢出表示高光过曝，左侧溢出表示暗部死黑。</li>
+      </ul>
+    </section>
+
+    <section id="white-balance">
+      <h2>白平衡</h2>
+      <p>白平衡（White Balance）用于校正不同光源的色温，使白色物体在照片中呈现为白色，避免整体偏黄或偏蓝。色温以开尔文（K）为单位，数值越低偏暖（橙黄），越高偏冷（蓝）。</p>
+      <p>常见白平衡预设包括：自动（AWB）、日光、阴天、阴影、白炽灯（钨丝灯）、荧光灯等。手动设定色温或使用灰卡可获得更精确的结果。</p>
+    </section>
+
+    <section id="focal-length">
+      <h2>焦距与视角</h2>
+      <ul>
+        <li><b>焦距（Focal Length，mm）</b>：决定视角与放大倍率。焦距越短，视角越广；焦距越长，视角越窄、压缩感越强。</li>
+        <li><b>广角</b>（如 16–35mm）：视角宽，常用于风光、建筑。</li>
+        <li><b>标准</b>（如 50mm 附近）：视角接近人眼，畸变小。</li>
+        <li><b>长焦</b>（如 70–200mm 及以上）：视角窄，压缩远近关系，常用于人像、野生动物、体育。</li>
+      </ul>
+    </section>
+
+    <section id="terms">
+      <h2>常见术语</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>术语</th><th>含义</th></tr></thead>
+        <tbody>
+          <tr><td>景深（Depth of Field）</td><td>画面中呈现清晰的纵深范围。受光圈、焦距和拍摄距离影响。</td></tr>
+          <tr><td>晕影（Vignette）</td><td>画面四角相对中心变暗的现象，可由镜头特性产生，也可在后期主动添加。</td></tr>
+          <tr><td>白炽灯（Incandescent）</td><td>一种暖色温人造光源，色温偏低，画面易偏橙黄。</td></tr>
+          <tr><td>动态范围（Dynamic Range）</td><td>传感器能同时记录的最亮与最暗细节的范围。</td></tr>
+          <tr><td>防抖（Image Stabilization）</td><td>通过镜头或机身补偿抖动；使用三脚架做长曝光时通常需关闭。</td></tr>
+          <tr><td>RAW</td><td>包含传感器原始数据的文件格式，保留更多后期调整空间。</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="sources">
+      <h2>参考与说明</h2>
+      <ul>
+        <li>本文内容为摄影领域的通用基础知识与相机行业标准术语。</li>
+        <li>具体的模式标识、菜单名称与参数范围因相机品牌和型号而异，应以设备官方说明书为准。</li>
+        <li>本文不包含任何个人化的拍摄参数预设、风格偏好或器材选购决策。</li>
+      </ul>
+    </section>
+  </main>
+  <p class="footer-note">本文是通用摄影基础知识整理，不包含个人隐私信息。具体设备操作请以官方说明书为准。</p>
+</body>
+</html>
