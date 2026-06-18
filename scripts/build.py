@@ -65,6 +65,19 @@ CATEGORY_MODULES = [
         "zh_categories": {"个人系统与决策"},
         "en_categories": {"Personal Systems & Decision Making"},
     },
+    {
+        "key": "learning",
+        "zh_label": "学习",
+        "en_label": "Learning",
+        "zh_title": "语言、考试与学习方法",
+        "en_title": "Languages, Exams, and Learning Methods",
+        "zh_description": "去个人化的备考框架、语言能力和学习方法整理。",
+        "en_description": "Neutral exam-preparation frameworks, language skills, and learning methods.",
+        "zh_role": "承载考试备考框架、语言学习和可复用的学习方法。",
+        "en_role": "For exam-preparation frameworks, language learning, and reusable study methods.",
+        "zh_categories": {"学习与考试"},
+        "en_categories": {"Learning & Exams"},
+    },
 ]
 
 
