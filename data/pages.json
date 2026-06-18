@@ -1,5 +1,21 @@
 [
   {
+    "slug": "cs-fundamentals-os-db-network",
+    "zh_title": "计算机基础：操作系统、数据库与网络",
+    "en_title": "CS Fundamentals: OS, Databases, and Networking",
+    "zh_subtitle": "面向公开读者的计算机基础知识参考：进程与线程、数据库与事务、Redis、数据结构与一致性哈希、网络协议，以及分布式系统的基本概念。",
+    "en_subtitle": "A public reference on computer-science fundamentals: processes and threads, databases and transactions, Redis, data structures and consistent hashing, network protocols, and distributed systems.",
+    "zh_category": "软件工程与系统设计",
+    "en_category": "Software Engineering & System Design",
+    "tags": ["computer science", "operating systems", "databases", "networking", "Redis", "distributed systems", "计算机基础", "操作系统", "数据库", "网络", "分布式"],
+    "zh_search": "计算机基础 操作系统 进程 线程 进程状态 守护进程 孤儿进程 僵尸进程 数据库 SQL NoSQL 键值 列式 文档 图 搜索引擎 分片 sharding mongodb mysql myisam innodb 事务 ACID 隔离级别 脏读 幻读 主键 唯一键 外键 读副本 CAP redis 主从 哨兵 集群 gossip RDB AOF 缓存 雪崩 穿透 击穿 LRU LFU FIFO 跳表 哈希 冲突 链地址 开放寻址 一致性哈希 虚拟节点 HTTP 状态码 GET POST PUT 幂等 HTTP2 多路复用 HTTPS SSL TLS 对称 非对称 加密 三次握手 四次挥手 websocket 微服务 单体 容器 镜像 kubernetes pod node",
+    "en_search": "computer science operating system process thread process states daemon orphan zombie database SQL NoSQL key value column document graph search engine sharding mongodb mysql myisam innodb transaction ACID isolation level dirty read phantom read primary key unique foreign key read replica CAP redis master slave sentinel cluster gossip RDB AOF cache avalanche penetration breakdown LRU LFU FIFO skip list hashing collision separate chaining open addressing consistent hashing virtual node HTTP status code GET POST PUT idempotent HTTP2 multiplexing HTTPS SSL TLS symmetric asymmetric encryption three way handshake four way handshake websocket microservices monolithic container image kubernetes pod node",
+    "zh_path": "articles/cs-fundamentals-os-db-network.html",
+    "en_path": "articles/cs-fundamentals-os-db-network.html",
+    "date": "2026-06-18",
+    "featured": false
+  },
+  {
     "slug": "high-concurrency-system-design",
     "zh_title": "高并发系统设计基础",
     "en_title": "Foundations of High-Concurrency System Design",

@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS Fundamentals: OS, Databases, and Networking</title>
+  <meta name="description" content="A public reference on computer-science fundamentals: processes and threads, databases and transactions, Redis, data structures and consistent hashing, network protocols, and distributed systems.">
+  <style>
+    :root{--bg:#f6f2e8;--fg:#202523;--muted:#68716d;--line:#d8cfbf;--ink:#173f39;--accent:#9f5136;--note:#fff9ec;--soft:#ebe2d2}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.72;-webkit-font-smoothing:antialiased}.top{position:sticky;top:0;background:rgba(246,242,232,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:4}.nav{width:min(1080px,calc(100vw - 40px));margin:0 auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:14px}.nav a{color:var(--ink);font-size:13px;font-weight:900;text-decoration:none}.lang{border:1px solid var(--line);border-radius:999px;padding:7px 12px}.wrap{width:min(980px,calc(100vw - 40px));margin:0 auto}header{padding:48px 0 32px}.kicker{color:var(--accent);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,5.8vw,52px);line-height:1.05;letter-spacing:-.02em;margin:10px 0 14px}.lead{font-size:19px;color:var(--muted);margin:0}.toc{border-top:1px solid var(--line);padding:18px 0 10px}.toc h2{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}.toc ol{margin:0;padding-left:20px}.toc a{color:var(--ink);text-decoration:none}.toc a:hover{text-decoration:underline}main{border-top:1px solid var(--line)}section{padding:28px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,"Times New Roman",serif;font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:0 0 12px}h3{font-size:20px;margin:26px 0 8px}h4,h5{font-size:16px;margin:20px 0 8px}p{margin:0 0 13px}ul,ol{margin:0 0 14px 22px;padding:0}li{margin:3px 0}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#fff8e8;padding:1px 4px;border-radius:4px}pre{background:#fff8e8;border:1px solid var(--line);padding:14px 16px;overflow:auto;font-size:13px;line-height:1.55}.table-scroll{width:100%;overflow-x:auto;margin:14px 0 22px;border-top:1px solid var(--line)}table{width:100%;min-width:760px;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}td:first-child{font-weight:800;color:var(--ink);width:28%}figure{margin:18px 0;padding:12px;background:#fffaf0;border:1px solid var(--line)}figure img{max-width:100%;height:auto;display:block;margin:0 auto}figcaption{font-size:12px;color:var(--muted);margin-top:8px;text-align:center}.note{background:var(--note);border-left:4px solid var(--accent);padding:14px 16px;margin:18px 0}.footer-note{margin:32px auto 60px;color:var(--muted);font-size:14px;max-width:980px;padding:0 20px}@media(max-width:760px){table{font-size:13px}}
+  </style>
+</head>
+<body>
+  <div class="top"><nav class="nav"><a href="../index.html">Knowledge Base</a><a class="lang" href="../../articles/cs-fundamentals-os-db-network.html">中文</a></nav></div>
+  <header class="wrap">
+    <div class="kicker">Software Engineering &amp; System Design</div>
+    <h1>CS Fundamentals: OS, Databases, and Networking</h1>
+    <p class="lead">A public reference on computer-science fundamentals: processes and threads, databases and transactions, Redis, data structures and consistent hashing, network protocols, and basic distributed-systems concepts.</p>
+  </header>
+  <nav class="toc wrap" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#os">Operating Systems: Processes and Threads</a></li>
+      <li><a href="#databases">Databases and Transactions</a></li>
+      <li><a href="#redis">Redis and Caching</a></li>
+      <li><a href="#algorithms">Data Structures and Consistent Hashing</a></li>
+      <li><a href="#networking">Network Protocols</a></li>
+      <li><a href="#distributed">Distributed Systems</a></li>
+      <li><a href="#sources">Sources and Notes</a></li>
+    </ol>
+  </nav>
+  <main class="wrap">
+    <div class="note">This article covers general computer-science fundamentals and standard concepts. It describes mechanisms and definitions and contains no implementation details from any individual or company.</div>
+
+    <section id="os">
+      <h2>Operating Systems: Processes and Threads</h2>
+      <h3>Process vs Thread</h3>
+      <p>A process is the basic unit of resource allocation in an operating system and has its own address space; a thread is the basic unit of CPU scheduling, and threads within the same process share that process's address space and resources. Thread switching is generally cheaper than process switching; processes are more isolated (one crashing usually does not affect others), whereas a thread crash can affect the whole process.</p>
+      <h3>Process States</h3>
+      <ol>
+        <li>After a program creates a process, it is admitted to the <b>ready</b> state.</li>
+        <li>The scheduler dispatches the process to the <b>running</b> state, where the processor executes it.</li>
+        <li>While running: if <b>interrupted</b> it returns to ready; if <b>waiting for I/O</b> it enters the <b>waiting</b> state and returns to ready when the I/O completes; if execution finishes it enters the <b>terminated</b> state.</li>
+      </ol>
+      <h3>Daemon, Orphan, and Zombie Processes</h3>
+      <ul>
+        <li><b>Orphan</b>: a process whose parent has terminated but which keeps running; it is adopted by the init process.</li>
+        <li><b>Zombie</b>: after a process terminates via exit(), its memory and resources are freed, but its entry remains in the process table; the parent uses wait() to read the child's exit status and clear those entries.</li>
+        <li><b>Daemon</b>: a background process that starts with system boot and ends at shutdown; it typically becomes an orphan after its parent terminates.</li>
+      </ul>
+    </section>
+
+    <section id="databases">
+      <h2>Databases and Transactions</h2>
+      <h3>SQL vs NoSQL</h3>
+      <p><b>SQL (relational)</b>: table-based storage, a predefined schema, structured query language, and transactions with ACID properties (e.g. MySQL, PostgreSQL); high consistency, but as users grow the database can become a bottleneck, requiring sharding, clustering, and consistent hashing to scale, which is challenging.</p>
+      <p><b>NoSQL</b>: dynamic schema for unstructured data. Common types:</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Type</th><th>Description and Examples</th></tr></thead>
+        <tbody>
+          <tr><td>Key-Value</td><td>Stores key-value pairs in memory, extremely fast, suited to caching and pub/sub (Redis, Memcached, DynamoDB).</td></tr>
+          <tr><td>Column</td><td>Can scan a few columns directly for analytics; decentralized and easy to scale; suited to time-series and historical records (Cassandra, HBase).</td></tr>
+          <tr><td>Document</td><td>Stores key-value pairs in JSON/XML documents, flexible and schema-less (MongoDB, CouchDB).</td></tr>
+          <tr><td>Graph</td><td>Stores data as nodes and the relationships (edges) between them, making associations easy to express.</td></tr>
+          <tr><td>Search Engine</td><td>Like a document database but builds an inverted index for searchable terms (Elasticsearch), suited to search and typeahead.</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Sharding and Selection</h3>
+      <p>Sharding scales horizontally; a shard key (such as UID) decides which node holds which data. Selection commonly considers whether a cache is needed in front of the database (Redis/Memcached), whether read replicas should offload reads, and the sharding/partitioning strategy.</p>
+      <h3>MySQL: MyISAM vs InnoDB</h3>
+      <ul>
+        <li>InnoDB supports transactions, MyISAM does not — MyISAM performs better for high-volume queries and inserts, while InnoDB suits frequent modifications with higher safety needs.</li>
+        <li>InnoDB supports foreign keys; MyISAM does not.</li>
+        <li>InnoDB supports row-level locking; MyISAM only table-level locking, so InnoDB performs better under multi-user concurrency.</li>
+      </ul>
+      <h3>Transactions and ACID</h3>
+      <p>A transaction is a sequence of operations that either completes as a whole or not at all.</p>
+      <ul>
+        <li><b>Atomicity</b>: the transaction's changes act as a single indivisible operation.</li>
+        <li><b>Consistency</b>: data is consistent before and after the transaction.</li>
+        <li><b>Isolation</b>: a transaction's intermediate state is invisible to others.</li>
+        <li><b>Durability</b>: once committed, changes are persisted.</li>
+      </ul>
+      <h3>Isolation Levels</h3>
+      <p>A higher isolation level better guarantees integrity and consistency but has a greater impact on concurrency.</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Level</th><th>Characteristic</th></tr></thead>
+        <tbody>
+          <tr><td>Read Uncommitted</td><td>Changes are visible even before a transaction commits (dirty read).</td></tr>
+          <tr><td>Read Committed</td><td>Only committed data from other transactions is readable, resolving dirty reads; a common default in SQL Server, Oracle, MySQL.</td></tr>
+          <tr><td>Repeatable Read</td><td>Reads data and applies a lock, resolving non-repeatable reads.</td></tr>
+          <tr><td>Serializable</td><td>The highest level; transactions on the same data run sequentially, resolving phantom reads.</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Primary, Unique, and Foreign Keys</h3>
+      <ul>
+        <li><b>Primary key</b>: the unique identifier of a record, must have a value, one per table, also a unique key by default, and can be a foreign key in another table.</li>
+        <li><b>Unique key</b>: may be null; a table can have several.</li>
+        <li><b>Foreign key</b>: a primary key of another table; may be null; a table can have several.</li>
+      </ul>
+      <h3>Read Replicas and CAP</h3>
+      <p>With read-write separation, a primary handles writes while several periodically synced read replicas handle reads — especially useful for read-heavy, high-QPS workloads. Distributed systems follow CAP: since partition tolerance is unavoidable, a trade-off must be made between consistency and availability.</p>
+      <ul>
+        <li><b>C — Consistency</b>: all nodes hold the same data at the same time.</li>
+        <li><b>A — Availability</b>: every request receives a response.</li>
+        <li><b>P — Partition Tolerance</b>: the system keeps operating when network partitions occur.</li>
+      </ul>
+      <p>Higher consistency needs more frequent (even synchronous) syncing and may sacrifice availability; higher availability may return stale data.</p>
+    </section>
+
+    <section id="redis">
+      <h2>Redis and Caching</h2>
+      <h3>Deployment Modes</h3>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Mode</th><th>Characteristic</th></tr></thead>
+        <tbody>
+          <tr><td>Standalone</td><td>A single point of failure.</td></tr>
+          <tr><td>Master/Slave</td><td>A single master handles reads and writes and syncs to multiple read-only slaves; a master failure requires manual replacement or promotion, with brief write unavailability.</td></tr>
+          <tr><td>Sentinel</td><td>Adds sentinels on top of master/slave; if most sentinels cannot ping the master, it is marked down and a failover automatically elects a new master — no manual action, but sentinel metadata must be maintained and detection has latency.</td></tr>
+          <tr><td>Cluster</td><td>Data is spread across nodes, each holding part of the data with replicas; easy to scale horizontally (redundancy and fault tolerance).</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Gossip Protocol, Persistence, and Single Thread</h3>
+      <ul>
+        <li><b>Gossip protocol</b>: a decentralized communication protocol; a Redis cluster uses it to propagate node metadata — a node periodically forwards information to randomly chosen nodes, and it gradually spreads.</li>
+        <li><b>Persistence</b>: RDB snapshots in-memory data to a binary file on a time-based policy (the default); AOF appends each write command (like a binlog) and replays it on restart. A hybrid of both is common.</li>
+        <li><b>Why single-threaded</b>: as an in-memory database, reads and writes are fast enough that CPU is not the bottleneck — network I/O is; multithreading would require locks for thread safety, adding CPU overhead.</li>
+      </ul>
+      <h3>Common Cache Problems</h3>
+      <ul>
+        <li><b>Cache avalanche</b>: many cached items expire at once or the cache service goes down, sending all requests to the database. Mitigation: randomize expiry times or keep keys non-expiring, and use a cache cluster so at least one instance is always available.</li>
+        <li><b>Cache penetration</b>: requested data exists in neither cache nor database, so every request hits the database directly. Mitigation: cache an empty value briefly for missing keys, or use a Bloom filter to check key existence.</li>
+        <li><b>Cache breakdown</b>: a hot item expires and high-concurrency requests overwhelm the database. Mitigation: use a mutex so only one thread rebuilds the cache while others wait or return a default; keep hot data non-expiring and refresh it asynchronously in the background.</li>
+      </ul>
+      <h3>Eviction Policies</h3>
+      <ul>
+        <li><b>FIFO</b>: a queue or doubly linked list.</li>
+        <li><b>LRU (Least Recently Used)</b>: data not accessed recently is unlikely to be accessed soon; a linked list handles insert/remove and a HashMap handles lookup.</li>
+        <li><b>LFU (Least Frequently Used)</b>: a min-heap whose top is the least-frequently accessed item; on overflow, the top is removed.</li>
+      </ul>
+    </section>
+
+    <section id="algorithms">
+      <h2>Data Structures and Consistent Hashing</h2>
+      <h3>Skip List</h3>
+      <p>An ordered structure built on linked lists with multiple layers: the bottom is a full sorted linked list, and upper layers are progressively sparser. A search starts at the top and descends layer by layer to approach the target quickly, reducing the average number of steps. Redis sorted sets are implemented with skip lists.</p>
+      <h3>Hashing and Collision Handling</h3>
+      <p>A hash function (e.g. MD5, SHA1) maps a key to an integer that is then taken modulo N. Mapping a larger space into a smaller one makes collisions inevitable; two common solutions:</p>
+      <ul>
+        <li><b>Separate chaining</b>: each mapped value is a bucket; on collision, a node is appended to that bucket's linked list.</li>
+        <li><b>Open addressing</b>: probe for the nearest empty slot (e.g. linear probing) and insert there.</li>
+      </ul>
+      <h3>Consistent Hashing</h3>
+      <p>Servers are distributed evenly on a hash ring; a key is hashed onto the ring and assigned to the next server clockwise. Adding or removing a server only remaps the keys that belonged to it, giving incremental remapping with minimal disruption. If the distribution is uneven, mapping each server to several virtual nodes spreads keys more evenly.</p>
+    </section>
+
+    <section id="networking">
+      <h2>Network Protocols</h2>
+      <h3>HTTP Components and Status Codes</h3>
+      <p>An HTTP request consists of a method, URI, version, headers, and body. Status codes: 1xx informational, 2xx success, 3xx redirection (301 permanent, 302 temporary), 4xx client error (400/403/404), 5xx server error (500/502).</p>
+      <h3>Request Methods</h3>
+      <p>GET retrieves information; POST creates a resource; PUT replaces a resource and should be idempotent (a repeated PUT has no side effect); DELETE removes a resource.</p>
+      <h3>HTTP Version Evolution</h3>
+      <ul>
+        <li><b>HTTP/1.0</b>: by default a short-lived connection per request, closed after the response; <code>Connection: keep-alive</code> can reuse it.</li>
+        <li><b>HTTP/1.1</b>: introduced persistent connections, allowing multiple requests on one connection, but sequentially.</li>
+        <li><b>HTTP/2.0</b>: multiplexing over a single connection (asynchronous concurrent requests/responses), binary compression, server push, and HPACK header compression.</li>
+      </ul>
+      <h3>HTTPS and Encryption</h3>
+      <ul>
+        <li>HTTP and HTTPS are both application-layer protocols; HTTPS adds encryption and verification via SSL/TLS.</li>
+        <li><b>Symmetric encryption</b>: one key for both encryption and decryption; <b>asymmetric encryption</b>: a public key encrypts and a private key decrypts.</li>
+      </ul>
+      <h4>The SSL Handshake</h4>
+      <ol>
+        <li>The client requests a secure session, asking the server to identify itself.</li>
+        <li>The server returns its SSL certificate, including its public key.</li>
+        <li>The browser verifies the certificate; if trusted, it generates a random symmetric key, encrypts it with the public key, and sends it back.</li>
+        <li>The server decrypts the symmetric key with its private key; both sides then use it to encrypt the connection.</li>
+      </ol>
+      <h3>What Happens When a URL Is Entered in a Browser</h3>
+      <ol>
+        <li>The browser resolves the domain to an IP: it checks caches (browser/router) first, and on a miss issues a DNS query (a domain is typically mapped to an IP via a DNS A record).</li>
+        <li>The resulting IP may be a load balancer, which routes the request to the real backend host.</li>
+        <li>The browser establishes a TCP connection via the three-way handshake; with HTTPS, a TLS handshake also occurs.</li>
+        <li>The browser sends HTTP requests; the server responds, and the browser renders the page from the retrieved resources.</li>
+      </ol>
+      <h3>TCP Three-Way Handshake and Four-Way Termination</h3>
+      <p><b>Three-way handshake</b>: (1) the client sends SYN; (2) the server replies SYN-ACK; (3) the client replies ACK, establishing the connection. The third step is needed because, without the client's ACK, the server cannot confirm the client is ready to receive data.</p>
+      <p><b>Four-way termination</b>: (1) one side sends FIN to close; (2) the other replies ACK; (3) later, that side also sends FIN; (4) the initiator replies ACK to finish. Four steps are needed because closing is bidirectional and each side must confirm all data has been sent and received.</p>
+      <h3>WebSocket</h3>
+      <p>WebSocket provides full-duplex communication over a single TCP connection; HTTP is half-duplex, requiring the client to poll periodically for new messages. WebSocket supports bidirectional communication.</p>
+    </section>
+
+    <section id="distributed">
+      <h2>Distributed Systems</h2>
+      <h3>The CAP Trade-off</h3>
+      <p>Partition tolerance (P) is unavoidable in distributed systems, so when a partition occurs a choice must be made between C and A: <b>CP</b> preserves consistency by blocking writes to other nodes; <b>AP</b> keeps accepting reads and writes, where data may be overwritten or stale values returned.</p>
+      <h3>Monolithic vs Microservices</h3>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Architecture</th><th>Pros</th><th>Cons</th></tr></thead>
+        <tbody>
+          <tr><td>Monolithic</td><td>Lower latency, simpler development, code reuse.</td><td>High complexity, a single fault can bring down the whole, code becomes hard to manage at scale, and parallel development conflicts often.</td></tr>
+          <tr><td>Microservices</td><td>Independent scaling of a single service, high maintainability (different tech stacks, communicating via RPC/MQ, friendly to CI/CD), and fault isolation.</td><td>More underlying infrastructure to maintain, slower development, and extra planning for data modeling and communication.</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Containers and Kubernetes</h3>
+      <ul>
+        <li><b>Image</b>: a template providing the libraries, resources, and configuration a container needs at runtime.</li>
+        <li><b>Container</b>: a running instance of an image, building an isolated application environment.</li>
+        <li><b>Kubernetes</b>: a container-orchestration platform that manages and schedules containers, automating packaging, deployment, and monitoring; it supports fault-tolerant restarts, auto-scaling, service discovery/load balancing, configuration management, and health probes.</li>
+        <li><b>Pod</b>: the basic scheduling unit in Kubernetes, which can contain multiple containers.</li>
+        <li><b>Node</b>: the host (physical or virtual) on which pods run, requiring a container runtime, kubelet, and kube-proxy.</li>
+      </ul>
+    </section>
+
+    <section id="sources">
+      <h2>Sources and Notes</h2>
+      <ul>
+        <li>This article covers widely used general computer-science fundamentals and standard concepts (operating systems, databases, networking, distributed systems).</li>
+        <li>Specific implementations, defaults, and protocol details vary by system, version, and vendor; official documentation takes precedence.</li>
+        <li>Caching hotspot handling, load shedding, and consistency under high concurrency are covered in the companion article, "Foundations of High-Concurrency System Design".</li>
+        <li>This article contains no implementation details from any specific project, company, or individual.</li>
+      </ul>
+    </section>
+  </main>
+  <p class="footer-note">This article is a general computer-science reference and contains no private personal information. Technical details change across versions; refer to the latest official sources.</p>
+</body>
+</html>
