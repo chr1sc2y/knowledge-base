@@ -290,5 +290,33 @@
     "en_path": "articles/resistance-training-nutrition-framework.html",
     "date": "2026-06-17",
     "featured": false
+  },
+  {
+    "slug": "local-hybrid-retrieval",
+    "zh_title": "私有知识库的本地混合检索",
+    "en_title": "Local Hybrid Retrieval for Private Knowledge Bases",
+    "zh_subtitle": "从查询语义出发，解释结构化检索、倒排索引、BM25、向量嵌入、RRF 融合、SQLite 架构与本地隐私边界。",
+    "en_subtitle": "A neutral architecture for structured retrieval, inverted indexes, BM25, vector embeddings, RRF, SQLite, and local privacy boundaries.",
+    "zh_category": "Agent 工程",
+    "en_category": "Agent Engineering",
+    "tags": [
+      "information retrieval",
+      "BM25",
+      "inverted index",
+      "vector search",
+      "hybrid retrieval",
+      "SQLite",
+      "RRF",
+      "全文检索",
+      "倒排索引",
+      "向量检索",
+      "混合检索"
+    ],
+    "zh_search": "本地混合检索 私有知识库 查询语义 结构化查询 全文检索 倒排索引 postings BM25 词频 IDF 中文分词 n-gram 向量嵌入 语义相似 余弦相似 精确扫描 ANN HNSW IVF RRF 排名融合 SQLite FTS5 原子构建 源指纹 隐私边界 检索评测 Recall MRR nDCG pgvector Qdrant LanceDB sqlite-vec",
+    "en_search": "local hybrid retrieval private knowledge base query semantics structured query full text search inverted index postings BM25 term frequency IDF Chinese tokenization n-gram vector embedding semantic similarity cosine exact scan ANN HNSW IVF reciprocal rank fusion RRF SQLite FTS5 atomic build source fingerprint privacy boundary retrieval evaluation Recall MRR nDCG pgvector Qdrant LanceDB sqlite-vec",
+    "zh_path": "articles/local-hybrid-retrieval.html",
+    "en_path": "articles/local-hybrid-retrieval.html",
+    "date": "2026-06-20",
+    "featured": false
   }
 ]

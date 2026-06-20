@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>私有知识库的本地混合检索</title>
+  <meta name="description" content="解释结构化查询、倒排索引、BM25、向量嵌入、RRF 混合排序、SQLite 架构与本地隐私边界。">
+  <style>
+    :root{--bg:#f7f3ea;--fg:#202523;--muted:#68716d;--line:#d8cfbf;--ink:#163d3a;--accent:#b24b2f;--note:#fffaf0;--soft:#efe7d8}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.78;-webkit-font-smoothing:antialiased}.top{position:sticky;top:0;background:rgba(247,243,234,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:4}.nav{width:min(1040px,calc(100vw - 40px));margin:0 auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:14px}.nav a{color:var(--ink);font-size:13px;font-weight:800;text-decoration:none}.lang{border:1px solid var(--line);border-radius:999px;padding:7px 12px}.wrap{width:min(860px,calc(100vw - 40px));margin:0 auto}header{padding:48px 0 32px}.kicker{color:var(--accent);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,5.8vw,52px);line-height:1.08;margin:10px 0 14px}.lead{font-size:19px;color:var(--muted);margin:0}.spine{border-top:1px solid var(--line)}section{padding:30px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:1.2;margin:0 0 12px}h3{font-size:18px;margin:24px 0 8px}p{margin:0 0 15px}ul,ol{padding-left:23px}.note{background:var(--note);border-left:4px solid var(--accent);padding:16px 18px;margin:18px 0}.soft{background:var(--soft);border-left-color:var(--ink)}table{width:100%;border-collapse:collapse;font-size:15px;margin:16px 0}th,td{border-bottom:1px solid var(--line);padding:10px 7px;text-align:left;vertical-align:top}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;background:#eee5d6;padding:2px 5px;border-radius:4px}.formula{overflow:auto;background:#fffdf8;border:1px solid var(--line);padding:15px 17px;margin:18px 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0}.node{border-top:3px solid var(--ink);background:#fffdf8;padding:12px;font-size:14px}.node b{display:block;color:var(--ink);margin-bottom:4px}.toc{border-top:1px solid var(--line);padding:18px 0 12px}.toc h2{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}.toc ol{margin:0;padding-left:20px}.toc li{margin:4px 0}.toc a,.sources a{color:var(--ink)}.footer-note{margin:32px auto 60px;color:var(--muted);font-size:14px;max-width:860px;padding:0 20px}@media(max-width:760px){.flow{grid-template-columns:1fr}table{font-size:14px}}
+  </style>
+</head>
+<body>
+  <div class="top"><nav class="nav"><a href="../index.html">知识库</a><a class="lang" href="../en/articles/local-hybrid-retrieval.html">English</a></nav></div>
+  <header class="wrap">
+    <div class="kicker">Agent 工程</div>
+    <h1>私有知识库的本地混合检索</h1>
+    <p class="lead">不同问题需要不同检索语义：精确数字依赖结构化查询，关键词相关性依赖倒排索引与 BM25，概念近似依赖向量嵌入。混合检索把这些能力放在同一条可审计的数据链路中。</p>
+  </header>
+  <nav class="toc wrap" aria-label="目录">
+    <h2>目录</h2>
+    <ol>
+      <li><a href="#query-semantics">先区分问题的检索语义</a></li>
+      <li><a href="#structured">结构化查询负责精确事实</a></li>
+      <li><a href="#inverted">倒排索引与全文检索</a></li>
+      <li><a href="#bm25">BM25 如何排序关键词结果</a></li>
+      <li><a href="#vectors">向量嵌入与语义相似</a></li>
+      <li><a href="#hybrid">混合检索与 RRF</a></li>
+      <li><a href="#sqlite">SQLite 作为单机检索层</a></li>
+      <li><a href="#boundaries">权威数据与隐私边界</a></li>
+      <li><a href="#lifecycle">索引构建与更新生命周期</a></li>
+      <li><a href="#evaluation">评测与常见失败模式</a></li>
+      <li><a href="#alternatives">其他存储与检索方案</a></li>
+      <li><a href="#sources">来源与说明</a></li>
+    </ol>
+  </nav>
+  <main class="wrap spine">
+    <section id="query-semantics">
+      <h2>先区分问题的检索语义</h2>
+      <p>“检索”不是单一操作。一个系统可能同时面对精确筛选、关键词匹配、短语定位、概念近似、跨文档聚合和时间序列计算。单一向量接口无法在这些目标上同时保持精确性、可解释性和稳定性。</p>
+      <table>
+        <thead><tr><th>问题类型</th><th>主要机制</th><th>结果含义</th></tr></thead>
+        <tbody>
+          <tr><td>某日期范围内的记录</td><td>字段过滤、SQL</td><td>满足条件的完整集合</td></tr>
+          <tr><td>某个名称或术语出现在哪里</td><td>全文索引、短语查询</td><td>包含词项的文档排序</td></tr>
+          <tr><td>与某概念含义接近的段落</td><td>向量嵌入、相似度</td><td>语义空间中的近邻</td></tr>
+          <tr><td>某期间的总额或分类占比</td><td>结构化数据、确定性聚合</td><td>可复算的数值</td></tr>
+          <tr><td>关键词与概念召回并重</td><td>多路召回、排名融合</td><td>合并后的候选证据</td></tr>
+        </tbody>
+      </table>
+      <div class="note">检索结果通常是候选证据，而不是事实全集。top-k 的含义是“按某种评分排在前 k 位”，不等于“除此之外没有相关内容”。</div>
+    </section>
+
+    <section id="structured">
+      <h2>结构化查询负责精确事实</h2>
+      <p>关系表、CSV 和带类型字段的记录适合等值条件、范围条件、分组、排序与聚合。日期、币种、金额、状态和分类都具有明确的数据类型与运算规则。此类问题的正确性来自 schema、约束和确定性计算，而不是文本相似度。</p>
+      <p>向量检索会返回“看起来相近”的记录，但不能保证覆盖某个期间的全部行，也不能保持小数精度、会计恒等式或去重规则。因此，数值报表通常由结构化数据生成；文本检索只承担解释材料与上下文的发现。</p>
+      <div class="note soft">混合系统不是把所有数据转换成向量。混合系统保留每种数据原本的计算语义，再在查询层组合结果。</div>
+    </section>
+
+    <section id="inverted">
+      <h2>倒排索引与全文检索</h2>
+      <p>普通文档可以看作“文档到词项”的映射。倒排索引反转该关系，为每个词项保存出现过的文档或位置列表，列表通常称为 postings。查询一个词时，系统直接读取对应 postings，不需要逐个扫描全部文档。</p>
+      <div class="flow">
+        <div class="node"><b>原始文档</b>保留完整正文与元数据</div>
+        <div class="node"><b>分词</b>产生规范化词项</div>
+        <div class="node"><b>倒排表</b>词项指向文档与位置</div>
+        <div class="node"><b>查询</b>合并多个 postings</div>
+        <div class="node"><b>排序</b>输出相关候选</div>
+      </div>
+      <p>位置数据支持短语和邻近查询；字段索引支持标题、正文或标签的不同权重。英文常按单词边界切分。中文没有天然空格边界，常见实现包括词典分词、统计分词和字符 n-gram。字符二元组、三元组会增加索引体积，但能稳定处理新词、简称和混合语言文本。</p>
+      <p>“全文索引”描述可搜索全文的整体能力；“倒排索引”描述实现该能力的核心数据结构。两者经常同时出现，但概念层级不同。</p>
+    </section>
+
+    <section id="bm25">
+      <h2>BM25 如何排序关键词结果</h2>
+      <p>BM25 是基于词项统计的相关性函数。核心因素包括查询词在文档中的频率、词在整个语料中的稀有程度，以及文档长度相对平均长度的偏差。一个常见表达为：</p>
+      <div class="formula">score(D,Q) = Σ IDF(t) × f(t,D)(k₁+1) / [f(t,D) + k₁(1-b+b|D|/avgdl)]</div>
+      <ul>
+        <li><code>IDF(t)</code> 提高稀有词的权重，降低到处出现的词的区分度。</li>
+        <li><code>f(t,D)</code> 表示词频；饱和项使重复十次不会简单等于重复一次的十倍。</li>
+        <li><code>|D|/avgdl</code> 提供长度归一化，减少长文仅因词更多而占优的倾向。</li>
+        <li><code>k₁</code> 与 <code>b</code> 控制词频饱和和长度校正的强度。</li>
+      </ul>
+      <p>BM25 对专有名词、错误码、产品名和原文措辞具有直接解释性。局限来自词汇不匹配：两个段落表达同一概念但没有共享词项时，BM25 可能无法建立联系。</p>
+    </section>
+
+    <section id="vectors">
+      <h2>向量嵌入与语义相似</h2>
+      <p>嵌入模型把文本映射到固定维度的数值向量。训练目标使语义相关文本在向量空间中更接近。检索阶段通常计算余弦相似度、点积或欧氏距离。</p>
+      <div class="formula">cosine(a,b) = (a · b) / (||a|| × ||b||)</div>
+      <p>精确向量扫描会比较查询向量与全部候选，结果确定但计算量随向量数线性增长。HNSW、IVF 等近似最近邻结构以额外内存、构建成本和召回损失换取更低延迟。数据量较小时，精确扫描的运维复杂度通常更低；规模和延迟要求提高后，近似索引的收益才会显现。</p>
+      <p>向量相似不代表事实相同。模型可能混淆否定、数字、时间、主体或因果方向；长文本截断和分块边界也会改变向量。因此，向量结果适合扩大召回范围，完整原文仍然承担证据确认。</p>
+    </section>
+
+    <section id="hybrid">
+      <h2>混合检索与 RRF</h2>
+      <p>关键词评分和向量相似度处在不同量纲，直接相加会引入不稳定的缩放问题。Reciprocal Rank Fusion（RRF）只使用每个通道的名次：</p>
+      <div class="formula">RRF(d) = Σ 1 / (k + rank(d))</div>
+      <p>每个召回通道分别产生排序列表。某个文档在多个列表中都靠前时，融合得分随之提高。常数 <code>k</code> 降低头部名次差异的敏感度。RRF 不需要把 BM25 分数与余弦分数校准到同一区间，适合组合异构检索器。</p>
+      <p>混合检索仍然受各通道候选集限制。若结构化必读材料不进入任一候选集，融合算法不会自动补回。因此，强制证据清单、元数据过滤和多路召回属于不同层次的控制。</p>
+    </section>
+
+    <section id="sqlite">
+      <h2>SQLite 作为单机检索层</h2>
+      <p>SQLite 是进程内数据库，没有独立服务器进程。FTS5 提供全文索引、短语查询、高亮、snippet 与 <code>bm25()</code>。文档元数据、分块、构建版本和向量 BLOB 可以保存在同一数据库文件中，事务与原子文件替换为索引发布提供清晰边界。</p>
+      <table>
+        <thead><tr><th>表或索引</th><th>职责</th></tr></thead>
+        <tbody>
+          <tr><td><code>documents</code></td><td>源标识、标题、日期、领域和内容哈希</td></tr>
+          <tr><td><code>chunks</code></td><td>稳定分块、heading、顺序和原文片段</td></tr>
+          <tr><td><code>FTS5</code></td><td>词项 postings 与 BM25 排序</td></tr>
+          <tr><td><code>embeddings</code></td><td>模型标识、维度和 float32 向量</td></tr>
+          <tr><td><code>metadata</code></td><td>schema 版本、源指纹和构建计数</td></tr>
+        </tbody>
+      </table>
+      <p>SQLite 的优势是部署简单、备份直观、SQL 过滤方便和本地事务完整。限制包括单写入者协调、大规模向量扫描成本，以及默认数据库文件不自带加密。文件权限、磁盘加密、备份位置和进程权限仍然属于系统安全设计。</p>
+    </section>
+
+    <section id="boundaries">
+      <h2>权威数据与隐私边界</h2>
+      <p>派生索引与权威数据分离可以降低损坏面。索引进程只读取源文件；数据库、模型、临时文件、锁和日志位于独立缓存层。索引删除后可由源数据重建，任何检索结果都不反向覆盖原文。</p>
+      <div class="flow">
+        <div class="node"><b>权威源</b>文档与结构化记录</div>
+        <div class="node"><b>只读提取</b>白名单、解析与哈希</div>
+        <div class="node"><b>派生索引</b>FTS、向量与元数据</div>
+        <div class="node"><b>候选召回</b>过滤、排序与通道来源</div>
+        <div class="node"><b>证据确认</b>重新打开完整权威源</div>
+      </div>
+      <p>“本地数据库”本身不等于隐私安全。嵌入模型可能在首次使用时联网下载公开权重；完成缓存后，本地推理不需要把文本发送到外部 API。临时文件、崩溃转储、命令历史、云同步目录和备份同样可能扩大数据边界。安全属性来自完整的数据流与运行环境，而不是文件扩展名。</p>
+    </section>
+
+    <section id="lifecycle">
+      <h2>索引构建与更新生命周期</h2>
+      <ol>
+        <li>读取白名单配置，解析并规范化源路径。</li>
+        <li>计算源文件集合与内容哈希，形成构建前指纹。</li>
+        <li>按标题、段落和长度分块，并保留源路径、日期、heading 与 chunk 哈希。</li>
+        <li>在缓存目录的新临时数据库中构建 FTS5 与向量；内容未变的 chunk 可复用旧向量。</li>
+        <li>再次计算源指纹。构建期间有变化时，临时结果被放弃。</li>
+        <li>执行数据库完整性检查、文件同步与原子替换，上一版数据库直到替换时仍可查询。</li>
+      </ol>
+      <p>稳定 chunk ID 使增量复用成为可能。模型名称、维度、分块配置或 tokenizer 变化会改变索引语义，构建元数据用于识别这种不兼容。单一构建锁避免两个写入者同时发布不同版本。</p>
+    </section>
+
+    <section id="evaluation">
+      <h2>评测与常见失败模式</h2>
+      <p>检索评测需要带相关性标注的查询集合。Recall@k 衡量相关项是否进入前 k 名；MRR 关注第一个相关项的位置；nDCG 适合存在多级相关性的排序。答案准确性、引用完整性和推理可靠性属于检索之后的独立评测层。</p>
+      <table>
+        <thead><tr><th>失败模式</th><th>可观测现象</th><th>对应控制</th></tr></thead>
+        <tbody>
+          <tr><td>中文分词不匹配</td><td>短词、新词或混合语言漏召回</td><td>n-gram、领域词典、查询分析</td></tr>
+          <tr><td>分块过大</td><td>向量主题混杂，片段难定位</td><td>按 heading 与段落切分</td></tr>
+          <tr><td>分块过小</td><td>上下文断裂，否定与主体丢失</td><td>重叠窗口、父文档回读</td></tr>
+          <tr><td>向量误相似</td><td>措辞接近但事实不同</td><td>BM25 交叉、元数据过滤、原文确认</td></tr>
+          <tr><td>索引陈旧</td><td>源已更新而结果仍指向旧片段</td><td>源指纹、构建版本、freshness 检查</td></tr>
+          <tr><td>以 top-k 代表全集</td><td>聚合遗漏、错误的“没有记录”结论</td><td>结构化查询、完整枚举、必读清单</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="alternatives">
+      <h2>其他存储与检索方案</h2>
+      <table>
+        <thead><tr><th>方案</th><th>主要特征</th><th>典型适用条件</th></tr></thead>
+        <tbody>
+          <tr><td>SQLite + FTS5 + 向量 BLOB</td><td>单文件、进程内、可精确扫描</td><td>单机、低运维、数据量与并发有限</td></tr>
+          <tr><td>sqlite-vec</td><td>SQLite 向量扩展，SQL 内执行向量查询</td><td>需要保留单文件形态并增加向量 SQL 能力</td></tr>
+          <tr><td>PostgreSQL + pgvector</td><td>事务数据库、丰富过滤、HNSW/IVFFlat</td><td>已有 PostgreSQL、并发写入与服务化查询</td></tr>
+          <tr><td>Qdrant</td><td>专用向量服务、过滤与分布式接口</td><td>高并发 API、独立服务生命周期</td></tr>
+          <tr><td>LanceDB</td><td>面向列式数据与多模态检索的嵌入式方案</td><td>较大分析数据集、对象存储或多模态工作负载</td></tr>
+        </tbody>
+      </table>
+      <p>选择条件包括数据规模、写入并发、延迟目标、过滤复杂度、备份方式、加密要求和运维能力。向量数据库解决的是向量存储与近邻查询，不会替代源数据治理、结构化计算、证据引用或隐私控制。</p>
+    </section>
+
+    <section id="sources" class="sources">
+      <h2>来源与说明</h2>
+      <ul>
+        <li><a href="https://www.sqlite.org/fts5.html">SQLite FTS5 Extension</a>：FTS5 查询、tokenizer、排序与 <code>bm25()</code>。</li>
+        <li><a href="https://www.sqlite.org/serverless.html">SQLite Is Serverless</a>：进程内、无独立数据库服务器的架构。</li>
+        <li><a href="https://www.staff.city.ac.uk/~sbrp622/papers/foundations_bm25_review.pdf">The Probabilistic Relevance Framework: BM25 and Beyond</a>：BM25 的概率相关性框架。</li>
+        <li><a href="https://doi.org/10.1145/1571941.1572114">Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Learning Methods</a>：RRF 排名融合。</li>
+        <li><a href="https://arxiv.org/abs/1603.09320">Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs</a>：HNSW。</li>
+        <li><a href="https://arxiv.org/abs/2005.11401">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a>：检索增强生成的经典架构。</li>
+        <li><a href="https://github.com/qdrant/fastembed">FastEmbed</a>、<a href="https://github.com/asg017/sqlite-vec">sqlite-vec</a>、<a href="https://github.com/pgvector/pgvector">pgvector</a>、<a href="https://github.com/qdrant/qdrant">Qdrant</a>、<a href="https://github.com/lancedb/lancedb">LanceDB</a>：本地嵌入与向量存储实现资料。</li>
+      </ul>
+      <div class="note soft">本文描述通用信息检索架构，不构成针对特定数据集的安全审计、合规意见或容量规划。组件版本、扩展成熟度和性能特征会随实现演进。</div>
+    </section>
+  </main>
+  <p class="footer-note">Knowledge Base · Local Hybrid Retrieval · 2026-06-20</p>
+</body>
+</html>

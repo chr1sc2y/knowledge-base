@@ -1,3 +1,5 @@
+import json
+import re
 import unittest
 from html.parser import HTMLParser
 from pathlib import Path
@@ -160,6 +162,54 @@ class ArticleTocTests(unittest.TestCase):
                     path.read_text(encoding="utf-8"),
                     "TOC should remain single-column",
                 )
+
+
+class LocalHybridRetrievalArticleTests(unittest.TestCase):
+    slug = "local-hybrid-retrieval"
+    cn_path = Path("articles/cn/local-hybrid-retrieval.html")
+    en_path = Path("articles/en/local-hybrid-retrieval.html")
+
+    def test_article_pair_is_registered_and_present(self):
+        pages = json.loads(Path("data/pages.json").read_text(encoding="utf-8"))
+        page = next(value for value in pages if value.get("slug") == self.slug)
+
+        self.assertEqual(page["zh_category"], "Agent 工程")
+        self.assertEqual(page["en_category"], "Agent Engineering")
+        self.assertEqual(page["date"], "2026-06-20")
+        self.assertTrue(self.cn_path.is_file())
+        self.assertTrue(self.en_path.is_file())
+
+    def test_bilingual_pages_have_matching_sections_and_language_links(self):
+        cn = self.cn_path.read_text(encoding="utf-8")
+        en = self.en_path.read_text(encoding="utf-8")
+        cn_parser = ArticleTocParser()
+        en_parser = ArticleTocParser()
+        cn_parser.feed(cn)
+        en_parser.feed(en)
+
+        self.assertEqual(cn_parser.section_ids, en_parser.section_ids)
+        self.assertEqual(cn_parser.toc_hrefs, en_parser.toc_hrefs)
+        self.assertIn('../en/articles/local-hybrid-retrieval.html', cn)
+        self.assertIn('../../articles/local-hybrid-retrieval.html', en)
+
+    def test_public_article_contains_no_private_or_personal_framing(self):
+        cn = self.cn_path.read_text(encoding="utf-8")
+        en = self.en_path.read_text(encoding="utf-8")
+        combined = f"{cn}\n{en}".lower()
+
+        for forbidden in (
+            "zintrulcre",
+            "/users/",
+            "diary/",
+            "finance/",
+            "ledger/",
+            "personal-vault",
+        ):
+            with self.subTest(forbidden=forbidden):
+                self.assertNotIn(forbidden, combined)
+        self.assertNotRegex(en, re.compile(r"\b(?:you|your|yours|i|we|our|ours)\b", re.I))
+        self.assertNotIn("你", cn)
+        self.assertNotIn("我", cn)
 
 
 if __name__ == "__main__":
