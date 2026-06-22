@@ -1,5 +1,38 @@
 [
   {
+    "slug": "physical-ai-simulation-basics",
+    "zh_title": "Physical AI 与仿真生成基础",
+    "en_title": "Physical AI and Simulation Generation Basics",
+    "zh_subtitle": "按概念依赖关系整理 Physical AI、Embodied AI、仿真资产、targeted datasets、sim-to-real、机器人学习工具栈与 agent-guided generation 的基础知识。",
+    "en_subtitle": "A dependency-ordered primer on Physical AI, embodied AI, simulation-ready assets, targeted datasets, sim-to-real, robot-learning toolchains, and agent-guided generation.",
+    "zh_category": "Agent 工程",
+    "en_category": "Agent Engineering",
+    "tags": [
+      "Physical AI",
+      "Embodied AI",
+      "robotics simulation",
+      "simulation-ready asset",
+      "synthetic data",
+      "targeted dataset",
+      "sim-to-real",
+      "Isaac Sim",
+      "Newton",
+      "OpenUSD",
+      "agent-guided generation",
+      "物理 AI",
+      "具身智能",
+      "机器人仿真",
+      "仿真资产",
+      "合成数据"
+    ],
+    "zh_search": "Physical AI 物理 AI embodied AI 具身智能 autonomous mobility 自主移动 manipulation task 操作任务 foundation model world foundation model targeted dataset 目标数据集 synthetic data 合成数据 simulation 仿真 sim-ready asset 仿真资产 real-to-sim sim-to-real gap domain randomization policy reinforcement learning imitation learning digital twin agentic pipeline robot sensor bitstream Isaac Sim Isaac Lab Newton MuJoCo Gazebo PyBullet Unreal Genesis OpenUSD agent guided generation",
+    "en_search": "Physical AI embodied AI autonomous mobility manipulation task foundation model world foundation model targeted dataset synthetic data simulation simulation-ready asset sim-ready asset real-to-sim sim-to-real gap domain randomization policy reinforcement learning imitation learning digital twin agentic pipeline robot sensor bitstream Isaac Sim Isaac Lab Newton MuJoCo Gazebo PyBullet Unreal Genesis OpenUSD agent-guided generation",
+    "zh_path": "articles/physical-ai-simulation-basics.html",
+    "en_path": "articles/physical-ai-simulation-basics.html",
+    "date": "2026-06-22",
+    "featured": false
+  },
+  {
     "slug": "ai-agent-core-concepts",
     "zh_title": "AI Agent 核心概念",
     "en_title": "Core Concepts of AI Agents",
