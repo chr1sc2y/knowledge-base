@@ -1,5 +1,37 @@
 [
   {
+    "slug": "electric-rice-cooker-meal-framework",
+    "zh_title": "电饭煲一锅饭：颜色、蛋白质与备餐系统",
+    "en_title": "Rice-Cooker One-Pot Meals: Colour, Protein, and Meal Prep",
+    "zh_subtitle": "从干米、水量和末段鸡蛋，到鸡胸、鸡腿、鱼、牛羊肉、彩色蔬菜、单位价格和分袋备餐。",
+    "en_subtitle": "From dry rice, water, and late-stage eggs to chicken, fish, beef, lamb, colourful vegetables, unit pricing, and portioned prep.",
+    "zh_category": "健康与营养",
+    "en_category": "Health & Nutrition",
+    "tags": ["meal prep", "rice cooker", "nutrition", "vegetables", "protein", "电饭煲", "一锅饭", "备餐", "蔬菜搭配", "营养"],
+    "zh_search": "电饭煲 一锅饭 盖饭 备餐 分袋 米饭 生重 熟重 水量 鸡蛋 鸡胸 鸡腿 牛肉 牛腩 羊肉 巴沙鱼 三文鱼 鳕鱼 罗非鱼 鲭鱼 虾仁 蔬菜 蛋白质 菠菜 西兰花 上海青 小青菜 胡萝卜 西葫芦 木耳 紫洋葱 紫甘蓝 红彩椒 黄彩椒 菌菇 口蘑 香菇 花菜 白萝卜 冬瓜 莲藕 山药 豆腐 颜色搭配 每100克 价格 盒马 七鲜",
+    "en_search": "rice cooker one pot meal meal prep portion bags rice raw weight cooked weight water eggs chicken breast thigh beef brisket lamb basa salmon cod tilapia mackerel shrimp vegetables protein spinach broccoli bok choy carrot zucchini wood ear red onion purple cabbage peppers mushrooms shiitake cauliflower daikon winter melon lotus root yam tofu colour combinations price per 100g Hema 7Fresh",
+    "zh_path": "articles/electric-rice-cooker-meal-framework.html",
+    "en_path": "articles/electric-rice-cooker-meal-framework.html",
+    "date": "2026-07-21",
+    "featured": false
+  },
+  {
+    "slug": "breakfast-smoothie-framework",
+    "zh_title": "早餐奶昔：克重、热量与冷冻水果配方",
+    "en_title": "Breakfast Smoothies: Weights, Calories, and Frozen Fruit",
+    "zh_subtitle": "按蛋白质、碳水主食、膳食纤维与维生素、脂肪和液体组织，包含十二种配方的克重与热量。",
+    "en_subtitle": "Organized by protein, carbohydrate, fibre and micronutrients, fats, and liquid, with weights and calories for twelve recipes.",
+    "zh_category": "健康与营养",
+    "en_category": "Health & Nutrition",
+    "tags": ["smoothie", "breakfast", "berries", "protein", "oats", "奶昔", "早餐", "莓果", "蛋白粉", "燕麦"],
+    "zh_search": "早餐 奶昔 果昔 配方 克重 热量 千卡 营养结构 蛋白质 发酵乳 碳水 主食 膳食纤维 微量营养 液体 蓝莓 黑莓 树莓 草莓 巴西莓 芒果 香蕉 菠萝 猕猴桃 菠菜 火龙果 桑葚 樱桃 黄桃 牛油果 黑芝麻 可可 咖啡 无糖酸奶 高蛋白酸奶 蛋白粉 燕麦 红薯 紫薯 南瓜 奇亚籽 冷冻分装 奶昔碗 隔夜燕麦",
+    "en_search": "breakfast smoothie recipe grams calories nutrition structure protein fermented dairy carbohydrate staple fibre micronutrients liquid blueberries blackberries raspberries strawberries acai mango banana pineapple kiwi spinach dragon fruit mulberry cherry peach avocado black sesame cocoa coffee plain high protein yogurt protein powder oats sweet potato pumpkin chia frozen prep smoothie bowl overnight oats",
+    "zh_path": "articles/breakfast-smoothie-framework.html",
+    "en_path": "articles/breakfast-smoothie-framework.html",
+    "date": "2026-07-21",
+    "featured": false
+  },
+  {
     "slug": "physical-ai-simulation-basics",
     "zh_title": "Physical AI 与仿真生成基础",
     "en_title": "Physical AI and Simulation Generation Basics",
