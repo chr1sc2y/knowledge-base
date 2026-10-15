@@ -27,6 +27,12 @@ python scripts/build.py
 open dist/index.html
 ```
 
+## Content Scope
+
+This site covers health, photography, decision frameworks, and learning.
+AI, agent engineering, retrieval systems, and robotics articles belong in the
+separate `blog` repository.
+
 ## Adding Content
 
 1. Place Chinese articles in `articles/cn/`.

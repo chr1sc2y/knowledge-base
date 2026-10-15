@@ -14,19 +14,6 @@ DIST = ROOT / "dist"
 
 CATEGORY_MODULES = [
     {
-        "key": "ai",
-        "zh_label": "AI",
-        "en_label": "AI",
-        "zh_title": "Agent 工程与 AI 系统",
-        "en_title": "Agent Engineering and AI Systems",
-        "zh_description": "模型之外的工程外壳：harness、工具权限、评测、部署、状态恢复和开源框架。",
-        "en_description": "The engineering around models: harnesses, tool permissions, evals, deployment, recovery, and open-source frameworks.",
-        "zh_role": "技术系统类内容入口，后续可继续容纳 OpenAI API、MCP、agent 评测、部署架构和工具链。",
-        "en_role": "A home for technical systems content, including OpenAI APIs, MCP, agent evals, deployment architecture, and tooling.",
-        "zh_categories": {"Agent 工程"},
-        "en_categories": {"Agent Engineering"},
-    },
-    {
         "key": "health",
         "zh_label": "健康",
         "en_label": "Health",
@@ -47,8 +34,8 @@ CATEGORY_MODULES = [
         "en_title": "Routes, Taste, Gear, and Editing",
         "zh_description": "旅行摄影、镜头选择、视觉主题、调色风格和成片工作流。",
         "en_description": "Travel photography, focal-length choices, visual themes, color style, and final-edit workflows.",
-        "zh_role": "路线指南、镜头策略、调色风格、AI 出样、Lightroom 工作流和成片复盘都放在这里。",
-        "en_role": "A place for route guides, lens strategy, color style, AI samples, Lightroom workflows, and final-image reviews.",
+        "zh_role": "路线指南、镜头策略、调色风格、Lightroom 工作流和成片复盘都放在这里。",
+        "en_role": "A place for route guides, lens strategy, color style, Lightroom workflows, and final-image reviews.",
         "zh_categories": {"旅行与摄影"},
         "en_categories": {"Travel & Photography"},
     },
@@ -286,7 +273,6 @@ def render_index(pages: list[dict], lang: str) -> str:
     .tags{{display:flex;gap:6px;flex-wrap:wrap}}
     .tags span{{border:1px solid var(--line-soft);border-radius:999px;padding:4px 8px;color:var(--muted);font-size:12px;background:rgba(255,250,241,.5)}}
     .go{{display:inline-flex;width:max-content;align-items:center;gap:8px;color:var(--green);font-weight:900;border-bottom:1px solid var(--green)}}
-    .module.ai{{--green:var(--blue)}}
     .module.health{{--green:#2f6b4f}}
     .module.photo{{--green:var(--rust)}}
     .module.cognition{{--green:var(--gold)}}

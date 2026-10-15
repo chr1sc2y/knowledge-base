@@ -12,6 +12,9 @@ Build a public static Knowledge Base at `knowledge.prov1dence.top` for clear,
 structured explanatory pages. The site should feel calm, direct, and reference-oriented. It should
 not feel like a dashboard, blog feed, marketing page, or card-heavy template.
 
+AI, agent engineering, retrieval systems, and robotics content is maintained
+in the separate `blog` repository, not in this Knowledge Base.
+
 ## Design Rules
 
 - Use bilingual content for every public page: Simplified Chinese and English.

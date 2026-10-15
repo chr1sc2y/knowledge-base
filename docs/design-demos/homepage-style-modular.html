@@ -47,7 +47,6 @@
     .tags{display:flex;gap:6px;flex-wrap:wrap}
     .tags span{border:1px solid var(--line-soft);border-radius:999px;padding:4px 8px;color:var(--muted);font-size:12px;background:rgba(255,250,241,.5)}
     .go{display:inline-flex;width:max-content;align-items:center;gap:8px;color:var(--green);font-weight:900;border-bottom:1px solid var(--green)}
-    .module.ai{--green:var(--blue)}
     .module.health{--green:#2f6b4f}
     .module.photo{--green:var(--rust)}
     .module.cognition{--green:var(--gold)}
@@ -66,7 +65,7 @@
   <main class="wrap">
     <nav class="module-jump" aria-label="快速导航">
       <span class="jump-label">快速导航</span>
-      <a href="#photo">摄影</a><a href="#ai">AI</a><a href="#cognition">认知</a><a href="#health">健康</a>
+      <a href="#photo">摄影</a><a href="#cognition">认知</a><a href="#health">健康</a>
     </nav>
     <section class="modules">
       <details class="module photo" id="photo" open>
@@ -76,29 +75,12 @@
           <div class="indicator"></div>
         </summary>
         <div class="panel">
-          <div class="panel-note"><b>Module Role</b>这里可以放路线指南、镜头策略、调色风格、AI 出样、Lightroom 工作流和成片复盘。</div>
+          <div class="panel-note"><b>Module Role</b>这里可以放路线指南、镜头策略、调色风格、Lightroom 工作流和成片复盘。</div>
           <a class="article" href="../../articles/cn/xinjiang-northern-photography.html">
             <div class="article-top"><span>摄影</span><span>2026-06-10</span></div>
             <h3>新疆初夏北疆摄影环线</h3>
             <p>按行驶顺序和视觉主题整理北疆摄影目的地：坎儿井、火焰山、库木塔格、江布拉克、伊犁草原、赛里木湖、雅丹、喀纳斯、禾木。</p>
             <div class="tags"><span>新疆</span><span>路线</span><span>镜头</span><span>视觉主题</span></div>
-            <span class="go">进入文章</span>
-          </a>
-        </div>
-      </details>
-      <details class="module ai" id="ai">
-        <summary>
-          <div class="code">AI</div>
-          <div class="summary-copy"><h2>Agent 工程与 AI 系统</h2><p>关注模型之外的工程外壳：harness、工具权限、评测、部署、状态恢复和开源框架。</p></div>
-          <div class="indicator"></div>
-        </summary>
-        <div class="panel">
-          <div class="panel-note"><b>Module Role</b>这里是技术系统类内容的入口。未来可以继续容纳 OpenAI API、MCP、agent 评测、部署架构和工具链。</div>
-          <a class="article" href="../../articles/cn/industrial-agent-development-roadmap.html">
-            <div class="article-top"><span>AI</span><span>2026-06-10</span></div>
-            <h3>工业级 Agent 开发路线图</h3>
-            <p>从系统工程角度理解 Agent：模型与 harness 的关系、开源框架选择、工具权限、评测、状态恢复、demo 练习和 AWS 部署路径。</p>
-            <div class="tags"><span>Agent</span><span>Harness</span><span>Eval</span><span>AWS</span></div>
             <span class="go">进入文章</span>
           </a>
         </div>
