@@ -63,6 +63,20 @@ Existing privacy rules in AGENT_GUIDE.md (itinerary stripping, time-sensitive in
 
 ## Structural Requirements
 
+- Lead with the usable conclusions, then explain the supporting mechanisms.
+  Keep the opening summary compact enough to scan before reading the full page.
+- Match the concise reference style of the existing Knowledge Base articles:
+  high information density, concrete quantities, clear comparisons, and explicit
+  conditions of application. Remove repeated conclusions, rhetorical questions,
+  storytelling hooks, filler, and promotional language.
+- Make practical implications easy to locate. Where supported by evidence, use
+  tables of quantities, options, substitutions, limits, and exceptions. Present
+  these as neutral reference frameworks rather than personal instructions.
+- When adapting an external article, extract the transferable knowledge and
+  rewrite it in the Knowledge Base style. Verify material claims against primary
+  research or authoritative guidance; distinguish established findings from
+  uncertainty. Retain units, population, and relevant limitations for numerical
+  claims. A concise article must not omit conditions needed to interpret it.
 - Follow the progressive explanatory model used in existing articles (see blood-glucose.html for reference).
 - Use headings, tables, lists, and callout notes (`.note`) for clarity.
 - Every article must include a single-column table of contents linking to the
