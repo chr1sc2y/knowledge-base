@@ -1,5 +1,31 @@
 [
   {
+    "slug": "vegetable-nutrition-and-selection",
+    "zh_title": "蔬菜营养：选菜、份量与数据比较",
+    "en_title": "Vegetable Nutrition: Selection, Portions, and Comparisons",
+    "zh_subtitle": "按纤维、维生素 C 与钙来源选菜，区分每百克、每份与每百千卡，核查营养排名和补钙误区。",
+    "en_subtitle": "Choose fibre, vitamin C, and calcium sources; distinguish weight, serving, and calorie comparisons; examine nutrient rankings.",
+    "zh_category": "健康与营养",
+    "en_category": "Health & Nutrition",
+    "tags": [
+      "蔬菜",
+      "营养",
+      "膳食纤维",
+      "钙",
+      "维生素 C",
+      "vegetables",
+      "nutrition",
+      "fibre",
+      "calcium"
+    ],
+    "zh_search": "蔬菜 营养密度 排名 生菜 罗马生菜 黄瓜 冬瓜 毛豆 彩椒 荠菜 香菜 西洋菜 豆瓣菜 西兰花 小白菜 纤维 不溶性 总膳食纤维 钙 吸收 草酸 焯水 胡萝卜素 RE RAE 份量 每100克 每100千卡",
+    "en_search": "vegetables nutrient density ranking lettuce romaine cucumber winter melon edamame peppers shepherd purse cilantro watercress broccoli bok choy fibre fiber insoluble calcium absorption oxalate cooking carotene RE RAE portion",
+    "zh_path": "articles/vegetable-nutrition-and-selection.html",
+    "en_path": "articles/vegetable-nutrition-and-selection.html",
+    "date": "2026-10-24",
+    "featured": false
+  },
+  {
     "slug": "electric-rice-cooker-meal-framework",
     "zh_title": "电饭煲一锅饭：颜色、蛋白质与备餐系统",
     "en_title": "Rice-Cooker One-Pot Meals: Colour, Protein, and Meal Prep",
