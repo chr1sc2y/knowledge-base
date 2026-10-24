@@ -55,7 +55,6 @@
       "en": "Green peas",
       "zh_state": "熟 · 水煮沥干、无盐",
       "en_state": "Boiled, drained, no salt",
-      "icon": "🟢",
       "example_portion_g": 100,
       "values": {
         "fibre": 5.5,
@@ -63,8 +62,11 @@
         "vitamin_c": 14.2,
         "calcium": 27.0,
         "potassium": 271.0,
-        "magnesium": 39.0
-      }
+        "magnesium": 39.0,
+        "folate_dfe": 63.0,
+        "vitamin_a_rae": 40.0
+      },
+      "image_slug": "peas"
     },
     {
       "fdc_id": 168411,
@@ -73,7 +75,6 @@
       "en": "Edamame",
       "zh_state": "熟 · 冷冻后制熟、去荚",
       "en_state": "Frozen, prepared, shelled",
-      "icon": "🫛",
       "example_portion_g": 100,
       "values": {
         "fibre": 5.2,
@@ -81,8 +82,11 @@
         "vitamin_c": 6.1,
         "calcium": 63.0,
         "potassium": 436.0,
-        "magnesium": 64.0
-      }
+        "magnesium": 64.0,
+        "folate_dfe": 311.0,
+        "vitamin_a_rae": 15.0
+      },
+      "image_slug": "edamame"
     },
     {
       "fdc_id": 170393,
@@ -91,7 +95,6 @@
       "en": "Carrot",
       "zh_state": "生",
       "en_state": "Raw",
-      "icon": "🥕",
       "example_portion_g": 100,
       "values": {
         "fibre": 2.8,
@@ -99,8 +102,11 @@
         "vitamin_c": 5.9,
         "calcium": 33.0,
         "potassium": 320.0,
-        "magnesium": 12.0
-      }
+        "magnesium": 12.0,
+        "folate_dfe": 19.0,
+        "vitamin_a_rae": 835.0
+      },
+      "image_slug": "carrot"
     },
     {
       "fdc_id": 170379,
@@ -109,7 +115,6 @@
       "en": "Broccoli",
       "zh_state": "生",
       "en_state": "Raw",
-      "icon": "🥦",
       "example_portion_g": 200,
       "values": {
         "fibre": 2.6,
@@ -117,8 +122,11 @@
         "vitamin_c": 89.2,
         "calcium": 47.0,
         "potassium": 316.0,
-        "magnesium": 21.0
-      }
+        "magnesium": 21.0,
+        "folate_dfe": 63.0,
+        "vitamin_a_rae": 31.0
+      },
+      "image_slug": "broccoli"
     },
     {
       "fdc_id": 168462,
@@ -127,7 +135,6 @@
       "en": "Spinach",
       "zh_state": "生",
       "en_state": "Raw",
-      "icon": "🌿",
       "example_portion_g": 150,
       "values": {
         "fibre": 2.2,
@@ -135,8 +142,11 @@
         "vitamin_c": 28.1,
         "calcium": 99.0,
         "potassium": 558.0,
-        "magnesium": 79.0
-      }
+        "magnesium": 79.0,
+        "folate_dfe": 194.0,
+        "vitamin_a_rae": 469.0
+      },
+      "image_slug": "spinach"
     },
     {
       "fdc_id": 170108,
@@ -145,7 +155,6 @@
       "en": "Red pepper",
       "zh_state": "生",
       "en_state": "Raw",
-      "icon": "🫑",
       "example_portion_g": 100,
       "values": {
         "fibre": 2.1,
@@ -153,8 +162,11 @@
         "vitamin_c": 127.7,
         "calcium": 7.0,
         "potassium": 211.0,
-        "magnesium": 12.0
-      }
+        "magnesium": 12.0,
+        "vitamin_a_rae": 157.0,
+        "folate_dfe": 46.0
+      },
+      "image_slug": "red-pepper"
     },
     {
       "fdc_id": 169247,
@@ -163,7 +175,6 @@
       "en": "Romaine lettuce",
       "zh_state": "生 · 生菜代表项",
       "en_state": "Raw · lettuce example",
-      "icon": "🥬",
       "example_portion_g": 150,
       "values": {
         "fibre": 2.1,
@@ -171,8 +182,11 @@
         "vitamin_c": 4.0,
         "calcium": 33.0,
         "potassium": 247.0,
-        "magnesium": 14.0
-      }
+        "magnesium": 14.0,
+        "vitamin_a_rae": 436.0,
+        "folate_dfe": 136.0
+      },
+      "image_slug": "romaine"
     },
     {
       "fdc_id": 169977,
@@ -181,7 +195,6 @@
       "en": "Red cabbage",
       "zh_state": "生",
       "en_state": "Raw",
-      "icon": "🟣",
       "example_portion_g": 100,
       "values": {
         "fibre": 2.1,
@@ -189,8 +202,11 @@
         "vitamin_c": 57.0,
         "calcium": 45.0,
         "potassium": 243.0,
-        "magnesium": 16.0
-      }
+        "magnesium": 16.0,
+        "folate_dfe": 18.0,
+        "vitamin_a_rae": 56.0
+      },
+      "image_slug": "red-cabbage"
     },
     {
       "fdc_id": 170457,
@@ -199,7 +215,6 @@
       "en": "Tomato",
       "zh_state": "生",
       "en_state": "Raw",
-      "icon": "🍅",
       "example_portion_g": 150,
       "values": {
         "fibre": 1.2,
@@ -207,8 +222,11 @@
         "vitamin_c": 13.7,
         "calcium": 10.0,
         "potassium": 237.0,
-        "magnesium": 11.0
-      }
+        "magnesium": 11.0,
+        "folate_dfe": 15.0,
+        "vitamin_a_rae": 42.0
+      },
+      "image_slug": "tomato"
     },
     {
       "fdc_id": 170390,
@@ -217,7 +235,6 @@
       "en": "Bok choy",
       "zh_state": "生",
       "en_state": "Raw",
-      "icon": "🥬",
       "example_portion_g": 150,
       "values": {
         "fibre": 1.0,
@@ -225,8 +242,11 @@
         "vitamin_c": 45.0,
         "calcium": 105.0,
         "potassium": 252.0,
-        "magnesium": 19.0
-      }
+        "magnesium": 19.0,
+        "vitamin_a_rae": 223.0,
+        "folate_dfe": 66.0
+      },
+      "image_slug": "bok-choy"
     },
     {
       "fdc_id": 169251,
@@ -235,7 +255,6 @@
       "en": "White mushroom",
       "zh_state": "生",
       "en_state": "Raw",
-      "icon": "🍄",
       "example_portion_g": 100,
       "values": {
         "fibre": 1.0,
@@ -243,8 +262,11 @@
         "vitamin_c": 2.1,
         "calcium": 3.0,
         "potassium": 318.0,
-        "magnesium": 9.0
-      }
+        "magnesium": 9.0,
+        "vitamin_a_rae": 0.0,
+        "folate_dfe": 17.0
+      },
+      "image_slug": "white-mushroom"
     },
     {
       "fdc_id": 168409,
@@ -253,7 +275,6 @@
       "en": "Cucumber",
       "zh_state": "生 · 带皮",
       "en_state": "Raw, with peel",
-      "icon": "🥒",
       "example_portion_g": 100,
       "values": {
         "fibre": 0.5,
@@ -261,8 +282,41 @@
         "vitamin_c": 2.8,
         "calcium": 16.0,
         "potassium": 147.0,
-        "magnesium": 13.0
-      }
+        "magnesium": 13.0,
+        "folate_dfe": 7.0,
+        "vitamin_a_rae": 5.0
+      },
+      "image_slug": "cucumber"
     }
-  ]
+  ],
+  "vitamin_profile": {
+    "reference": "US FDA Daily Values, adults and children aged 4 years and older; comparison reference, not an individualized target or Chinese dietary recommendation",
+    "reference_url": "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels",
+    "nutrients": [
+      {
+        "key": "vitamin_a_rae",
+        "usda_nutrient_id": 1106,
+        "zh": "维生素 A",
+        "en": "Vitamin A",
+        "unit": "μg RAE",
+        "dv": 900
+      },
+      {
+        "key": "vitamin_c",
+        "usda_nutrient_id": 1162,
+        "zh": "维生素 C",
+        "en": "Vitamin C",
+        "unit": "mg",
+        "dv": 90
+      },
+      {
+        "key": "folate_dfe",
+        "usda_nutrient_id": 1190,
+        "zh": "叶酸 B9",
+        "en": "Folate (B9)",
+        "unit": "μg DFE",
+        "dv": 400
+      }
+    ]
+  }
 }

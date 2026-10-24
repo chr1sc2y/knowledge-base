@@ -43,6 +43,9 @@ separate `blog` repository.
 
 ## Design Notes
 
+- Follow [the visual content workflow](docs/VISUAL_CONTENT_WORKFLOW.md) for food
+  images and quantitative charts. It records the preferred imagegen treatment,
+  exact prompt locations, data conventions, rebuild commands, and visual checks.
 - Editorial template: warm paper background, serif display headings, restrained accent color, and section-by-section reading flow.
 - Every public page should have Simplified Chinese and English versions with a matching language switch.
 - Home page is a quiet index, not a card grid and not a references wall.

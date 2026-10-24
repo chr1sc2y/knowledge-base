@@ -17,6 +17,10 @@ in the separate `blog` repository, not in this Knowledge Base.
 
 ## Design Rules
 
+For food imagery and quantitative figures, read and follow
+[VISUAL_CONTENT_WORKFLOW.md](./VISUAL_CONTENT_WORKFLOW.md). Use generated ingredient
+images and code-rendered charts as separate layers; avoid emoji food substitutes.
+
 - Use bilingual content for every public page: Simplified Chinese and English.
 - Provide a language switch in the same location on every page, preferably the
   top-right corner of the viewport/header.

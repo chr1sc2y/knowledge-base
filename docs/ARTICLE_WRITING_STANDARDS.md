@@ -63,6 +63,9 @@ Existing privacy rules in AGENT_GUIDE.md (itinerary stripping, time-sensitive in
 
 ## Structural Requirements
 
+The reusable image and chart production method is documented in
+[VISUAL_CONTENT_WORKFLOW.md](./VISUAL_CONTENT_WORKFLOW.md).
+
 - Lead with the usable conclusions, then explain the supporting mechanisms.
   Keep the opening summary compact enough to scan before reading the full page.
 - Match the concise reference style of the existing Knowledge Base articles:
@@ -89,6 +92,10 @@ Existing privacy rules in AGENT_GUIDE.md (itinerary stripping, time-sensitive in
   single representative cultivar when a category is simplified. For several
   nutrients, a single overview can combine labelled values with column-specific
   bars; never compare bar lengths across different units or nutrient scales.
+- Use recognizable ingredient images in food charts rather than emoji stand-ins.
+  Similar ingredients such as garden peas and edamame need distinct images with
+  accurate shape and colour. Keep illustrative images separate from measured
+  values, and use consistent image treatment across languages and charts.
 - Every article must include a single-column table of contents linking to the
   top-level sections.
 - Interactive elements are permitted only when they illustrate objective relationships (not when they deliver advice).

@@ -1,0 +1,56 @@
+{
+  "method": "Built-in image_gen tool, one generation per ingredient",
+  "transparent_background": true,
+  "derivative": "PNG, maximum edge 256 px, aspect ratio and alpha preserved; original generations retained separately",
+  "purpose": "Ingredient recognition only; not measured food portions or nutrient data",
+  "assets": [
+    {
+      "file": "peas.png",
+      "prompt": "Generate a single isolated food ingredient photograph for a nutrition comparison chart. Subject: a small neat mound of cooked shelled green garden peas, visibly small round spherical peas, bright natural green, no pods. Style: premium editorial studio food photography, true-to-life botanical morphology and natural color, realistic delicate texture, soft diffused daylight, soft minimal contact shadow. Centered compact composition, entire subject visible with a generous clear margin on every side. Transparent background with actual alpha, no plate, no bowl, no tabletop, no backdrop, no text, no numbers, no icons, no illustration, no logo, no watermark, no hands, no extra ingredients. The subject is recognizable at small size. This is one ingredient cutout, not a chart and not a food serving measurement."
+    },
+    {
+      "file": "edamame.png",
+      "prompt": "Generate a single isolated food ingredient photograph for a nutrition comparison chart. Subject: a small neat mound of cooked shelled edamame soybeans, visibly plump oval kidney-shaped beans, pale yellow-green, no pods. Style: premium editorial studio food photography, true-to-life botanical morphology and natural color, realistic delicate texture, soft diffused daylight, soft minimal contact shadow. Centered compact composition, entire subject visible with a generous clear margin on every side. Transparent background with actual alpha, no plate, no bowl, no tabletop, no backdrop, no text, no numbers, no icons, no illustration, no logo, no watermark, no hands, no extra ingredients. The subject is recognizable at small size. This is one ingredient cutout, not a chart and not a food serving measurement."
+    },
+    {
+      "file": "carrot.png",
+      "prompt": "Generate a single isolated food ingredient photograph for a nutrition comparison chart. Subject: one small whole fresh orange carrot with a short leafy green top, and two clean diagonal carrot slices. Style: premium editorial studio food photography, true-to-life botanical morphology and natural color, realistic delicate texture, soft diffused daylight, soft minimal contact shadow. Centered compact composition, entire subject visible with a generous clear margin on every side. Transparent background with actual alpha, no plate, no bowl, no tabletop, no backdrop, no text, no numbers, no icons, no illustration, no logo, no watermark, no hands, no extra ingredients. The subject is recognizable at small size. This is one ingredient cutout, not a chart and not a food serving measurement."
+    },
+    {
+      "file": "broccoli.png",
+      "prompt": "Generate a single isolated food ingredient photograph for a nutrition comparison chart. Subject: two fresh broccoli florets, deep green rounded crowns and pale green short stalks. Style: premium editorial studio food photography, true-to-life botanical morphology and natural color, realistic delicate texture, soft diffused daylight, soft minimal contact shadow. Centered compact composition, entire subject visible with a generous clear margin on every side. Transparent background with actual alpha, no plate, no bowl, no tabletop, no backdrop, no text, no numbers, no icons, no illustration, no logo, no watermark, no hands, no extra ingredients. The subject is recognizable at small size. This is one ingredient cutout, not a chart and not a food serving measurement."
+    },
+    {
+      "file": "spinach.png",
+      "prompt": "Generate a single isolated food ingredient photograph for a nutrition comparison chart. Subject: a small loose bunch of fresh spinach leaves, dark green smooth tender pointed leaves on thin green stems. Style: premium editorial studio food photography, true-to-life botanical morphology and natural color, realistic delicate texture, soft diffused daylight, soft minimal contact shadow. Centered compact composition, entire subject visible with a generous clear margin on every side. Transparent background with actual alpha, no plate, no bowl, no tabletop, no backdrop, no text, no numbers, no icons, no illustration, no logo, no watermark, no hands, no extra ingredients. The subject is recognizable at small size. This is one ingredient cutout, not a chart and not a food serving measurement."
+    },
+    {
+      "file": "red-pepper.png",
+      "prompt": "Generate a single isolated food ingredient photograph for a nutrition comparison chart. Subject: one glossy red sweet bell pepper half, broad blocky lobes and a few pale seeds inside, no chili pepper. Style: premium editorial studio food photography, true-to-life botanical morphology and natural color, realistic delicate texture, soft diffused daylight, soft minimal contact shadow. Centered compact composition, entire subject visible with a generous clear margin on every side. Transparent background with actual alpha, no plate, no bowl, no tabletop, no backdrop, no text, no numbers, no icons, no illustration, no logo, no watermark, no hands, no extra ingredients. The subject is recognizable at small size. This is one ingredient cutout, not a chart and not a food serving measurement."
+    },
+    {
+      "file": "romaine.png",
+      "prompt": "Generate a single isolated food ingredient photograph for a nutrition comparison chart. Subject: a small romaine lettuce heart, tall elongated crisp pale green leaves with thick light ribs. Style: premium editorial studio food photography, true-to-life botanical morphology and natural color, realistic delicate texture, soft diffused daylight, soft minimal contact shadow. Centered compact composition, entire subject visible with a generous clear margin on every side. Transparent background with actual alpha, no plate, no bowl, no tabletop, no backdrop, no text, no numbers, no icons, no illustration, no logo, no watermark, no hands, no extra ingredients. The subject is recognizable at small size. This is one ingredient cutout, not a chart and not a food serving measurement."
+    },
+    {
+      "file": "red-cabbage.png",
+      "prompt": "Generate a single isolated food ingredient photograph for a nutrition comparison chart. Subject: a small red cabbage wedge showing dense purple and white concentric leaf layers. Style: premium editorial studio food photography, true-to-life botanical morphology and natural color, realistic delicate texture, soft diffused daylight, soft minimal contact shadow. Centered compact composition, entire subject visible with a generous clear margin on every side. Transparent background with actual alpha, no plate, no bowl, no tabletop, no backdrop, no text, no numbers, no icons, no illustration, no logo, no watermark, no hands, no extra ingredients. The subject is recognizable at small size. This is one ingredient cutout, not a chart and not a food serving measurement."
+    },
+    {
+      "file": "tomato.png",
+      "prompt": "Generate a single isolated food ingredient photograph for a nutrition comparison chart. Subject: one ripe red tomato with a green star calyx and one clean round tomato slice. Style: premium editorial studio food photography, true-to-life botanical morphology and natural color, realistic delicate texture, soft diffused daylight, soft minimal contact shadow. Centered compact composition, entire subject visible with a generous clear margin on every side. Transparent background with actual alpha, no plate, no bowl, no tabletop, no backdrop, no text, no numbers, no icons, no illustration, no logo, no watermark, no hands, no extra ingredients. The subject is recognizable at small size. This is one ingredient cutout, not a chart and not a food serving measurement."
+    },
+    {
+      "file": "bok-choy.png",
+      "prompt": "Generate a single isolated food ingredient photograph for a nutrition comparison chart. Subject: one small fresh bok choy, plump pale white-green spoon-shaped stalks and dark green leaves. Style: premium editorial studio food photography, true-to-life botanical morphology and natural color, realistic delicate texture, soft diffused daylight, soft minimal contact shadow. Centered compact composition, entire subject visible with a generous clear margin on every side. Transparent background with actual alpha, no plate, no bowl, no tabletop, no backdrop, no text, no numbers, no icons, no illustration, no logo, no watermark, no hands, no extra ingredients. The subject is recognizable at small size. This is one ingredient cutout, not a chart and not a food serving measurement."
+    },
+    {
+      "file": "white-mushroom.png",
+      "prompt": "Generate a single isolated food ingredient photograph for a nutrition comparison chart. Subject: three small white button mushrooms, ivory smooth rounded caps and short stems, one halved to show pale gills, no fly agaric. Style: premium editorial studio food photography, true-to-life botanical morphology and natural color, realistic delicate texture, soft diffused daylight, soft minimal contact shadow. Centered compact composition, entire subject visible with a generous clear margin on every side. Transparent background with actual alpha, no plate, no bowl, no tabletop, no backdrop, no text, no numbers, no icons, no illustration, no logo, no watermark, no hands, no extra ingredients. The subject is recognizable at small size. This is one ingredient cutout, not a chart and not a food serving measurement."
+    },
+    {
+      "file": "cucumber.png",
+      "prompt": "Generate a single isolated food ingredient photograph for a nutrition comparison chart. Subject: a short fresh dark green cucumber segment and two round pale green slices with seeds. Style: premium editorial studio food photography, true-to-life botanical morphology and natural color, realistic delicate texture, soft diffused daylight, soft minimal contact shadow. Centered compact composition, entire subject visible with a generous clear margin on every side. Transparent background with actual alpha, no plate, no bowl, no tabletop, no backdrop, no text, no numbers, no icons, no illustration, no logo, no watermark, no hands, no extra ingredients. The subject is recognizable at small size. This is one ingredient cutout, not a chart and not a food serving measurement."
+    }
+  ]
+}
