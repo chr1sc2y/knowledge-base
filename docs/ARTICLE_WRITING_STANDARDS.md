@@ -79,6 +79,11 @@ Existing privacy rules in AGENT_GUIDE.md (itinerary stripping, time-sensitive in
   claims. A concise article must not omit conditions needed to interpret it.
 - Follow the progressive explanatory model used in existing articles (see blood-glucose.html for reference).
 - Use headings, tables, lists, and callout notes (`.note`) for clarity.
+- Use charts and visual explanations where quantities, proportions, or mechanisms
+  are easier to understand visually. Label values, units, preparation states, and
+  sources directly; retain readable data without JavaScript. Use restrained,
+  high-quality food imagery where it adds recognition or context. Generated
+  illustrations must be identified and must not supply quantitative chart data.
 - Every article must include a single-column table of contents linking to the
   top-level sections.
 - Interactive elements are permitted only when they illustrate objective relationships (not when they deliver advice).
