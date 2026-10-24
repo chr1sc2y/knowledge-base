@@ -40,7 +40,8 @@ substitutes and standalone infographic images for quantitative comparisons.
 - Every article page must include a table of contents immediately after the
   header and before the main article body. The TOC should link to each top-level
   `section id` / `h2` section in the article. Keep the TOC as a single-column
-  list on all viewport sizes.
+  list on all viewport sizes. Prefer 4–6 top-level modules; group related tables
+  and notes under subsection headings.
 - Cards are reserved for truly framed tools, quizzes, warnings, or interactive
   elements. Do not use cards as the default content container.
 - Simplicity means reducing friction and visual competition, not merely using

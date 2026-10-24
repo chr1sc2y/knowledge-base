@@ -41,6 +41,15 @@ value, unit, portion and source remain readable text without JavaScript.
 - Use unrounded source values in calculations and round only the display. A bar
   capped at 100% retains the actual percentage in its label, with the cap explained.
 
+- Use a restrained sequential palette to distinguish magnitudes within a table.
+  Current bands are <25%, 25–<50%, 50–<75%, and ≥75%, in muted red-brown,
+  yellow, light green and dark green. Name the denominator next to each legend:
+  column maximum, FDA DV, or a fixed gram scale. Colour is not a health grade.
+- Explain material differences between authoritative food databases beside the
+  affected table; retain one consistent source within the main comparison.
+- Group related tables and notes into about 4–6 top-level modules. Use subsection
+  headings for individual tables rather than expanding the main contents list.
+
 ## Image treatment
 
 - Use recognizable ingredient images rather than emoji stand-ins. Similar foods,
