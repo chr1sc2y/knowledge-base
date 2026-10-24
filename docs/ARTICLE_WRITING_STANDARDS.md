@@ -84,6 +84,11 @@ Existing privacy rules in AGENT_GUIDE.md (itinerary stripping, time-sensitive in
   sources directly; retain readable data without JavaScript. Use restrained,
   high-quality food imagery where it adds recognition or context. Generated
   illustrations must be identified and must not supply quantitative chart data.
+- In food comparisons, prefer distinct everyday ingredients over several similar
+  cultivars. Include relevant common choices such as spinach and identify a
+  single representative cultivar when a category is simplified. For several
+  nutrients, a single overview can combine labelled values with column-specific
+  bars; never compare bar lengths across different units or nutrient scales.
 - Every article must include a single-column table of contents linking to the
   top-level sections.
 - Interactive elements are permitted only when they illustrate objective relationships (not when they deliver advice).

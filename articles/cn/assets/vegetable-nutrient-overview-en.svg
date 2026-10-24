@@ -1,0 +1,306 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1330" viewBox="0 0 1440 1330" role="img" aria-labelledby="title desc">
+<title id="title">Six nutrients across 12 everyday ingredients</title>
+<desc id="desc">Per 100 g edible portion, preparation labelled. Each column uses its own scale. Values describe content, not absorption.</desc>
+<rect width="1440" height="1330" fill="#f5f1e8"/>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans SC","PingFang SC",sans-serif;fill:#203d34}.muted{fill:#68716c}.unit{fill:#8b7665;font-size:17px}.value{font-size:24px;font-variant-numeric:tabular-nums}a{text-decoration:none}</style>
+<text x="64" y="60" font-size="16" class="unit" font-weight="700" text-anchor="start">FOOD COMPARISON / 12 × 6</text>
+<text x="64" y="119" font-size="44" class="" font-weight="650" text-anchor="start">Everyday vegetables, compared</text>
+<text x="64" y="160" font-size="20" class="muted" font-weight="400" text-anchor="start">Per 100 g edible portion · one USDA release · only these 12 ingredients</text>
+<line x1="64" y1="202" x2="64" y2="260" stroke="#a6b394" stroke-width="3"/>
+<text x="81" y="219" font-size="15" class="unit" font-weight="600" text-anchor="start">FIBRE</text>
+<text x="81" y="251" font-size="25" class="" font-weight="650" text-anchor="start">Green peas 5.5 g</text>
+<line x1="514" y1="202" x2="514" y2="260" stroke="#a6b394" stroke-width="3"/>
+<text x="531" y="219" font-size="15" class="unit" font-weight="600" text-anchor="start">VITAMIN C</text>
+<text x="531" y="251" font-size="25" class="" font-weight="650" text-anchor="start">Red pepper 127.7 mg</text>
+<line x1="964" y1="202" x2="964" y2="260" stroke="#a6b394" stroke-width="3"/>
+<text x="981" y="219" font-size="15" class="unit" font-weight="600" text-anchor="start">POTASSIUM</text>
+<text x="981" y="251" font-size="25" class="" font-weight="650" text-anchor="start">Spinach 558 mg</text>
+<line x1="64" y1="286" x2="1376" y2="286" stroke="#cfc5b3"/>
+<text x="64" y="324" font-size="18" class="muted" font-weight="400" text-anchor="start">Food / preparation</text>
+<text x="340" y="317" font-size="20" class="" font-weight="650" text-anchor="start">Fibre</text>
+<text x="340" y="342" font-size="15" class="unit" font-weight="400" text-anchor="start">g</text>
+<text x="512" y="317" font-size="20" class="" font-weight="650" text-anchor="start">Protein</text>
+<text x="512" y="342" font-size="15" class="unit" font-weight="400" text-anchor="start">g</text>
+<text x="684" y="317" font-size="20" class="" font-weight="650" text-anchor="start">Vitamin C</text>
+<text x="684" y="342" font-size="15" class="unit" font-weight="400" text-anchor="start">mg</text>
+<text x="856" y="317" font-size="20" class="" font-weight="650" text-anchor="start">Calcium</text>
+<text x="856" y="342" font-size="15" class="unit" font-weight="400" text-anchor="start">mg</text>
+<text x="1028" y="317" font-size="20" class="" font-weight="650" text-anchor="start">Potassium</text>
+<text x="1028" y="342" font-size="15" class="unit" font-weight="400" text-anchor="start">mg</text>
+<text x="1200" y="317" font-size="20" class="" font-weight="650" text-anchor="start">Magnesium</text>
+<text x="1200" y="342" font-size="15" class="unit" font-weight="400" text-anchor="start">mg</text>
+<rect x="48" y="359" width="1344" height="65" rx="3" fill="#eee8db"/>
+<a href="https://fdc.nal.usda.gov/food-details/170420/nutrients"><title>Peas, green, cooked, boiled, drained, without salt; FDC 170420</title>
+<text x="64" y="381" font-size="23" class="" font-weight="650" text-anchor="start">Green peas</text>
+<text x="64" y="403" font-size="12" class="muted" font-weight="400" text-anchor="start">Boiled, drained, no salt</text>
+</a>
+<text x="340" y="381" font-size="24" class="value" font-weight="700" text-anchor="start">5.5</text>
+<rect x="340" y="394" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="340" y="394" width="132.0000" height="7" rx="2" fill="#ad5437"/>
+<text x="512" y="381" font-size="24" class="value" font-weight="450" text-anchor="start">5.4</text>
+<rect x="512" y="394" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="512" y="394" width="59.4055" height="7" rx="2" fill="#688164"/>
+<text x="684" y="381" font-size="24" class="value" font-weight="450" text-anchor="start">14.2</text>
+<rect x="684" y="394" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="684" y="394" width="14.6782" height="7" rx="2" fill="#688164"/>
+<text x="856" y="381" font-size="24" class="value" font-weight="450" text-anchor="start">27</text>
+<rect x="856" y="394" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="856" y="394" width="33.9429" height="7" rx="2" fill="#688164"/>
+<text x="1028" y="381" font-size="24" class="value" font-weight="450" text-anchor="start">271</text>
+<rect x="1028" y="394" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1028" y="394" width="64.1075" height="7" rx="2" fill="#688164"/>
+<text x="1200" y="381" font-size="24" class="value" font-weight="450" text-anchor="start">39</text>
+<rect x="1200" y="394" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1200" y="394" width="65.1646" height="7" rx="2" fill="#688164"/>
+<a href="https://fdc.nal.usda.gov/food-details/168411/nutrients"><title>Edamame, frozen, prepared; FDC 168411</title>
+<text x="64" y="446" font-size="23" class="" font-weight="650" text-anchor="start">Edamame</text>
+<text x="64" y="468" font-size="12" class="muted" font-weight="400" text-anchor="start">Frozen, prepared, shelled</text>
+</a>
+<text x="340" y="446" font-size="24" class="value" font-weight="450" text-anchor="start">5.2</text>
+<rect x="340" y="459" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="340" y="459" width="124.8000" height="7" rx="2" fill="#688164"/>
+<text x="512" y="446" font-size="24" class="value" font-weight="700" text-anchor="start">11.9</text>
+<rect x="512" y="459" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="512" y="459" width="132.0000" height="7" rx="2" fill="#ad5437"/>
+<text x="684" y="446" font-size="24" class="value" font-weight="450" text-anchor="start">6.1</text>
+<rect x="684" y="459" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="684" y="459" width="6.3054" height="7" rx="2" fill="#688164"/>
+<text x="856" y="446" font-size="24" class="value" font-weight="450" text-anchor="start">63</text>
+<rect x="856" y="459" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="856" y="459" width="79.2000" height="7" rx="2" fill="#688164"/>
+<text x="1028" y="446" font-size="24" class="value" font-weight="450" text-anchor="start">436</text>
+<rect x="1028" y="459" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1028" y="459" width="103.1398" height="7" rx="2" fill="#688164"/>
+<text x="1200" y="446" font-size="24" class="value" font-weight="450" text-anchor="start">64</text>
+<rect x="1200" y="459" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1200" y="459" width="106.9367" height="7" rx="2" fill="#688164"/>
+<rect x="48" y="489" width="1344" height="65" rx="3" fill="#eee8db"/>
+<a href="https://fdc.nal.usda.gov/food-details/170393/nutrients"><title>Carrots, raw; FDC 170393</title>
+<text x="64" y="511" font-size="23" class="" font-weight="650" text-anchor="start">Carrot</text>
+<text x="64" y="533" font-size="12" class="muted" font-weight="400" text-anchor="start">Raw</text>
+</a>
+<text x="340" y="511" font-size="24" class="value" font-weight="450" text-anchor="start">2.8</text>
+<rect x="340" y="524" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="340" y="524" width="67.2000" height="7" rx="2" fill="#688164"/>
+<text x="512" y="511" font-size="24" class="value" font-weight="450" text-anchor="start">0.9</text>
+<rect x="512" y="524" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="512" y="524" width="10.3073" height="7" rx="2" fill="#688164"/>
+<text x="684" y="511" font-size="24" class="value" font-weight="450" text-anchor="start">5.9</text>
+<rect x="684" y="524" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="684" y="524" width="6.0987" height="7" rx="2" fill="#688164"/>
+<text x="856" y="511" font-size="24" class="value" font-weight="450" text-anchor="start">33</text>
+<rect x="856" y="524" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="856" y="524" width="41.4857" height="7" rx="2" fill="#688164"/>
+<text x="1028" y="511" font-size="24" class="value" font-weight="450" text-anchor="start">320</text>
+<rect x="1028" y="524" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1028" y="524" width="75.6989" height="7" rx="2" fill="#688164"/>
+<text x="1200" y="511" font-size="24" class="value" font-weight="450" text-anchor="start">12</text>
+<rect x="1200" y="524" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1200" y="524" width="20.0506" height="7" rx="2" fill="#688164"/>
+<a href="https://fdc.nal.usda.gov/food-details/170379/nutrients"><title>Broccoli, raw; FDC 170379</title>
+<text x="64" y="576" font-size="23" class="" font-weight="650" text-anchor="start">Broccoli</text>
+<text x="64" y="598" font-size="12" class="muted" font-weight="400" text-anchor="start">Raw</text>
+</a>
+<text x="340" y="576" font-size="24" class="value" font-weight="450" text-anchor="start">2.6</text>
+<rect x="340" y="589" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="340" y="589" width="62.4000" height="7" rx="2" fill="#688164"/>
+<text x="512" y="576" font-size="24" class="value" font-weight="450" text-anchor="start">2.8</text>
+<rect x="512" y="589" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="512" y="589" width="31.2544" height="7" rx="2" fill="#688164"/>
+<text x="684" y="576" font-size="24" class="value" font-weight="450" text-anchor="start">89.2</text>
+<rect x="684" y="589" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="684" y="589" width="92.2036" height="7" rx="2" fill="#688164"/>
+<text x="856" y="576" font-size="24" class="value" font-weight="450" text-anchor="start">47</text>
+<rect x="856" y="589" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="856" y="589" width="59.0857" height="7" rx="2" fill="#688164"/>
+<text x="1028" y="576" font-size="24" class="value" font-weight="450" text-anchor="start">316</text>
+<rect x="1028" y="589" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1028" y="589" width="74.7527" height="7" rx="2" fill="#688164"/>
+<text x="1200" y="576" font-size="24" class="value" font-weight="450" text-anchor="start">21</text>
+<rect x="1200" y="589" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1200" y="589" width="35.0886" height="7" rx="2" fill="#688164"/>
+<rect x="48" y="619" width="1344" height="65" rx="3" fill="#eee8db"/>
+<a href="https://fdc.nal.usda.gov/food-details/168462/nutrients"><title>Spinach, raw; FDC 168462</title>
+<text x="64" y="641" font-size="23" class="" font-weight="650" text-anchor="start">Spinach</text>
+<text x="64" y="663" font-size="12" class="muted" font-weight="400" text-anchor="start">Raw</text>
+</a>
+<text x="340" y="641" font-size="24" class="value" font-weight="450" text-anchor="start">2.2</text>
+<rect x="340" y="654" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="340" y="654" width="52.8000" height="7" rx="2" fill="#688164"/>
+<text x="512" y="641" font-size="24" class="value" font-weight="450" text-anchor="start">2.9</text>
+<rect x="512" y="654" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="512" y="654" width="31.6977" height="7" rx="2" fill="#688164"/>
+<text x="684" y="641" font-size="24" class="value" font-weight="450" text-anchor="start">28.1</text>
+<rect x="684" y="654" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="684" y="654" width="29.0462" height="7" rx="2" fill="#688164"/>
+<text x="856" y="641" font-size="24" class="value" font-weight="450" text-anchor="start">99</text>
+<rect x="856" y="654" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="856" y="654" width="124.4571" height="7" rx="2" fill="#688164"/>
+<text x="1028" y="641" font-size="24" class="value" font-weight="700" text-anchor="start">558</text>
+<rect x="1028" y="654" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1028" y="654" width="132.0000" height="7" rx="2" fill="#ad5437"/>
+<text x="1200" y="641" font-size="24" class="value" font-weight="700" text-anchor="start">79</text>
+<rect x="1200" y="654" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1200" y="654" width="132.0000" height="7" rx="2" fill="#ad5437"/>
+<a href="https://fdc.nal.usda.gov/food-details/170108/nutrients"><title>Peppers, sweet, red, raw; FDC 170108</title>
+<text x="64" y="706" font-size="23" class="" font-weight="650" text-anchor="start">Red pepper</text>
+<text x="64" y="728" font-size="12" class="muted" font-weight="400" text-anchor="start">Raw</text>
+</a>
+<text x="340" y="706" font-size="24" class="value" font-weight="450" text-anchor="start">2.1</text>
+<rect x="340" y="719" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="340" y="719" width="50.4000" height="7" rx="2" fill="#688164"/>
+<text x="512" y="706" font-size="24" class="value" font-weight="450" text-anchor="start">1.0</text>
+<rect x="512" y="719" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="512" y="719" width="10.9723" height="7" rx="2" fill="#688164"/>
+<text x="684" y="706" font-size="24" class="value" font-weight="700" text-anchor="start">127.7</text>
+<rect x="684" y="719" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="684" y="719" width="132.0000" height="7" rx="2" fill="#ad5437"/>
+<text x="856" y="706" font-size="24" class="value" font-weight="450" text-anchor="start">7</text>
+<rect x="856" y="719" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="856" y="719" width="8.8000" height="7" rx="2" fill="#688164"/>
+<text x="1028" y="706" font-size="24" class="value" font-weight="450" text-anchor="start">211</text>
+<rect x="1028" y="719" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1028" y="719" width="49.9140" height="7" rx="2" fill="#688164"/>
+<text x="1200" y="706" font-size="24" class="value" font-weight="450" text-anchor="start">12</text>
+<rect x="1200" y="719" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1200" y="719" width="20.0506" height="7" rx="2" fill="#688164"/>
+<rect x="48" y="749" width="1344" height="65" rx="3" fill="#eee8db"/>
+<a href="https://fdc.nal.usda.gov/food-details/169247/nutrients"><title>Lettuce, cos or romaine, raw; FDC 169247</title>
+<text x="64" y="771" font-size="23" class="" font-weight="650" text-anchor="start">Romaine lettuce</text>
+<text x="64" y="793" font-size="12" class="muted" font-weight="400" text-anchor="start">Raw · lettuce example</text>
+</a>
+<text x="340" y="771" font-size="24" class="value" font-weight="450" text-anchor="start">2.1</text>
+<rect x="340" y="784" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="340" y="784" width="50.4000" height="7" rx="2" fill="#688164"/>
+<text x="512" y="771" font-size="24" class="value" font-weight="450" text-anchor="start">1.2</text>
+<rect x="512" y="784" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="512" y="784" width="13.6322" height="7" rx="2" fill="#688164"/>
+<text x="684" y="771" font-size="24" class="value" font-weight="450" text-anchor="start">4</text>
+<rect x="684" y="784" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="684" y="784" width="4.1347" height="7" rx="2" fill="#688164"/>
+<text x="856" y="771" font-size="24" class="value" font-weight="450" text-anchor="start">33</text>
+<rect x="856" y="784" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="856" y="784" width="41.4857" height="7" rx="2" fill="#688164"/>
+<text x="1028" y="771" font-size="24" class="value" font-weight="450" text-anchor="start">247</text>
+<rect x="1028" y="784" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1028" y="784" width="58.4301" height="7" rx="2" fill="#688164"/>
+<text x="1200" y="771" font-size="24" class="value" font-weight="450" text-anchor="start">14</text>
+<rect x="1200" y="784" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1200" y="784" width="23.3924" height="7" rx="2" fill="#688164"/>
+<a href="https://fdc.nal.usda.gov/food-details/169977/nutrients"><title>Cabbage, red, raw; FDC 169977</title>
+<text x="64" y="836" font-size="23" class="" font-weight="650" text-anchor="start">Red cabbage</text>
+<text x="64" y="858" font-size="12" class="muted" font-weight="400" text-anchor="start">Raw</text>
+</a>
+<text x="340" y="836" font-size="24" class="value" font-weight="450" text-anchor="start">2.1</text>
+<rect x="340" y="849" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="340" y="849" width="50.4000" height="7" rx="2" fill="#688164"/>
+<text x="512" y="836" font-size="24" class="value" font-weight="450" text-anchor="start">1.4</text>
+<rect x="512" y="849" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="512" y="849" width="15.8489" height="7" rx="2" fill="#688164"/>
+<text x="684" y="836" font-size="24" class="value" font-weight="450" text-anchor="start">57</text>
+<rect x="684" y="849" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="684" y="849" width="58.9193" height="7" rx="2" fill="#688164"/>
+<text x="856" y="836" font-size="24" class="value" font-weight="450" text-anchor="start">45</text>
+<rect x="856" y="849" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="856" y="849" width="56.5714" height="7" rx="2" fill="#688164"/>
+<text x="1028" y="836" font-size="24" class="value" font-weight="450" text-anchor="start">243</text>
+<rect x="1028" y="849" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1028" y="849" width="57.4839" height="7" rx="2" fill="#688164"/>
+<text x="1200" y="836" font-size="24" class="value" font-weight="450" text-anchor="start">16</text>
+<rect x="1200" y="849" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1200" y="849" width="26.7342" height="7" rx="2" fill="#688164"/>
+<rect x="48" y="879" width="1344" height="65" rx="3" fill="#eee8db"/>
+<a href="https://fdc.nal.usda.gov/food-details/170457/nutrients"><title>Tomatoes, red, ripe, raw, year round average; FDC 170457</title>
+<text x="64" y="901" font-size="23" class="" font-weight="650" text-anchor="start">Tomato</text>
+<text x="64" y="923" font-size="12" class="muted" font-weight="400" text-anchor="start">Raw</text>
+</a>
+<text x="340" y="901" font-size="24" class="value" font-weight="450" text-anchor="start">1.2</text>
+<rect x="340" y="914" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="340" y="914" width="28.8000" height="7" rx="2" fill="#688164"/>
+<text x="512" y="901" font-size="24" class="value" font-weight="450" text-anchor="start">0.9</text>
+<rect x="512" y="914" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="512" y="914" width="9.7531" height="7" rx="2" fill="#688164"/>
+<text x="684" y="901" font-size="24" class="value" font-weight="450" text-anchor="start">13.7</text>
+<rect x="684" y="914" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="684" y="914" width="14.1613" height="7" rx="2" fill="#688164"/>
+<text x="856" y="901" font-size="24" class="value" font-weight="450" text-anchor="start">10</text>
+<rect x="856" y="914" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="856" y="914" width="12.5714" height="7" rx="2" fill="#688164"/>
+<text x="1028" y="901" font-size="24" class="value" font-weight="450" text-anchor="start">237</text>
+<rect x="1028" y="914" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1028" y="914" width="56.0645" height="7" rx="2" fill="#688164"/>
+<text x="1200" y="901" font-size="24" class="value" font-weight="450" text-anchor="start">11</text>
+<rect x="1200" y="914" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1200" y="914" width="18.3797" height="7" rx="2" fill="#688164"/>
+<a href="https://fdc.nal.usda.gov/food-details/170390/nutrients"><title>Cabbage, chinese (pak-choi), raw; FDC 170390</title>
+<text x="64" y="966" font-size="23" class="" font-weight="650" text-anchor="start">Bok choy</text>
+<text x="64" y="988" font-size="12" class="muted" font-weight="400" text-anchor="start">Raw</text>
+</a>
+<text x="340" y="966" font-size="24" class="value" font-weight="450" text-anchor="start">1.0</text>
+<rect x="340" y="979" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="340" y="979" width="24.0000" height="7" rx="2" fill="#688164"/>
+<text x="512" y="966" font-size="24" class="value" font-weight="450" text-anchor="start">1.5</text>
+<rect x="512" y="979" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="512" y="979" width="16.6247" height="7" rx="2" fill="#688164"/>
+<text x="684" y="966" font-size="24" class="value" font-weight="450" text-anchor="start">45</text>
+<rect x="684" y="979" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="684" y="979" width="46.5153" height="7" rx="2" fill="#688164"/>
+<text x="856" y="966" font-size="24" class="value" font-weight="700" text-anchor="start">105</text>
+<rect x="856" y="979" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="856" y="979" width="132.0000" height="7" rx="2" fill="#ad5437"/>
+<text x="1028" y="966" font-size="24" class="value" font-weight="450" text-anchor="start">252</text>
+<rect x="1028" y="979" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1028" y="979" width="59.6129" height="7" rx="2" fill="#688164"/>
+<text x="1200" y="966" font-size="24" class="value" font-weight="450" text-anchor="start">19</text>
+<rect x="1200" y="979" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1200" y="979" width="31.7468" height="7" rx="2" fill="#688164"/>
+<rect x="48" y="1009" width="1344" height="65" rx="3" fill="#eee8db"/>
+<a href="https://fdc.nal.usda.gov/food-details/169251/nutrients"><title>Mushrooms, white, raw; FDC 169251</title>
+<text x="64" y="1031" font-size="23" class="" font-weight="650" text-anchor="start">White mushroom</text>
+<text x="64" y="1053" font-size="12" class="muted" font-weight="400" text-anchor="start">Raw</text>
+</a>
+<text x="340" y="1031" font-size="24" class="value" font-weight="450" text-anchor="start">1.0</text>
+<rect x="340" y="1044" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="340" y="1044" width="24.0000" height="7" rx="2" fill="#688164"/>
+<text x="512" y="1031" font-size="24" class="value" font-weight="450" text-anchor="start">3.1</text>
+<rect x="512" y="1044" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="512" y="1044" width="34.2469" height="7" rx="2" fill="#688164"/>
+<text x="684" y="1031" font-size="24" class="value" font-weight="450" text-anchor="start">2.1</text>
+<rect x="684" y="1044" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="684" y="1044" width="2.1707" height="7" rx="2" fill="#688164"/>
+<text x="856" y="1031" font-size="24" class="value" font-weight="450" text-anchor="start">3</text>
+<rect x="856" y="1044" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="856" y="1044" width="3.7714" height="7" rx="2" fill="#688164"/>
+<text x="1028" y="1031" font-size="24" class="value" font-weight="450" text-anchor="start">318</text>
+<rect x="1028" y="1044" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1028" y="1044" width="75.2258" height="7" rx="2" fill="#688164"/>
+<text x="1200" y="1031" font-size="24" class="value" font-weight="450" text-anchor="start">9</text>
+<rect x="1200" y="1044" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1200" y="1044" width="15.0380" height="7" rx="2" fill="#688164"/>
+<a href="https://fdc.nal.usda.gov/food-details/168409/nutrients"><title>Cucumber, with peel, raw; FDC 168409</title>
+<text x="64" y="1096" font-size="23" class="" font-weight="650" text-anchor="start">Cucumber</text>
+<text x="64" y="1118" font-size="12" class="muted" font-weight="400" text-anchor="start">Raw, with peel</text>
+</a>
+<text x="340" y="1096" font-size="24" class="value" font-weight="450" text-anchor="start">0.5</text>
+<rect x="340" y="1109" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="340" y="1109" width="12.0000" height="7" rx="2" fill="#688164"/>
+<text x="512" y="1096" font-size="24" class="value" font-weight="450" text-anchor="start">0.7</text>
+<rect x="512" y="1109" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="512" y="1109" width="7.2040" height="7" rx="2" fill="#688164"/>
+<text x="684" y="1096" font-size="24" class="value" font-weight="450" text-anchor="start">2.8</text>
+<rect x="684" y="1109" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="684" y="1109" width="2.8943" height="7" rx="2" fill="#688164"/>
+<text x="856" y="1096" font-size="24" class="value" font-weight="450" text-anchor="start">16</text>
+<rect x="856" y="1109" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="856" y="1109" width="20.1143" height="7" rx="2" fill="#688164"/>
+<text x="1028" y="1096" font-size="24" class="value" font-weight="450" text-anchor="start">147</text>
+<rect x="1028" y="1109" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1028" y="1109" width="34.7742" height="7" rx="2" fill="#688164"/>
+<text x="1200" y="1096" font-size="24" class="value" font-weight="450" text-anchor="start">13</text>
+<rect x="1200" y="1109" width="132" height="7" rx="2" fill="#ddd7c9"/>
+<rect x="1200" y="1109" width="21.7215" height="7" rx="2" fill="#688164"/>
+<line x1="64" y1="1180" x2="1376" y2="1180" stroke="#cfc5b3"/>
+<text x="64" y="1215" font-size="18" class="muted" font-weight="400" text-anchor="start">Compare bar lengths within a column only. Rust marks that column’s maximum, not overall nutritional rank.</text>
+<text x="64" y="1245" font-size="18" class="muted" font-weight="400" text-anchor="start">Peas and edamame use prepared values; other foods use raw values. Calcium content is not absorbed calcium.</text>
+<text x="64" y="1280" font-size="16" class="muted" font-weight="400" text-anchor="start">USDA FoodData Central · SR Legacy · April 2018 · knowledge.prov1dence.top</text>
+</svg>

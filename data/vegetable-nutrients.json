@@ -1,0 +1,268 @@
+{
+  "source": "USDA FoodData Central, SR Legacy, April 2018 release",
+  "source_url": "https://fdc.nal.usda.gov/download-datasets/",
+  "download_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+  "basis": "Per 100 g edible portion; preparation states specified individually. Total dietary fibre. Content is not absorbed amount.",
+  "nutrients": [
+    {
+      "key": "fibre",
+      "usda_nutrient_id": 1079,
+      "zh": "纤维",
+      "en": "Fibre",
+      "unit": "g"
+    },
+    {
+      "key": "protein",
+      "usda_nutrient_id": 1003,
+      "zh": "蛋白质",
+      "en": "Protein",
+      "unit": "g"
+    },
+    {
+      "key": "vitamin_c",
+      "usda_nutrient_id": 1162,
+      "zh": "维生素 C",
+      "en": "Vitamin C",
+      "unit": "mg"
+    },
+    {
+      "key": "calcium",
+      "usda_nutrient_id": 1087,
+      "zh": "钙",
+      "en": "Calcium",
+      "unit": "mg"
+    },
+    {
+      "key": "potassium",
+      "usda_nutrient_id": 1092,
+      "zh": "钾",
+      "en": "Potassium",
+      "unit": "mg"
+    },
+    {
+      "key": "magnesium",
+      "usda_nutrient_id": 1090,
+      "zh": "镁",
+      "en": "Magnesium",
+      "unit": "mg"
+    }
+  ],
+  "foods": [
+    {
+      "fdc_id": 170420,
+      "usda_description": "Peas, green, cooked, boiled, drained, without salt",
+      "zh": "豌豆仁",
+      "en": "Green peas",
+      "zh_state": "熟 · 水煮沥干、无盐",
+      "en_state": "Boiled, drained, no salt",
+      "icon": "🟢",
+      "example_portion_g": 100,
+      "values": {
+        "fibre": 5.5,
+        "protein": 5.36,
+        "vitamin_c": 14.2,
+        "calcium": 27.0,
+        "potassium": 271.0,
+        "magnesium": 39.0
+      }
+    },
+    {
+      "fdc_id": 168411,
+      "usda_description": "Edamame, frozen, prepared",
+      "zh": "毛豆仁",
+      "en": "Edamame",
+      "zh_state": "熟 · 冷冻后制熟、去荚",
+      "en_state": "Frozen, prepared, shelled",
+      "icon": "🫛",
+      "example_portion_g": 100,
+      "values": {
+        "fibre": 5.2,
+        "protein": 11.91,
+        "vitamin_c": 6.1,
+        "calcium": 63.0,
+        "potassium": 436.0,
+        "magnesium": 64.0
+      }
+    },
+    {
+      "fdc_id": 170393,
+      "usda_description": "Carrots, raw",
+      "zh": "胡萝卜",
+      "en": "Carrot",
+      "zh_state": "生",
+      "en_state": "Raw",
+      "icon": "🥕",
+      "example_portion_g": 100,
+      "values": {
+        "fibre": 2.8,
+        "protein": 0.93,
+        "vitamin_c": 5.9,
+        "calcium": 33.0,
+        "potassium": 320.0,
+        "magnesium": 12.0
+      }
+    },
+    {
+      "fdc_id": 170379,
+      "usda_description": "Broccoli, raw",
+      "zh": "西兰花",
+      "en": "Broccoli",
+      "zh_state": "生",
+      "en_state": "Raw",
+      "icon": "🥦",
+      "example_portion_g": 200,
+      "values": {
+        "fibre": 2.6,
+        "protein": 2.82,
+        "vitamin_c": 89.2,
+        "calcium": 47.0,
+        "potassium": 316.0,
+        "magnesium": 21.0
+      }
+    },
+    {
+      "fdc_id": 168462,
+      "usda_description": "Spinach, raw",
+      "zh": "菠菜",
+      "en": "Spinach",
+      "zh_state": "生",
+      "en_state": "Raw",
+      "icon": "🌿",
+      "example_portion_g": 150,
+      "values": {
+        "fibre": 2.2,
+        "protein": 2.86,
+        "vitamin_c": 28.1,
+        "calcium": 99.0,
+        "potassium": 558.0,
+        "magnesium": 79.0
+      }
+    },
+    {
+      "fdc_id": 170108,
+      "usda_description": "Peppers, sweet, red, raw",
+      "zh": "红彩椒",
+      "en": "Red pepper",
+      "zh_state": "生",
+      "en_state": "Raw",
+      "icon": "🫑",
+      "example_portion_g": 100,
+      "values": {
+        "fibre": 2.1,
+        "protein": 0.99,
+        "vitamin_c": 127.7,
+        "calcium": 7.0,
+        "potassium": 211.0,
+        "magnesium": 12.0
+      }
+    },
+    {
+      "fdc_id": 169247,
+      "usda_description": "Lettuce, cos or romaine, raw",
+      "zh": "罗马生菜",
+      "en": "Romaine lettuce",
+      "zh_state": "生 · 生菜代表项",
+      "en_state": "Raw · lettuce example",
+      "icon": "🥬",
+      "example_portion_g": 150,
+      "values": {
+        "fibre": 2.1,
+        "protein": 1.23,
+        "vitamin_c": 4.0,
+        "calcium": 33.0,
+        "potassium": 247.0,
+        "magnesium": 14.0
+      }
+    },
+    {
+      "fdc_id": 169977,
+      "usda_description": "Cabbage, red, raw",
+      "zh": "紫甘蓝",
+      "en": "Red cabbage",
+      "zh_state": "生",
+      "en_state": "Raw",
+      "icon": "🟣",
+      "example_portion_g": 100,
+      "values": {
+        "fibre": 2.1,
+        "protein": 1.43,
+        "vitamin_c": 57.0,
+        "calcium": 45.0,
+        "potassium": 243.0,
+        "magnesium": 16.0
+      }
+    },
+    {
+      "fdc_id": 170457,
+      "usda_description": "Tomatoes, red, ripe, raw, year round average",
+      "zh": "番茄",
+      "en": "Tomato",
+      "zh_state": "生",
+      "en_state": "Raw",
+      "icon": "🍅",
+      "example_portion_g": 150,
+      "values": {
+        "fibre": 1.2,
+        "protein": 0.88,
+        "vitamin_c": 13.7,
+        "calcium": 10.0,
+        "potassium": 237.0,
+        "magnesium": 11.0
+      }
+    },
+    {
+      "fdc_id": 170390,
+      "usda_description": "Cabbage, chinese (pak-choi), raw",
+      "zh": "小白菜",
+      "en": "Bok choy",
+      "zh_state": "生",
+      "en_state": "Raw",
+      "icon": "🥬",
+      "example_portion_g": 150,
+      "values": {
+        "fibre": 1.0,
+        "protein": 1.5,
+        "vitamin_c": 45.0,
+        "calcium": 105.0,
+        "potassium": 252.0,
+        "magnesium": 19.0
+      }
+    },
+    {
+      "fdc_id": 169251,
+      "usda_description": "Mushrooms, white, raw",
+      "zh": "白蘑菇",
+      "en": "White mushroom",
+      "zh_state": "生",
+      "en_state": "Raw",
+      "icon": "🍄",
+      "example_portion_g": 100,
+      "values": {
+        "fibre": 1.0,
+        "protein": 3.09,
+        "vitamin_c": 2.1,
+        "calcium": 3.0,
+        "potassium": 318.0,
+        "magnesium": 9.0
+      }
+    },
+    {
+      "fdc_id": 168409,
+      "usda_description": "Cucumber, with peel, raw",
+      "zh": "黄瓜",
+      "en": "Cucumber",
+      "zh_state": "生 · 带皮",
+      "en_state": "Raw, with peel",
+      "icon": "🥒",
+      "example_portion_g": 100,
+      "values": {
+        "fibre": 0.5,
+        "protein": 0.65,
+        "vitamin_c": 2.8,
+        "calcium": 16.0,
+        "potassium": 147.0,
+        "magnesium": 13.0
+      }
+    }
+  ]
+}
