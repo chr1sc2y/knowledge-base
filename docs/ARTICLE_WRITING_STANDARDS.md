@@ -82,16 +82,16 @@ The reusable image and chart production method is documented in
   claims. A concise article must not omit conditions needed to interpret it.
 - Follow the progressive explanatory model used in existing articles (see blood-glucose.html for reference).
 - Use headings, tables, lists, and callout notes (`.note`) for clarity.
-- Use charts and visual explanations where quantities, proportions, or mechanisms
-  are easier to understand visually. Label values, units, preparation states, and
-  sources directly; retain readable data without JavaScript. Use restrained,
-  high-quality food imagery where it adds recognition or context. Generated
-  illustrations must be identified and must not supply quantitative chart data.
-- In food comparisons, prefer distinct everyday ingredients over several similar
-  cultivars. Include relevant common choices such as spinach and identify a
-  single representative cultivar when a category is simplified. For several
-  nutrients, a single overview can combine labelled values with column-specific
-  bars; never compare bar lengths across different units or nutrient scales.
+- Present quantitative food comparisons as native HTML tables, following the
+  three-vitamin supply table. Keep primary data visible; small comparison bars
+  can sit inside cells. Readers can screenshot the table directly. Do not replace
+  comparisons with standalone infographic images or maintain duplicate PNG/SVG
+  chart exports by default.
+- Label values, units, preparation states, reference systems and sources directly.
+  Retain readable data without JavaScript. Prefer distinct everyday ingredients
+  over several similar cultivars; identify any representative cultivar explicitly.
+  Several nutrients can share a table, but different scales and units must remain
+  explicit. Generated ingredient photographs illustrate identity, not quantities.
 - Use recognizable ingredient images in food charts rather than emoji stand-ins.
   Similar ingredients such as garden peas and edamame need distinct images with
   accurate shape and colour. Keep illustrative images separate from measured

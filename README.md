@@ -58,12 +58,11 @@ separate `blog` repository.
 - Deployed via `.github/workflows/pages.yml` using official `upload-pages-artifact` + `deploy-pages`.
 - Custom domain defined by root `CNAME` file.
 
-The vegetable comparison charts use the checked USDA snapshot in
-`data/vegetable-nutrients.json`. Rebuild both language versions and SVG overviews
-with `python3 scripts/build_vegetable_visuals.py`, then run the site build.
-On macOS, `python3 scripts/build_vegetable_visuals.py --png` also refreshes the
-downloadable PNGs using Quick Look and Pillow. The ordinary site build uses the
-committed assets and needs neither tool.
+The vegetable comparison tables use the checked USDA snapshot in
+`data/vegetable-nutrients.json`. Rebuild both language versions with
+`python3 scripts/build_vegetable_visuals.py`, then run the site build. Comparisons
+are native HTML tables with optional small bars inside cells; screenshots can be
+taken directly from the page, without a separate chart-image export.
 
 ## Contributing
 

@@ -19,7 +19,8 @@ in the separate `blog` repository, not in this Knowledge Base.
 
 For food imagery and quantitative figures, read and follow
 [VISUAL_CONTENT_WORKFLOW.md](./VISUAL_CONTENT_WORKFLOW.md). Use generated ingredient
-images and code-rendered charts as separate layers; avoid emoji food substitutes.
+images and native HTML comparison tables as separate layers; avoid emoji food
+substitutes and standalone infographic images for quantitative comparisons.
 
 - Use bilingual content for every public page: Simplified Chinese and English.
 - Provide a language switch in the same location on every page, preferably the
